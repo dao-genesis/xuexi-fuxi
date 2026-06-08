@@ -1,0 +1,16 @@
+# 地理信息系统 Geographic Information System, GIS — 第 22 页
+
+> 来源: 002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf
+> 页码: 22
+> OCR置信: 90.6%
+
+![page 22](../page_022.jpg)
+
+GIS应用案例 东江上游集水区土壤侵蚀
+114°00E 114°400°E 115°200E 114°00°E 114400E 115°200E 114°00°E 114°400E 115°200°E 114°0′0°E 114°400E 115°200E 114°00°E 114°400°E 115°200°E1999 2004 2009 2014 2017
+
+#### NOsS N.0.SS.
+NO.S+.7 Legend Legend Legend Legend Legend N.0.S07
+ASlight BLight ASlight ASligh ASlight ASlightCModeratc CModerat BLight CModerate BLight CModerate BLight CModerate BLightD Severe EVery severe 01530 60km EVery severe D Severe DSevere D Severe DSevereFExtremely severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 209 N.0017114°00E 114°400°E 115°200°E 114°00°E 114°400°E 115°200°E 114°00°E 114°400E 115°200E 114°0′0°E 114°400°E 115°200°E 114°00°E 114°400°E 115°200ERUSLE公式 A =K·L·S·P·E REP114°00E 114400E 115°200E 114°00E 114400E 115°200E 114°00E 114400E 115°200E 114°00E 114°400E 115°200E 11400E 114°400E 115°200E1999 2004 2009 2014 2017
+N0.5SLegend Legend Legend Legend Legendt/km2 0-1500 t/km2 t/km2 t/km2 t/km21500-3000 1500-3000 0-1500 1500-3000 0-1500 1500-3000 0-1500 1500-3000 0-15003000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60 km
+>6000 >6000 >6000 >6000 >6000114°00"E 114°400"E 115200E 114°00E 114°400E 115°200E 3.00.11 114°400"E 115°200E 114°00"E 114°400E 115°200"E 114°00E 114°400E 115200EC-Fix模型：植被固碳量 流域水污染

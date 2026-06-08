@@ -1,0 +1,46 @@
+{
+  "course_dir": "地理信息系统-2026春-121000222-001-黄源生",
+  "course_name": "地理信息系统",
+  "semester": "2026春",
+  "teacher": "黄源生",
+  "pdf_total": 4,
+  "page_total": 515,
+  "chapter_count": 0,
+  "chapter_nums": [],
+  "chapters": [],
+  "non_lecture": [],
+  "uncategorized": [
+    {
+      "rel_dir": "001-地理信息系统 Geographic Information System, GIS-地理信息系统 Geographic Information System, GIS",
+      "pdf_name": "001-地理信息系统 Geographic Information System, GIS-地理信息系统 Geographic Information System, GIS.pdf",
+      "lesson_seq": 1,
+      "page_count": 90,
+      "lesson_title": "地理信息系统 Geographic Information System, GIS",
+      "presentation_title": "地理信息系统 Geographic Information System, GIS"
+    },
+    {
+      "rel_dir": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS",
+      "pdf_name": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf",
+      "lesson_seq": 2,
+      "page_count": 90,
+      "lesson_title": "地理信息系统 Geographic Information System, GIS（2）",
+      "presentation_title": "地理信息系统 Geographic Information System, GIS"
+    },
+    {
+      "rel_dir": "003-GIS-空间数据-知识点回顾",
+      "pdf_name": "003-GIS-空间数据-知识点回顾.pdf",
+      "lesson_seq": 3,
+      "page_count": 166,
+      "lesson_title": "GIS",
+      "presentation_title": "空间数据-知识点回顾"
+    },
+    {
+      "rel_dir": "004-空间数据-知识点回顾",
+      "pdf_name": "004-空间数据-知识点回顾.pdf",
+      "lesson_seq": 4,
+      "page_count": 169,
+      "lesson_title": "空间数据",
+      "presentation_title": "知识点回顾"
+    }
+  ]
+}

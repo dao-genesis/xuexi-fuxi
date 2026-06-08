@@ -1,0 +1,252 @@
+{
+  "course_dir": "环境法学-2026春-090968-001-杨建英",
+  "course_name": "环境法学",
+  "semester": "2026春",
+  "teacher": "杨建英",
+  "pdf_total": 14,
+  "page_total": 262,
+  "chapter_count": 4,
+  "chapter_nums": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "chapters": [
+    {
+      "chapter_num": 2,
+      "chapter_title": "环境保护法的基本原则",
+      "doc_count": 6,
+      "total_pages": 132,
+      "primary": {
+        "rel_dir": "006-2.环境保护法的基本原则（4）-2.环境保护法的基本原则",
+        "pdf_name": "006-2.环境保护法的基本原则（4）-2.环境保护法的基本原则.pdf",
+        "lesson_seq": 6,
+        "page_count": 35,
+        "lesson_title": "2.环境保护法的基本原则（4）",
+        "presentation_title": "2.环境保护法的基本原则"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "002-2.环境保护法的基本原则-1-2026年3月4日-杨建英-开学第一课",
+          "pdf_name": "002-2.环境保护法的基本原则-1-2026年3月4日-杨建英-开学第一课.pdf",
+          "lesson_seq": 2,
+          "page_count": 31,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "004-2.环境保护法的基本原则（2）-2.环境保护法的基本原则",
+          "pdf_name": "004-2.环境保护法的基本原则（2）-2.环境保护法的基本原则.pdf",
+          "lesson_seq": 4,
+          "page_count": 23,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "005-2.环境保护法的基本原则（3）-2.环境保护法的基本原则",
+          "pdf_name": "005-2.环境保护法的基本原则（3）-2.环境保护法的基本原则.pdf",
+          "lesson_seq": 5,
+          "page_count": 22,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "006-2.环境保护法的基本原则（4）-2.环境保护法的基本原则",
+          "pdf_name": "006-2.环境保护法的基本原则（4）-2.环境保护法的基本原则.pdf",
+          "lesson_seq": 6,
+          "page_count": 35,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "006-2.环境保护法的基本原则（4）-3. 环境利用行为的主体及其权利义务",
+          "pdf_name": "006-2.环境保护法的基本原则（4）-3. 环境利用行为的主体及其权利义务.pdf",
+          "lesson_seq": 6,
+          "page_count": 8,
+          "all_chapter_nums": [
+            2,
+            3
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "011-第二编 污染控制法-第二编 污染控制法",
+          "pdf_name": "011-第二编 污染控制法-第二编 污染控制法.pdf",
+          "lesson_seq": 11,
+          "page_count": 13,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "环境利用行为的主体及其权利义务",
+      "doc_count": 2,
+      "total_pages": 44,
+      "primary": {
+        "rel_dir": "007-3. 环境利用行为的主体及其权利义务-3. 环境利用行为的主体及其权利义务",
+        "pdf_name": "007-3. 环境利用行为的主体及其权利义务-3. 环境利用行为的主体及其权利义务.pdf",
+        "lesson_seq": 7,
+        "page_count": 36,
+        "lesson_title": "3. 环境利用行为的主体及其权利义务",
+        "presentation_title": "3. 环境利用行为的主体及其权利义务"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "006-2.环境保护法的基本原则（4）-3. 环境利用行为的主体及其权利义务",
+          "pdf_name": "006-2.环境保护法的基本原则（4）-3. 环境利用行为的主体及其权利义务.pdf",
+          "lesson_seq": 6,
+          "page_count": 8,
+          "all_chapter_nums": [
+            2,
+            3
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "007-3. 环境利用行为的主体及其权利义务-3. 环境利用行为的主体及其权利义务",
+          "pdf_name": "007-3. 环境利用行为的主体及其权利义务-3. 环境利用行为的主体及其权利义务.pdf",
+          "lesson_seq": 7,
+          "page_count": 36,
+          "all_chapter_nums": [
+            3
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "国家的环境保护义务",
+      "doc_count": 3,
+      "total_pages": 33,
+      "primary": {
+        "rel_dir": "009-4. 国家的环境保护义务 （2）-4. 国家的环境保护义务",
+        "pdf_name": "009-4. 国家的环境保护义务 （2）-4. 国家的环境保护义务.pdf",
+        "lesson_seq": 9,
+        "page_count": 17,
+        "lesson_title": "4. 国家的环境保护义务 （2）",
+        "presentation_title": "4. 国家的环境保护义务"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "008-4. 国家的环境保护义务-4. 国家的环境保护义务",
+          "pdf_name": "008-4. 国家的环境保护义务-4. 国家的环境保护义务.pdf",
+          "lesson_seq": 8,
+          "page_count": 12,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "009-4. 国家的环境保护义务 （2）-4. 国家的环境保护义务",
+          "pdf_name": "009-4. 国家的环境保护义务 （2）-4. 国家的环境保护义务.pdf",
+          "lesson_seq": 9,
+          "page_count": 17,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "009-4. 国家的环境保护义务 （2）-5. 环境基本法与综合性环境法律制度",
+          "pdf_name": "009-4. 国家的环境保护义务 （2）-5. 环境基本法与综合性环境法律制度.pdf",
+          "lesson_seq": 9,
+          "page_count": 4,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "环境基本法与综合性环境法律制度",
+      "doc_count": 2,
+      "total_pages": 27,
+      "primary": {
+        "rel_dir": "010-5. 环境基本法与综合性环境法律制度-5. 环境基本法与综合性环境法律制度",
+        "pdf_name": "010-5. 环境基本法与综合性环境法律制度-5. 环境基本法与综合性环境法律制度.pdf",
+        "lesson_seq": 10,
+        "page_count": 23,
+        "lesson_title": "5. 环境基本法与综合性环境法律制度",
+        "presentation_title": "5. 环境基本法与综合性环境法律制度"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "009-4. 国家的环境保护义务 （2）-5. 环境基本法与综合性环境法律制度",
+          "pdf_name": "009-4. 国家的环境保护义务 （2）-5. 环境基本法与综合性环境法律制度.pdf",
+          "lesson_seq": 9,
+          "page_count": 4,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "010-5. 环境基本法与综合性环境法律制度-5. 环境基本法与综合性环境法律制度",
+          "pdf_name": "010-5. 环境基本法与综合性环境法律制度-5. 环境基本法与综合性环境法律制度.pdf",
+          "lesson_seq": 10,
+          "page_count": 23,
+          "all_chapter_nums": [
+            5
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    }
+  ],
+  "non_lecture": [
+    {
+      "rel_dir": "001-1-2026年3月4日-杨建英-开学第一课-1-2026年3月4日-杨建英-开学第一课",
+      "pdf_name": "001-1-2026年3月4日-杨建英-开学第一课-1-2026年3月4日-杨建英-开学第一课.pdf",
+      "lesson_seq": 1,
+      "page_count": 22,
+      "lesson_title": "1"
+    },
+    {
+      "rel_dir": "003-1-2026年3月4日-杨建英-开学第一课（2）-1-2026年3月4日-杨建英-开学第一课",
+      "pdf_name": "003-1-2026年3月4日-杨建英-开学第一课（2）-1-2026年3月4日-杨建英-开学第一课.pdf",
+      "lesson_seq": 3,
+      "page_count": 7,
+      "lesson_title": "1"
+    },
+    {
+      "rel_dir": "003-1-2026年3月4日-杨建英-开学第一课（2）-2.环境保护法的基本原则",
+      "pdf_name": "003-1-2026年3月4日-杨建英-开学第一课（2）-2.环境保护法的基本原则.pdf",
+      "lesson_seq": 3,
+      "page_count": 9,
+      "lesson_title": "1"
+    }
+  ],
+  "uncategorized": []
+}

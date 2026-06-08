@@ -1,0 +1,410 @@
+{
+  "pdf_path": "D:\\道\\道生一\\一生二\\学习复习\\流体力学\\01_原始PDF\\012-《流体力学》 第四章 流体动力学基础（3）-《流体力学》 第四章 流体动力学基础.pdf",
+  "pdf_name": "012-《流体力学》 第四章 流体动力学基础（3）-《流体力学》 第四章 流体动力学基础.pdf",
+  "lesson_seq": 12,
+  "lesson_title": "《流体力学》 第四章 流体动力学基础（3）",
+  "presentation_title": "《流体力学》 第四章 流体动力学基础",
+  "chapter_num": 4,
+  "chapter_raw": "第四章",
+  "all_chapter_nums": [
+    4
+  ],
+  "all_chapter_raws": [
+    "第四章"
+  ],
+  "page_count": 56,
+  "pages": [
+    {
+      "index": 1,
+      "image": "page_001.jpg",
+      "embedded_text": null,
+      "ocr_text": "《流体力学》\n第四章流体动力学基础",
+      "ocr_score": 0.999
+    },
+    {
+      "index": 2,
+      "image": "page_002.jpg",
+      "embedded_text": null,
+      "ocr_text": "本章主要内容\n4.1欧拉运动方程\n4.2沿流线的伯努利方程的导出\n4.3缓变流\n4.4总流的伯努利方程的导出\n4.5伯努利方程的应用\n4.6微分形式的动量方程\n4.7纳维-斯托克斯方程",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 3,
+      "image": "page_003.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 欧拉运动方程\n一、欧拉运动方程\n欧拉运动方程，也称理想流体运动微分方程，是欧拉\n1775年根据理想流体运动是流体受力与动量变化推导出的微\n分方程组。\n如图，在运动的理想流体取\n一密度为，的正六面体微元，其 (do.\n沿各坐标的边长分别为sxyz，\n已知该流微元中心点O处压强为\nP。近似认单位质量力在该微元内均匀分布。",
+      "ocr_score": 0.964
+    },
+    {
+      "index": 4,
+      "image": "page_004.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 欧拉运动方程\n欧拉运动方程 泰勒级数展开 f() f（co)\nTo)f'（o)\n该流体微元受质量力为：\nCo)²f\"（co)\nfpox8y8z f（为单位质量力）\nco)nf(n)（co)\n表面力：理想流体无切应力\n，只受表面力只有压力，分别作\nop 8z dx\n用在前后、左右、上下表面，指 dx 2\n向流体内部。\nop Sy p\n六个表面中心处压强作泰勒 ay 2 ay Sy\n级数展开，略去高阶项，通过各\n表面中心点压强求出所受压力。\ndp Sx0x2 Oz.",
+      "ocr_score": 0.853
+    },
+    {
+      "index": 5,
+      "image": "page_005.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 欧拉运动方程\n欧拉运动方程\nx方向前后表面所受压力：\nop &xop 1 (前) 0 p 0x2\np+ 8x8y8zop opSx Sy 8 p + Sy8y8z (后) dy 2 20x2 (doy方向左右表面所受压力：\nop (左)\nSy 8x8z op 1 &x op Sz0x2 0zp 8x8z (右)",
+      "ocr_score": 0.855
+    },
+    {
+      "index": 6,
+      "image": "page_006.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 欧拉运动方程\n欧拉运动方程\nz方向上下表面所受压力：\nop 1 (上) 2 0x 2\np+ 8x8yop dy p+ dy SySz 8x8y (下) (do·\nx轴方向表面力合力：\nop 1 op 1 op 1 &x opp 十 8x 8y8z+ p 8x 8y8z P+ 0x20x2 0x2 2\nop op P8x8y8z8x8y8z 同理得 8x8y8zOx oy",
+      "ocr_score": 0.894
+    },
+    {
+      "index": 7,
+      "image": "page_007.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 欧拉运动方程\n欧拉运动方程\n由上述过程获得了质量力： op8z &r0z 2 0x2\nfp8x8y8z\n表面力合力： op Sy opdy 8 p+ dy SyPsx8y8z- op Psx8y8z (do8x8y8z-\n0x oy 0xe op op8x8y8z=-Vp8x8y8z0x op 一 &x op0.x 2 pDV F=fp8x8y8z-Vp8x8y8zF=ma= p8x8y8zDV (矢量形式）",
+      "ocr_score": 0.853
+    },
+    {
+      "index": 8,
+      "image": "page_008.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1欧拉运动方程\n欧拉运动方程\n欧拉运动方程的分量形式：\nDu 1 op 1op ne Ou Ou neDt pox 0x Ot 0x 0yDv Op Op Ov 0v 0vDt Ot 0x 0y OzDw op Ow Me Ow awDt ze d Oz Ot 0x oz",
+      "ocr_score": 0.834
+    },
+    {
+      "index": 9,
+      "image": "page_009.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n、沿流线的伯努利方程\n生活中许多情景可以用伯努利 吹气\n方程解释，如向漏斗中的乒乓球吹 纸\n纸\n气、向相邻两张纸间吹起、足球场\n上香蕉球等。\n丹尼尔·伯努利1726年提出“伯\n努利原理”，描述了流体运动时速\n度、压强、高度之间的关系。",
+      "ocr_score": 0.988
+    },
+    {
+      "index": 10,
+      "image": "page_010.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n一、沿流线的伯努利方程\n首先来看沿流线的伯努利方程，其是在欧拉运动方程上\n附加一些条件获得的。\n第一个附加条件：流动定常，即空间点上任意物理量对\n时间的变化率为零 0 Ov Ow 。由欧拉\n方程得： ot 10\nou OuOx 0x oyOw Ow0x oy W",
+      "ocr_score": 0.843
+    },
+    {
+      "index": 11,
+      "image": "page_011.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n沿流线的伯努利方程\n第二个附加条件：质量力有势，存在力势函数，有：\nLIe Lef=一 ，代入前式得：\n0x Oz1 Op Ou Ouoy oy 十 W1 op Ow OwOz poz Ox oz",
+      "ocr_score": 0.761
+    },
+    {
+      "index": 12,
+      "image": "page_012.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\naXb=[ab-ab2,asb-ab3,ab2-ab]\n一、沿流线的伯努利方程\ndxV=dw-dv,czu-cw,cav-chu=0\nx,y,z分量等式两边分别同时乘Lkxydz得 dx chy dzu（x,y，z,1)v（x,y，z,1)w（x,y,z,1)\n1 op ne Ou ne 第三个条件：\n沿流线 dx- -dx=u dx+v- -dx+w dx dx dy dzox pox Ox 0yu 满足 Me 1 op 0v 0v vdy dy dy+ dyOy udy =vdxoy ox Oy 0zudz=wdxLIe 1 op Ow dw vdz=wdy\n-zp n=zp- -dz+v -dz+w dzOz ze d Ox oy",
+      "ocr_score": 0.833
+    },
+    {
+      "index": 13,
+      "image": "page_013.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n沿流线的伯努利方程\nudy=vdxudz=wdxvdz=wdy ，代入上式得：\n1 op ne Ou nedx dx=u n+xp n+p =npn=zp0x p 0x 0x oyIe 1 op 0v 0v 0vdy dy=v dx+v dy+v dz=vdv=\noy p 0x oyIIe 1oPdz=W ow owdz- dx+w dy + wpoz 0x ay\n上式相加：\nHe LIe Le op op op\n+xp +<p dz dx dy+ dz0x oy 0x Oy Oz",
+      "ocr_score": 0.846
+    },
+    {
+      "index": 14,
+      "image": "page_014.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n、沿流线的伯努利方程\nHIe HIe op op op\n+xp +p dz dx +<p dz0x 0y 0x Oy\n-dI- d+ dp +\n附加条件四：质量力只有重力f=0\nf=0 f.F-8\n=-f=g→ d=gdz 1\ngdz+— +dp p\n积分得\ngz+ （沿流线的伯努利方程）",
+      "ocr_score": 0.89
+    },
+    {
+      "index": 15,
+      "image": "page_015.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n一、沿流线的伯努利方程\n伯努利方程的适用条件：\n12345 理想均质不可压缩流体；\n定常流动;\n质量力有势且只有重力；\n沿同一流线成立\n无其他能量输入、输出。",
+      "ocr_score": 0.961
+    },
+    {
+      "index": 16,
+      "image": "page_016.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n沿流线伯努利方程的物理意义\n伯努利方程 (1)\n可表述为 (2)\n下标1、2表示同一流线任意两点，其物理意义：\nmgz ，单位质量流体具有的重力势能；\nmV2 ，单位质量流体具有的动能；\nP 单位质量流体具有的压力能。 （单位质量流体机械能守恒）",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 17,
+      "image": "page_017.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n沿流线伯努利方程的物理意义\n式（2）边同除以g得：\nV2 P V2 p\n十 (3)\n2g pg g pgmgz ，单位重量流体具有的重力势能；\nmgmV /mg ，单位重量流体具有的动能；\n，单位重量流体具有的压力能。 （单位重量流体机械能守\n恒) pg",
+      "ocr_score": 0.93
+    },
+    {
+      "index": 18,
+      "image": "page_018.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2沿流线的伯努利方程\n三、沿流线伯努利方程的几何意义\n单位重量伯努利方程+ 中每项的量\n2 g pg\n纲为长度，单位为m，具有几何意义：\n总水头线\n2：为位置水头，该点相对于基\n准面的位置高度； 静水头线\n速度水头，不考虑阻力时流\n体垂直向上运动的高度；\n卫：压强水头，该点压强作用下测压管流体上升的高度。\npg\n，总能头（总水头），为一水平直线。\n2g pg",
+      "ocr_score": 0.962
+    },
+    {
+      "index": 19,
+      "image": "page_019.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.3缓变流\n一、缓变流特征\n缓变流是一个特殊流动区域，该区域必须同时满足下列\n条件：\n1) 该流动区域流线切线之间夹角很小，即流线近似平行\n2） 缓变流流动区域流线曲率很小，即流线近似于直线\n不能同时满足上述条件的流动称为急变流。如图：\n缓变流 急变流 急变流\n急变流\n急交流 缓变流 急变流 *缓变流存\n在均质 突然扩大2 ！！ 3突然缩小\n闸阀10",
+      "ocr_score": 0.951
+    },
+    {
+      "index": 20,
+      "image": "page_020.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.3缓变流\n缓变流过流断面压强分布规律\n如图所示：在任意选取缓变流区域上任意选取一个过流\n断面，在该过流断面任意选取一条直线n-n，以n-n为中心轴\n线，选取一个任意长度的微小流体圆柱，其与铅垂方向夹角\n为，其底面积为dA，中心轴线与dA的交点\n为1点、2点，对应的压强分别为p1、P2，对\n该微元柱体作受力分析得：\npgdAlcosa+pdA-p2dA=0 （过流断面速度）\npgdA(z-z2)+pdA-p2dA=02+ P1\npg pg\n（与水静压强分布规律一致）",
+      "ocr_score": 0.963
+    },
+    {
+      "index": 21,
+      "image": "page_021.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n一、总流的伯努利方程\n沿流线的伯努利方程只适用于一条流线，工程实际中许\n多问题关注的是通道内的流动-属于总流问题\n研究总流问题需要采用总流的流动方程-总\n流伯努利方程。\n总流伯努利方程如何获得？\n应用沿流线的伯努利方程推导总流的伯\n努利方程。",
+      "ocr_score": 0.989
+    },
+    {
+      "index": 22,
+      "image": "page_022.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n一、总流的伯努利方程\n在流场中任意选一有限流管，在有限流管内任意选一条\n微小流束 （虚线部分），微小流束进、出口参数已知，如图。\n首先，求单位时间通过微小流束过流\n断面的不可压缩流体的重量：\n进口1点：pgvdA\n出口2点：pgv2dA2\nP1,V1,P1,dA\n定常流动时，根据质量守恒定律：\nogv,dA, =pgvdA2",
+      "ocr_score": 0.926
+    },
+    {
+      "index": 23,
+      "image": "page_023.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n、总流的伯努利方程\n其次，对于微小流束，应用流线伯努利方程：\nVpg 2g pg 2g\n令该式左、右分别乘以过流断面\n流过的流体重量，得： 1\nP1,V1,P1,dAZ+ pgv,dA pgv2dApg 2g pg 2 g\n两边积分得： pgv,dA, pgv2dApg 2g g",
+      "ocr_score": 0.901
+    },
+    {
+      "index": 24,
+      "image": "page_024.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n、总流的伯努利方程\n对积分形式的总流伯努利方程拆分：\npgv,dA, pgvdApg 2g pg\n等式左右侧均可写为下述形式： dApg]A2g vdA+pg] p vdApg\n第一项为动能项：8 vdAP1,V1,P1,dA\n第二项为势能项pg",
+      "ocr_score": 0.927
+    },
+    {
+      "index": 25,
+      "image": "page_025.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n一、总流的伯努利方程\n对动能项进行求解：由于速度v在过流断面的分布未知\n无法直接进行积分。用过流断面的平均速度代替速度v进行积\n分，则动能项可表示为：\n，V2，P2，dApg v²dA= pg V3dA av2g 2g\n其中。为动能修正系数，上式也可写为：\npg av2 P1,V1,P1,dA1\nv²dA= pg dA= pgA vdA2g 2g",
+      "ocr_score": 0.932
+    },
+    {
+      "index": 26,
+      "image": "page_026.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n、总流的伯努利方程\n对势能项进行求解：同样由于参数在过流断面分布未知\n无法直接积分。这里补充一约束条件：即该有限流管进、出口\n断面均位于渐变流过流断面上，有过流断面任意点z+=Cpg\n代入势能项积分得：\npg P vdA=pg PZ+ vdApg pg\n将上述积分后的动能项、势能项代入总流伯努利方程：\npgvdA= Z2 pgv2dA2\nA pg 2g pg 2g",
+      "ocr_score": 0.948
+    },
+    {
+      "index": 27,
+      "image": "page_027.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n总流的伯努利方程\n整理后得：\nP a,v pgJs v2dA2\nZ+ pg V,dA, Z2\npg 2g pg 2g\n定常流情况 pg vdA,=pg V2dA\n上式可写为：\nP av P a2v2\npg 2g pg 2g （总流伯努利方程）\n下标1、2代表两缓流过流断面，不再是流线上两点。",
+      "ocr_score": 0.909
+    },
+    {
+      "index": 28,
+      "image": "page_028.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n一、总流的伯努利方程\n总流伯努利方程适用条件：\n流体为理想不可压缩流体； pg 2g pg 2g2） 流体为定常流动；\n3） 流体所受质量力有势且只有重力；\n4 流体两过流断面间无能量输入输出；\n5）两过流断面必须是缓变流过流断面。",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 29,
+      "image": "page_029.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n总流的伯努利方程\n总流伯努利方程的物理意义：\nP avi P2 a2V2\npg 2g pg 2g\n单位重量流体所具有的重力势能；\n单位重量流体具有的压力能；\n单位重量流体具有的动能。\n流体两过流断面的机械能守恒",
+      "ocr_score": 0.965
+    },
+    {
+      "index": 30,
+      "image": "page_030.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n一、总流的伯努利方程\n若两缓变流过流断面间有能量的输入、输出，需在方程\n中加入/减去输入/输出的能量，总流伯努利方程可写为：\nP1 avi P2 a2V2\nZ+ Z2+\npg 2g pg 2g\n式中为流体机械向流体输入或输出的单位重量流体具有的能\n量，量纲为长度，单位为m。其值有正有负，输入为负，输出\n为正。",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 31,
+      "image": "page_031.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n、总流的伯努利方程\nBd 2g 2g1) 断面压强要求采用同一种压强表示方法；\n2)z,p/ pg 可以是过流断面上任一点的处的值，但必须为\n同一点的值；\n3）两过流断面间可以不是缓变流;\n4）取=a2",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 32,
+      "image": "page_032.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n动能修正系数\n动能修正系数是在沿流线伯努利方程推导总流伯努利方\n程为将动能项积分出来，用过流断面平均速度替代有分布的速\n度V，由此引入了误差，用动能修正系数对积分结果加以修正：\n80 [dA=a [vdA\n根据该式可得动能修正系数表达式：\nVdA 式中只有v是变量，其在过流断面A分布\n越均匀，其值越接近平均速度，动能修正系数越趋近于1。动\n能修正系数反映了过流断面速度分布的均匀程度。",
+      "ocr_score": 0.938
+    },
+    {
+      "index": 33,
+      "image": "page_033.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.4总流的伯努利方程\n动能修正系数\n动能修正系数与管道内流体流动状态有关。流体在管道\n内流动状态分为层流与瑞流\n瑞流过流断面速度分布比较 Turbulent\n均匀；层流过流断面速度分布很\n不均匀。\n湍流时动能修正系数约等于\n1；层流时动能修正系数等于2\n工程应用中，管道内流体一般为湍流，故动能修正系数\n取1。",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 34,
+      "image": "page_034.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.5伯努利方程的应用\n、速度与流量测量\n简单毕托管原理-伯努利方程：\n如图所示，直角弯玻璃管放入流体\n中，其开口正对来流方向，流体进入毕\n托管上升高度h，然后平衡静止\n该过程相当于流体中放入一段柱状\n驻点\n固体，前方来流绕过管口从管外流过\n如右下图，存在分流线 （即滞止流线）\n，流体沿该流线到达管口，流速为零，\n称为驻点，其压强记作po。 滞止流线",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 35,
+      "image": "page_035.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.5伯努利方程的应用\n一、速度与流量测量\n在滞止流线上取1、2两点，1点为远前方点，速度记作。\n压强记作P。，2点为驻点，速度为零，对两点列伯努利方程：\n驻点\npg 2g\n，式（1）写为：\n(2) 滞止流线\n式中P。称为滞止压强或总压，P。称为静压\n1-2 称为动压。静压+动压=总压\npv²",
+      "ocr_score": 0.944
+    },
+    {
+      "index": 36,
+      "image": "page_036.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.5伯努利方程的应用\n速度与流量测量\n根据静力学理论，可推导出。-P。=pgh 代入式 (2)\n得：\n工程中常用毕托管，其测速原理\n也是伯努利方程。如右图毕托管，用\n总压管测总压，用静压管测静压，总\n压管与静压管间用U型管连接测得总\n压与静压之差（p。-p） p p2\n(4）代入(5) ，得：\n2ghP。-p",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 37,
+      "image": "page_037.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.5伯努利方程的应用\n、速度与流量测量\n将总压管与静压管组合在一起\n如图，内管为总压管，外管为静压\n测压管 测速管\n管，测压孔开在外管的适当位置，\n迎流孔 3d 0.1d 8~10d\n为减少静压测量的干扰，孔的尺寸\n与位置不能随意设置，需参考图中\n参数要求设置。 顺流孔",
+      "ocr_score": 0.977
+    },
+    {
+      "index": 38,
+      "image": "page_038.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n一、静止和理想流体的表面力\n牛顿内摩擦定律：r=u du\n描述的是粘性应力与流体层间速度梯度成正比，对于牛\n顿流体，都符合上述定律。存在两种特殊流体：\n绝对静止流体\n→ 0=1 Ah\n相对静止流体 dy\n理想流体→ 0=1-0=n yP=1 dv\n该两种流体内部没有粘性力，即没有切向力。只存在法\n向力，单位面积的法向力为法向应力，也即压强。=p(x,y，z)",
+      "ocr_score": 0.945
+    },
+    {
+      "index": 39,
+      "image": "page_039.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n二 粘性流体中的应力\n对于粘性流体，如图取粘性流体一点，每个不同作用面\n上都作用了一个力，其不一定是法向的，因粘\n性流体内部存在粘性切应力，任一方位作用 On\n面所作用的力可分解为法向和切向，分别用\n，，，表示，其不仅有大小，大小和方向还与 8A\n作用面的方位有关，即存在两个方向：力的 与作用面方位有关\n方向和作用面的方向。不能用压强简单表示",
+      "ocr_score": 0.945
+    },
+    {
+      "index": 40,
+      "image": "page_040.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n米 粘性流体中的应力\n在粘性流体内任取一点，过该点取一个作用面，规定：\n该作用面法线方向为x轴，根据坐标系确定原则，确定y、z方\n向，如图。\n可以看到x方向是该作用面法线方向 切向应力\ny、z方向是该作用面的切向方向。过该点\n法向应力\n的应力矢量可向x、y、z方向分解，得到 O..\n切向应力\n三个应力分量，用?表示法向应力，用 T\n表示切向应力。。，均有两个下标？",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 41,
+      "image": "page_041.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n二、米 粘性流体中的应力\n从图可看到3个分量第1个下标都是x，其表示该作用面法\n线方向。三个分量第2个下标不同，法向应力分量为×，切向\n应力分量分别有yz，表示y，z方向的切向应力。\n过一点作三个相互垂直的平面，则过该 切向应力\n点任意方位表面上的应力都可以用这三个平 法向应力\n切向应力 D..\n面上的九个应力分量表示：\n唯一地确定该点的应力状态",
+      "ocr_score": 0.92
+    },
+    {
+      "index": 42,
+      "image": "page_042.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n应力正方向：由粘性流体取出六面体微团如图所示。流体微\n团有六个面，每个面上都有一个应力矢量，把每个应力天量向xyz\n三个方向分解。\n以右侧面为例，其有三个应力分量，其\n外法向与坐标系×的正向一致，其应力分量\n的正向规定为与坐标轴正向一致。即一个面\n外法向方向与坐标轴正向一致，即规定应力\n分量正向与坐标轴正向一致。同理，外法向\n与坐标轴正向相反时，规定其应力分量方向\n与坐标轴正向相反。",
+      "ocr_score": 0.987
+    },
+    {
+      "index": 43,
+      "image": "page_043.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n受力分析：如右图六面体流体微团\n量和6个切向应力分量：\n在右侧面，所有应力分量不可能\n等于中心点处应力分量，必然有增量\n其正、负视具体情况确定",
+      "ocr_score": 0.998
+    },
+    {
+      "index": 44,
+      "image": "page_044.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n图中右侧面三个应力分量分别指向三个坐标轴正向，对\n流体微团中心点法向应办，采用泰勒级数展开，去掉高阶项\n得右侧面法向方向应力 Ox ，同理，得y,z方向切应力。",
+      "ocr_score": 0.937
+    },
+    {
+      "index": 45,
+      "image": "page_045.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n同理，得六面体微团其他各面法向应力、切向应力表达\n式，如下图所\nyy dy 2\ndx 8x",
+      "ocr_score": 0.824
+    },
+    {
+      "index": 46,
+      "image": "page_046.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n表面力合力：以x方向为例，得：\n0tyx8ySx 00 Sx Sx8y8z Oy 2\nax 2 ax 2 Cx\n同理，得上下、左右表面力合力\n00xx8xOT, Sy OT Sy OT 0xx axyx Sx8z t yx Sx8z= yx 8x8y8z20 Sz OT Sz Otyx8ySx8y Sx8y: Tyx Oy 2\nOZ 2 OZ",
+      "ocr_score": 0.835
+    },
+    {
+      "index": 47,
+      "image": "page_047.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n三、六面体流体微团受力分析\n同理，得上下、左右表面力合力： 0tyx8yy2 Tx 02\nOT Syyx Sx8z X Sx8z 8x8y8zoy 2 yx 2 voxx 0xx ax20 20 Sz 8x8y8z2 Sx8y SxSy= S=\nZ 2 OZ 2 Z 8.xTx Tyx oy00 OT, OT OT 00 OT OT 00\nSF yx Sxoy8y SF W 8x8y8y SF VZ Sx8y8ySX ax cax Z",
+      "ocr_score": 0.771
+    },
+    {
+      "index": 48,
+      "image": "page_048.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n四、 微分形式的动量方程\n实质上是牛顿第二定律应用于流体微团：ZF=ma\n单位体积流体微团微分形式动量方程：\nOu u Ou ne 00 OT 20\npgx XX yx ZXat Ox ax OZW 微分形式动量方\nOx OZ\n程\n质量 物质导数（加速度） 质量力 表面力合力",
+      "ocr_score": 0.879
+    },
+    {
+      "index": 49,
+      "image": "page_049.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.6微分形式的动量方程\n四、微分形式的动量方程\nOu Ou Ou ne\n微分形式动量方\n程\n质量物质导数 (加速度) 质量力 表面力合力\n（1个未知）（3个未知） （9个应力分量，有6个独立未知）\n10个未知量，3个方程，未知量个数>方程个数，微分方程组不封闭， ，不能求解未知量",
+      "ocr_score": 0.899
+    },
+    {
+      "index": 50,
+      "image": "page_050.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯 （N-S）方程\n一、本构方程\n所谓本构方程，描述的是应力与变形速度 （即变形率）\n之间的关系。建立粘性应力与变形率之间的关系。要导出本构\n方程，需要进行一定假设（斯托克斯假设）：\n1）小变形假设：应力与变形率之间呈线性关系：du/d2) 各向同性：应力与变形率的关系不随坐标变换而变化\n3) μ→0：应力状态简化为理想流体应力状态，即一点的\n应力可以用压强表示==0=-p 负号由于压强方向指向流\n体内部，规定外法线方向与坐标轴正向一致，压强与法向正向\n相反。",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 51,
+      "image": "page_051.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯（N-S）方程\n本构方程\n经过一系列复杂推导得到法向应力与变形率的关系：\n=-p+2u A·n2 法向应力与变形率关系\nA.△n31·△n\n压强项线变形率相对体积膨胀率",
+      "ocr_score": 0.861
+    },
+    {
+      "index": 52,
+      "image": "page_052.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯 （N-S）方程\n本构方程\n切向应力与变形率的关系：\n0v du0x 01\now 法向应力与变形率关系\n角变形率\n切向应力与角变形率成正比",
+      "ocr_score": 0.831
+    },
+    {
+      "index": 53,
+      "image": "page_053.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯（N-S）方程\nN-S方程\n将法向应力与变形率关系、 切向应力与变形率关系代入\n微分形式动量方程，得N-S方程：\nDu （\nDt Cx\n质量*加速度=重力+压力 粘性力 F=ma",
+      "ocr_score": 0.927
+    },
+    {
+      "index": 54,
+      "image": "page_054.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯 （N-S）方程\nN-S方程\n可压缩流体：求解6个未知量uvw,pT ，列方程：\n连续方程：质量守恒\nN-S方程：动量定律/牛顿第二定律\n能量方程：能量守恒\n状态方程：解决pT关系",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 55,
+      "image": "page_055.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.7纳维-斯托克斯 （N-S）方程\n二 N-S方程\n不可压缩流体V=0μ=corst 求解4个未知量vw ，列方\n程：\n连续方程：质量守恒\nN-S方程：动量定律/牛顿第二定律\n=pgx ulD ax ax a DV\n=pg-Vp+ND p DtDW Dv\n=pg-Vp\n（理想流体）",
+      "ocr_score": 0.879
+    },
+    {
+      "index": 56,
+      "image": "page_056.jpg",
+      "embedded_text": null,
+      "ocr_text": "本章小结\n欧拉运动方程\n沿流线的伯努利方程的导出\n总流的伯努利方程的导出\n微分形式的动量方程\n纳维-斯托克斯方程\n作业：\n复习思考题：P107页，4-3，4-4\n习题：P111页，4-5，4-12",
+      "ocr_score": 0.992
+    }
+  ]
+}

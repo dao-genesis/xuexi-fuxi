@@ -1,0 +1,43 @@
+# ── 道法自然 · 学习复习 .gitignore ──
+# 善行者无辙迹 · 敏感不入仓
+
+# ── 凭证 / 会话 ──
+.env
+.yuketang/
+.session_cache.txt
+
+# ── LLM 缓存 ──
+.llm_cache/
+
+# ── 浏览器 profile（含 cookie） ──
+**/pw_profile/
+**/edge_pw_profile/
+
+# ── Python 缓存 ──
+__pycache__/
+*.pyc
+*.pyo
+
+# ── 系统文件 ──
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ── PDF（总量5.4GB超GitHub限额，排除之；解析成果MD已含文本） ──
+*.pdf
+
+# ── 图片（解析生成page_XXX.jpg共12361个，文本已入MD） ──
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
+
+# ── 日志（可选保留，此处排除大日志） ──
+_pdf_run.log
+_闭环_*.log
+_login.log
+_courses.log

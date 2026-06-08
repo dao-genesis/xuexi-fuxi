@@ -1,0 +1,30 @@
+{
+  "course_dir": "环境科学概论-2024秋-090138-001-杨建英",
+  "course_name": "环境科学概论",
+  "semester": "2024秋",
+  "class_code": "090138-001",
+  "teacher": "杨建英",
+  "pdf_count": 1,
+  "processed": 0,
+  "rescanned": 1,
+  "skipped": 0,
+  "failed": 0,
+  "documents": [
+    {
+      "pdf_name": "003-2-环境科学概论（2）-2-环境科学概论.pdf",
+      "lesson_seq": 3,
+      "lesson_title": "2",
+      "presentation_title": "环境科学概论（2）-2-环境科学概论",
+      "chapter_num": 0,
+      "chapter_raw": "概论",
+      "all_chapter_nums": [
+        0
+      ],
+      "all_chapter_raws": [
+        "概论"
+      ],
+      "page_count": 32,
+      "rel_dir": "003-2-环境科学概论（2）-2-环境科学概论"
+    }
+  ]
+}

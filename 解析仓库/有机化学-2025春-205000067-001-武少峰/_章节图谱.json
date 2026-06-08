@@ -1,0 +1,493 @@
+{
+  "course_dir": "有机化学-2025春-205000067-001-武少峰",
+  "course_name": "有机化学",
+  "semester": "2025春",
+  "teacher": "武少峰",
+  "pdf_total": 25,
+  "page_total": 2545,
+  "chapter_count": 8,
+  "chapter_nums": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    11
+  ],
+  "chapters": [
+    {
+      "chapter_num": 2,
+      "chapter_title": "饱和烃",
+      "doc_count": 3,
+      "total_pages": 242,
+      "primary": {
+        "rel_dir": "004-2第二章 饱和烃-3第三章 不饱和烃",
+        "pdf_name": "004-2第二章 饱和烃-3第三章 不饱和烃.pdf",
+        "lesson_seq": 4,
+        "page_count": 117,
+        "lesson_title": "2第二章 饱和烃",
+        "presentation_title": "3第三章 不饱和烃"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "003-有机化学 Organic Chemistry（3）-2第二章 饱和烃",
+          "pdf_name": "003-有机化学 Organic Chemistry（3）-2第二章 饱和烃.pdf",
+          "lesson_seq": 3,
+          "page_count": 61,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "004-2第二章 饱和烃-3第三章 不饱和烃",
+          "pdf_name": "004-2第二章 饱和烃-3第三章 不饱和烃.pdf",
+          "lesson_seq": 4,
+          "page_count": 117,
+          "all_chapter_nums": [
+            2,
+            3
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "004-2第二章 饱和烃-2第二章 饱和烃",
+          "pdf_name": "004-2第二章 饱和烃-2第二章 饱和烃.pdf",
+          "lesson_seq": 4,
+          "page_count": 64,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "不饱和烃",
+      "doc_count": 4,
+      "total_pages": 448,
+      "primary": {
+        "rel_dir": "004-2第二章 饱和烃-3第三章 不饱和烃",
+        "pdf_name": "004-2第二章 饱和烃-3第三章 不饱和烃.pdf",
+        "lesson_seq": 4,
+        "page_count": 117,
+        "lesson_title": "2第二章 饱和烃",
+        "presentation_title": "3第三章 不饱和烃"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "004-2第二章 饱和烃-3第三章 不饱和烃",
+          "pdf_name": "004-2第二章 饱和烃-3第三章 不饱和烃.pdf",
+          "lesson_seq": 4,
+          "page_count": 117,
+          "all_chapter_nums": [
+            2,
+            3
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "005-3第三章 不饱和烃-3第三章 不饱和烃",
+          "pdf_name": "005-3第三章 不饱和烃-3第三章 不饱和烃.pdf",
+          "lesson_seq": 5,
+          "page_count": 116,
+          "all_chapter_nums": [
+            3
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "006-3第三章+不饱和烃-3第三章+不饱和烃",
+          "pdf_name": "006-3第三章+不饱和烃-3第三章+不饱和烃.pdf",
+          "lesson_seq": 6,
+          "page_count": 116,
+          "all_chapter_nums": [
+            3
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "006-3第三章+不饱和烃-4第四章+芳烃",
+          "pdf_name": "006-3第三章+不饱和烃-4第四章+芳烃.pdf",
+          "lesson_seq": 6,
+          "page_count": 99,
+          "all_chapter_nums": [
+            3,
+            4
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "+芳烃",
+      "doc_count": 3,
+      "total_pages": 294,
+      "primary": {
+        "rel_dir": "006-3第三章+不饱和烃-4第四章+芳烃",
+        "pdf_name": "006-3第三章+不饱和烃-4第四章+芳烃.pdf",
+        "lesson_seq": 6,
+        "page_count": 99,
+        "lesson_title": "3第三章+不饱和烃",
+        "presentation_title": "4第四章+芳烃"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "006-3第三章+不饱和烃-4第四章+芳烃",
+          "pdf_name": "006-3第三章+不饱和烃-4第四章+芳烃.pdf",
+          "lesson_seq": 6,
+          "page_count": 99,
+          "all_chapter_nums": [
+            3,
+            4
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "007-4第四章 芳烃-4第四章 芳烃",
+          "pdf_name": "007-4第四章 芳烃-4第四章 芳烃.pdf",
+          "lesson_seq": 7,
+          "page_count": 98,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "008-5第五章+对映异构-4第四章+芳烃",
+          "pdf_name": "008-5第五章+对映异构-4第四章+芳烃.pdf",
+          "lesson_seq": 8,
+          "page_count": 97,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "+对映异构",
+      "doc_count": 3,
+      "total_pages": 250,
+      "primary": {
+        "rel_dir": "008-5第五章+对映异构-4第四章+芳烃",
+        "pdf_name": "008-5第五章+对映异构-4第四章+芳烃.pdf",
+        "lesson_seq": 8,
+        "page_count": 97,
+        "lesson_title": "5第五章+对映异构",
+        "presentation_title": "4第四章+芳烃"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "008-5第五章+对映异构-4第四章+芳烃",
+          "pdf_name": "008-5第五章+对映异构-4第四章+芳烃.pdf",
+          "lesson_seq": 8,
+          "page_count": 97,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "008-5第五章+对映异构-6第六章+卤代烃",
+          "pdf_name": "008-5第五章+对映异构-6第六章+卤代烃.pdf",
+          "lesson_seq": 8,
+          "page_count": 94,
+          "all_chapter_nums": [
+            5,
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "008-5第五章+对映异构-5第五章+对映异构",
+          "pdf_name": "008-5第五章+对映异构-5第五章+对映异构.pdf",
+          "lesson_seq": 8,
+          "page_count": 59,
+          "all_chapter_nums": [
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "+卤代烃",
+      "doc_count": 4,
+      "total_pages": 380,
+      "primary": {
+        "rel_dir": "010-6第六章+卤代烃（2）-8第八章+醇酚醚",
+        "pdf_name": "010-6第六章+卤代烃（2）-8第八章+醇酚醚.pdf",
+        "lesson_seq": 10,
+        "page_count": 100,
+        "lesson_title": "6第六章+卤代烃（2）",
+        "presentation_title": "8第八章+醇酚醚"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "008-5第五章+对映异构-6第六章+卤代烃",
+          "pdf_name": "008-5第五章+对映异构-6第六章+卤代烃.pdf",
+          "lesson_seq": 8,
+          "page_count": 94,
+          "all_chapter_nums": [
+            5,
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "009-6第六章+卤代烃-6第六章+卤代烃",
+          "pdf_name": "009-6第六章+卤代烃-6第六章+卤代烃.pdf",
+          "lesson_seq": 9,
+          "page_count": 93,
+          "all_chapter_nums": [
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "010-6第六章+卤代烃（2）-8第八章+醇酚醚",
+          "pdf_name": "010-6第六章+卤代烃（2）-8第八章+醇酚醚.pdf",
+          "lesson_seq": 10,
+          "page_count": 100,
+          "all_chapter_nums": [
+            6,
+            8
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "010-6第六章+卤代烃（2）-6第六章+卤代烃",
+          "pdf_name": "010-6第六章+卤代烃（2）-6第六章+卤代烃.pdf",
+          "lesson_seq": 10,
+          "page_count": 93,
+          "all_chapter_nums": [
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 8,
+      "chapter_title": "+醇酚醚",
+      "doc_count": 4,
+      "total_pages": 421,
+      "primary": {
+        "rel_dir": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌",
+        "pdf_name": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌.pdf",
+        "lesson_seq": 12,
+        "page_count": 121,
+        "lesson_title": "8第八章+醇酚醚（2）",
+        "presentation_title": "9第九章+醛酮醌"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "010-6第六章+卤代烃（2）-8第八章+醇酚醚",
+          "pdf_name": "010-6第六章+卤代烃（2）-8第八章+醇酚醚.pdf",
+          "lesson_seq": 10,
+          "page_count": 100,
+          "all_chapter_nums": [
+            6,
+            8
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "011-8第八章+醇酚醚-8第八章+醇酚醚",
+          "pdf_name": "011-8第八章+醇酚醚-8第八章+醇酚醚.pdf",
+          "lesson_seq": 11,
+          "page_count": 100,
+          "all_chapter_nums": [
+            8
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌",
+          "pdf_name": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌.pdf",
+          "lesson_seq": 12,
+          "page_count": 121,
+          "all_chapter_nums": [
+            8,
+            9
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "012-8第八章+醇酚醚（2）-8第八章+醇酚醚",
+          "pdf_name": "012-8第八章+醇酚醚（2）-8第八章+醇酚醚.pdf",
+          "lesson_seq": 12,
+          "page_count": 100,
+          "all_chapter_nums": [
+            8
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "+醛酮醌",
+      "doc_count": 4,
+      "total_pages": 468,
+      "primary": {
+        "rel_dir": "014-9第九章+醛酮醌（2）-9第九章+醛酮醌",
+        "pdf_name": "014-9第九章+醛酮醌（2）-9第九章+醛酮醌.pdf",
+        "lesson_seq": 14,
+        "page_count": 121,
+        "lesson_title": "9第九章+醛酮醌（2）",
+        "presentation_title": "9第九章+醛酮醌"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌",
+          "pdf_name": "012-8第八章+醇酚醚（2）-9第九章+醛酮醌.pdf",
+          "lesson_seq": 12,
+          "page_count": 121,
+          "all_chapter_nums": [
+            8,
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "013-9第九章+醛酮醌-9第九章+醛酮醌",
+          "pdf_name": "013-9第九章+醛酮醌-9第九章+醛酮醌.pdf",
+          "lesson_seq": 13,
+          "page_count": 121,
+          "all_chapter_nums": [
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "014-9第九章+醛酮醌（2）-9第九章+醛酮醌",
+          "pdf_name": "014-9第九章+醛酮醌（2）-9第九章+醛酮醌.pdf",
+          "lesson_seq": 14,
+          "page_count": 121,
+          "all_chapter_nums": [
+            9
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "014-9第九章+醛酮醌（2）-I 羧酸",
+          "pdf_name": "014-9第九章+醛酮醌（2）-I 羧酸.pdf",
+          "lesson_seq": 14,
+          "page_count": 105,
+          "all_chapter_nums": [
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 11,
+      "chapter_title": "+含氮化合物",
+      "doc_count": 2,
+      "total_pages": 184,
+      "primary": {
+        "rel_dir": "016-11第十一章+含氮化合物-11第十一章+含氮化合物",
+        "pdf_name": "016-11第十一章+含氮化合物-11第十一章+含氮化合物.pdf",
+        "lesson_seq": 16,
+        "page_count": 92,
+        "lesson_title": "11第十一章+含氮化合物",
+        "presentation_title": "11第十一章+含氮化合物"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "015-I 羧酸-11第十一章+含氮化合物",
+          "pdf_name": "015-I 羧酸-11第十一章+含氮化合物.pdf",
+          "lesson_seq": 15,
+          "page_count": 92,
+          "all_chapter_nums": [
+            11
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "016-11第十一章+含氮化合物-11第十一章+含氮化合物",
+          "pdf_name": "016-11第十一章+含氮化合物-11第十一章+含氮化合物.pdf",
+          "lesson_seq": 16,
+          "page_count": 92,
+          "all_chapter_nums": [
+            11
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    }
+  ],
+  "non_lecture": [],
+  "uncategorized": [
+    {
+      "rel_dir": "001-有机化学 Organic Chemistry-有机化学 Organic Chemistry",
+      "pdf_name": "001-有机化学 Organic Chemistry-有机化学 Organic Chemistry.pdf",
+      "lesson_seq": 1,
+      "page_count": 123,
+      "lesson_title": "有机化学 Organic Chemistry",
+      "presentation_title": "有机化学 Organic Chemistry"
+    },
+    {
+      "rel_dir": "002-有机化学 Organic Chemistry（2）-有机化学 Organic Chemistry",
+      "pdf_name": "002-有机化学 Organic Chemistry（2）-有机化学 Organic Chemistry.pdf",
+      "lesson_seq": 2,
+      "page_count": 127,
+      "lesson_title": "有机化学 Organic Chemistry（2）",
+      "presentation_title": "有机化学 Organic Chemistry"
+    },
+    {
+      "rel_dir": "003-有机化学 Organic Chemistry（3）-有机化学 Organic Chemistry",
+      "pdf_name": "003-有机化学 Organic Chemistry（3）-有机化学 Organic Chemistry.pdf",
+      "lesson_seq": 3,
+      "page_count": 131,
+      "lesson_title": "有机化学 Organic Chemistry（3）",
+      "presentation_title": "有机化学 Organic Chemistry"
+    },
+    {
+      "rel_dir": "015-I 羧酸-I 羧酸",
+      "pdf_name": "015-I 羧酸-I 羧酸.pdf",
+      "lesson_seq": 15,
+      "page_count": 105,
+      "lesson_title": "I 羧酸",
+      "presentation_title": "I 羧酸"
+    }
+  ]
+}

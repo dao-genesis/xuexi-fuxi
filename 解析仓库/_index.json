@@ -1,0 +1,18 @@
+{
+  "input_root": "D:\\道\\道生一\\一生二\\学习复习\\雨课堂PDF",
+  "output_root": "D:\\道\\道生一\\一生二\\学习复习\\解析仓库",
+  "course_count": 1,
+  "pdf_total": 29,
+  "page_total": 0,
+  "courses": [
+    {
+      "course_dir": "环境毒理学-2026春-090963-001-森巴提·叶尔肯",
+      "course_name": "环境毒理学",
+      "semester": "2026春",
+      "teacher": "森巴提·叶尔肯",
+      "pdf_count": 29,
+      "page_count": 0,
+      "chapters_detected": []
+    }
+  ]
+}

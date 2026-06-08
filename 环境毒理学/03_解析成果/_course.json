@@ -1,0 +1,259 @@
+{
+  "course_dir": "环境毒理学-2026春-090963-001-森巴提·叶尔肯",
+  "course_root_name": "环境毒理学",
+  "course_name": "环境毒理学",
+  "semester": "2026春",
+  "class_code": "090963-001",
+  "teacher": "森巴提·叶尔肯",
+  "pdf_count": 15,
+  "processed": 0,
+  "rescanned": 0,
+  "skipped": 15,
+  "failed": 0,
+  "documents": [
+    {
+      "pdf_name": "001-青春逐梦，共赴改革新征程-青春逐梦，共赴改革新征程.pdf",
+      "lesson_seq": 1,
+      "lesson_title": "青春逐梦，共赴改革新征程",
+      "presentation_title": "青春逐梦，共赴改革新征程",
+      "chapter_num": null,
+      "chapter_raw": null,
+      "all_chapter_nums": [],
+      "all_chapter_raws": [],
+      "page_count": 29,
+      "rel_dir": "001-青春逐梦，共赴改革新征程-青春逐梦，共赴改革新征程"
+    },
+    {
+      "pdf_name": "002-第一章绪论-第一章绪论.pdf",
+      "lesson_seq": 2,
+      "lesson_title": "第一章绪论",
+      "presentation_title": "第一章绪论",
+      "chapter_num": 1,
+      "chapter_raw": "第一章",
+      "all_chapter_nums": [
+        1
+      ],
+      "all_chapter_raws": [
+        "第一章"
+      ],
+      "page_count": 40,
+      "rel_dir": "002-第一章绪论-第一章绪论"
+    },
+    {
+      "pdf_name": "003-第二章 污染物在环境中的迁移和转化-第二章 污染物在环境中的迁移和转化.pdf",
+      "lesson_seq": 3,
+      "lesson_title": "第二章 污染物在环境中的迁移和转化",
+      "presentation_title": "第二章 污染物在环境中的迁移和转化",
+      "chapter_num": 2,
+      "chapter_raw": "第二章",
+      "all_chapter_nums": [
+        2
+      ],
+      "all_chapter_raws": [
+        "第二章"
+      ],
+      "page_count": 35,
+      "rel_dir": "003-第二章 污染物在环境中的迁移和转化-第二章 污染物在环境中的迁移和转化"
+    },
+    {
+      "pdf_name": "004-3环境毒理学 第三章-3环境毒理学 第三章.pdf",
+      "lesson_seq": 4,
+      "lesson_title": "3环境毒理学 第三章",
+      "presentation_title": "3环境毒理学 第三章",
+      "chapter_num": 3,
+      "chapter_raw": "第三章",
+      "all_chapter_nums": [
+        3
+      ],
+      "all_chapter_raws": [
+        "第三章"
+      ],
+      "page_count": 50,
+      "rel_dir": "004-3环境毒理学 第三章-3环境毒理学 第三章"
+    },
+    {
+      "pdf_name": "004-3环境毒理学 第三章-第二章 污染物在环境中的迁移和转化.pdf",
+      "lesson_seq": 4,
+      "lesson_title": "3环境毒理学 第三章",
+      "presentation_title": "第二章 污染物在环境中的迁移和转化",
+      "chapter_num": 2,
+      "chapter_raw": "第二章",
+      "all_chapter_nums": [
+        2,
+        3
+      ],
+      "all_chapter_raws": [
+        "第二章",
+        "第三章"
+      ],
+      "page_count": 35,
+      "rel_dir": "004-3环境毒理学 第三章-第二章 污染物在环境中的迁移和转化"
+    },
+    {
+      "pdf_name": "005-3环境毒理学 第三章（2）-3环境毒理学 第三章.pdf",
+      "lesson_seq": 5,
+      "lesson_title": "3环境毒理学 第三章（2）",
+      "presentation_title": "3环境毒理学 第三章",
+      "chapter_num": 3,
+      "chapter_raw": "第三章",
+      "all_chapter_nums": [
+        3
+      ],
+      "all_chapter_raws": [
+        "第三章"
+      ],
+      "page_count": 51,
+      "rel_dir": "005-3环境毒理学 第三章（2）-3环境毒理学 第三章"
+    },
+    {
+      "pdf_name": "006-第四章 环境污染物的毒作用及其影响因素-第四章 环境污染物的毒作用及其影响因素.pdf",
+      "lesson_seq": 6,
+      "lesson_title": "第四章 环境污染物的毒作用及其影响因素",
+      "presentation_title": "第四章 环境污染物的毒作用及其影响因素",
+      "chapter_num": 4,
+      "chapter_raw": "第四章",
+      "all_chapter_nums": [
+        4
+      ],
+      "all_chapter_raws": [
+        "第四章"
+      ],
+      "page_count": 50,
+      "rel_dir": "006-第四章 环境污染物的毒作用及其影响因素-第四章 环境污染物的毒作用及其影响因素"
+    },
+    {
+      "pdf_name": "007-第四章 环境污染物的毒作用及其影响因素（2）-第四章 环境污染物的毒作用及其影响因素.pdf",
+      "lesson_seq": 7,
+      "lesson_title": "第四章 环境污染物的毒作用及其影响因素（2）",
+      "presentation_title": "第四章 环境污染物的毒作用及其影响因素",
+      "chapter_num": 4,
+      "chapter_raw": "第四章",
+      "all_chapter_nums": [
+        4
+      ],
+      "all_chapter_raws": [
+        "第四章"
+      ],
+      "page_count": 50,
+      "rel_dir": "007-第四章 环境污染物的毒作用及其影响因素（2）-第四章 环境污染物的毒作用及其影响因素"
+    },
+    {
+      "pdf_name": "008-第四章 环境污染物的毒作用及其影响因素（3）-第五章 环境毒理学常用实验方法.pdf",
+      "lesson_seq": 8,
+      "lesson_title": "第四章 环境污染物的毒作用及其影响因素（3）",
+      "presentation_title": "第五章 环境毒理学常用实验方法",
+      "chapter_num": 5,
+      "chapter_raw": "第五章",
+      "all_chapter_nums": [
+        4,
+        5
+      ],
+      "all_chapter_raws": [
+        "第四章",
+        "第五章"
+      ],
+      "page_count": 82,
+      "rel_dir": "008-第四章 环境污染物的毒作用及其影响因素（3）-第五章 环境毒理学常用实验方法"
+    },
+    {
+      "pdf_name": "008-第四章 环境污染物的毒作用及其影响因素（3）-第四章 环境污染物的毒作用及其影响因素.pdf",
+      "lesson_seq": 8,
+      "lesson_title": "第四章 环境污染物的毒作用及其影响因素（3）",
+      "presentation_title": "第四章 环境污染物的毒作用及其影响因素",
+      "chapter_num": 4,
+      "chapter_raw": "第四章",
+      "all_chapter_nums": [
+        4
+      ],
+      "all_chapter_raws": [
+        "第四章"
+      ],
+      "page_count": 50,
+      "rel_dir": "008-第四章 环境污染物的毒作用及其影响因素（3）-第四章 环境污染物的毒作用及其影响因素"
+    },
+    {
+      "pdf_name": "009-第五章 环境毒理学常用实验方法-第五章 环境毒理学常用实验方法.pdf",
+      "lesson_seq": 9,
+      "lesson_title": "第五章 环境毒理学常用实验方法",
+      "presentation_title": "第五章 环境毒理学常用实验方法",
+      "chapter_num": 5,
+      "chapter_raw": "第五章",
+      "all_chapter_nums": [
+        5
+      ],
+      "all_chapter_raws": [
+        "第五章"
+      ],
+      "page_count": 82,
+      "rel_dir": "009-第五章 环境毒理学常用实验方法-第五章 环境毒理学常用实验方法"
+    },
+    {
+      "pdf_name": "010-第五章 环境毒理学常用实验方法（2）-6-第六章环境化学物的安全性和健康危险度评价.pdf",
+      "lesson_seq": 10,
+      "lesson_title": "第五章 环境毒理学常用实验方法（2）",
+      "presentation_title": "6-第六章环境化学物的安全性和健康危险度评价",
+      "chapter_num": 6,
+      "chapter_raw": "第六章",
+      "all_chapter_nums": [
+        5,
+        6
+      ],
+      "all_chapter_raws": [
+        "第五章",
+        "第六章"
+      ],
+      "page_count": 40,
+      "rel_dir": "010-第五章 环境毒理学常用实验方法（2）-6-第六章环境化学物的安全性和健康危险度评价"
+    },
+    {
+      "pdf_name": "010-第五章 环境毒理学常用实验方法（2）-第五章 环境毒理学常用实验方法.pdf",
+      "lesson_seq": 10,
+      "lesson_title": "第五章 环境毒理学常用实验方法（2）",
+      "presentation_title": "第五章 环境毒理学常用实验方法",
+      "chapter_num": 5,
+      "chapter_raw": "第五章",
+      "all_chapter_nums": [
+        5
+      ],
+      "all_chapter_raws": [
+        "第五章"
+      ],
+      "page_count": 82,
+      "rel_dir": "010-第五章 环境毒理学常用实验方法（2）-第五章 环境毒理学常用实验方法"
+    },
+    {
+      "pdf_name": "011-6-第六章环境化学物的安全性和健康危险度评价-6-第六章环境化学物的安全性和健康危险度评价.pdf",
+      "lesson_seq": 11,
+      "lesson_title": "6",
+      "presentation_title": "第六章环境化学物的安全性和健康危险度评价-6-第六章环境化学物的安全性和健康危险度评价",
+      "chapter_num": 6,
+      "chapter_raw": "第六章",
+      "all_chapter_nums": [
+        6
+      ],
+      "all_chapter_raws": [
+        "第六章"
+      ],
+      "page_count": 39,
+      "rel_dir": "011-6-第六章环境化学物的安全性和健康危险度评价-6-第六章环境化学物的安全性和健康危险度评价"
+    },
+    {
+      "pdf_name": "011-6-第六章环境化学物的安全性和健康危险度评价-第七章 常见化学致癌物的环境毒理学.pdf",
+      "lesson_seq": 11,
+      "lesson_title": "6",
+      "presentation_title": "第六章环境化学物的安全性和健康危险度评价-第七章 常见化学致癌物的环境毒理学",
+      "chapter_num": 6,
+      "chapter_raw": "第六章",
+      "all_chapter_nums": [
+        6,
+        7
+      ],
+      "all_chapter_raws": [
+        "第六章",
+        "第七章"
+      ],
+      "page_count": 52,
+      "rel_dir": "011-6-第六章环境化学物的安全性和健康危险度评价-第七章 常见化学致癌物的环境毒理学"
+    }
+  ]
+}

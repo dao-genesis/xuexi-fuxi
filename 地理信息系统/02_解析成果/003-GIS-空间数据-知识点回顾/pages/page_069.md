@@ -1,0 +1,29 @@
+# 空间数据-知识点回顾 — 第 69 页
+
+> 来源: 003-GIS-空间数据-知识点回顾.pdf
+> 页码: 69
+> OCR置信: 93.6%
+
+![page 69](../page_069.jpg)
+
+
+### 3.2创建一个新的地理数据库
+
+#### 建立关系表格
+在Catalog目录中选中地理数据库→新建(New)
+关系表（Table...)
+
+#### Catalog 口x Copy
+>> 启 Paste Feature Dataset...
+Location: Example_DB.gdb Delete Feature Class...
+田 $RECYCLE.BIN Rename Table...
+田 ArcGIS_3rd Refresh
+田 DesktopMakeDefaultGeodatabase View...
+
+#### document
++ download Administration Relationship Class...
+GISExampleExample DB.mdb Distributed Geodatabase Raster Catalog...
+ExampleDB.gdb NewFeature_Ex RasterDataset...
+Feature_Class Import
++ GIS_map MosaicDataset...
+NoteExpress ExportNotes ShareasGeodataService... SchematicDatasetReport ItemDescription.. ToolboxProperties...

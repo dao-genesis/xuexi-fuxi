@@ -1,0 +1,767 @@
+{
+  "pdf_path": "D:\\道\\道生一\\一生二\\学习复习\\地理信息系统\\01_原始PDF\\006-空间数据的可视化表达-空间数据的可视化表达.pdf",
+  "pdf_name": "006-空间数据的可视化表达-空间数据的可视化表达.pdf",
+  "lesson_seq": 6,
+  "lesson_title": "空间数据的可视化表达",
+  "presentation_title": "空间数据的可视化表达",
+  "chapter_num": 4,
+  "chapter_raw": "第四章",
+  "all_chapter_nums": [
+    4
+  ],
+  "all_chapter_raws": [
+    "第四章"
+  ],
+  "page_count": 107,
+  "pages": [
+    {
+      "index": 1,
+      "image": "page_001.jpg",
+      "embedded_text": null,
+      "ocr_text": "空间数据的可视化表达",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 2,
+      "image": "page_002.jpg",
+      "embedded_text": null,
+      "ocr_text": ">数据可视化的是为了清晰有效的传递信息，\n便于研究者与用户对数据进行分析推理。\n>数据可视化包括图像综合和定量信息的视\n觉表达。\n>数字信息对于计算机来说是可识别的，但\n对于人的肉眼来说是不可识别的，必须将\n这些数字信息转换为人可识别的图形才具\n有实用的价值。",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 3,
+      "image": "page_003.jpg",
+      "embedded_text": null,
+      "ocr_text": "地理信息的可视化过程\n》地图数据的可视化表示：地图数据的视觉表达。\n》地理信息的可视化表示：利用各种地理时空数\n据进行分级处理，然后选择适当的视觉变量以\n专题地图的形式表示出来。\n》空间分析结果的可视化表示：地理信息系统的\n一个很重要的功能就是空间分析，包括网络分\n析、缓冲区分析、叠加分析等，分析的结果往\n往以专题地图的形式来描述。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 4,
+      "image": "page_004.jpg",
+      "embedded_text": null,
+      "ocr_text": "本章内容\n一、数据符号化\n二、专题地图编制",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 5,
+      "image": "page_005.jpg",
+      "embedded_text": null,
+      "ocr_text": "第一节\n数据符号化",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 6,
+      "image": "page_006.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化的原则是按实际情况确定地图符号的基本\n形状，以符号的颜色或者形状区分事物的性质。\n例如用点、线、面符号表示呈点、线、面分布特征\n的地理要素，点表示建筑或者特定地点，线表示公\n路和铁路，面用来表示地区。\n》符号化方法可分为以下几类：单一符号、分类符\n号、分级符号、分级色彩、比率符号、组合符号、\n统计符号、彩色阴影等。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 7,
+      "image": "page_007.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n单一符号：采用大小、形状、颜色都统一的点状、\n线状或者面状符号来表达制图要素。\n忽略了要素在数量、大小、比例等方面的差异；\n）只能反映制图要素的地理位置而不能反映要素的\n定量差异。\n点值符号：使用一定大小的点状符号来表示一定\n数量的制图要素。是一种用点的密度来表现要素\n空间分布的方法，数值较大的区域点较多，数值\n小的地区点较小。",
+      "ocr_score": 0.993
+    },
+    {
+      "index": 8,
+      "image": "page_008.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n>分类色彩：根据数据层要素属性值来设置地图\n符号的方式是分类符号表示方法。\n将不同属性值的要素分开，属性值相同的采用\n相同的符号，属性值不同的采用不同的符号；\n利用不同形状、大小、颜色、图案的符号来表\n达不同的要素；\n能够反映出地图要素的数量或者质量的差异",
+      "ocr_score": 0.99
+    },
+    {
+      "index": 9,
+      "image": "page_009.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n分级色彩：将要素属性数值按照一定的分级方\n法分成若干级别之后，用不同的颜色来表示不\n同级别。\n每个级别用来表示数值的一个范围，从而可以\n明确反映制图要素的定量差异；\n颜色的选择和分级的设置要取决于制图要素的\n特征；\n只有合理的配色方案和科学的分级方法才能将\n地图中要素的宏观分布规律体现得清晰明确",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 10,
+      "image": "page_010.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n》分级符号：与分级色彩设置有所不同，是采用\n不同大小的符号来表示不同级别的要素属性数值。\n符号形状取决于制图要素的特征，符号大小取\n决于分级数值的大小或者级别高低；\n一般用于表示点状或者线状要素，如多用于表\n达人口分级图、道路分级图等；\n可以直观地表达制图要素的数值差异；\n制图要素分级和分级符号表示是关键环节。",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 11,
+      "image": "page_011.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n比率符号：按照一定的比率关系，来确定与制图\n要素属性数值对应的符号大小，一个属性数值就\n对应了一个符号大小，这种一一对应的关系使得\n符号设置表现得更细致，不仅反应不同级别的差\n异，也能反映同级别之间微小的差异。\n如果属性数值过大，则不适合采用此种方法，\n因为比率符号过大会严重影响地图的整体视觉\n效果。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 12,
+      "image": "page_012.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号化方法分类\n统计符号：这是专题地图中经常应用的一类符号，\n用于表示制图要素的多项属性。\n常用的统计图有饼状图、柱状图、累计柱状图等。\n饼图主要用于表示制图要素的整体属性与组成部\n分之间的比例关系\n柱状图常用于表示制图要素的两项可比较的属性\n或者是变化趋势\n累计柱状图既可以表示相互关系与比例，也可以\n表示相互比较与趋势。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 13,
+      "image": "page_013.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.1ArcMap符号系统简介\n>可以从该系统中选\nCustomize Windows Help\n择需要的符号，或\nToolbars\n者设计合适的符号\nExtensions...\n加入到样本库之中。\nAdd-In Manager...\n菜单→自定义\nCustomizeMode...\n(Customize）→样\nStyle Manager...\n式管理器（StyteArcMap Options..\nManager...)",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 14,
+      "image": "page_014.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n样式管理器\nESRI.style 名称 类别 关闭\n参考系统\nMaplex标注 美国路..默认 样式…\n阴影 55 美国州.. 默认\n区域斑块 AaBbYyZz 国家1 默认 Help\n线状斑块 AaBbYyZz 国家2 默认\n标注 AaBbYyZz 国家3 默认\n制图表达标记 AaBbYyZz 首府 默认\n指北针 AaBbYyZz 县 默认\n比例尺 AaBbYyZz 大城市 默认\n图例项 AaBbYyZz 城市 默认\n比例文字 AaBbYyZz 镇 默认\n色带 AaBbYyZz 北美街.默认\n边框 AaBbYyZz 欧洲街.默认\n背景 aBbYyZz自然区.….默认\n颜色 AaBbYyZz 历史区默认\n矢量化设置 AaBbYyZz 沿海区..默认\n填充符号 aBbYyZz 默认\n线符号 海洋\n标记符号 laBbYyZz 大海 默认\n文字符号 AaBbYyZe 河流 默认\n制图表达规则 AeBbryz. 溪流 默认\n影线 Aabyz 通栏标默认\nAabyz 通栏标默认\nAabry2z 项目符 口",
+      "ocr_score": 0.949
+    },
+    {
+      "index": 15,
+      "image": "page_015.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.1ArcMap符号系统简介\n》符号样本库可能不足以满足制图者或者地图用\n户的需求！！！——！ 自定义样式\n口点击【样式管理器】右侧的【样式】按钮，进\n入【样式引用】对话框，点击【创建新样式】，\n选择合适的文件夹并命名新样式(***.style);\n口可以从【样式管理器】对话框左侧的样式库中\n选择任意符号库，在右侧空白区域右键选择新\n建，即可自行设计新的样式符号。",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 16,
+      "image": "page_016.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nStyleManager X\n+ ESRI.style Name CloseE:\\ArcGIS_3rd\\Chapter5.styleReference SystemsReference Systems Styles..\nMaplexLabels MaplexLabelsShadows ShadowsAreaPatches AreaPatchesLine Patches Line PatchesLabels LabelsRepresentation Markers Representation M...\nNorth Arows NorthArowsScale Bars ScaleBarsLegendItems LegendItemsScale Texts ScaleTextsColorRamps ColorRampsBorders BordersBackgrounds BackgroundsColors ColorsFill Symbols VectorizationSetti..\nLine Symbols FilSymbolsLine SymbolsMarkerSymbolsText Symbols MarkerSymbolsRepresentation Rules TextSymbolsRepresentation R.... 可口\nHatches 品",
+      "ocr_score": 0.948
+    },
+    {
+      "index": 17,
+      "image": "page_017.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.1ArcMap符号系统简介\n》自行设计新的样式符号\n口在【样式管理器】对话框左侧的样式库中选择\n任意符号库，在右侧空白区域右键选择新建。\n线符号为例，在左侧选择线符号样式库，右侧空白\n处右键选择【新建】丨【线符号】。\n（【类型】中选择【制图线符号】，点击左下角添加\n新的线符号，将上层符号设置为“太阳黄”和“平\n端头”，宽度为2.6，下层符号设置为“电子金色”\n和“平端头”，宽度设置为3.4，点击【确定】。",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 18,
+      "image": "page_018.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.1ArcMap符号系统简介\n》自行设计新的样式符号\n口在【样式管理器】对话框左侧的样式库中选择\n任意符号库，在右侧空白区域右键选择新建。\n线符号为例，在左侧选择线符号样式库，右侧空白\n处右键选择【新建】丨【线符号】。\n（【类型】中选择【制图线符号】，点击左下角添加\n新的线符号，将上层符号设置为“太阳黄”和“平\n端头”，宽度为2.6，下层符号设置为“电子金色”\n和“平端头”，宽度设置为3.4，点击【确定】。",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 19,
+      "image": "page_019.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nStyle SymbolPropertyEditorPreview Properties:\nType: Simple Line Symbol Units: PointsSimple LineColor:\nStyle: Solid\n: 100%\nWidth: 1.0000\nLayers\n添加 删除 上移 下移\nOK Cancel",
+      "ocr_score": 0.97
+    },
+    {
+      "index": 20,
+      "image": "page_020.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nStyle ManagerESRI.style Name Category Tags CloseE：VArcGIS_3rd\\Chapter5.styleLine Syn1 Reference Systems New Styles...\nMaplexLabelsShadows Cut Ctrl+xAreaPatchesCopy Ctrl+CLine PatchesLabels Paste Ctrl+VRepresentation MarkersNorthArows Delete DelScale Bars RenameLegend ItemsScaleTexts Properties...\nColorRampsBordersBackgroundsColorsFill SymbolsLine SymbolsMarkerSymbolsText SymbolsRepresentation Rules",
+      "ocr_score": 0.961
+    },
+    {
+      "index": 21,
+      "image": "page_021.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1天量数据符号化\n11.1.2分类符号设置\n》现实中，道路有不同的等级，起到的作用也不\n同。需根据道路的属性对道路数据进行分类分\n级设置，实现对道路数据的有效表达。\n口打开空间数据，在道路图层上右键选择【属\n性】，打开【图层属性】对话框，进入【符号\n系统】选项卡。",
+      "ocr_score": 0.986
+    },
+    {
+      "index": 22,
+      "image": "page_022.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMap 口\nFileEditView BookmarksInsert Selection Geoprocessing Customize Windows Help52 1:355,526 3DAnalystAK 1 Editor ·米中国国 Drawing\"\nTable Of Contents Snapping Environment\n国\n日 Layers\n日 地铁line\n地铁10号线\n一地铁11号线\n地铁11号线支线\n地铁1号线\n地铁2号线\n地铁3号线\n地铁4号线\n地铁5号线\n地铁6号线\n地铁7号线 Results\n地铁8号线\n一地铁9号线\n一轨道交通12号线\n轨道交通13号线\nAttributes121.477 31.01Decimal Degrees",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 23,
+      "image": "page_023.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMap 口\nFileEdit ViewBookmarksInsert Selection Geoprocessing Customize WindowsHelp1:3,087,627 3DAnalyst-\n+ XK Editor ·口中 DrawingTable OfContents SnappingEnvironment123740.324104.925898.527101.730543 Create Features32830.8133260.534627.736351.636448.437786.242257.343857.2 Results43965.847175.748294.350355.1 ArcToolbox53930.453945.256603.956981.864735.9 Attri165178 一日口\n112.8523.843DecimalDegrees",
+      "ocr_score": 0.974
+    },
+    {
+      "index": 24,
+      "image": "page_024.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.3分级彩色设置\n打开数据图层的【图层属性】对话框，进入\n【符号系统】；\n【显示】窗口下选择【数量】下的【分级色彩】\n【分类】栏中将【类】设置为7类，或单击【分\n类】，在【分类】对话框中进行高级设置。\nFeaturesCategoriesQuantitiesGraduatedcolors\n'roportionaLsyDotdensity",
+      "ocr_score": 0.986
+    },
+    {
+      "index": 25,
+      "image": "page_025.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMap 口\nFileEdit View Bookmarks Insert Selection Geoprocessing Customize WindowsHelp1:3,087,627 3DAnalyst\n+ Editor DrawingTable OfContents Snapping Environment\n日 Layers\n田 口 地铁_line\n日 TestRegion1\nSewage9009.799805-18104.4018104.400392-30543.030543.000001-43965.8143965.800782-56981.8156981.800782-85624.\n185624.703126-112474112474.000001-18513\nResultsArcToolbox1日口\n112.0523.175DecimalDegrees",
+      "ocr_score": 0.94
+    },
+    {
+      "index": 26,
+      "image": "page_026.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n11.1.3分级符号设置\nLayerProperties\n打开数据图层 Labels Joins&Relates Time HTMLPopupGeneral Source Selection Display Symbology Fields DefinitionQuery\n的【图层属性】 Show:\nFeatures Drawquantitiesusingsymbolsizetoshowrelativevalues. Import...\nCategories Fields Classification\n对话框，进入 Quantities Value: Sewage Natural Breaks (Jenks)\nGraduated colors Nomalization: Classes:7 Classfy..\nGraduated symbols none\n-Dotdensity Proportional symbols Symbol Sizefrom: to:18\n【符号系统】 Charts TemplateMultiple Alttributes Symbol Range Label9009.799805-18104.400359009.799805-18104.40039\n【显示】窗口 18104.400392-30543.000018104.400392-30543.0000 Background30543.000001-43965.8007 30543.000001-43965.800743965.800782-56981.800743965.800782-56981.8007\n下选择【数量】 56981.800782-85624.703156981.800782-85624.7031\nShow class ranges using feature values Advanced\n下的【分级符\n号】。\n确定 取消 应用（A）",
+      "ocr_score": 0.975
+    },
+    {
+      "index": 27,
+      "image": "page_027.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMap Layer Properties 口 ×\nFileEdit View Bd TimeLabels Joins&Relates HTMLPopupH General Source Selection Display Symbology Fields Definition QueryXK DrawingTable Of Contents Show: SnappingEnvironmentFeatures Drawquantitiesusingsymbolsizetoshowrelativevalues. Import...\n日 Layers Categories Fields Classification\n地铁_line Quantities Value: Sewage Natural Breaks (Jenks)\n田 Graduated colors\n日 TestRegion1 Graduated symbols Nomalization: none Classes: Classify....\nSewage Proportional symbols9009.79980 Dotdensity Symbol Size from: to:18 Create Features18104.400 Charts Template30543.0000 MultipleAttributes Symbol Range Label43965.8001 9009.799805-18104.400399009.799805-18104.4003956981.8001 Background18104.400392-30543.000C18104.400392-30543.000085624.703 30543.000001-43965.800730543.000001-43965.8007112474.000 43965.800782-56981.800743965.800782-56981.8007\nResults56981.800782-85624.703156981.800782-85624.7031\nShowclassrangesusingfeaturevalues AdvancedArcToolbox\n确定 取消 应用（A）\ngrees",
+      "ocr_score": 0.962
+    },
+    {
+      "index": 28,
+      "image": "page_028.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMapFileEdit View BookmarksInsertSelection Geoprocessing Customize Windows Help1:3,087,627 3DAnalyst-\nKKA Editor DrawingTable Of Contents Snapping Environment\n日 Layers\n田 地铁_line\n日 TestRegionlSewage9009.799805-18104.4 Create Features18104.400392-30543.\n30543.000001-43965.843965.800782-56981.856981.800782-85624.\n85624.703126-112474112474.000001-18513\nResultsArcToolboxAttri115.782 23.211Decimal Degrees",
+      "ocr_score": 0.94
+    },
+    {
+      "index": 29,
+      "image": "page_029.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\n1.1.4统计符号设置\n》打开数据图层的【图层属性】对话框，进入\n【符号系统】；\n【显示】窗口下选择【图表】下的【条形图/饼\n状图】。\nShow:\nFeaturesCategoriesQuantitiesChartsBar/ColumnStacked",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 30,
+      "image": "page_030.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1矢量数据符号化\nUntitled-ArcMapFile EditViewBookmarks InsertSelection Geoprocessing Customize WindowsHelp1:360,851 3DAnalyXKKX Editc DrawingTable OfContents xLayers\n田口 地铁_line\n日 TestRegion22,900,000\ncounty_gdpcounty_pop121.356 31.222DecimalDegrees",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 31,
+      "image": "page_031.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2栅格数据符号化\n1.2.1分类栅格符号设置\n》分类栅格符号表示法是表达专题栅格数据的一\n种常用方法，类似于分类色彩符号法，是利用\n不同的颜色来表示不同的专题类别，如土地利\n用、行政区划等，离散数据。\n口【图层属性】对话框，进入【符号系统】；\n口在【显示】列表框中选择【唯一值】，在【值\n字段】下拉列表框中选择属性字段",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 32,
+      "image": "page_032.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2栅格数据符号化\nUntitled-ArcMapFile Edit View.Bookmarks InsertSelection Geoprocessing Customize WindowsHelp1:74,544 3DAnalyst- landuse1\nEditor DrawingTableOfContents X七\n日 Layerslanduse1\n铁路用地\n采矿用地\n设施农用地\n裸地\n河流水面\n沟渠\n水浇地\n水库水面\n果园\n村庄\n有林地\n旱地\n建制镇\n城市\n坑塘水面\n农村道路\n其他草地\n其他林地\n其他园地\n公路用地\n117.711 36.112Decimal Degrees",
+      "ocr_score": 0.963
+    },
+    {
+      "index": 33,
+      "image": "page_033.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2栅格数据符号化\n1.2.2分级栅格符号设置\nLayerProperties\n①某区域AQIGeneral SourceKey MetadataExtentDisplaySymbology Fields Joins&Relates TimeShow: Drawrastergroupingvaluesintoclasses CH 指数空间分\nVectorFieldUniqueValues ClassifiedStretched FieldsDiscreteColor Value Value Normalization <None> 布\nClassification Natural Breaks(Jenks)\nClasses 5 Classify...\nColorRamp ②某区域土\nSymbol Range Label1-3 1-3 壤中Cr浓度\n3-7 3.000000001-77-11 7.000000001-1111-15 11.00000001-15 分布\n15-21 15.00000001-21\nshow class breaks using cell values Display NoDataas ③某片水域\nAbout symboloqy UsehilshadeeffectTN浓度分布\n确定 取消 应用（A）",
+      "ocr_score": 0.979
+    },
+    {
+      "index": 34,
+      "image": "page_034.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2栅格数据符号化\n11.2.3栅格数据色带设置\n数据连续变化的栅格数据，精度较高要求较高\n的栅格数据;\n口在【显示】列表框中选择【拉伸】\nLayerPropertiesGeneralSource KeyMetadata Extent Display Symbology TimeShow: StretchvaluesciongacolorrampVectorFieldUnique ValuesClassifiedStretchedDisuetecoior Color Value Label Labeling",
+      "ocr_score": 0.976
+    },
+    {
+      "index": 35,
+      "image": "page_035.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2栅格数据符号化\nUntitled-ArcMapFile EditView Bookmarks InsertSelection Geoprocessing Customize WindowsHelp1:4,611,275 3DAnalyst hill 品\nEditor DrawingTable Of Contents x\n国\n日乡 Layerstestregion3\nValueHigh:6904\nLow:251\n日hillValueHigh:251\nLow:2797.577 31.876Decimal Degrees",
+      "ocr_score": 0.908
+    },
+    {
+      "index": 36,
+      "image": "page_036.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.3特殊方法\nUntitled-ArcMapFileEditView BookmarksInsert Selection Geoprocessing Customize Windows Help\n+ 1:28,081,773 3DAnalyst1 + Editor 山中国内 Drawing* 口\nTable Of Contents\n日 LayersCN-sheng-A\n上海：北京；天津；山东\n云南\n内蒙古\n台湾\n吉林\n四川\n宁夏\n安徽\n山西\n新疆 Results\n江西\n河南\n海南\n湖北 ArcToolbox\n湖南\n甘肃\n西藏\n贵州\n重庆\n陕西\n青海\n口黑龙江\ntestregion3\n口hill113.74244.797DecimalDegrees",
+      "ocr_score": 0.965
+    },
+    {
+      "index": 37,
+      "image": "page_037.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.3特殊方法 透明度\nUntitled-ArcMapFile Edit View BookmarksInsert Selection Geoprocessing Customize WindowsHelp1:4,349,695 3DAnalystEditor Drawing ，\nTable Of ContentsLayerstestregion3\nValueHigh:6904\nLow:251\n④hil102.249 32.848DecimalDegrees",
+      "ocr_score": 0.953
+    },
+    {
+      "index": 38,
+      "image": "page_038.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.3特殊方法\nLayerPropertiesGeneral Source Key Metadata Extent Display Symbology TimeshowMapTipsDisplayrasterresolutionin tableofcontentsAllowinteractive display forEffects toolbaResample during displayusing:\nNearest Neighbor(for discrete data)\nContrast: % Orthorectification using elevationBrightness: % OConstantelevation:\nTransparency: 50 olo ODEM hillDisplayQuality ElevationadjustmentZfactor:\nCoarse Medium NormalZoffset:\nGeoid:\n确定 取消 应用（A）",
+      "ocr_score": 0.965
+    },
+    {
+      "index": 39,
+      "image": "page_039.jpg",
+      "embedded_text": null,
+      "ocr_text": "第二节\n专题地图编制",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 40,
+      "image": "page_040.jpg",
+      "embedded_text": null,
+      "ocr_text": "地图编制是一个非常复杂的过程。\n地图数据的符号化与注记标注，都是为地\n图的编制准备基础的地理数据\n要将准备好的地图数据，通过一幅完整的\n地图表达出来，还有很多工作，包括布局\n纸张的设置、制图范围的定义、制图比例\n尺的确定、制作图名、图例、坐标网、指\n北针等。",
+      "ocr_score": 0.998
+    },
+    {
+      "index": 41,
+      "image": "page_041.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nTable Of Contents115°20'0\"E 115°220\"E 115°240\"E 115°260\"E24°32'0\"N\n日 Geography\n田 VolcanoTypeAirports\n日 Populationcities24°30'0\"NChina24°28'0\"NLegendFengshubaReservoir 24°26'0\"NThePearl RiverBasin\n数据框 (data frame) 24°24'0\"N1.25 2.5 km115°200\"E 115°220\"E 115°240\"E 115°260\"E",
+      "ocr_score": 0.933
+    },
+    {
+      "index": 42,
+      "image": "page_042.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n129120115°200\"E 115°220\"E 115°240\"E 115°260\"E24°32'O\"N24°30'0\"NChina24°28'0\"NLegendFengshubaReservoir 24°26'0\"N24°24'0\"N1.25 2.5 km115°200\"E 115°220\"E 115°24'0\"E 115°260\"E",
+      "ocr_score": 0.904
+    },
+    {
+      "index": 43,
+      "image": "page_043.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nUntitled-ArcMap 10BIUAPrint XPrinte File Edit View Bookmarks Insert Selection Geoprocessing Cu!\nnte Name: Adobe PDF Properties...\nNew... Ctrl+N 1:4,349,695\nStatus: ReadyType: Adobe PDF Converter Open... Ctrl+o 回\nA Where: Documents\\.pdfComments: Save Ctrl+s1U Save As... Printer PaperS Printer Engine: WindowsPrinterSaveA Copy.. Printer MarginsOutput Image Quality (ResampleRatio)\nMap Page (Page Layout)\nShare As Sample Map ElementsFast Normal BestRatio: 1: AddDataTling SignIn...\nTile Map to PrinterPaperOAl 2tle(s) ArcGIS Online...\nOTilesfrom: Page and Print Setup....\nOScaleMap to fitPrinterPaperPrintPreview...\nNumberof Copies: Page and Print SetupPrint... roportionally to changesinPage SizePrint toFile Specify thepage size andExport Map.. orientation for this map OK CancelAnalyze Map... document.You can also\n·步骤：①点 specify that the map will beMapDocument OKprinted out as a map series by",
+      "ocr_score": 0.935
+    },
+    {
+      "index": 44,
+      "image": "page_044.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n+ 1:1,444,879 Drawina OHA 宋体 10BIUAPage and Print Setup XPrinte Printer Setupnte Name: Adobe PDF Setup... Name: AdobePDF Properties...\nStatus: Ready Status: ReadyType: Adobe PDF Converter Type: AdobePDF ConverterA Where: Documents\\pdf Where: Documents\\*.pdfComments: Comments:\nPaper1U Printer Engine: WindowsPrinter Properties... Printer Paper(s)that willbe printed A4 Printer PaperOutput Image Quality(ResampleRatio) Map Page(PageLayout) Source: 自动选择 Printer MarginsSampleMap Elements Orientation: OPortrait OLandscape Map Page (Page Layout)\nFast Normal Best Djibouti Sample Map ElementsRatio: Map Page Size1: MapPage Size UsePrinter Paper SetingsTiling UsePrinterPaperSettings PageTile Map to PrinterPaper Page Page Size that willbe used isequal to PrinterPaper SizeOAl 2tile(s) Standard Sizes: A4 Width: 21 CentimetersOTlesfrom: Width: ARCHEA5 29.7 CentimetersOScaleMap to fitPrinterPaper A4 Orientation: OPortrait OLandscapeHeight:\nNumberof Copies: Orientation:\nPrint toFile AO ShowPrinterMarginsonLayout ScaleMapElementsproportionally tochangesinPageSizeCustomData Driven Pages... OK Cancel\n·步骤：①点击“print”；②选择“Setup”；MapPageSize;④OK",
+      "ocr_score": 0.946
+    },
+    {
+      "index": 45,
+      "image": "page_045.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nPage and PrintSetupPrinter SetupName: AdobePDFStatus: ReadyType: AdobePDF Converter Setup....\nWhere: Documents\\*.pdfComments:\nPaperSize: A4\nSource: 自动选择 s)that wil be printedOrientation: OPortrait OLar geLayout)\nementsMapPage SizeUse PrinterPaper SettingsStandardSizes: CustomWidth: 30 CentiHeight: 21 CentiOrientation: OPortrait OLarShowPrinterMarginson Layout Scale CloseDataDriven Pages... OK Cancel",
+      "ocr_score": 0.975
+    },
+    {
+      "index": 46,
+      "image": "page_046.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nData Frame PropertiesGeneral Data Frame Coordinate System IlluminationGrids Feature Cache Annotation GroupsExtent Indicators Frame Size andPosition\n日 Color.\nGap X1 ptsY:OptsRounding:\n回 Color:\nGap 0\nDrop ShadowColor:\n15psY-15ptsRoundingDraftmode-jst show name\n坐标原点：\n地图页面的左下角\n确定 取消 应用（A）\nSize and Position: ① Position “anchor point\"; ② Size.",
+      "ocr_score": 0.92
+    },
+    {
+      "index": 47,
+      "image": "page_047.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>地图页面长、宽与数据框 (Data frame)\n长、宽的区别？\nunried-ArcMap\nPage and Print Setup ofCerPrinter SetupName: Adobe PDFStatus: Ready Band.2\nType: Adobe PDFConverterWhere: Documents\\\".pdfComments:\nPaperSize: PrinterPaperSource: 自动选择 Printer MarginsOrientation: Portrait Landscape Map Page (Page Layout)\nSample Map ElementsMap Page Size BUse Printer Paper SettingsStandard Sizes: CustomWidth: 21 CentimetersHeight: 6 timetersOrientaton: Portrait ndscapeShow PrinterMarginsonLayout Scale Map Eements proportionally to changesinPage SizeData Driven Pages... OK Cancel",
+      "ocr_score": 0.933
+    },
+    {
+      "index": 48,
+      "image": "page_048.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>地图页面长、宽与数据框 (Data frame)\n长、宽的区别？\nVie .1:22.500\nDataFrameProperties Talle Of ConentsGeneral DataFrame Coordinate System Illumination d Band1\nGrids Feature Cache Annotation Groups Band.2\nExtentIndicators Frame Size and PositionPosition SizeX: 3cm Width: 15cm a3cm Height: 23cmAs Offset Distance As PercentageAnchorPoint: PreserveAspectRatio BElementNameLayers\n确定 取消 应用（A）\n原点\n25.4810.33 Ce",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 49,
+      "image": "page_049.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n布局调整\n平移(Pan)\nArcMap工具栏：Selectelement\n选择元素\n选择(Select)\n建议鼠标模式：选择模式",
+      "ocr_score": 0.917
+    },
+    {
+      "index": 50,
+      "image": "page_050.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n115°200\"E 115°220\"E 115°240\"E 115°260\"EGeneral Data Frame Coordinate System IlluminationGeneral GridsandGraticulesWizard ExtentIndicators Frame Size andPositionExtentl Grids Feature Cache Annotation GroupsGrids Create a graticuleReference gid Axesandla Reference gridsare drawn ontop of the data frame in Layout view only.\nGraticule New Grid..\n'0\" Remove GndStyle...\ndge of graticuleProperties....\nConvert To Graphics115°20 atcanbeedited\n确定 取消 应用（A） Finish",
+      "ocr_score": 0.941
+    },
+    {
+      "index": 51,
+      "image": "page_051.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nGeneral DataFrame Coordinate System IlluminationExtent Indicators Frame Size and PositionGrids Feature Cache Annotation GroupsReference gids are drawn ontop of the data frame in Layout view only.\nGraticule New Gnid..\nRemove GnidStyle...\nProperties...\n确定 取消 应用（A）",
+      "ocr_score": 0.952
+    },
+    {
+      "index": 52,
+      "image": "page_052.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n115°200\"E 115°220\"E 115°240\"E 115°260\"E Reference SystemPropertiesAxes InteriorLabelsLabels Lines Hatching IntervalsTop Bottom Right24°30'0\"N Symbol:\nDisplay ticks Oinside of the dataframe Ticksize: 5.00 ptsOoutsideSubdivision Ticks24°28'0\"N Top Bottom RightUse subdivisionsSymbol:\n24°26'0\"N Display ticks Oinsideoutside of the dataframe Tick size: 2.00 ptsBorder: SimpleBorder Properties...\n24°24'0\"N1.25 2.5 km\n确定 取消 应用（A）\n115°200\"E 115°220\"E 115°240\"E 115°260\"E",
+      "ocr_score": 0.947
+    },
+    {
+      "index": 53,
+      "image": "page_053.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n115°200\"E 115°220\"E 115°240\"E 115°260\"E Reference System Properties XAxes InteriorLabels Labels Lines Hatching IntervalsLabel AxesTop Bottom24°30'O\"N Label StyleFomat: Degrees Minutes SecondsFont:\n24°28'O\"NSize: 10 BColor: Label Offset: ptsAdditional Properties...\nLabel Orientation33°00\"北 Vertical Labels:\nTop Left Bottom Right3200\"北\n1.25 2.5 3100\"北\n115°200\"E 115°220\"E 115°240\"E 115°260\"E\n确定 取消 应用（A）",
+      "ocr_score": 0.942
+    },
+    {
+      "index": 54,
+      "image": "page_054.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\nReferenceSystem PropertiesAxes InteriorLabelsLabels Lines Hatching IntervalsIntervalXAxis: 0.000000\nYAxis: 0.000000\nOriginOUse origin from the currentcoordinate systemDefine your own originXOrigin: -180 0.000000\nYOrigin: -90 0.000000\nODegrees-Minutes-SecondsDecimalDegreesODegrees and Decimal Minutes\n确定 取消 应用（A）",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 55,
+      "image": "page_055.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n115°19'0E 115°21'0E 115°23'0E 115°25'0E 115°27'0E24°330H Data Frame PropertiesGeneral Data Frame CoordinateSystem IlluminationExtentIndicators Frame Size and PositionGrids Feature Cache AnnotationGroupsReference gnids are drawn ontop of the data frameinLayout view only.\nGraticule New Grid..\nRemove GnidStyle...\n24°29'0H Properties..\nConvert ToGraphics24°27'0H24°25'0H115°19'0E 115°21'0E 115°23′0E 115°250E 115°27'0E 确定 取消 应用（A）",
+      "ocr_score": 0.923
+    },
+    {
+      "index": 56,
+      "image": "page_056.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>如何新建格网？如何修改格网属性？\n12005430\"E 120°550\"E 1200550 Data Frame Properties 12005605 12005620\"E 1208570\"F X 1200!\nN GeneralData FraneCoordinate SystenIllunination Annotation Groups ExtentIndicatorsFrane Size and PositionGrids Feature Cache 格网刻度 （Axes)\nReferenceg re drawn on top of the data framein Layout view only. eseGrtiode NewGnd..\nReferenceSystemProperies Remove GndInterior Labels Labels Lines HatchingIntervals) Style... 格网标签 (Labels)\nLabel Axes PropetiesVLTop Bottom 四RgtLabel Shyle Convert ToGraphicsNuOCoT Legeid Fommat: Degrees Mnutes SecondsSamplin 格网线性 (Line)\nRivenet Font: Tmes NewRoman\n:ozS 12\nwaterarColor Label Offset:\nAddtionalProperties 格网间距 (Intervals)\nLabel OnentationTop Left Botom RghtNO.Io1E 标签方向（Orientation）\n标签方向\n确定 取消 应用（A） 联消 应用（A）\n120°5430\"E 120°550\"E 120°55'30\"E 120°560\"E 120°56'30\"E 120°570\"E 120°!",
+      "ocr_score": 0.879
+    },
+    {
+      "index": 57,
+      "image": "page_057.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>如何新建格网？如何修改格网属性？\nReferenceSystemProperties × 118°00\"E 119°00\"E 120°00\"E 121°00\"E 122°0E 123°00E\n资金\nAxes InteriorLabelsLabels Lines Hatching IntervalsLabel AxesTop BottomLabel StyleFomat: Degrees Minutes SecondsFont:\nSize: 10 BColor: Label Offset: ptsAdditional Properties....\n图例\nLabel Oientation 资金 75 150kmVertical Labels: 0. 49 资金\nTop Left Bottom Right 444号 平原\n台地 66.17% 平原 山地\n丘陵 2.95%\n山地\n资金（十亿） 丘陵 13.79%\n台地 17.09%\n确定 取消 应用（A）\nE117°00\"E 300811 119°00\"E 120°00\"E 121°00\"E 122°00\"E",
+      "ocr_score": 0.956
+    },
+    {
+      "index": 58,
+      "image": "page_058.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>如何新建格网？如何修改格网属性？\nReferenceSystemProperties 118°00\"E 119°00\"E 120°00E 121°00\"E 122°00\"E 123°00E\n资金\nAxes InteriorLabels LabelsLines Hatching IntervalsLabel AxesTop BottomLabel StyleFomat: Degrees Minutes SecondsFont: Times NewRoman33000\"北 Size: 14 B U3200'0\"北 Color: Label Offset: ptsAdditional Properties...\n31°00\"北 图例\nLabel Orientation 资金 75 150kmVerticalLabels: 0.49 资金\nTop Left Bottom 平原\n中 台地 66.17% 平原 山地\n丘陵 2.95%\n山地 丘陵\n资金（十亿） 13.79%\n17.09% 台地\n确定 取消 应用（A）\nE11700\"E 11800\"E 30.0611 120°00\"E 121°00\"E 12200E",
+      "ocr_score": 0.953
+    },
+    {
+      "index": 59,
+      "image": "page_059.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n115°19′0E 115°21'0E 115°23'0E 115°25'0E 115°27'0EInsert Selection Geoprocessing CustorData FrameTitle Title 品 HA Tex InsertData FrameDyr Createa new,empty dataframe in themap.A dataNe frame represents a geographic 24°31'0HLeg location andcontainslayersof\n+2 No data.\nScale Bar...\n1:n Scale Text.. 24°29'0NPicture...\nObject..\nChina 24°270H24°25'0HLegend115°19'0E 115°21'0\"E 115°23'0E 115°25'0E 115°27'0E",
+      "ocr_score": 0.938
+    },
+    {
+      "index": 60,
+      "image": "page_060.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图布局设计\n>多数据框时，如何确定选中了哪个数据框？\ndeypouggbFleEdt Vinw Bookmarkaisen Selecion Geoprcessing Cus3D Anast· A·gTable OfConteets X EtoChinaSouthChina Sea 1150200\"E 115220E 11524'0\"E 115°260EReserch Area 24°320N\n地图页面\nTableOfContents China\n田业 China 24280NSouthChinaSeaLegendResearchArea The PearlRiver Basin N.0.97.\n内容列表\n1.25 2.5 km115200E 115°220E 115°240\"E 115°260\"E",
+      "ocr_score": 0.875
+    },
+    {
+      "index": 61,
+      "image": "page_061.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰\n指北针\nNortharrow 115°200\"E 115°220\"E 115°240\"E 115°260\"E24°32'0\"N\n文字\nTEXT 标签\nLabels 24°30'0\"NChina\n符号\nSymbols 24°28'0\"NLegend 24°26'0\"NFengshuba ReservoirThePearl RiverBasin\n图例\nLegend 24°24'0\"N1.25 2.5 km115°200\"E 115°220\"E 11 O\"E 115°260\"E\n比例尺\nScalebar",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 62,
+      "image": "page_062.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2 地图装饰\n设置地图符号\n·地图符号分为点、线和面\n从可用的符号中选择并编辑属性以获得所需的\n结果。\nVolcanoes Highways LandcoverType Class Cover TypeCaldera Interstate Shrub SteppeCinder cone Freeway TallShrublandComplexvolcano -Arterial TransitionalForestShieldvolcano Unclassified UrbanandIndustrialStratovolcano Water\n日 Layers\n双击图层或选中图层点右键选择 “Properties 日 F:\\GIS_RSDATA\\CN_map\\\nCN-shi-A",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 63,
+      "image": "page_063.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰\n符号样式，（stvles）\nSymbolSelectorTypehere to search 品 Current Symbol StyleReferencesSearch: All Styles OReferencedStyles ERSHomelandSecurtyESRI ESRI-CADESRI_OptimizedForestryGreen Blue Sun Geology24KFillColor: HazmatOutine Width: 0.40 Miltary EmergencyManagement MeteorologicalHollow Lake Rose Outine Color: MilitaryMETOCOctagoi Mining undMSExp258\nEditSymbo... JOrdnanceSurveyPetroleumUKBeige Yellow Olive Save As... Reset PublicSigns PetroleumStar: Set as Default List orAdd Style toList.... Create New Style.\nGreen Jade BlueStyleReferences... OK CancelOK Cancel",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 64,
+      "image": "page_064.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰\n编辑符号Editingsymbols\n符号选择器 Symbol PropertyEditor SymbolPropertyEditor符号属性编辑器\nPreview Properties:\nCurrent SymbolType: CharacterMarkerSymbol Units: PointsCharacter Marker MaskFont: ESRIDefaultMarker Size: 36\nSubset: BasicLatin Angle: 0.00\nColor:\n100% Color:\nSize: 36.00\nLayers Offset:\nAngle: -45.00 X: 0.0000\nEdit Symbol. Y: 0.0000\nSave As... Reset\n保存编辑后\n的符号 Unicode: 33\nOK Cancel",
+      "ocr_score": 0.956
+    },
+    {
+      "index": 65,
+      "image": "page_065.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—NorthTarrowInsert Selection Geoprocessing Customize Wi NorthArrowSelector XDataFrame PreviewTitle TitleA Text 同\nDynamicTextNeatline... ESRINorth1 ESRINorth2 ESRI North3\nLegend... N NN North Arrow....\nScale Bar.... WInsert North Arrow1:n Scale Text... Insert a north arrow in Layout S NPicture... view ESRINorth4 ESRI North5 ESRINorth6\nObject.. NScale tofit page115°19'0E Properties.\nESRINorth7 ESRI North8 ESRI North9 More StylesSave... ResetOK Cancel\n选择指北针，双击或右键选择 “Properties",
+      "ocr_score": 0.95
+    },
+    {
+      "index": 66,
+      "image": "page_066.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—NortharrowNorthArrowProperties NorthArrow Properties NorthArrowPropertiesNorthArrow Frame Size andP North Arrow Frame Size and North Arrow Frame Size andPositionPreview Angle Border Position SizeAlignTo: X: 1.2113cm Width: 1.6838cmDataFra 人 13.24cm Height: 1.6798cmCalibratioil <None>\n0.5Point As Offset Distance As Percentage1.0PointN 1.5Point Anchor Point: Preserve Aspect RatioCalculate 2.0Polnt0.1 2.5Point30Point ElementName\n<None> BlueMarker LCyan LBlue NorthArrowFont: Green OliveESRI Grey40 Sepia SiennaGrey 10%\nSize: Hollow Black\n<None> Grey 20%\nGrey 30% Grey40%\nStyle... Char Grey 50% Grey 60%\nBlack SlennaMed Sand SandAqua Blue\n确定 Leaf 确定 取消 应用（A）",
+      "ocr_score": 0.941
+    },
+    {
+      "index": 67,
+      "image": "page_067.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—ScalebarInsert Selection Geoprocessing Customizt ScaleBarSelectorData Frame PreviewTitle Title 美期 200\nText ScaleLine1\nDynamicText 200Miles50 100\nNeatline...\nLegend... Scale Line 2\n+N North Arrow...\nScale Bar... 0 50 100 200MilesScale Line31:n Scale Text...\nPicture... InsertScale BarObjec.... Insert a scale barinLayout SteppedScaleLine121043_201 view. Scale tofit pageAltematingScaleBar1 Properties..\nMore StylesAltematingScaleBar2 Save... ResetMile 100 OK Cancel115°94'n 115°2'n\"R 115° 7s\n选中比例尺，双击或右键选择 “Properties",
+      "ocr_score": 0.916
+    },
+    {
+      "index": 68,
+      "image": "page_068.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—Scale barAlternating ScaleBar Prc AlternatingScaleBarProper Alternating ScaleBarPr 115°200E 115°220E 115°240E 115°260EFormat Scaleand Units Scale and UnitsScale and Units Format Fra FormatScale Border Text 24°31'O\"NDivisionvalue: Font: ArialNumber of divisions: Size: 10\nNumber of subdivisions: Gap X: pts Color:\nshow one division bef Background BarWhenresizing... Color: 24°290\"NAdjustwidth Size: 5ptAdjustdivisionvalue Adjustwidth Gap X 0 ptsAdjustnumberofdivisic Drop Shadow StyleAdjustdivisions anddivi 1.5\nKilometers 3\nCentimetersDecimal Degrees 24°27O\"NDecimeters 15 ptsaboveleftLabovecenteraboveright Draftmode-just shownamebeforelabels abovebothendsafterlabelsbeforebar afterbar 确\nbefore and after bar 24°250\"Nbelowleftbelowright belowcenterbelowbothends\n次刻度 主刻度 刻度单位 115°200E 115°220E 115°240E 115°260ESubdivision Division Division unit",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 69,
+      "image": "page_069.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰一文本TextInsert Selection Geoprocessing Customize Windows Properties XData FrameTitle Title ++ Text Size and PositionEditcA Text Text:\nDynamic Insert Text 116.1 TextNeatline.... Insertatext string into theLegend.. map. Properties X\n+2 North Arrow... Text Size and PositionScale Bar..\n1:n ScaleText... Position Size11.1484cm Width: 0.7056cmPicture... W China X:\nObject... 人 5.3785cm Height: 0.3528cmAs OffsetDistance As PercentageAnchorPoint: PreserveAspectRatioElementName\n选中文本，双击或右键选择 “Properties\n确定 取消 应用（A）",
+      "ocr_score": 0.949
+    },
+    {
+      "index": 70,
+      "image": "page_070.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标题TitleProperties X PropertiesText Size and Position Text Size and PositionText: Text:\nText <dyntype=document”\"property='title\"/>\nFont: 宋体10.00 Font:\nAngle: 0.00 、 Character Spacing: 0.00 Angle: 0.00 、 Character Spacing: 0.00\nLeading: 0.00 Leading: 0.00\nAboutfommattinqtext Change Symbol. Aboutfommattinq text Change Symbol...\n确定 取消 应用（A） 确定 取消 应用（A）\n选中标题，双击或右键\n选择 “PropertiesDrawing Q国|口·A·KI Arial 10BIUA",
+      "ocr_score": 0.948
+    },
+    {
+      "index": 71,
+      "image": "page_071.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标题TitleFile EditView BookmarksInsert Selection Geoproces Map DocumentPropertiesNew... Ctrl+N 1:125,000\nOpen... Ctrl+O GeneralSave Ctrl+S File:\nSave As...\nSaveA Copy..\nSummary:\nShare As <dyn type=\"document\"\nAddData APE property=\"title\"/>\n品 Description:\nSign In...\n88 ArcGISOnline...\nPage and Print Setup...\nPrintPreview...\nPrint.... Author:\nExport Map... Credits:\nAnalyze Map.... Tags:\nMap Document Properties.... Hyperlink base:\n1E...FengshubaReservd Map Document Properties Last Saved:\n2E:\\Arc.\\Suzhou10..1_23E:\\ArcGIS...\\Suzhou10.1 Displayoredit theproperties LastPrinted:\nof thismap document,such as Last Exported:\n4E:\\Docu..土地使用现状 description,author,credits, Default5E:课题资料\\东部河浙 and specifywhether Geodatabase: C:\\Users\\Yuansheng_Huang\\Documents\\ArcGIS\\Cdisk-based data it uses will be Pathnames: Storerelative pathnames to data sources6E:\\ArcGISDocume..m referenced byrelative7G:\\Investment\\sampling pathnames. Thumbnail: Make Thumbnail Delete Thumbnail8C:\\Users\\Yuanshe.../shujv.mxd 确定 取消 应用（A）\nExit Alt+F4",
+      "ocr_score": 0.936
+    },
+    {
+      "index": 72,
+      "image": "page_072.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—绘制DrawDrawing 16BIUASplinedTextLabelCallout anA PolygonTextA Rectangle TextA CircleTextMarkerProperties X Symbol SelectorSymbolLength Sizeand Position @量- Current SymbolSearch: AIStyles OReferenced StylesPreview: Dashed 1Long Dashed 1Long Dashed 1LongColor: 1Short 2 Short 3ShortColor:\nWidth: 1.00 Dashed wth 1Dashed with 2Dashed with 3 Dot Dots Dots Width: 1.00\nEdit Symbol...\nChange Symbol... ArrowatEnd ArrowatStartArrowsatStart Save As... ResetpugpueDam Single,Nautical Dashed2 ArrowRight Mdde\n确定 取消 应用（A） AerowLeft Middle Style References..\nOK Cancel",
+      "ocr_score": 0.931
+    },
+    {
+      "index": 73,
+      "image": "page_073.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—绘制DrawHI MOM! ArialA NewTextBrandon Splined TextLabelCreer CalloutPolygon TextRectangleTextCircle TextHI DAD!\nDrawing 口·A·六 Arial BI U\n使用绘图工具条设置字体/大小",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 74,
+      "image": "page_074.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰一图例LegendInsert Selection Geoprocessing Custo LegendWizardDataFrame Choose whichlayersyouwant toincludeinyourlegendTitle Title XY MapLayers: Legend ItemsA Text Fengshuba Reservoir FengshubaReservoirDynamicText CN_provence_area The Pearl River Basin CN_provence_areaNeatline...\nLegend....\n42 Nor Insert LegendScal Insert a legend in Layoutview.\nPicture...\nObjec... Set thenumberof columnsin your\n选择目标数据框\nPreview\n(data frame)\nInsertLegend <上—步（B) 下一页（N）> 取消",
+      "ocr_score": 0.949
+    },
+    {
+      "index": 75,
+      "image": "page_075.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰一图例LegendLegendWizardLegendWizardLegend TitleLegend Legend Frame LegendWizardBorder Legend WizardYou can changettline and polygon1 Set the spacing between theparts of your legend.\nLegend Title font pr Background SelectoneormorSpacing between:\nColor: Legend Items: Title andLegend Items: 8.00 (pts.) TitleCN provence areSize: 14 Drop Shadow ThePearl RiverB Legend Items: 5.00 (pts.) Layer1Layer7\nGroup1\nFont: 宋体 Columns: 5.00 (pts.) Group2\nH Gap Headings and Classes: 5.00 (sd))\n10.00 Labels andDescriptions: 5.00 (pts.)\nPreview LegendPatches(vertically): 5.00 (pts.)\nPreview Fengshuba ReservoirPatches and Labels: 5.00 (pts.) CN_provence_aresPreviewThe PearlRiver BasinjPreview ndvi1998\nValue0.920.730.550.37 Chinai\n使用预览Preview功能，参看当前设置的视图效果 180. 00",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 76,
+      "image": "page_076.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例LegendLegend Properties Legend Properties Legend Properties Legend PropertiesGeneral Items Lay General Items Lay GeneralItems Lay GeneralItems LayoutFrame Size and PositionGaps Border Position SizeLegend titlegap X: 0.9601cm Width: 4.8325cmitemgap 6.3793cm Height: 1.9776cmshow columngaplayer name gap xdeg As Offset Distance As PercentageSpecify LegendItems heading gap de5 dno6 Background Anchor Point: Preserve Aspect RatioMap Layers: textgapFengshuba Rest vertical pathgap ElementNameCN_provence_a patchgapThePearlRiver Xde LegendDefault Patch Drop ShadowLine: Area:\nTextWrapping DffsetX:15\nMap Connection wrap labelsOnly display layer Label width: Draftmode-just shovAdd anew item tod Psudsap demReorder thelegen Description width: 1\nScale symbols wh Right to leftreading\n确定 取消 应用（A）\n选中图例，双击，或点击右键在快捷菜单中选择 “Properties",
+      "ocr_score": 0.928
+    },
+    {
+      "index": 77,
+      "image": "page_077.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例LegendLegend Properties LegendItemSelectorGeneral Items LayoutFrame Sizeand Headng Preview PreviewValue dem30mApply settings to selected item(s) ValueSelect All Select None Font High:8776\nFengshubaReservoir Apply toallal DescriptionThePearl RiverBasin 8776 Low:-553\ndem30m HighMap Extent Op Horizontal Barwith Heading. Horizontal Single SymbolLabels,andDescription DescriptionOnlyonly showShowfeatuLayerNameUsecurrent LabelDescriptionItemColumms Properties... Properties..\nLegend Item X Legend Item Legend ItemStyle.... ArrangementGeneralBar Arrangement General BarLabel Appearance Show Layer Name Show Labels Angle of text above the bar: 5.00 degreesO Descniption Label Desciption Label Descrption Layer Name Symbol... Label Symbol.. Angle of text belowthebar: 45.00 degreesLabel Description Description Show Heading Show DescniptionsDescription O LabelLabelOvemde default patch Ovemide default patch sizeLine: With:36ptArea: Height:24ptOnly show classes from this heading ValuePrevent tem from being spltacrosslegend columns\n确定 取消 应用（A） 确定 应用（A） 确定 黑 应用（A）",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 78,
+      "image": "page_078.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例LegendLegendndvi1998\nLegend Item Advanced Labeling ced Labeling XArrangement General Bar Numberof Intervals >1)：: ber of Intervals(>1):\nAppearance Show LayerName ShowLabels OIntervalSize: 50 Generate srval Size: GenerateLayer Name Symbol... Label Symbol... Symbol <VALUE> Label ColorRamp <VALUE> Label ColorRampShow Heading ShowDescnptions 0.733125 Z60 260 0.92 0.920.73 0.733125 0.549844 0.733125 0.549844\nHeading Symbol. Descnption Symbol. 0.549844 0.366563 0.55 0.366563 0.366563\nOvemide default patch Ovemide default patch size 0.183281 0 0.00 0.18 0.183281 0 0.183281 0\nLine: Width:60ptArea: Height:11ptOnly show classes from this heading ValuePrevent temfrombeing spitacrosslegendcolms OK Cancel Legend\n确定 取消 应用（A） ndvi1998\n确定 取消 应用（A） 0\nndvi1998 733125 549844 0 0 366563153 000\nLayer properties →Symbology→Stretched→ Labeling\n图层属性→符号→拉伸→标签",
+      "ocr_score": 0.922
+    },
+    {
+      "index": 79,
+      "image": "page_079.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例Legend115°20'0\"E 115°22'0\"E 115°24'0\"E 115°26'0\"E24°32'0\"N24°30'0\"NChina24°28'0\"NLegendFengshubaReservoir 240260\"Nndvi199824°24'0\"N1.25 2.5115°20'0\"E 115°22'0\"E 115°24'0\"E 115°26'0\"E",
+      "ocr_score": 0.91
+    },
+    {
+      "index": 80,
+      "image": "page_080.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰一图例Legend\n目录窗口TableofContents\n图例LegendGeologyRockUnit Legend 图层名LayerNameMadisonLimestone Geology 标题HeadingLowerPaleozoic 标\nRock Unit 签LabelPrecambrian 描\n述DescriptiohMadison LimestoneMassivebuff-colored limestonewithblackweatheringLowerPaleozoic\n对图例中显示的文本进行 Sandstone,siltstone,shale,and limestone\n更改，在何处修改？ PrecambrianMetapelitesandquartzites,metagranite,andpegmatite",
+      "ocr_score": 0.974
+    },
+    {
+      "index": 81,
+      "image": "page_081.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例Legend115°20'0\"E 115°22'0\"E 115°24'0\"E 115°260\"E24°32'0\"N24°300\"NChina China24°280\"NLegend LegendFengshubaReservoir Fengshuba Reservoir 24°26'0\"NThePearl RiverBasin ThePearl RiverBasin24°24'0\"N1.25 2.5115°200\"E 115°22'0\"E 115°24'0\"E 115°26'0\"E",
+      "ocr_score": 0.919
+    },
+    {
+      "index": 82,
+      "image": "page_082.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例LegendCustomize Windows Help CustomizeToolbarsExtensions.. Toolbars Commands OptionsAdd-In Manager. ShowcommandsCustomize Mode... Categories: Commands:\nStyle Manager... Online Services Title Map Title...\nArcMapOption... Package MarginsPageLayoutPan/Zoom MarkerParcel Neatline...\n自定义→自定义 Parcel FabricTools NewFramePublisherRaster New LegendPatch Shape\n模式→命令→页 Reports Next PageRepresentation N North Arrow...\nRoute Editing CommandsSchematics Nudge Down\n面布局→新建图 SchematicsTools Nudge LeftSelertion\n例→鼠标选中拖 Description\n拽到工具条中 Keyboard... AddFromFile... Close\n双击打开工具",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 83,
+      "image": "page_083.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—图例LegendLegend Properties XNewLegendPatch XPatchType Preview General Items Layout Frame Size and PositionArea OLine GapsPatch Shape titlegap 7.91pt Titleitemgap 4.95pt Layer1Layer7\nOutline of Features columngap 5.00pt Group1\nLayer: layernamegap 4.95ptThePear River E headinggap groupgap 4.95pt Group24.95pt Class1Description1\nFeatures: textgap 5.00ptvertical patchgap 4.95ptpatchgap 5.00ptCreatePatch PreserveAspectRatio DefaultPatchOOutlineofSelectedElements Line: Area: Width: Height:\nAdd to Styleset 28pt 13.8473\nClose TextWrappir RectangleWrap lab Rounded Rectangle imeLabel wi Elipse Diamond natically adjust number of columns\n类型设定→形状设置 Wrap des ParkorPreserveUrbanized Area WaterBody kcontents to fit frameDescript Natural Area imum font size: 4pt\n→添加至样式\nRight to left reading\n确定 取消 应用（A）\n珠江\nCancel",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 84,
+      "image": "page_084.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标签Label115°20'0\"E 115°22'0\"E 115°24'0\"E 115°26'0\"E24°32'0\"N\n标签\nLabels24°30'0\"NChina24°28'0\"NLegendFengshubaReservoir 240260\"Nndvi199824°24'0\"N1.25 2.5115°20'0\"E 115°22'0\"E 115°24'0\"E 115°26'0\"E",
+      "ocr_score": 0.919
+    },
+    {
+      "index": 85,
+      "image": "page_085.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标签Label\n点放置选项 Placement PropertiesPlacement Conflict DetectionPoint placement options Point SetingsOffsetlabelhorizontallyaround thepoint221 Prefer Top Right, allallowedLayer Properties 3 2332 Change Locatio...\nGeneral Source Selection Display Symbology Fields DefinitionQuery Priorty:0=Blocked,1=Highest,3=LowestLabels Joins&Relates Time HTMLPopup Place label on top of the pointLabel featuresin this layerMethod: Labelallthe featuresthesame way OPlace labelat specfied anglesAngles..\nAlfeatures willbelabeled using theoptions specfied.\nRotation Field...\nTet StringLabelField: ID Expression.. Duplicate LabelsTextSymbol Remove duplicatelabelsTmes NewRoma 18 Place one label per featureAaBbYyZz BIU OPlace one label perfeature patSymbol..\nOtherOptions Pre-defined Label StyePlacement Properties.... ScaleRange.. Label Styles.. 确定\n取消\nInitial point placement33 1 0 0 2 30 2 0 2 0 3\n确定 应用（A） 0 0 2 3 3 1 2 2 1\nPreferUpperRight.then Right then Top then Right then Bottomthen Bottom then Right Prefer BottomRight. Prefer BottomRight.\n图层属性→标签 2 0 0 3 0 0 23 0 3 08 1 2 3 0\nLayer properties→ LabelsPriorty:0=Blocked,1=Hghest,3=LowestOK Cancel",
+      "ocr_score": 0.926
+    },
+    {
+      "index": 86,
+      "image": "page_086.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标签Label\n多边形位置选项PolygonplacementoptionsPlacement Properties ？ Always horizontalPlacement Conflict Detection 558646\nPolygon Settings Always straight558645\nAlwayshorizontal Iry horizontal first,then straight558646\nAlways straight558645\nTry horizontal first.then straightCAlways horizontal888646\nOnly place label inside polygon Always straight154 Iryhorizontal first,then straightDuplicateLabelsRemove duplicatelabels Always horizontal688646\nPlace onelabel perfeatureOPlace onelabel perfeature part Always straight558645\nTryhorizontal first,thenstraightOK Cancel Apply",
+      "ocr_score": 0.946
+    },
+    {
+      "index": 87,
+      "image": "page_087.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图装饰—标签Label\n线位置选项PolylineplacementoptionsPlacement Properties ？xPlacement Conflict Detection SouthEork-GTandBaerLine SettingsOrientation PositionHonizontal Above Above Clarks FrkCreekBelowParalll On the lineCurved Below AboveBelowPerpendicularOrientation PageSystem:\nOffset 0 mapunitsLocation SouthForkGrand RiverLocation along the line: AtBest Prionties...\nDuplicateLabelsPlace onelabel perfeaturepartOK Cancel Apply",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 88,
+      "image": "page_088.jpg",
+      "embedded_text": null,
+      "ocr_text": "插入图片（picture）或对象（object）\nInsert Selection Geop Lookin: NewProject 田\nDataFrameBestMapEverTitle Title Recent PlacesDesktop 1005632.jpgDynamicTextNeatline... LibrariesLegend... ComputerNorth Arrow...\nScaleBar.. Network Fle name: 1005632jpg Open1:n ScaleText.... Files of type: AIFomats CancelPicture... LegendObject... 插入对象 X\n对象类型（T）： 确定 Rntmowr ddebogue\n新建（N） MicrosoftWordDocument MicrosoftWord97-2003Documer 取消 tan Revolut/on.\nchxttoneh horndvedpple\n由文件创建（F） OpenDocument Presentation MicrosoftWordMacro-EnabledDo meww b.honondfonveOpenDocument TextOrganization ChartAdd-in forMicrt 显示为图标（D）\nOrigin GraphUnicodeOrigin Graph\n结果\n将一个新的AdobeAcrobatDocument对象插入 Object：双击可编辑\n你的文档。",
+      "ocr_score": 0.937
+    },
+    {
+      "index": 89,
+      "image": "page_089.jpg",
+      "embedded_text": null,
+      "ocr_text": "地图文件导出\nFile Edit View Bookmarks Insert ExportMapNew... 保存在（I）： Dr.ChenOpen... Ctrl+o 名称 修改日期\n快速访问 SHAPE_PRJ 2023/3/1\nSave Ctrl+S 测试 2018/10/\n枫树坝水库 2018/10/\nSave As... 桌面 Fengshuba Reservoir.png 2023/3/1\nSave A Copy... 文件名（）： Fengshuba Reservoir.png 保存（s）\nShareAs 库 保存类型（T）： PNG（*.png) 取消\n（米.emE）\nAddData Options PDF8 General Format SVGSign In... Resolution: 96 PRG（*png） IPEG(*.jpS) BMP\n出 ArcGIS Online... Width: 1123 GIF (*.giE) TIFF（*.tif)\nPage and Print Setup.. Height: 794 pixe]\nWrite World FilePrint Preview...\nPrint..\nExport Map...\nAnalyze Map.... clip Output to Graphics ExtentMap DocumentProperties... ArcMap窗口选中File菜单→Export1G..FengshubaReservoir.mxd2G:\\Dr.Chen\\Lake_Chao\\C.mxd Map...→文件存储路径、文件名、文\n3C:\\Users\\yuans...\\Untitled.mxd 件类型、分辨率resolution→保存\n4G:\\Document..\\DSTP_test.mxdExit Alt+F4",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 90,
+      "image": "page_090.jpg",
+      "embedded_text": null,
+      "ocr_text": "制作地图的目的是什么？\n制作地图前首要任务是明确制图的目的\n>四个问题需要考虑\n·到底是为了什么?\nObjective\n·受众是谁？\n·采用什么介质？\n·它将在什么条件下被查看？",
+      "ocr_score": 0.974
+    },
+    {
+      "index": 91,
+      "image": "page_091.jpg",
+      "embedded_text": null,
+      "ocr_text": "地图目标\nThe Aral Sea2009\n>地图有很多用途\n·定位\nMedian Rent by County\n·导航\n汇编\n论证...\nWBabcock St Emerson Center for\n·比较... WOliveSt the Arts&Cultural BaldwinS15thAve SBthAve WAT UG lonvilleS1lthAve Sherwood +94 Todd FleetwoodSugar Grove Boone\n·分析 S19thAve S.7th Swillson /ilas 水 DeepGapSGrand BeechMitn.\nWCollege St WCollege St Valle Crucis\n言 194 105\nS11th Montana State (184 BLUEtanaState big skyconference school ofnursing 194 FOR BlowingRockNorth Hedges Hall Ave OKGLTWGrant St nville UptonWest LincolnStreet Develop Human neola Globe 21",
+      "ocr_score": 0.948
+    },
+    {
+      "index": 92,
+      "image": "page_092.jpg",
+      "embedded_text": null,
+      "ocr_text": "地图目标\n>受众\n口谁会查看我们绘制的地图？\n口他们期望期望从图中获取哪些信息？\n·一般问题、常规内容\n·专业信息、专业内容\n口他们是否有特别的需求？\n·色盲、大尺度打印？",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 93,
+      "image": "page_093.jpg",
+      "embedded_text": null,
+      "ocr_text": "选择数据图层\n>地图是否讲述了一个\n吸引人的故事\n－这幅地图的主要图层、\n主要信息？\n-哪些图层应该设置为\n辅助图层？\n－一些层次是否会关键\n信息的可视化？",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 94,
+      "image": "page_094.jpg",
+      "embedded_text": null,
+      "ocr_text": "符号和模式\n》大脑不只是观察，\n它还试图找到模式\n·为什要把部分数据凸\n显出来？有什么区别？\n·展示数量上的差异？\n·定性分类?",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 95,
+      "image": "page_095.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n>有时需要在地图上简化数据集以获得更好\n的可视化效果\n-使用查询功能query： 显示要素feature的子集\n地震等级 地震等级\n>4.0 >6.0",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 96,
+      "image": "page_096.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，高速、城市主干道、步行道..\n高速路",
+      "ocr_score": 0.985
+    },
+    {
+      "index": 97,
+      "image": "page_097.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，高速、城市主干道、步行道..\n安徽省立方数据学社\nbridge tunnel felass_cn typeF 居住区道路 城市支路\nF 第三级道路 城市次干路\n居住区道路 城市支路\n居住区道路 城市支路\n第三级道路 城市次干路\n商速公路 高浆及快速路\n商速公路 高架及快速路\n商速公路 高架及快速路\n高速公路 高架及快速路\n商速公路 高架及快速路\n第三级道路 城市次干路\n第三级道路 城市次干路\n第三级道路 城市次干路\n第三级道路 城市次干路\n高速公路 高架及快速路\n高速公路 高架及快速路\n商速公路 高架及快速路\n商速公路 高架及快速路\n高速公路 高莱及快速路\n商速公路 高架及快速路\n第三级道路 城市次干路\n第三级道路 城市次干路\n高速公路 高菜及快速路\n商速公路 高架及快速路\n第三级道路 城市次干路\n第三级道路 城市次干路\n干道连接 高架及快速路\n(0outof141566Selected)",
+      "ocr_score": 0.935
+    },
+    {
+      "index": 98,
+      "image": "page_098.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n>安徽省道路数据，高速、城市主干道、步行道..\nSelectbyAttributes X Table\n图\nEntera WHEREclause to selectrecords inthe table window. 安徽省立方数据学社 XMethod: Create anew selection bridge tunnel felass_cn type\n\"oneway\" F 居住区道路 城市支路\n\"bpuq.. F 第三级道路 城市次干路\nF 居住区道路 城市支路\n\"tunnel\" F 居住区道路 第三级道路 城市次干路 城市支路\n\"fclass_cn\" F F 商速公路 高架及快速路\n\"type\" F 商速公路 高架及快速路\nF 高速公路 高架及快速路\n<> Like 干道连接 F 高速公路 高架及快速路\n高速公路 F 商速公路 城市次干路 高架及快速路\n>= And 高速公路连接 F 第三级道路 第三级道路 城市次干路\n<= Or 公车专用道 F 第三级道路 城市次干路\n居住区道路 F 第三级道路 城市次干路\n马道 F 高速公路 高架及快速路\n() Not F 高速公路 高菜及快速路\nF 商速公路 高架及快速路\nIn Null Get UniqueValuesGoTo: F 高速公路 高架及快速路\nSELECT·FROM安徽省_立方数据学社WHERE： F 商速公路 高莱及快速路\nF 高速公路 商架及快速路\n“fclass_cn\"=高速公路 F 第三级道路 城市次干路\nF 第三级道路 城市次干路 商菜及快速路\nF 高速公路\nF 第三级道路 高速公路 高架及快速路\n城市次干路\n第三级道路 城市次干路\nF 干道连接 高架及快速路\nClear Vernfy Help Load.... Save...\nApply Close 14 (0outof141566Selected)\n安徽省立方数据学社",
+      "ocr_score": 0.924
+    },
+    {
+      "index": 99,
+      "image": "page_099.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，高速、城市主干道、步行道..\nSelectbyAttributes XEnteraWHEREclause to selectrecordsin the table window.\nMethod: Create anew selection\n\"oneway\"\n\"tunnel\"\n\"fclass_cn\"\n\"type\"\nLike 干道连接\n高速公路\nAnd 高速公路连接\nOr 公车专用道\n居住区道路\nNot 马道\nNull GetUniqueValuesGoTo:\nSELECT·FROM安徽省立方数据学社WHERE：\n“fclass_cn\"=高速公路\nClear Verfy Help Load.. Save...\nApply Close",
+      "ocr_score": 0.96
+    },
+    {
+      "index": 100,
+      "image": "page_100.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，高速、城市主干道、步行道..\nRemoveOpen AttributeTableJoins andRelatesZoomToLayerZoom To MakeVisibleVisible ScaleRangeUseSymbol LevelsSelectionLabel FeaturesEditFeaturesConvert Labels to Annotation...\nConvert Features to Graphics..\nConvertSymbology toRepresentation..\nSave AsLayer File... Export Data...\nCreateLayerPackage... Export ExportDataProperties.. Make Save this layer's data asaViewlt shapefile or geodatabaseRevie feature class\n内容目录窗口，图层属性",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 101,
+      "image": "page_101.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n>安徽省道路数据，高速、城市主干道、步行道..\nExportDataCopy Export: SelectedfeaturesRemove Use the same coordinate system as:\nOpen Attribute Table Othislayer'ssource dataJoins andRelates OthedataframeZoomTo Layer Othefeaturedatasetyouexport thedatainto\n(only appllesif you export to a feature datasetina geodatabase)\nZoom To Make Visible Output feature class:\nVisible ScaleRange F:GIS_RS_DATA\\2023年OSM道路数据（全国，分省，分市）\nUseSymbol LevelsSelectionLabel FeaturesEditFeaturesConvert Labels to Annotation.. OK CancelConvert Features to Graphic..\nConvertSymbologytoRepresentation... ArcMapSave As Layer File... Export Data...\nCreate LayerPackage.. Export ExportData Doyouwant toadd theexported data to themap asalayer?\nProperties.. MakeViewIt Save thislayer'sdata asashapefile or geodatabase Yes NoReviev feature class\n内容目录窗口，图层属性",
+      "ocr_score": 0.963
+    },
+    {
+      "index": 102,
+      "image": "page_102.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，高速、城市主干道、步行道..\n高速路",
+      "ocr_score": 0.985
+    },
+    {
+      "index": 103,
+      "image": "page_103.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，只需要显示合肥市的数据...\n合肥市",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 104,
+      "image": "page_104.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n>安徽省道路数据，只需要显示合肥市的数据..\nLayers\n日口 AddData...\nNewGroupLayer Table Of ContentsNewBasemapLayerPaste Layer(s) 日 LayersRemove highwayTurn All Layers OnTurn All Layers Off hefeiSelectAll Layers 口\nExpandAll Layers 安徽省立方数据学社\nCollapse All LayersReference ScaleAdvanced Drawing Options...\nLabeling 注意区分数据\nConvert Labels toAnnotation. 框和数据图层\nConvertFeaturestoGraphics...\nConvert GraphicsToFeatures..\nActivateProperties....",
+      "ocr_score": 0.965
+    },
+    {
+      "index": 105,
+      "image": "page_105.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，只需要显示合肥市的数据..\nData Frame PropertiesLayers Grids Feature Cache Annotation Groups\n日口 h Add Data... Extent Indicators Frame Size andPositionNew GroupLayer General DataFrame Coordinate System IlluminationNewBasemapLayer ExtentCopy Automatic\n日 启 Paste Layer(s)\nX RemoveTurn All Layers OnTurnAll LayersOffSelectAll LayersExpandAll Layers ExtentUsedByFullExtentCommandExtent of data inallayers (Default)\nCollapse All Layers Oother:\nReference Scale SpecifyExtent...\nAdvanced DrawingOptions... ClipOptionsLabeling No CippingConvertLabelstoAnnotation... Exclude Layers... SordeConvert Features to Graphic.. ClpGrids andGraticulesConvertGraphicsToFeatures..\nActivateProperties....\n确定 取消 应用（A）",
+      "ocr_score": 0.944
+    },
+    {
+      "index": 106,
+      "image": "page_106.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n>安徽省道路数据，只需要显示合肥市的数据..\nData Frame Properties Data Frame PropertiesGrids Feature Cache Annotation Groups Grids FeatureCache Annotation GroupsExtent Indicators Frame Size and Position Extent Indicators Frame Size and PositionGeneral Data Frame Coordinate System illumination General Data Frame Coordinate System illuminationExtent ExtentAutomatic AutomaticExtent UsedBy Full Extent Command Extent UsedByFull Extent CommandExtent of data in allayers (Default) Extent of data in allayers (Default)\nother: Oother:\nSpedfy Extent... Spedfy Extent...\nClp Options ClipOptionsNo Clipping Speafy Shape...\nNo Clipping Clip to shape Exclude Layers... Border:\nCipGridsandGraticules Clip Grids andGraticules\n修剪形状/Cliptoshape\n确定 取消 应用（A） 确定 取消 应用（A）",
+      "ocr_score": 0.946
+    },
+    {
+      "index": 107,
+      "image": "page_107.jpg",
+      "embedded_text": null,
+      "ocr_text": "图层/数据选择\n》安徽省道路数据，只需要显示合肥市的数据..\nGrids Feature CacheExtent Indicators FrameGeneral DataFrameExtent Features:\nAutomatic AllDegrees120.812327007ddExtentUsedByFull ExtentCommandOExtent of datainallayers(Default)\nOother: OK CancelSpecify Extent...\nClp OptonsClip to shapeExdude Layers..\n确定 取消 应用（A）",
+      "ocr_score": 0.953
+    }
+  ]
+}

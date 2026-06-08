@@ -1,0 +1,648 @@
+{
+  "pdf_path": "D:\\道\\道生一\\一生二\\学习复习\\地理信息系统\\01_原始PDF\\002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf",
+  "pdf_name": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf",
+  "lesson_seq": 2,
+  "lesson_title": "地理信息系统 Geographic Information System, GIS（2）",
+  "presentation_title": "地理信息系统 Geographic Information System, GIS",
+  "chapter_num": 1,
+  "chapter_raw": "第一章",
+  "all_chapter_nums": [
+    1
+  ],
+  "all_chapter_raws": [
+    "第一章"
+  ],
+  "page_count": 90,
+  "pages": [
+    {
+      "index": 1,
+      "image": "page_001.jpg",
+      "embedded_text": null,
+      "ocr_text": "地理信息系统\nGeographic Information System, GIS\n在环境/生态科学中的应用\n授课老师：黄源生副教授\n办公室：学院楼309室\n联系方式：\n电话：13452085128\nQQ:534720018\n邮箱：\nysh_huang@xju.edu.cr",
+      "ocr_score": 0.988
+    },
+    {
+      "index": 2,
+      "image": "page_002.jpg",
+      "embedded_text": null,
+      "ocr_text": "教材 费通意等教育“十一五”滨家经统划教材\n地理信息系统\n地理信息系统，刘耀林，中国农业出\n刘耀林 王编\n版社，2018\n参考教材\n>ArcGIS地理信息系统空间分析实验教程（第二版）\n>ArcGIS地理信息系统教程（第七版）\nQGIS和通用工具\n>ArcGISProPython编程\n地理息系统理论与应用丛书 WILEY PocktaArcGIS ArcGISPro\n地理信息系统空间分析 实验教程（第二版） ArcGIS Python编程\n地理信息系统教程 Python forArcGISProMastoring rEGIS. aTQGIS and GenericToolsQGIS和通用工具\n[法]Nclas Baghda",
+      "ocr_score": 0.887
+    },
+    {
+      "index": 3,
+      "image": "page_003.jpg",
+      "embedded_text": null,
+      "ocr_text": "授课目标\n》了解地理信息系统（GIS）的基本原理、理论;\n>掌握常见GIS软件（ArcGIS）的基本操作;\n》了解地理信息系统在环境科学中的应用。\n考核方法\n》考勤10%，请假、迟到5'/次，早退10'/次，旷课20/次；\n>作业20%，实验报告、课程汇报（4人）；\nGIS软件的一些有趣的功能、实际应用等（主题自选）\n>期末考试70%（闭卷）。",
+      "ocr_score": 0.976
+    },
+    {
+      "index": 4,
+      "image": "page_004.jpg",
+      "embedded_text": null,
+      "ocr_text": "实验课程简介\n序号 实验项目名称 实验内容\n熟悉软件的菜单、图形操作界面及基本\nGIS软件概述及基本操作\n操作方法\n掌握点、线、面矢量数据的创建，包括\n2 矢量数据创建\n几何形状和属性。\n掌握矢量数据编辑的基本方法，矢量数\n3 空间数据编辑与处理\n据坐标转换的基本方法。\n掌握如何进行地图布局；熟悉如何将各\n专题地图和地图制图输出\n种地图元素添加到布局中的方法\n掌握缓冲区分析、叠加分析的基本操作\n市区择房分析\n和用途\n熟悉栅格距离制图、表面分、栅格计算\n学校选址\n器、重分类\n污染物空间插值 掌握数据转换、空间插值操作\n8 综合数据处理模型构建 掌握ModelBuilder的使用\n总学时 16",
+      "ocr_score": 0.99
+    },
+    {
+      "index": 5,
+      "image": "page_005.jpg",
+      "embedded_text": null,
+      "ocr_text": ">GIS能干什么？\n在环境专业中有什么应用价值？",
+      "ocr_score": 0.971
+    },
+    {
+      "index": 6,
+      "image": "page_006.jpg",
+      "embedded_text": null,
+      "ocr_text": "龙港新城控制性详细规划 02-用地规划图（修编后）\n>GIS能干什么？\n滨江湿地 公园\n在环境专业中有什么 03006001200m\n应用价值？\n图例 市山地生态用障\n西北都水乡生态区 市级生志间\nH区生态电路 生态保护红线\n自然保护S 重要地\n主干天道 级行政中心\n干网\n山体公司\nA2 行政办公用地 其地商务用地 留白用地 51交通组用地 幼儿器 变市站\n图 教育科研用地 文化设施用地 541 加油加气站用地 乐康体用地 H23港口用地 工业用地 541公共交通场站用地 542社会停车场用地 广播电用地 环境设洲用地 ①小学 共热设施 信设所\nA4 A 医行卫生用地 体育用池 其他服务设集用地 水城 W 新型产业用地 一类工业用地 其他交通设施用地 供应设施用地 排水用地 陈卫用地 业学校 高中 污水设第\n例 社会福利用地 行政商务合用地 G 公园绿地 农林用地 三类工业用地 二类工业用地 供水用地 供电用地 防洪用地 防用地 P社会停车场垃圾转运站 公交首末站消防站\n本核不作为事仅的体院 商业用地 商务用地 G3 广场用地 防护绿地 R2 二类住用地 报务设宽用地 供燃气用地 供热用地 W 物清仓储用地 规划围 加加气交 共水设\n温州市城市规划设计研究院有限公司",
+      "ocr_score": 0.833
+    },
+    {
+      "index": 7,
+      "image": "page_007.jpg",
+      "embedded_text": null,
+      "ocr_text": "预期效果 采样/研究区地图\n113°20'0\"E 114°0'0\"E 114°40'0\"E 115°20'0\"E 116°0'0\"EChina NResearch Area25°0'0\"NHigh-intensity HumanActivity Area 24°30'0\"NWaterareaRiverReservoir5001,000 2,000km Elevstion/m 24°0'0\"NThePearl RiverBasin 161\nThePearlRiverBasin 14 23°300\"N23°0'O\"NRiver 2550 100kmThePearl RiverBasin 0125250 500km DThe Dong RiverBasin113°200\"E 114°0'0\"E 114°40'0\"E 115°20'0\"E 116°00\"E",
+      "ocr_score": 0.925
+    },
+    {
+      "index": 8,
+      "image": "page_008.jpg",
+      "embedded_text": null,
+      "ocr_text": "预期效果 采样/研究区地图\n115°200\"E 115°220\"E 115°240\"E 115°260\"E24°32'0\"N24°30'0\"NChina24°28'0\"NLegendFengshuba Reservoir 24°26'0\"N24°24'0\"N1.25 2.5 km115°200\"E 115°220\"E 115°240\"E 115°260\"E",
+      "ocr_score": 0.918
+    },
+    {
+      "index": 9,
+      "image": "page_009.jpg",
+      "embedded_text": null,
+      "ocr_text": "预期效果 污染物浓度空间可视化\nNO.o01 12030'0\"E 120°40'0\"E 120050'0\"E N0.0015 N0.0.10\nCao mak LI a Cao LakeNo.o201\nWu-Song River Wu-SongRiverLegend (μg/L)\n10.23-16.62 R4 K416.63-29.4929.50-39.7839.79-76.04 ChengLake N.0.01015 Legend(mg/kg) ChengLakeN.o.01e176.05-162.36 4,900 N.0.o1o1\nP4 Sediment P4\nTaihu Lake Taipu RiverP3PA Taihu Lake aipuRiveN..0.015 R7 R8 Taipu River N.0.001\nN0.0o1E Taipu River Taipu River R7 N.0.001E12030'0\"E 120°40'0\"E 120050'0\"E120°400\"F. 10.050071\n矢量数据符号化",
+      "ocr_score": 0.836
+    },
+    {
+      "index": 10,
+      "image": "page_010.jpg",
+      "embedded_text": null,
+      "ocr_text": "预期效果 污染物浓度空间可视化\n空间插值计算\n0.113 0.098 0.117 0.530.094 0.500.107 0.090 0.112 0.470.101 0.107 0,449800 0.102 0.410.095 0.082 0.0970.089 Middlewater 0.38\nSurface watcr 0.078 Bottomwater 0.092 Porc water 0.350.088 0.076 0.090 0.3020.085 0.074 0.087 0.2840.082 0.071 0.083 0.2660.078 0.080 0.2480.075 0.068 0.076 0.230\nSurfacewater 0.072 Middle water 0.065 Bottomwatcr 0.073 Pore watcr 0.212",
+      "ocr_score": 0.979
+    },
+    {
+      "index": 11,
+      "image": "page_011.jpg",
+      "embedded_text": null,
+      "ocr_text": "第一讲\n地理信息系统概论",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 12,
+      "image": "page_012.jpg",
+      "embedded_text": null,
+      "ocr_text": "本章内容\n、GIS应用案例\n二、地理信息系统\n三、GIS空间分析\n四、ArcGIS10概述\n五、环境地理信息系统",
+      "ocr_score": 0.995
+    },
+    {
+      "index": 13,
+      "image": "page_013.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS能干什么\n数据编辑\n与更新\n数据采集\n与输入 数据存储\n与管理\n空间查询\n登加分析\nGIS能作 空间查询\n与分析\n什么？ 缓冲区分析\n网络分析\n地形分析\n数据显示\n与输出",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 14,
+      "image": "page_014.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例\nCoronaVirus2019 （2020)\n内家古\n≥100001000-9999100-09910-991-9 数据空间可视化",
+      "ocr_score": 0.926
+    },
+    {
+      "index": 15,
+      "image": "page_015.jpg",
+      "embedded_text": null,
+      "ocr_text": "、GIS应用案例\n英国伦敦霍乱溯源（19世纪）\nJohnSnow约翰·斯诺 （1813-1858），英国麻醉\n学家、流行病学家\n确认Thebroadstreet水井是该次霍乱疫情的源头\n空间数据可视化 空间插值\nThe BroadStreetWell",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 16,
+      "image": "page_016.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例\nTropicalForestTemperateForestBorealForestSavannaTundraSemi-Desert/Desert/lce0-10%\n10-20%\n20-30%\n30-40%\n40-50%\n50-60%\n60-70%\n70-80%\n80-90%\n90-100%\nFOLEYJA,DEFRIESR,ASNERGP,etal.Globalconsequencesoflanduse[J].Science,2005,309（5734):570-574.",
+      "ocr_score": 0.989
+    },
+    {
+      "index": 17,
+      "image": "page_017.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例\nBrowningGreeningFrequency(%) 32\n0 -20-15-10-50510152025\n<-19 -12 -8 -5 -3 2 5 8 11 13 >18\nTrendinannualaverageLAl(1o-m²perm²perdecade)\nFig.1|MapoftrendsinannualaverageMoDISLAlfor20o0-2017.Statisticallysignificanttrends(Mann-Kendalltest,P<0.1)arecolour-coded.Greyareasshowvegetatedlandwithstatisticallyinsignificanttrends.Whiteareasdepictbarrenlands,permanentice-coveredareas,permanentwetlandsandbuilt-upareas.Blueareasrepresentwater.Theinsetshowsthefrequencydistributionofstatisticallysignificanttrends.Thehighlightedgreeningareasinredcirclesmostlyoverlapwithcroplands,withtheexceptionofcirclenumber4.SimilarpatternsareseenatP≤0.o5andthesevengreeningclustersarevisibleevenatP<O.o1.\nCHENC,PARKT,WANGX,et al.China andIndia leadingreeningof theworld through land-usemanagement[J].NatureSustainability,2019,2(2):122-129.",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 18,
+      "image": "page_018.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例\na 160W 140°W 120°W 100W 80W M.09 40°W 20°W 20°E 100°E 120°E 140°E 160°E180° 40°E 60°E 80°E 180°\n30°N10°N10°S30°S50°S70°SSoilerosion2012 0 2500 5000\nMgha-1yr-1 km0-1 1-3 3-5 5-1010-2020-50 >50 NodataBORRELLIPROBINSONDA,FLEISCHERLR,etal.Anassessmentoftheglobalimpactof21stcenturyandusechangeon soil erosion[J].Nature Communications,2017,8(1):2013.",
+      "ocr_score": 0.913
+    },
+    {
+      "index": 19,
+      "image": "page_019.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例\na 160°W 140W 120W 100°W 20°W 100°E 120°E 140°E 160°E180° 80W M.09 40°W 20°E 40°E 60°E 3.08 180°\n830°N10°N10°S30°S50°S70°SSoilerosionchangebaselinescenario(2001-2012) 0 2500 5000\nS-> -5--2.5-2.5--0.5-0.5-00-0.50.5-2.52.5-5 >5 NodataBORRELLIPROBINSONDA,FLEISCHERLR,etal.Anassessmentoftheglobalimpactof21stcenturyandusechangeonsoilerosion[J].NatureCommunications,2017,8(1):2013.",
+      "ocr_score": 0.899
+    },
+    {
+      "index": 20,
+      "image": "page_020.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 苏州河重金属\nlatitude longitude Type31.42167 120.455 Rural Area31.39111 120.5028 Rural Area31.44639 120.5353 Rural Area120°30'0\"E 120°40'0\"E 120°50'0\"E 31.49417 120.5761 Rural AreaL1 31.44028 120.6322 RuralAreaCaoLake 31.4525 120.7742 Rural Area31.34861 120.5767 Urban Area1.2 31.37444 120.6106 UrbanAreaR YangchengLake 31.30694 120.5686 UrbanArea31.31056 120.6056 UrbanArea31.31833 120.61 Urban AreaC3 31.32472 120.6403 Urban AreaC8 31.34361 120.6483 UrbanArea31.34 120.7189 UrbanAreaC9 Wu-Song River 31.29611 120.6097 Urban AreaR2 R4 31.29444 120.6283 UrbanArea31.30889 120.6344 Urban AreaR3 31.28833 120.6461 UrbanArea31.26333 120.5881 UrbanAreaLegend ChengLake 31.25944 120.6042 UrbanArea31.23861 120.6583 SuburbArea\n★ City System 31.26361 120.7744 Suburb AreaReservoirSystem SuburbAreaRiverSystem Jinghang Canal 31.17917 120.6567\nRiver 31.19833 120.7211 Suburb AreaLake 31.19028 120.8211 Suburb AreaTaihu Lake 31.10972 120.6753 Suburb Area31.1025 120.6578 Suburb AreaPP5 P4 31.06472 120.6669 SuburbAreaN.0.0010 TaipuRiver R7 31.0025 120.6483 SuburbAreaR8 R9 31.00889 120.4864 SuburbArea30.99389 120.675 SuburbArea120°40'0\"F. 120°50'0\"F. 3099944 120.7375 Suburh AreaFig.1-Samplingmap of the city-river-reservoir system.C1-C9:CitySystem,CiS;R1-R9:RiverSystem,RiS;P1-P5andL1-L4:\nReservoirSystem,ReS.",
+      "ocr_score": 0.977
+    },
+    {
+      "index": 21,
+      "image": "page_021.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 苏州河重金属\nName Alti Long utumn,ng/vinter,ng/Ispring,ng/Lummer,ng pring,ng/gummer,ng/utumn,ng/wmter,ng/Lsprmg,ng/lummer,n\n鹤溪大桥 31.42167 120.455 317.64 345.5977413.413 22.626\n浒青路 31.39111 120.5028 248.51 1173.002 806.843 46.60475 30.680\n西塘河桥 31.44639120.5353 207.35 259.8876 502.8195 894.4551904.13 2373.3843.0242827.68722 21.8975 44.6195\n漕湖 31.49417 120.5761 39.28 252.2499424.555 33.68775 45.1122\n人民桥 31.44028120.6322 312.20 678.2084 437.2139 45.972 34.1875\n阳澄湖 31.4525 120.7742 53.53 52.6209\n联城桥 3134861 1205767 40630594.70771551.33435.5807312.02404 25.828 54.064\nN.0.00015 120°30'0\"E 120°40'0\"E 1200500\"E Nuo.001 N0.001\nLI a LICaoLak CaolakeNo.07010 No.02015\nWu-Song River Wu-SongRiverLegend (μg/L)\n。 10.23-16.62 R2 T416.63-29.49\n? 29.50-39.78\nN.0.ole15 39.79-76.04 ChengLake No.olo1 Legend(mg/kg)\n76.05-162.36 N.0.01o1 4,900 N.0.01olTaihu Lake TaipuRiverPPA TaihnLake aipuRiveeN.0.0c1 R7 R8Taipu River N0.0ol5\nN.0.01 Taipu River Taipu River R72R8 0.0130.00071 120°40'0\"E 1200500\"E120°40′0\"F.\nFig.2-Spatial distributionofheavymetalsinthreephases.(a)surfacewater;(b)SPMandsediment.\n太浦河大桥 30.99389 120.675 269.274343.5504366.7255 226.695219.4869497.10289.85846513.0193225.1312530.9446\n黎里东大桥 30.99944120.73753 329.758252.9385432.712232.5375122.56571534963105241322.09293369745155568",
+      "ocr_score": 0.884
+    },
+    {
+      "index": 22,
+      "image": "page_022.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 东江上游集水区土壤侵蚀\n114°00E 114°400°E 115°200E 114°00°E 114400E 115°200E 114°00°E 114°400E 115°200°E 114°0′0°E 114°400E 115°200E 114°00°E 114°400°E 115°200°E1999 2004 2009 2014 2017\nNOsS N.0.SS.\nNO.S+.7 Legend Legend Legend Legend Legend N.0.S07\nASlight BLight ASlight ASligh ASlight ASlightCModeratc CModerat BLight CModerate BLight CModerate BLight CModerate BLightD Severe EVery severe 01530 60km EVery severe D Severe DSevere D Severe DSevereFExtremely severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 60km EVery severe FExtremely severe 01530 209 N.0017114°00E 114°400°E 115°200°E 114°00°E 114°400°E 115°200°E 114°00°E 114°400E 115°200E 114°0′0°E 114°400°E 115°200°E 114°00°E 114°400°E 115°200ERUSLE公式 A =K·L·S·P·E REP114°00E 114400E 115°200E 114°00E 114400E 115°200E 114°00E 114400E 115°200E 114°00E 114°400E 115°200E 11400E 114°400E 115°200E1999 2004 2009 2014 2017\nN0.5SLegend Legend Legend Legend Legendt/km2 0-1500 t/km2 t/km2 t/km2 t/km21500-3000 1500-3000 0-1500 1500-3000 0-1500 1500-3000 0-1500 1500-3000 0-15003000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60km 3000-4500 4500-6000 01530 60 km\n>6000 >6000 >6000 >6000 >6000114°00\"E 114°400\"E 115200E 114°00E 114°400E 115°200E 3.00.11 114°400\"E 115°200E 114°00\"E 114°400E 115°200\"E 114°00E 114°400E 115200EC-Fix模型：植被固碳量 流域水污染",
+      "ocr_score": 0.906
+    },
+    {
+      "index": 23,
+      "image": "page_023.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 东江上游集水区土壤侵蚀\n114°400\"E 115°20'0\"E 116°0'0\"E 114°400\"E 115°20'0\"E 116°0'0\"E 114°400\"E 115°20'0\"E 0.0911\nSoil Erosion Changes Vegetation Coverage Changes1999-2017 N Carbon Capture Changes 1999-2017 1999-2017 25°0'0\"NN0.005724°300\"N24°300N24°00\"N24°00\"N23°300\"N23°300\"N Legend Legend LegendUnchanged Increased UnchangedInceased Unchanged DecreasedDecreased 15 30 09 Decreased 15 30 60km Changed 15 30 60 km 23°0'0\"N11400\"E 114°400\"E 115°200\"E 114°0'0\"E 114°400\"E 115°200\"E 114°00\"E 114°400\"E 115°200\"E800 (a) 2000 1.0 100 (@) SoilErosion- -Rainfall--NDVI 300 1.0\nSoilErosionll RainfalNNDVI700600 1600 0.8 80 240 0.8\nSoil Erosion(x10t) Soil Erosion(x10+1)\n500 Rainfall(mm) Rainfall(mm)\n1200 0.6 NDVI 60 180 0.6 NDVI400300 800 0.4 120 0.4200 400 0.2 20 60 021001999 2004 2009 2014 2017 J0.0 0.0\nMonth",
+      "ocr_score": 0.924
+    },
+    {
+      "index": 24,
+      "image": "page_024.jpg",
+      "embedded_text": null,
+      "ocr_text": "一、GIS应用案例 农村排水模式优化\n农村污水治理规划框架 地表水水质 数值高程数据\n水质数据 DEM数据 居民聚集区图斑数据 农村居民人口\n输入数据\n流域集水区 地形地貌特征 农村居民人口空间分\n布图 农村居民星落图庚数据 Y.R 人口密度\nRuST出水排放标准 农村居民空间分布\n模式\n基础参数\n农村居民生活污水 数据库\n排放量核算\n结果输出\nRuST设备及配套 图例\n管材需求量 输入\n总投资金额及金额 区域拆分\n拆分 关键输出\n>基于GIS的计算框架\nArcGISTatle To Excel",
+      "ocr_score": 0.97
+    },
+    {
+      "index": 25,
+      "image": "page_025.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 开始\n预处理模块 空间聚类分析\n空间叠置分析\n污水管网优化\n居民点模式数据筛选\n未处理点模式子集\n未处理节点\n最邻近节点计算 ↑\n污水管网优化\n扩展模块 处理设施优选\n造价核算\n造价最优污水处理系统\n型让算： 施工设计 ArcGIS 所有节点均接入\n国区 污水处理设施？\nHETOR 10 高线 所有子区域计算完毕？\n未处理的最大规模处理系统\n潜在合并系统分析\npython 潜在合并可能\nb1) b2)\n施工设计 污水管网优化\n合并模块 (MM) 处理设施优选\nc2) 造价核算\n造价更低？\n》管网设计、工艺优选 元\n所有可能检查完毕？\n是\n所有系统检查完毕？\n>算法设计、代码编写 输出污水处理最佳方案\n结束",
+      "ocr_score": 0.936
+    },
+    {
+      "index": 26,
+      "image": "page_026.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS应用案例 市政排水模式优化\nSewagepipelinesDiameter(m)\n0.2-0.30.4-0.60.7-1.01.1-1.6\nWWTPs(12)\n>借助GIS读写数据；算法设计、代码编写",
+      "ocr_score": 0.977
+    },
+    {
+      "index": 27,
+      "image": "page_027.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.1信息与地理信息 数据和信息\n数据：是人类在认识世界和改造世界过程中，定\n性或定量对事物和环境描述的直接或间接原始记\n录，是一种未经加工的原始资料。\n信息：是用数据来表示事件、事物、现象等的内\n容、数量或特征，从而向人们（或系统）提供关\n于现实世界新的事实和知识\n信息\n加工处理\n数据\n数据元余",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 28,
+      "image": "page_028.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.1信息与地理信息 数据和信息\n信息来源于数据，是数据内涵的意义和数据内容\n的解释。信息是一种客观存在，而数据是客观对\n象的一种表示，其本身并不是信息。\n数据所蕴涵的信息不会自动呈现出来，需要利\n用一种技术，如统计、解译、编码等对其解释，\n信息才能呈现出来。\n信息是数据的表达，数据是信息的载体。\n编号 鸡蛋体积 频数\n1 62.14\n... ......\n300 58.23\n体积（立方厘米）\n现实世界中的对象 描述事物特征的数据 从数据中统计得到的信息",
+      "ocr_score": 0.965
+    },
+    {
+      "index": 29,
+      "image": "page_029.jpg",
+      "embedded_text": null,
+      "ocr_text": "地理信息系统\n2.1信息与地理信息 数据和信息\n114°00\"E 114°400°E 115°200E 114°00E 114°400E 115200E 114°0E 114°400E 115°200E 114°00E 114°400E 115°200E 11400E 114400E 115°200E1999 2004 2009 2014 2017\nNOSS. N.O.SS.ZN.007.\nLegend Legend Legend Legend Legend N.0.S7\nASlight ASlight ASlight ASlight ASlightCModerate BLight CModerate BLight CModerate BLight BLight CModerate CModerate BLightD Severe EVery severe 01530 60km D Severe EVery severc 01530 60 km D Severe EVery severe 01530 60km D Severc D SevereFExtremely severe FExtremely severe FExtremely severe FExtremely severe EVery severe 01530 60 km FExtremely severe EVery severe 01530  09 N001.711400\"E 114400°E 115200E 114°00°E 114400E 115200°E 114°00°E 114400\"E 115°200°E 114°00E 114°400E 115°200E 30011 114400E 115°200E800 (a) 2000 1.07001600 0.8\nSoil Erosion(x10*) 600500 1200 Rainfall(mm) 0.6400 NDVI300 800 0.4200 400 0.21001999 2004 2009 2014 2017 0.0",
+      "ocr_score": 0.911
+    },
+    {
+      "index": 30,
+      "image": "page_030.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.1信息与地理信息一地理数据和地理信息\n》地理数据：与地理环境要素有关的事物/现象的数\n量、质量、分布特征、联系和规律等的数字、文\n字、图像和图形等总称。\n地理信息：有关地理实体和地理现象的性质、特\n征和运动/变化状态的表征和一切有用的知识，它\n是对表达地理特征和地理现象之间关系的地理数\n据的解释。",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 31,
+      "image": "page_031.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.1信息与地理信息— 地理数据的特征\n地理数据相比常规数据，\n具有一些独有的特征，主\n要包括： 属性\n定位 数据\n数据\n空间上的分布性\n时域\n数据\n时间上的序列性\n数量上的海量性\n地理对象或地理现\n载体的多样性\n象的数据描述\n位置和属性的对应性",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 32,
+      "image": "page_032.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.1信息与地理信息— 地理数据的特征\n空间数据 属性数据\nName Address Town St.",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 33,
+      "image": "page_033.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.1信息与地理信息一 地理数据的特征\n空间数据 属性数据\nName Alti Long utumn,ng/winter,ng/Ispring,ng/Lummer,ng12030'0\"E 120°400\"E 12050'0\"E 鹤溪大桥 31.42167 120.455 317.64 345.5977413.413527.462\na 浒青路 31.39111120.5028 248.51 1173.002806.843711.1685\n西塘河桥 31.44639120.5353 207.35 259.8876 502.8195894.455\n漕湖 31.49417120.5761 39.28 252.2499 424.555 397.021\n人民桥 31.44028120.6322 312.20 678.2084437.2139160.966\n阳澄湖 31.4525120.7742 53.53 840.8927258.1396598.7045\nN.o.o7o10 联城桥 31.34861120.5767 403.9381 650.4731308.4395 406.305\n塔影桥 31.37444120.6106467.42441445.932 495.421 597.2\nWu-SongRiver 何山桥 31.30694120.5686549.8601 636.2775502.422 453.6725\nLegend (μg/L)\n10.23-16.62 R2 中市桥 南新桥 31.31056 120.6056 452.9659 871.4124 467.4905 591.84616.63-29.49 31.31833 120.611678.874735.1736 905.731 694.67429.50-39.78 娄门桥 31.32472120.64031305.836531.9348 591.841 470.83\nN.o.olele hengLake N0.01c1e 外塘河大桥\n76.05 -162.36 跨塘大桥 31.34 5\n泰让桥 31.29611120.6097268.3996 262.7185 566.1995 335.4255\n大云桥 5\n兴市桥 31.30889120.6344548.9965377.4075 991.714258.6455\nTaihu Lake TapuRiver 觅渡桥 31.28833120.64611754.961324.0539 902.9 329.6365\n石湖大桥\nN.o.0e1 R7 R8 TaipuRiver 友联运河大桥31.25944120.6042561.1573378.9517487.8525687.5335\n尹山大桥 31.23861120.6583349.5529282.2571009.469592.374120°30'0\"E 120°40°0\"E 1200500\"E 吴淞江大桥 31.26361120.7744403.9513273.2996265.8405597.663\n江陵大桥 31.17917120.6567318.913249.2123 686.6185 369.5325",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 34,
+      "image": "page_034.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.1信息与地理信息- 地理数据的特征\n》作为信息的一种，地\n空间相\n理信息具备信息的基 关性\n本特征，即信息的客\n观性、适用性、可传 空间层\n特征 空间区\n次性 域性\n输性和共享性；但从\n其本身而言，地理信\n空间多\n息还具有一些独特的\n样性\n特性：",
+      "ocr_score": 0.99
+    },
+    {
+      "index": 35,
+      "image": "page_035.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.2地理信息系统一定义\n>地理信息系统（GeographicInformationSystem或Geo-InformationSystem，简称GIS）\n既是跨地球科学、空间科学、信息科学和计算\n机科学的一门应用基础学科，又是一项工程应\n用技术。它是以地学原理为依托，在计算机软\n硬件的支持下，研究空间数据的采集、处理、\n存储、管理、分析、建模和显示的相关理论方\n法和应用技术，以解决复杂的管理、规划和决\n策等问题。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 36,
+      "image": "page_036.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.2地理信息系统一内涵\nGIS处理/管理的对象：地理空间实体数据及其关\n系，包括空间定位数据、图形数据、遥感图像数\n据、属性数据等，主要用于分析和处理一定区域\n内分布的各种现象（物种、污染物）和过程（群\n落演变、污染扩散），解决各种复杂地学问题。\nGIS的操作对象：点、线、面、体这类有空间位\n置和空间形态特征的空间数据。\nGIS的技术优势在于它的数据综合、模拟与分析\n评价能力。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 37,
+      "image": "page_037.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.2地理信息系统 基本特征\n数据的空间定位特征：有别于其他数据的本\n质特征；\n空间关系处理的复杂性：图像、空间关系、\n属性数据。\n海量数据管理的能力：空间对象本身具有海\n量数据、分析过程产生海量数据。",
+      "ocr_score": 0.987
+    },
+    {
+      "index": 38,
+      "image": "page_038.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.2地理信息系统 基本特征\n空间数据 属性数据\nName Address Town St. ZipGIS IS\n是\n空间数据和属性数据的综合体",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 39,
+      "image": "page_039.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.3GIS的构成\n>GIS功能的实现需要一定的环境支持，GIS运行\n环境包括计算机硬件系统、软件系统、空间数据、\n地学模型和管理与应用人员五大部分\n硬件系统 软件系统\n构建 应用\n地学模型 空间数据\n应用人员",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 40,
+      "image": "page_040.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.3.1计算机硬件系统\n计算机硬件是计算机系统中的实际物理装置的总\n称，是GIS的物理外壳。可以是电子的、电的、\n磁的、机械的、光的原件或装置。\n数字摄影测量仪器\n外部存储器 内部存储器\n全站仪 专用设备\n存储设备 绘图仪\n输入设备 处理设备 输出设备 打印机\n数字化仪\n终端\n扫描仪 常规设备\n服务器 工作站\n鼠标键盘",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 41,
+      "image": "page_041.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.2计算机软件系统\n》GIS运行所必需的各种程序，包括三类：\nGIS支撑软件：GIS运行所必需的各种软件环\n境，如操作系统、数据库。\nGIS平台软件包括GIS功能所必需的各种处理\n软件和扩展开发包，如ArcGIS、QGIS等。\nGIS应用软件一般是在GIS平台软件的基础上，\n通过二次开发所形成的具体的应用软件，一般\n是面向应用部门的。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 42,
+      "image": "page_042.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.2计算机软件系统\n土地资源管理系统\n其它行业应用系统\nGIS应用软件\n平台软件 平台SDKGIS平台软件\n其它平台组件\nGIS支撑软件 操作系统 数据库系统\n其它支撑软件",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 43,
+      "image": "page_043.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.3 地理空间数据\n数据是GIS的核\n心内容。地理空\n间数据是指以地 遥感监测数据 GPS及物联网\n相关数据\n球表面空间位置\n为参照的自然、 空间数据库\n社会和人文景观\n社会调查数据 社交媒体数据\n数据，可以是图\n形、图像、文件、\n表格和数字等。 交通时空数据 传统地图数据",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 44,
+      "image": "page_044.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.3地理空间数据\n》不同用途的GIS，其地理空间数据的种类、精度\n均会有所不同，一般都包括以下三种信息：\n几何坐标：标识空间对象在自然界中的位置；\n空间关系：如距离、方位、拓扑关系等；\n非几何属性：\n①定性：名称、类型、特性等，如土地利用、土壤种类；\n②定量：数量和等级，如面积、人口数量等",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 45,
+      "image": "page_045.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.4地学模型\n源数据\n>GIS的地学模型是根据\n数据1 填洼模型\n具体的地学目标和问\n题，①以GIS已有的\n相格水系提取模型 数据2\n操作和方法为基础，\n构建能够表达或模拟\n河流分级 水系矢里化\n特定现象的计算机模\n型；②无已有工具或\n分级河网 矢量河网\n算法，基于计算机编\n基于ArcGIS的河网\n程语言构建.... 提取模型\n河网提取模型",
+      "ocr_score": 0.979
+    },
+    {
+      "index": 46,
+      "image": "page_046.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.3.5应用人员\n》人员是GIS中的重要\n构成因素。地理信息\n系统从其设计、建立、\n项目管理 系统开发\n人员 人员\n运行和维护的整个生\n命周期，都离不开人\nGIS普通\n用户\n的作用。仅有系统的 科学研究 软件设计\n人员 人员\n软硬件、数据和模型\n构不成完整的地理信\n数据维护\n人员\n息系统。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 47,
+      "image": "page_047.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4GIS功能与应用\n>GIS以数字形式表示自然界，具有完备的空间特\n性，它可以存储和处理不同地理发展时期的大\n量地理数据，具有极强的空间信息综合分析能\n力，是地理分析的有力工具。\nGIS不仅要管理大量复杂的地理数据\n还要完成地理分析、评价、预测和辅助决策的任\n务。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 48,
+      "image": "page_048.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4.1数据采集与输入\n>将外部数据传输到GIS内部，并将数据从外部格\n式转化为便于处理的内部格式的过程\n确保GIS数据在内容和空间上的完整性、数值逻辑\n一致性和正确性；\nGIS数据库的建设占整个系统建设投资的70%;\n重要GIS研究内容：数据共享和自动化数据输入",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 49,
+      "image": "page_049.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.1 娄 数据采集与输入\n遥感传感器\n模拟地图 影像数据\n地面测量与\n足 历史数据\n计算机媒介 存储介质\n数字化仪\n扫描仪\n表格 矢量数据 栅格数据",
+      "ocr_score": 0.954
+    },
+    {
+      "index": 50,
+      "image": "page_050.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.1数据采集与输入",
+      "ocr_score": 0.986
+    },
+    {
+      "index": 51,
+      "image": "page_051.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.2数据编辑与更新\n数据编辑主要包括：图形编辑和属性编辑\n图形编辑：包括拓扑关系、几何图形、图幅拼\n接、投影变换以及误差校正等；\n属性编辑：属性表编辑，结合数据库完成。\n数据获取\n数据入库\nEditing and error correction Geocoding",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 52,
+      "image": "page_052.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.2数据编辑与更新",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 53,
+      "image": "page_053.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4.2数据编辑与更新\n>数据编辑主要包括：图形编辑和属性编辑\n图形编辑：包括拓扑关系、几何图形、图幅拼\n接、投影变换以及误差校正等；\n属性编辑：属性表编辑。\n数据更新：以新记录数据替代数据库中相对应\n的原有数据项或记录。\n空间实体是动态发展的，空间数据只反映其瞬\n时特征。",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 54,
+      "image": "page_054.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4.3数据存储与管理\n》建立空间数据库的关键步骤，涉及空间数据和\n属性数据的组织。\n空间数据组织方式：矢量模型、栅格模型、混合\n模型（矢量/栅格）；\n数据结构决定系统的功能；\n如何将空间数据和属性数据融为一体？",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 55,
+      "image": "page_055.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.3数据存储与管理\n如何将空间数据和属 Name Alti Long utumn,ng/vinter,ng/Ispring,ng/Lummer,ng\n鹤溪大桥 31.42167 120.455 317.64 345.5977413.413527.462\n性数据融为一体？ 浒青路 31.39111 120.5028 248.51 1173.002806.843 711.1685\n西塘河桥 31.44639 120.5353 207.35 259.8876502.8195 894.455\n漕湖 31.49417120.5761 39.28 252.2499424.555 397.021120°30'0\"E 120°400\"E 120°500\"E 人民桥 31.44028 120.6322 312.20 678.2084437.2139 160.9660.00.1 a\n阳澄湖 31.4525 120.7742 53.53 840.8927258.1396 598.7045\n联城桥 31.34861 120.5767 403.9381 650.4731308.4395 406.305\n塔影桥 31.37444120.6106467.42441445.932495.421 597.2\n何山桥 31.30694120.5686549.8601636.2775502.422 453.6725\n南新桥 591.846\n中市桥 31.31833 120.61 1678.874735.1736905.731 694.674\nWu-Song River 娄门桥 31.32472120.64031305.836531.9348591.841 470.83\nLegend (μg/L) 外塘河大桥 31.34361120.6483364.0045468.7547 938.638 257.237510.23-16.6216.63 -29.49 跨塘大桥 31.34 120.7189326.253285.1374411.3755 753.42529.50-39.78 泰让桥\nN.0.olelf 39.79 -76.04 N.0.olel 大云桥 31.29444120.6283 2578.363332.59151134.215 347.735576.05-162.36 兴市桥 31.30889120.6344548.9965377.4075 991.714 258.6455\n觅渡桥 31.28833120.64611754.961324.0539 902.9 329.6365\n石湖大桥 463.2005\nTaihu Lake Talpu River 友联运河大桥 31.25944120.6042 561.1573378.9517 487.8525687.5335\n尹山大桥 31.23861120.6583349.5529282.2571009.469 592.374\nN0.01 Rs Taipu River Nuo.0elc 吴淞江大桥 31.26361120.7744403.9513273.2996265.8405 597.663\n江陵大桥 31.17917120.6567318.913249.2123686.6185 369.5325120°300E 120°40°0°E 1200500\"E",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 56,
+      "image": "page_056.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.3数据存储与管理\n栅格数据\n矢量数据\n组织规则\n表格、多媒\n体等数据\n空间数据库",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 57,
+      "image": "page_057.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.4空间数据分析与处理\n如何造\n呢？\n300 600km\n空间数据 （原料）\n图\n中原城市群 城市人口联系中城市山车丰马城市 北部湾城市群 关中平原域市\n兰西城市群 哈长城市样 京津复城市联包多控城市群 海城市路 天山北坡城市\nGIS空间查询与 时中城市科 成淮城市群 辽中南城市都山西中部城市路\n武汉城市群 长株源城市群宁复沿黄城市部 长三角城市群湖峡两岸城市路\n空间分析 （工具）",
+      "ocr_score": 0.924
+    },
+    {
+      "index": 58,
+      "image": "page_058.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4.5空间数据分析与处理\n》空间查询是GIS以及许多其他自动化地理数据\n处理系统应具备的最基本的分析功能\n）一个功能强大的GIS软件，应该设计一些空间查\n询语言，满足常见的空间查询的要求。\n》空间分析是GIS的核心功能，也是GIS与其他计\n算机系统的根本区别\n》模型分析是在GIS的支持下，分析和解决现实世\n界中与空间相关的问题，它是GIS应用深化的\n重要标志。",
+      "ocr_score": 0.993
+    },
+    {
+      "index": 59,
+      "image": "page_059.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4.5数据与图形的交互显示\n》GIS为用户提供了许多表达地理数据的工具。\n可以是计算机屏幕显示；\n也可以是诸如报告、表格、地图等硬拷贝图件；\n可以通过人机交互方式来选择显示对象的形式\n尤其要强调的是GIS的地图输出功能\n可以输出全要素地图，也可以根据用户需要，输\n出各种专题图、统计图等。",
+      "ocr_score": 0.993
+    },
+    {
+      "index": 60,
+      "image": "page_060.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.5数据与图形的交互显示\n表格\n501:1万坡度分级\n初格占总数百分比（%） 40 □0-385 口3-530 日8-15 5-825 15-2525-35\n目35-45\n专题地图 10 图45-605-3 8-15 15-2525-35 35-45\n坡度分级（1：5万）\n统计图",
+      "ocr_score": 0.931
+    },
+    {
+      "index": 61,
+      "image": "page_061.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、1 地理信息系统\n2.4.6应用模型与系统开发功能\n空气指数地图\n>GIS在各行各业的应用越 AQI PM PMOS NO\n来越广泛，常规GIS无法 严壹污染 全国\n中度污染 重度污染\n轻度污染\n满足各类型的应用需求。 俄罗斯\nGIS具有相应的二次开发 系\n斯坦 蒙古\n功能，用于开发满足特定\n行业需求的应用模型或应 中华人民共和国 韩国\n用软件系统。 加拉国\n印度\n泰国\nGIS的二次开发功能包通\n斯里兰卡\n常会提供完整的API和开 新加坡 印度尼西亚\n1000km\n高德地师\n发环境。",
+      "ocr_score": 0.949
+    },
+    {
+      "index": 62,
+      "image": "page_062.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、 地理信息系统\n2.4.6应用模型与系统开发功能\n应用领域 应用功能 应用领域 应用功能\n地方管理 公共服务 网络管理\n社会经济/政府\n交通规划 服务提供\n社会服务规划 电力与通信\n城市管理 紧急维护\n援助与发展 环境管理 垃圾填埋场选择\n国防、警务 目标位置识别 矿物分布制图\n战术支持决策 污染检测\n智能数据集成 自然灾害评估\n国土安全与防恐 灾害管理和救济\n商业 市场份额分析 资源管理\n运输车辆管理 环境影响评估\n保险 非点源污染负荷评估\n零售点位置 环境管理与规划",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 63,
+      "image": "page_063.jpg",
+      "embedded_text": null,
+      "ocr_text": "二、地理信息系统\n2.4GIS技术与发展\n物联网与智慧城市：传感器实时、动态获取信息，\n为城市空间物联信息的应用提供基础\n云平台与数据中心：空间数据来源的广泛性、数\n据的多源性和应用的复杂性\n》大数据与并行运算：多源、异构、海量和实时动\n态的空间数据\n机器学习与人工智能：计算机通过学习、自我完\n善，使挖掘和预测的结果更加准确",
+      "ocr_score": 0.995
+    },
+    {
+      "index": 64,
+      "image": "page_064.jpg",
+      "embedded_text": null,
+      "ocr_text": "三、GIS空间分析\n>基于GIS的空间分析是GIS区别于其他信息系\n统的主要特色，也是评价GIS功能的主要特征\n之一。\n》GIS集成了多学科的最新技术，如关系数据库\n管理、高效图形算法、插值、区划和网络分析\n等，为GIS空间分析提供了强大的工具。\n》基于GIS空间分析的不同角度和层次：\n按空间数据结构类型；\n按分析对象的维数；\n按分析的复杂性程度。",
+      "ocr_score": 0.988
+    },
+    {
+      "index": 65,
+      "image": "page_065.jpg",
+      "embedded_text": null,
+      "ocr_text": "三、（ GIS空间分析\n4.1常用GIS软件\n商业软件 口开源软件\nArcGIS QGISMapInfo GRASS GISSuperMap GDAL/ OGRESRI GIS MapInfoSuperMap GDALGRASS GIS",
+      "ocr_score": 0.978
+    },
+    {
+      "index": 66,
+      "image": "page_066.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\n最常用软件 ArcGIS4.2ArcGIS软件平台\nArcCatalog10.6\nArcMap10.6\nArcGISDesktop10.6HelpArcGISDesktop10.6WebHelpArcCatalog10.6\nArc ArcGlobe 10.6\nArcMap10.6\nGIS TM ArcScene10.6\nESRI ToolboxIDLE(Python GUI)\nLicense ManagerReference GuideArcScene10.6 Module DocsMXD DoctorPython(command line)\nArcGlobe10.6 Python Manuals",
+      "ocr_score": 0.975
+    },
+    {
+      "index": 67,
+      "image": "page_067.jpg",
+      "embedded_text": null,
+      "ocr_text": "ArcGIS的三个基础模块\nArcMap10.6 ArcCatalog10.6 Toolbox\n>ArcMap是ArcGIS桌面系统的核心应用程序，用\n于显示、查询、编辑和分析地图数据，具有地图\n制图的所有功能 数据视图和布局视图。\n>ArcCatalog是空间数据资源管理器，用于浏览、\n搜索、组织和管理空间数据，可以创建和管理地\n理数据库。\n》Geoprocessing地理处理框架，具有强大的空间数\n据处理和分析功能，由ToolBox、ModelBuilder、\nPython（ArcPy）组成。",
+      "ocr_score": 0.99
+    },
+    {
+      "index": 68,
+      "image": "page_068.jpg",
+      "embedded_text": null,
+      "ocr_text": "》空间数据\nArcMap10.6 ArcCatalog10.6 Toolbox\n》矢量数据 CN-sheng-A.dbf DBF文件\nCN-sheng-A.prj PRJ文件\nCN-sheng-A.shp Shapefile CN-sheng-A.sbn SBN文件\nArcGIS软件中的矢量数据， CN-sheng-A.sbx SBX文件\nCN-sheng-A.shp AutoCAD形源代码\n离散数据，行政区划、植\nCN-sheng-A.shx AutoCAD编译的形\n被覆盖、土地利用 SHX\n栅格数据 Extract_dem30m1.tif.xml XML文档\nExtractdem30m1.tfw TFW文件\nExtractdem30m1.tif fRasterDataset Extractdem30m1.tif TIF文件\nExtractdem30m1.tif.aux.xml XML文档\nArcGIS软件中的栅格数据，\nExtract_dem30m1.tif.vat.cpg CPG文件\n连续数据，数值高程、空 Extractdem30m1.tif.vat.dbf DBF文件\n气质量等",
+      "ocr_score": 0.978
+    },
+    {
+      "index": 69,
+      "image": "page_069.jpg",
+      "embedded_text": null,
+      "ocr_text": "ArcMap10.6 ArcCatalog10.6 Toolbox\n》矢量数据\nCN-sheng-A.shp ShapefileArcGIS软件中的矢量数据，\n离散数据，行政区划、植\n被覆盖、土地利用\n栅格数据\nExtractdem30m1.tif RasterDatasetArcGIS软件中的栅格数据：\n连续数据，数值高程、空\n气质量等",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 70,
+      "image": "page_070.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\nArcCatalog4.3ArcGIS桌面软件\nArcCatalog10.6\nArcCatalog-ArcEditor-C:\\gisclass\\mgisdata\\OregonFileEditViewGoGeoprocessing Customize Windows Help\n品\nLocation:C:\\gisclassmgisdata\\OregonCatalogTree Contents Preview Description\n田 Metadata oregondata.mdbNewProject L720021127av2.bil\n日 Oregon L720021127av2.prj\n日 oregondata.mdb myairports.lyrQQsection_locator MyCounties.lyrGrantCty MyOregon.lyrTransportation MyOregonStuff.lyrcities ORprecipnormals.xlsORstations.xlscounties rocksamples.xlsxgtopo1km rocksampleskey.xlsx\n田 gtoposhd samplelocalities.shphospitalslandcovermajcitiesparksprecip",
+      "ocr_score": 0.971
+    },
+    {
+      "index": 71,
+      "image": "page_071.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\n4.3ArcGIS桌面软件 ArcMapArcMap10.6\nlabelskills.mxd-ArcMap-ArcEditor 回 XFile EditView Bookmarks Insert Selection Geoprocessing Customize Windows Help1:614,690\nEditor Labeling` FastTable Of Contents DanvaasPeabody Salerh ArcToolboxWilmington larblehead\n日 Layers Reading\n日 Capitals Burlington Wabyrn SaugusPOP2007 Stonshan Melose10,000 MaldenRelvereCatalog\n☆ 100,000 Megtoro 。 Winthrop1,000,000 Maynard Walthanmo Watertoyr BostonNewtoBEn HullMajorCities Hudson\n。 Marlberough Mitor Quinoy\n日 MajorRoads Framingham Dedham Braintreg WeymouthUSCounties Randolph1Dot=10,000 Norwood AbingtonPOP2010111thCongress Brodkton\n口 MfordUSStates\n口\nDrawing|口A Arial 20 n1935543.48549471.3Meters",
+      "ocr_score": 0.923
+    },
+    {
+      "index": 72,
+      "image": "page_072.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\n4.3ArcGIS桌面软件 ToolBoxToolboxArcCatalog-ArcEditor-C:\\gisclass\\mgisdata\\Oregon X ArcToolbox XFileEditViewGoGeoprocessing Customize Windows Help ArcToolbox3DAnalyst ToolsLocation:C:\\gisclassmgisdata\\Oregon labelskills.mxd-ArcMap-ArcEditorCatalog Tree X Content FileEdit ViewBookmarksInsertSelection Geoprocessing Custor AnalysisToolsMetadata Uoreg +-1:614.690 Extract\n日Oregon 田 NewProject L720 区限 一\n日□ oregondata.mdb L720 ClipEditorGrantCty QQsection_locator mya Myd Table OfContents X SelectTransportation MydMyd Layers mington Rea TableSelect\n回ORp 日 Capitals Buringtor Overlaycounties @ORs POP2007 Stoner +\ngtopo1km 回rock 10,000 Proximity\n田gtoposhd 回rock sam ☆ 100,000 LexingtonEvhospitals Statisticslandcover 1,000,000 Maynard ArlingtonBelm WathanhaNewtog Wale CartographyToolsmajcities MajorCities Hudsonparks Marberough Conversion Toolsprecip MajorRoads FraminghamIIL. + DataManagementToolsUSCounties1Dot=10,000 + Geocoding ToolsArcCatalog 111th Congress POP2010 GeostatisticalAnalystTools\n口 Mdord + LinearReferencingToolsUS States\n口 回 + Spatial AnalystToolsArcCatalog10.6 Drawing·AAia 20\n+ Spatial StatisticsToolsArcMapArcMap10.6",
+      "ocr_score": 0.924
+    },
+    {
+      "index": 73,
+      "image": "page_073.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\n空间分析内容列表\n名称 主要内容\n裁剪、选择、拆分等\n分析工具（analysis 相交、联合、判别等\ntools) 缓冲区、邻近分析、点距离\n>频度、汇总统计等\n矢量数据空间分析（缓冲区分析、叠置分析、网络分析）\n栅格数据空间分析（距离制图、表面分析、密度制图、统计\n分析、重分类、栅格计算）\n空间分析工具 空间统计分析（空间插值、创建统计表面等）\n(spatial analyst 水文分析（河网提取、流域分割、汇流累积量计算、水流长\ntools) 度计算等）\n地下水分析（达西分析、粒子追踪、多孔渗流等）\n√多变量分析、空间插值\n数学、地图代数\n网络分析（network 构建和维护网络数据集\nanalyst) 网络分析（成本路径、最近设施点、服务区、多路径派发等）",
+      "ocr_score": 0.983
+    },
+    {
+      "index": 74,
+      "image": "page_074.jpg",
+      "embedded_text": null,
+      "ocr_text": "四、ArcGIS 10 概述\n空间分析内容列表\n名称 主要内容\n聚类分析、空间自相关\n度量地理分布（中心、中位数中心、方向分布）\n空间统计（spatial 渲染（属性渲染、带渲染的热点分析、带渲染的聚类分析、计数\nstatistics) 渲染）\n空间关系建模（回归、最小二乘、空间权矩阵、网络空间权重）\n聚类分布制图（热点分析、聚类和异常值分析）\n地统计分析 插值（多项式内插、反距离加权内插、局部多项式插值法等）\n数据探索分析工具和各种克里金插值（地统计分析向导）\n(geostatistical\n地统计工具（交叉验证、半变异函数灵敏度、邻域选择）\nanalyst) 采样网络设计\n转换工具\n重分类及TIN工具\n3D分析（3D √表面生成（栅格、TIN表面）\n表面分析（表面积与体积、提取等值线、计算坡度与坡向、可\nanalyst)\n视性分析、提取断面与表面阴影等）\n3D临近、3D内部、3D相交等\n√天际线、天际线图、构造通视线等",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 75,
+      "image": "page_075.jpg",
+      "embedded_text": null,
+      "ocr_text": "GIS数据共享网站\n>ArcGIS Online (not all downloadable)\n>National Aeronautics and Space Administration\n>地理空间数据云\n>资源环境科学与数据中心\n>国家冰川冻土沙漠科学数据中心\n>国家生态数据中心资源共享服务平台",
+      "ocr_score": 0.985
+    },
+    {
+      "index": 76,
+      "image": "page_076.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.1环境GIS应用模式\n》环境科学研究工具：环境科学研究的辅助手段；\n针对环境GIS的空间分析功能，获得环境科学分\n析结果\n》环境管理：将GIS技术与具体环境管理业务工作\n结合起来，建立长期、稳定和高效运行的业务化\n服务系统 环境规划与管理\n》公众服务",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 77,
+      "image": "page_077.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.2环境GIS空间信息查询与处理\n空气指数地图 全部 空气指数地图\nAQI PM PM. SO NO CO PM SO NO\n>污染源空间信息：点/线\n严童污染 本市 全国\n重度污染 中度污染\n轻度污染镇\n污染源数据变化趋势、 长山子镇\n柏杨河乡 俄罗斯\n>环境质量空间信息：监 安宁渠镇 米东区\n芦草沟乡\n气质量监测信息、城市 文\n乌鲁木齐地窝 堡国际机场 新市 130 蒙古\n屯河区 112\n自然生态空间信息：务 176 石人沟 中华人民共和国 韩国\n乌鲁木齐市 EE\n化、生物多样性、土地 天山区\n124 拉国\n流失) 泰国 精值\n越南\n新加坡 印度尼西亚\n喜德地圖",
+      "ocr_score": 0.941
+    },
+    {
+      "index": 78,
+      "image": "page_078.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.3环境GIS应用需求\n》①污染控制：污染源分布情况、排污企业基本情况、\n排污口等，动态查询辖区内或流域内纳污状况。\n>(②环境监测：监测点(断面)分布和环境监测质量信\n息的GIS表达与处理；掌握监测点绝对或相对污染\n情况，提供监测对象的污染程度分析和专题图。\n>③建设项目管理：辅助进行建设项目审核和环境污\n染控制、确定建设项目影响范围、寻找废物处理最\n短路径、审核工业污染源达标排放等。",
+      "ocr_score": 0.989
+    },
+    {
+      "index": 79,
+      "image": "page_079.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.3环境GIS应用需求\n>④环境规划：编辑和修改各种综合规划、区域规\n划、流域规划水环境规划以及自然保护区规划等，\n为环境规划的制定提供技术手段\n>5污染源、环境质量远程监控：收集环境监测数\n据并进行识别、计算，反映监控污染源的实时污\n染指标信息，对实施监控的污染源进行跟踪表述\n动态直观的显示监控污染源的实时状态和污染物\n排放情况，使重点污染源的远程监控可视化。",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 80,
+      "image": "page_080.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.3环境GIS应用需求\n>6环境质量现状评价：直观反映出区域中受污染的\n程度以及空间分布情况。\n>自然生态现状与变化调查分析：自然生态环境现\n状与变化的调查分析，如对土地利用、水土流失、\n沙漠化、森林砍伐等进行分类解析，面积计算和信\n息查询、专题制图等。\n>8城市定量考核：制作环境质量、污染控制和城市\n建设三部分指标的信息查询和专题制图",
+      "ocr_score": 0.987
+    },
+    {
+      "index": 81,
+      "image": "page_081.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.3环境GIS应用需求\n>9应急预警预报：对事故风险源的地理位置及其\n属性、事故敏感区域单位位置及其属性进行有效\n管理。提供污染事故的大气、河流污染扩散的模\n拟过程和应急方案\n》10流域管理：对于整个流域的空间信息进行综合\n管理，对流域水质污染状况进行分析与评价。根\n据河流上监测断面的监测数据评价整条河流的水\n质状况以及排放到该条河流工业污染源贡献率。",
+      "ocr_score": 0.989
+    },
+    {
+      "index": 82,
+      "image": "page_082.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.4环境GIS功能需求\n>①环境空间数据处理功能：环境GIS应具备调整\n数据结构，灵活组织数据内容的功能；需考虑环\n境空间数据与环保业务属性数据的分离/统一存储\n策略。\n>②环境空间数据分析功能：具备从已有数据中获\n得（挖掘）对环境管理有用的信息或规律性知识\n的能力；环境GIS首先必备空间数据查询分析功\n能（属性或空间查询）。",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 83,
+      "image": "page_083.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n5.4环境GIS功能需求\n>③环境空间数据维护功能：环境空间数据的多样\n性和应用的广泛性决定了环境GIS需要较强的数\n据维护功能，包括图层、图形（编辑、显示）、\n客户请求、数据访问等功能。\n》④环境应用功能：动态查询和显示、制作环境功\n能区专题地图、环境质量评价等；多与环境空间\n信息专题数据产品生产和发布；环境管理与规划\n决策方面应用较少",
+      "ocr_score": 0.993
+    },
+    {
+      "index": 84,
+      "image": "page_084.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n襄阳市樊城区七里河黑臭水体整治工程监控中心项目\n：樊城区七里河黑臭水体整治智慧水务平台 首页 管网管理 黑臭水体治理 视频监控子系统 污水处理厂监督 巴 2023.06.14 系统管理员\n黑臭水体评价 污水厂基本信息\n河道新面 水质程度 更新时间 标准处理水量 服务范\n中航大道 2023-06-1412:01:00 鱼梁洲 30万 吴城片、襄州片区 工艺\n富康路以南区域\n普泊沟汇入点 V 2023-06-1412:01:00 标准处理水堂 20万td 服务范摄 城片 改良型AO 核心工艺\n西 中欧西路 2023-05-22 16:24:00 标准处理水量 服务范 核心工艺\n东津 10万td 东津区 取气生物减池\n自 吴一禁站 TV 2023-06-1412:01:00\n园 卧龙大道 NEW IBER R 污水厂水质达标 观音园\n注：指2小时更新 新烽光电 进水水质 出水水质 来达标\n河道斯面监测\n实时水位 瞬时流量 招标名称 水质评价 2时狗\n0.331 pHn 7.16 2023-06-1401:50:000.0 0.0\nm mh ms COD 7.6 一级A 2023-06-1401:50:00\n际名称 水级评价 0.04 -级A 2023-06-1401:50:00\n注度 107.3 2023-06-1412:01:00 总码 0.113 -级A 2023-06-1401:50:00\nL00 I类 2023-06-1412:01:00 本月报警统计 污水处理厂\np值 8.02 2023-06-1412:01:00\n总氨 I类 2023-06-1412:01:00\n治裤氢 7.8 I类 2023-06-1412:01:00 雨水系统 雨水管网 口雨水检香拌 口雨水菱子 日雨水用门 而水检修井\n电导率 468.0 污水系统 污水营网 口男水检直井 口污水菱子 口污水检排井\n2023-06-1412:01:00 合流系统 合流营网 口台查井 口台 合流草水井 故障报警 消缺报警\n0.314 VK 2023-06-1412:01:00 排水设临 为水处理厂 污水泵站 口排海站 可分站 排口",
+      "ocr_score": 0.864
+    },
+    {
+      "index": 85,
+      "image": "page_085.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n襄阳市樊城区七里河黑臭水体整治工程监控中心项目\n樊城区七里河黑臭水体整治智慧水务平台 首页 管网管理 黑突水体治理 视频监控子系统 污水处理厂监督 2023.06.14 系统管理员\n自\n自建小学 品农工品球大酒店 阳市封动保健员\n蔡阳市第十三中学\n七国河黑身水体 月充连黑身水体 南果黑身水体 ? 阿道水版 诚量水位\nNEW IBER\n站点名称 水位（m) 新烽光电 S速(m/s) 小时水量（mm） 累计论（m） 爱测时间\n中航大道 0.28 0.03 346.615 4074616.01962 2023-06-141350:00\n营沱沟汇入点 1.178 0.0 0.0 6756931.33538 2023-06-141355:00\n中国西路 0.124 0.031 201.071 61455226441 2023-06-1413:55:00\n奖一采站 0.289 0.026 553.451 459308320888 2023-06-1413:55:00\n卧龙大道 0.492 0.334 5957218 1369566276936 2023-06-141355:00",
+      "ocr_score": 0.891
+    },
+    {
+      "index": 86,
+      "image": "page_086.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n襄阳市樊城区七里河黑臭水体整治工程监控中心项目\n三樊城区七里河黑臭水体整治智慧水务平台 首页 管网管理子系统 黑臭水体治理 污水处理厂监管 视频监控子系统 系统管理 10:362020/01/06星期四\n厂站工情实时监测 出水口 鱼梁洲污水处理厂 观音阁污水处理厂 东津污水处理厂 RTU监测设备运行情况\n标名标 监送售 水质评价 盗时间 进水口通行时长 出水口运行时长 日异常次数\n365 小时 325 小时 263 次\nCOD 123mg/L 17:05 次\n刻然 123mg/ 类 17:05 60 60\n总码 123mg/L 川员 17:05 40\n总翼 123mg/L VA 17:05 20\nPH 123 VA 17:05 00 12:00 14:00 14:00\n进水口水质超势 当月监测指标报警统计\nSS PH 总 一总氮\n单位 R SSNEW IBER PH13 总磷\n新 烽 电 总量 总复\n光 氨氮\n00 0:00 1:00 2:00 4:00 5:00\n出水口水质趋势 1780 进出水瞬时流量 当月监测指标达标率\n进水流量 正龙效 一进水洗量 一出水洗量\nSS H 一总贺 一氨 指标名称 合格率\n20 单位 SS 90%\n单位 超标效\nPH 82%\n1780 进水流量：64000 总砖 75%\n出水流量 正常数 出水流量：5000020 总知 79%\n00 超标数 氨氮 %980:00 1:00 2:00 3:00 4:00 5:00 1月 2月 3月 4月 5月 6月 7月 9月 10月 11月 12月",
+      "ocr_score": 0.901
+    },
+    {
+      "index": 87,
+      "image": "page_087.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n襄阳市樊城区七里河黑臭水体整治工程监控中心项目\n：樊城区七里河黑臭水体整治智慧水务平台 颜 管网管理 黑泉水体治理 视频监控子系统 污水处理厂监督 2023.06.14 系统管理员\n政指管理 在线5#水质监测 站点输号 信号强度（百分比） 电量（百分比） 电源电压（代特） 冰位1（米） 盗速1（米/粉）\n普沁沟汇入点\n实时监刻 在线6液位流量监测 在线6水质监测 1911500171 2023-06-1414:00:00 62 78.0 120 NaN 0.0\n服表管理 中原酒路\n在续7#液位流量监测 选择日期： 2023-06-11 2023-06-14 Q搜索 山导出\n报警管理 南线7#水质监测\n奖一泵站 表格展示 时形展示 数据统计\n排水设施 在线8液位流量监测\n在线8水质监测 累计诊量（立方米） COD皇克升) 总（皇克升） 总（皇克/升） 氨斯（空克/升） PHn\n管网管理 卧龙大道 在线9液位流量监测\n2776826.18368 82.5 2.403 24.84 15.72 7.01\n运维管理 汉江北泵站 在线10#液位流基监测 2776617.12384 82.5 2.403 24.84 15.72 7.01\n配置管理 长虹北路 2776408.39168 82.5 2.403 24.84 15.72 7.01\n在线11液位流量监测 2776199.9872 82.5 2.403 24.84 15.72 7.01\n系统设置 奖效路\n在线12液位流量益测 2775999.11936 825 2.403 24.84 15.72 7.01\n春路 2775790.05952 82.5 2.403 24.84 15.72 7.01\n在线13液位烧基监测\n小清河入同口 2775581.65504 82.5 2.403 24.84 15.72 7.01\n在线14液位流量益测 2775380.45952 825 2.403 24.84 15.72 7.01\n在域14水质监测 2775171.72736 82.5 2.403 24.84 15.72 7.01\n污水处理厂\n鱼梁州 2774962 33984 82.5 2.403 24.84 15.72 7.01\n在线鱼梁洲亏水厂进水水质监测 共1033条 10条/页 104\n在鱼梁州污水厂出水水质道测 前注 页\n观音司 ?\n在域观音调污水厂进水水质盗测 NEWIBER\n在盛音污水厂出水水质道测 新烽光电\n东津\n在域东津污水厂进水水质蓝测\n在东津污水厂出水水质监测",
+      "ocr_score": 0.889
+    },
+    {
+      "index": 88,
+      "image": "page_088.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、 环境地理信息系统\n绿网 检索 彩像 环境风险指数排行榜 数据开放 8 EN\n地表水\n用边监测站数量 33个\n监商新面 水质\n地下水冰磨河水源地 3KM\n水河塘厂泉 3KM\n西北诺河-水塔河七幼桥 3KM 1类\n水洱七坊桥 4KM\n西北诸河七坊桥 4KM1类\n旦示更多\n水质不达标 回\n黑臭河流\n回\n超标污染物分布\n五日生化需氨景 化学需氧量\n水质图例\n乌省木齐市水唐沟区 搜卖位面",
+      "ocr_score": 0.823
+    },
+    {
+      "index": 89,
+      "image": "page_089.jpg",
+      "embedded_text": null,
+      "ocr_text": "五、环境地理信息系统\n乌鲁木齐市 空气指数地图 全部 城市列表\n新疆维吾尔自治区水83> 史新时间01/0917:00 AQI PMs PM SO: NO 0 CO 实时 今日 昨日 本月 今年 去年\n风场地图号 严重污染 本市 2024/01/0918:26 数值降序 数值升序\n重度污染 中度污染\n长山子镇 序号 全国 城市 AQIV 首要污染物\n优 良 G215 265 新疆 乌鲁木齐市\n108 108 细瓶粒物\n柏杨河乡 辽宁 阜新市\n轻度\n安宁渠镇 2 广东 清远市\n首要污物：PM 米东区\n健康提示 242 07 芦草沟乡 新造 阿勒泰地区\n晴-7°℃1级45% 312 阿坝州\nG7 四川\nX G3003 内蒙古 赤峰市\n乌鲁木齐地窝 堡国际机场 新市130\n屯河区 112 西藏 昌都市\n176 广东 韶关市\n86 82 石人沟\n乌鲁木齐市 83 8 山西 大同市\n天山区 内蒙古 乌兰察布市\n12410 河北 张家口市\n11 黑龙江 大兴安岭地区\n今天 79-118 明天 88-132 12 内蒙吉 锡林郭勒盟\n首要污染物：PMNO 首要污染物：PM.NO 13 海南 倍州市\n-12-0°℃晴 8--1°C晴 G30 G30 14 西藏 山南市\n10km 15 内蒙古 呼伦贝尔市\n逐小时预报 高德地图\n16 西藏 鄂曲地区",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 90,
+      "image": "page_090.jpg",
+      "embedded_text": null,
+      "ocr_text": "课后思考\nGIS在环境科学与工程专业中有何应用？\n数据编辑\n与更新\n数据采集\n与输入 数据存储\n与管理\n空间查询\n叠加分析\nGIS能作 空间查询\n与分析\n什么？ 缓冲区分析\n网络分析\n地形分析\n数据显示\n与输出",
+      "ocr_score": 0.982
+    }
+  ]
+}

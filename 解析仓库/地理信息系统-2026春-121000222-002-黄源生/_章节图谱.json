@@ -1,0 +1,30 @@
+{
+  "course_dir": "地理信息系统-2026春-121000222-002-黄源生",
+  "course_name": "地理信息系统",
+  "semester": "2026春",
+  "teacher": "黄源生",
+  "pdf_total": 2,
+  "page_total": 211,
+  "chapter_count": 0,
+  "chapter_nums": [],
+  "chapters": [],
+  "non_lecture": [],
+  "uncategorized": [
+    {
+      "rel_dir": "001-空间数据的转换与处理-空间数据的转换与处理",
+      "pdf_name": "001-空间数据的转换与处理-空间数据的转换与处理.pdf",
+      "lesson_seq": 1,
+      "page_count": 104,
+      "lesson_title": "空间数据的转换与处理",
+      "presentation_title": "空间数据的转换与处理"
+    },
+    {
+      "rel_dir": "002-空间数据的可视化表达-空间数据的可视化表达",
+      "pdf_name": "002-空间数据的可视化表达-空间数据的可视化表达.pdf",
+      "lesson_seq": 2,
+      "page_count": 107,
+      "lesson_title": "空间数据的可视化表达",
+      "presentation_title": "空间数据的可视化表达"
+    }
+  ]
+}

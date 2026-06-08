@@ -1,0 +1,746 @@
+{
+  "pdf_path": "D:\\道\\道生一\\一生二\\学习复习\\地理信息系统\\01_原始PDF\\005-空间数据的转换与处理-空间数据的转换与处理.pdf",
+  "pdf_name": "005-空间数据的转换与处理-空间数据的转换与处理.pdf",
+  "lesson_seq": 5,
+  "lesson_title": "空间数据的转换与处理",
+  "presentation_title": "空间数据的转换与处理",
+  "chapter_num": 3,
+  "chapter_raw": "第三章",
+  "all_chapter_nums": [
+    3
+  ],
+  "all_chapter_raws": [
+    "第三章"
+  ],
+  "page_count": 104,
+  "pages": [
+    {
+      "index": 1,
+      "image": "page_001.jpg",
+      "embedded_text": null,
+      "ocr_text": "空间数据的转换与处理\n栅格、矢量数据结构\nA.现实世界\n河流\nB.栅格表示形式 300 400 500 600\nC.矢量表示形式",
+      "ocr_score": 0.972
+    },
+    {
+      "index": 2,
+      "image": "page_002.jpg",
+      "embedded_text": null,
+      "ocr_text": "》下图中，哪个是真实的地球？\n(a (b)\n60 60'E55'N55'Lat20 Longitude 40 60",
+      "ocr_score": 0.89
+    },
+    {
+      "index": 3,
+      "image": "page_003.jpg",
+      "embedded_text": null,
+      "ocr_text": "本章内容\n一、地球空间参考\n二、空间数据投影\n三、空间变换\n四、数据格式转换\n五、数据处理",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 4,
+      "image": "page_004.jpg",
+      "embedded_text": null,
+      "ocr_text": "第一节\n地球空间参考",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 5,
+      "image": "page_005.jpg",
+      "embedded_text": null,
+      "ocr_text": "空间参考系统：确定地理目标平面位置和\n高程的平面坐标系和高程系的统称。\n平面坐标系统\n描述空间对象\n位置 (坐标)\n的参考系。\n高程系统\n地球椭球体\n采用不同水准\n中华人民共和国临理幸业 面表示地面点\n的高低。",
+      "ocr_score": 0.986
+    },
+    {
+      "index": 6,
+      "image": "page_006.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1地球形状与气球椭圆\n地球形状\n地球是一个近似球体，其自然表面是一个极其\n复杂的不规则曲面。根据大地测量学的研究成\n果，地球表面几何模型可以分为四类：\n地球的自然表面\n大地水准面\n地球椭球面\n数学模型\n现实 理想",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 7,
+      "image": "page_007.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1地球形状与气球椭圆\n海拔高度 地形起伏\n地球自然表面\n大地水准面\n海平面\n地球椭球面\n球面",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 8,
+      "image": "page_008.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1地球形状与地球椭圆\n》对地球形状后，还必须确定大地水准面与椭球体\n面的相对关系（最佳拟合）。即确定与局部地区\n大地水准面符合最好的一个地球椭球体 参考\n椭球体。\n定位\n定向\n椭球体 参考椭球体",
+      "ocr_score": 0.995
+    },
+    {
+      "index": 9,
+      "image": "page_009.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.1地球形状与地球椭圆\n>更加符合本国/地区的自然地球表面\n椭球定位\n椭球参数 大地原点\n与定向\n三\n参考椭球体\n在陕西省泾阳县永乐镇北流村，具体位置在：北纬\n34°32'27.00″东经108°55'25.00″",
+      "ocr_score": 0.978
+    },
+    {
+      "index": 10,
+      "image": "page_010.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\n坐标定义\n地理空间坐标系统提供了确定空间位置的参照\n基准。根据表达方式的不同，地理空间坐标系\n统通常分为球面坐标系统和平面坐标系统（或\n投影坐标系统）。\n天文地理坐标 Xi'an 80\nBeijing 54\n球面坐标系统 大地地理坐标\nCGCS2000\n（地理坐标系统）\n空间直角坐标系 WGS 1984\n地理空间坐标\n高斯平面直角坐标系 兰伯投影特\n平面坐标系统 高斯克吕格投影\n（投影坐标系统）（地方独立平面直角坐标系",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 11,
+      "image": "page_011.jpg",
+      "embedded_text": null,
+      "ocr_text": "XYCoordinateSystem ZCoordinate SystemType here to search\n球面坐标系统 田 Favorites\n田 GeographicCoordinate SystemsProjected Coordinate Systems\n(Geographic CoordinateSystem, GCS)\nCurrentcoordinate system:\n平面坐标系统 <Unknown>\n(Projected CoordinateSystem, PCS)\n确定 取消",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 12,
+      "image": "page_012.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\n大地坐标系\n》大地测量中以参考椭球面为基准面建立的坐标\n系。参考椭球一旦确定，则标志着大地坐标系已\n经建立。\n》空间上任何一点的大地坐标，\n采用大地经度（-180—180) 60E55N\n大地纬度B（-90°—+90和大 20 55'Lat.\n6020 Longitude 40 60\n地高程(-6371千米—8.845千米)\n表示。",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 13,
+      "image": "page_013.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\n北京1954坐标系\n》简称北京54坐标系，是我国50年代为满足测绘工作\n的需求，从前苏联1942普尔科沃坐标系换算而成。\n特征 缺点\n属于参心坐标系； 椭球参数与现代的精确参数\n采用克拉索夫斯基椭球体； 差异较大；\n利用多点定位法进行椭球 椭球定向并不十分明确；\n定位； 参考椭球面与我国大地水准\n大地原点在前苏联的普尔 面呈西高东低倾斜；\n科沃。 全国控制网精度不均····",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 14,
+      "image": "page_014.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2 坐标系统\n西安1980坐标系\n》采用了当时国际推荐的椭球参数，采用局部椭球局\n部定位，重新严格定义了中国国家坐标系统。\n特征\n属于参心坐标系；\n中华人民共和国\n采用关于几何与物理层面的四个 大地原点\n椭球基本参数；\n利用多点定位法进行椭球定位 原点\n椭球定向明确；\n大地原点在西安市境内。",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 15,
+      "image": "page_015.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\n12000国家大地坐标系（CGCS2000）\n》为了适应更加精确的定位应用需要，2008年7月起，\n全面启用2000国家大地坐标系\n特征\n属于地心坐标系坐标系；\n更有利于现代空间技术对坐标系进行维护和快速更新：\n可以测量高精度大地控制点的三维坐标；\n能够大大提高测图的工作效率；\n，北斗卫星导航系统使用的是2000年中国大地坐标系。",
+      "ocr_score": 0.987
+    },
+    {
+      "index": 16,
+      "image": "page_016.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\nIWGS1984坐标系\n》美国国防部研制的坐标系统，GPS定位结果都是属\n于WGS-84坐标系。\n特征\n属于地心坐标系坐标系；\nY轴与Z轴、X轴构成右手坐标系。\n》定位、导航、国土资源动态资源监测方面有广发\n的应用",
+      "ocr_score": 0.992
+    },
+    {
+      "index": 17,
+      "image": "page_017.jpg",
+      "embedded_text": null,
+      "ocr_text": "1.2坐标系统\n高程基准\n高程（elevation）是表示地球上一点至参考基准面的\n距离，就一点位置而言，它和水平量值一样是不可缺\n少的。大地水准面、似大地水准面和地球椭球面都是\n理想的表面。\n我国主要高程基准：\n1956年黄海高程系：以青岛港验潮站的长期观测资\n料推算出的黄海平均海平面作为中国的水准基面：\n1985国家高程基准：基准面为青岛大港验潮19521979年验潮资料确定的黄海平均海面。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 18,
+      "image": "page_018.jpg",
+      "embedded_text": null,
+      "ocr_text": "第二节\n空间数据投影",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 19,
+      "image": "page_019.jpg",
+      "embedded_text": null,
+      "ocr_text": "为什么要进行地图投影？\nPrime tdeMeridian 投影\nEquator\n》地理坐标是球面坐标，不方便进行距离、方位、面积\n等参数的测量、计算。\n》平面地图，符合视觉、使用习惯，易于进行距离、方\n位、面积等参数的测量、计算和空间分析。\n地球椭球为不可展开曲面。",
+      "ocr_score": 0.943
+    },
+    {
+      "index": 20,
+      "image": "page_020.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.1地图投影的基本问题\n》在数学中，投影（project）是指建立两个点集之间\n一一对应的映射关系。地图投影的实质：一定的数\n学法则，将地球椭球面上的经纬网转换到平面上。\n投影\n地球表面是一种不可能展开的曲面，要把这样一个\n曲面表现到平面上，就会发生裂隙或褶皱。运用经\n纬线的“拉伸”或“压缩”实现投影，往往会造成\n地图投影的变形",
+      "ocr_score": 0.998
+    },
+    {
+      "index": 21,
+      "image": "page_021.jpg",
+      "embedded_text": null,
+      "ocr_text": "CEAN AWTICSOUTH ATLANTICTHE WORLD INDIAN OCEANPOLITICAL",
+      "ocr_score": 0.953
+    },
+    {
+      "index": 22,
+      "image": "page_022.jpg",
+      "embedded_text": null,
+      "ocr_text": "阿尔良利登 中华人民共礼国\n利比 州\n沙特网拉白\n利\n洲",
+      "ocr_score": 0.725
+    },
+    {
+      "index": 23,
+      "image": "page_023.jpg",
+      "embedded_text": null,
+      "ocr_text": null,
+      "ocr_score": null
+    },
+    {
+      "index": 24,
+      "image": "page_024.jpg",
+      "embedded_text": null,
+      "ocr_text": "THE WORLDRUS: 17,098,200 KM2\nCAN: 9,980,000 KM2\nPRC: 9,600,000 KM2\nUSA:9,370,000 KM2",
+      "ocr_score": 0.964
+    },
+    {
+      "index": 25,
+      "image": "page_025.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n>按地图投影的构\n成方法划分：几\n何投影和非几何\n投影",
+      "ocr_score": 0.986
+    },
+    {
+      "index": 26,
+      "image": "page_026.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n几何投影\n》几何投影是把椭球面上的经纬线网投影到几何\n面上，然后将面展平面得到。\n口按辅助投影面的类型划分：方位投影、圆柱\n投影、圆锥投影\n口按投影面与地球自转轴间的方位关系划分：\n正轴投影、横轴投影、斜轴投影\n口按投影面与地球的位置关系划分：割投影、\n切投影。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 27,
+      "image": "page_027.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n正轴 横轴 斜轴\n方位\n圆柱\n圆锥",
+      "ocr_score": 0.998
+    },
+    {
+      "index": 28,
+      "image": "page_028.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n方位投影 以平面作为投影面，与地球相切（割）而构成的投影。\n经线：以极点为出发点的放射状直线。\n正方位投影\n纬线：以极点为圆心的同心圆。\n经线：中央经线为直线，其余为对称\n于中央经线的曲线。\n横方位投影\n纬线：赤道为直线，其余为对称于赤\n道的曲线。\n经线：中央经线为直线，其余为对称\n斜方位投影 于中央经线的曲线。\n纬线：所有纬线为任意曲线。",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 29,
+      "image": "page_029.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n圆柱投影\n以圆柱面作为投影面，与地球相切（割）而构成的投影。\n有正轴、横轴和斜轴之分，实际中常用正轴和横轴投影。\nt90°\n正变形\n负变形\n不存在变形\n适用于编制赤道及其附近地区地图的编制",
+      "ocr_score": 0.969
+    },
+    {
+      "index": 30,
+      "image": "page_030.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n圆锥投影\n以圆锥面作为投影面，与地球相切（割）而构成的投影。\n按切（割）位置分为正轴、横轴和斜轴，实际中常用正轴投影。\n无变形\n无变形\n负变形\n正变形\n无变形\n正变形\n适用于中纬度、沿东西方向延伸的地区",
+      "ocr_score": 0.995
+    },
+    {
+      "index": 31,
+      "image": "page_031.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n非几何投影\n非几何投影是不借助几何面，根据某些条件用数学\n解析法确定球面与平面之间点与点的函数关系。一\n般按经纬线形状分为下述几类：。\n口伪方位投影：纬线为同心圆，中央经线为直线，其余的经线\n均为对称于中央经线的曲线，且相交于纬线的共同圆心。\n口伪圆柱投影：纬线为平行直线，中央经线为直线，其余的经\n线均为对称于中央经线的曲线。\n口伪圆锥投影：纬线为同心圆弧，中央经线为直线，其余经线\n均为对称于中央经线的曲线。\n口多圆锥投影：纬线为同周圆弧，其圆心均位于中央经线上\n中央经线为直线，其余的经线均为对称于中央经线的曲线。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 32,
+      "image": "page_032.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n等角投影\n投影后任意方向线所夹角度不变，即在一定范围内保持形状不变。\n增加面积变形，以确保角度不变形。\n交通地图 上海市 上海市 气象地图\n嵊泗列岛\n杭州湾大桥 舟\n一机场 高速公路",
+      "ocr_score": 0.944
+    },
+    {
+      "index": 33,
+      "image": "page_033.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n120°300 台州市土地利用奕型图 121*00 12东\n1等积投影\n投影后面积保持不变。\n图例\n耕地 水体\n草地课地 林地 建筑用地\n1020203005 土地利用地图\n湖北省行政区划图地图\n正轴方位等积 横轴方位等积\n投影 投影\n适用于对面积精度要求较高的自然\n社会经济地图\n行政区划地图",
+      "ocr_score": 0.945
+    },
+    {
+      "index": 34,
+      "image": "page_034.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.2地图投影的分类\n等距投影\n是一种任意投影，沿某一特定方向的长度不变。\n在其他方向上，距离、角度和面积都发生变化，但幅度不大。\n适用于无特殊要求的教学用图。\n中国地图\n吐鲁潘地区 石油\n0天然气\n石油\n石油 美品 自\n天然 天然气\nLa 天然气\n0N00.00\n审图号：GS(2016)1600号 自然资源部监制",
+      "ocr_score": 0.905
+    },
+    {
+      "index": 35,
+      "image": "page_035.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n高斯-克吕格投影（Gauss-KrugerProject）\n高斯投影的中央经线和赤道为互相垂直的直线，\n其他经线均为凹向，并对称于中央经线的曲线，\n其他纬线均是以赤道为对称轴的向两极弯曲的\n曲线，经纬线成直角相交。",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 36,
+      "image": "page_036.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n高斯-克吕格投影（Gauss-KrugerProject）\n经纬线形状\n中央经线为直线，其余为向极点收敛的弧线；\n赤道为直线，其余为凸向赤道的曲线；\n经纬线投影后任保持正交。\n变形特征\n中央经线无任何变形；\n同纬线上，距离中央经线越远，变形越大；\n同一经线上，纬度越低，变形越大；\n等变形线为平行与中央经线的直线。",
+      "ocr_score": 0.994
+    },
+    {
+      "index": 37,
+      "image": "page_037.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n高斯-克吕格投影（Gauss-KrugerProject）\n我国规定1:1万、1:2.5万、1:5万、1:10万、1:25万、\n1:50万比例尺地形图，均采用高斯投影。1:2.5至1:50万\n比例尺地形图采用经差6°分带，1:1万比例尺地形图采\n用经差3°分带。比例尺小于1：50万，采用兰伯特投影\n9° 690 75° 81° 870 93° 99°105° 111°117°123°129°135°\n12 13 14 15 16 17 18 19 20 21 22 230° 6° 12°66% 72° 78° 840 90° 96° 102° 108° 114° 120° 126° 132° 138°\n25 27 29 313335 37 39 41 43 45",
+      "ocr_score": 0.976
+    },
+    {
+      "index": 38,
+      "image": "page_038.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n高斯-克吕格投影（Gauss-KrugerProject）\n6°分带：从0°经线开始，每6度划分为一个投影带，总\n共划分为60个投影带。\n东半球：从0°经线开始至180°E，中央经线L0=（6n-3)\n西半球：从180°W经线开始至0°，中央经线L0=360-\n(6n-3)°\n口3°分带：从1°30'经线开始，每3度划分为一个投影带，\n总共划分为120个投影带。\n东半球：从1°30E经线开始至178°30W，中央经线\nLo=3n°\n西半球：从178°30W经线开始至1°30'E，中央经线\nL0=360-3n°",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 39,
+      "image": "page_039.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n通用横轴墨卡托投影 (UTM)\nUTM投影是一种横割圆柱等角投影，圆柱\n面在84N和84°S处与椭球体相割，它与高\n斯-克吕格投影十分相似，也采用在地球表\n面按经度每6°分带。其带号是自西经180°由\n西向东每隔6°一个编号。\n兰勃特等角投影\n在双标准纬线下是“正轴等角割圆锥投影 基准线\n基准线2\n想用一个正圆锥割于球面两标准纬线，应用\n赤道\n等角条件将地球面投影到圆锥面上，然后沿\n一母线展开，即为兰勃特投影平面。",
+      "ocr_score": 0.978
+    },
+    {
+      "index": 40,
+      "image": "page_040.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n地图投影的选择\n选择制图投影时，主要考虑以下因素：制图区域的范围、\n形状和地理位置，地图的用途、出版方式及其他特殊要\n求等。其中制图区域的范围、形状和地理位置是主要因\n素。\n世界地图，常用的主要是正圆柱、伪圆柱和多圆锥投影。\n半球地图，东、西半球图常选用横轴方位投影；南、北半球\n图常选用正轴方位投影；水、陆半球图一般选用斜轴方位投\n影。\n对于其他的中、小范围的投影选择，须考虑到它的轮廓形状\n和地理位置，最好是使等变形线与制图区域的轮廓形状基本\n一致，以便减少地图的变形。",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 41,
+      "image": "page_041.jpg",
+      "embedded_text": null,
+      "ocr_text": "2.3常用地图投影\n形变\n所有的地图投影都会产生形变\n变形的类型和程度随地图投影的不同而不同\n在使用投影时，必须注意选择具有合适属性的投影\nArea ShapeDistance Direction",
+      "ocr_score": 0.997
+    },
+    {
+      "index": 42,
+      "image": "page_042.jpg",
+      "embedded_text": null,
+      "ocr_text": "第三节\n空间变换",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 43,
+      "image": "page_043.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n>每个数据集都需要对其坐标系统进行完整\n的描述，以便进行正确的显示和分析。\n地理坐标系统/基准面\n投影 （如果必要）\nX-Y的单位（度、米...）\n阈（x-y值的取值范围）\n分辨率（x-y值的精度）",
+      "ocr_score": 0.972
+    },
+    {
+      "index": 44,
+      "image": "page_044.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n非投影（Unprojected)\nPrime MeridanGeographic coordinate system (GCS\n地理坐标系统)\nEquator\n经纬度（°）\nBeijing 1954; Xi'an 1980; CGCSSpherical coordinates(degrees)\n2000; WGS 1984\n投影(Projected)\nProjected coordinate system PCS\n投影坐标系统)\n长度单位（米、千米）\n<1:500,000: Lambert\n>>1:500,000: Gauss -Kruger",
+      "ocr_score": 0.978
+    },
+    {
+      "index": 45,
+      "image": "page_045.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n地理坐标系统（GCS）特征\nPrimeMeridianquatoi90\n-180 +180\n以角度测量\n在地理信息系统中，通常\n使用十进制来表示平面坐\n标系统，这引入了误差。",
+      "ocr_score": 0.987
+    },
+    {
+      "index": 46,
+      "image": "page_046.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n非投影数据的精度\n·未投影的数据以度（°）为单位\n-需要高分辨率才能获得良好的效果\nPrimeMeridian1°~110km*\n0.001 ° ~110 mEquator0.000001° ~ 0.1 m\n*在赤道附近 -180 +180\nDegrees displayed asplanarcoordinates",
+      "ocr_score": 0.969
+    },
+    {
+      "index": 47,
+      "image": "page_047.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n>空间数据坐标系统的常见问题\n·空间数据坐标系统标签缺失：\n·空间数据使用了错误的坐标系统标签",
+      "ocr_score": 0.977
+    },
+    {
+      "index": 48,
+      "image": "page_048.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n>坐标标签(.prj)缺失\n·在ArcMap中使用标签缺失数据会有以下提示。\nUnknownSpatial Reference ？\nThefollowingdata sourcesyouaddedaremissing spatialreferenceinfomation.This data canbe drawninArcMap.but cannot be projected: SpatialReference <Undefined>\nbenchmarks1 LinearUnitAngular UnitStatistics\n数据属性窗口中， Data SourceData Type: ShapefileFeatureClassCS为未定义 Shapefle: C:gisclassmgisdata\\BlackHils\\benchmarks1.shpGeometryType: Point\n(Undefined) Coordinate System: <Undefined>",
+      "ocr_score": 0.97
+    },
+    {
+      "index": 49,
+      "image": "page_049.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\nUntitled-ArcMap-ArcEditorFileEditViewBookmarksInsertSelection Geoprocessing Customize Windows Help\n+1:232.275\nKKA K 数据框CS为NAD83UTMZone13\nTable Of Contents Catalog\n国\nLayers\n日 Watershed 数据正常显示\n日 geology\n<allotherv。\nCenozo 数据层未定义CSLowerNLowerPareozorcPrecambrianUpperMesozoicUpperPaleozoic\n确保数据框设置了cS\n如果先加载未定义CS\n数据，则数据框cS将\n是未定义的。\nDrawing|A|Aial 10 BIU A613651.1184929477.606Meters",
+      "ocr_score": 0.943
+    },
+    {
+      "index": 50,
+      "image": "page_050.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\nUntitled-ArcMap-ArcEditorFileEdit View Bookmarks Insert Selection Geoprocessing Customize Windows Help1:232.275\nTable OfContents X Catalog\n口\n日 Layers 数据不能正常显示\n日 Watershed\n日 geology\n<allothervalues>\nNAME 数据层未定义CSCenozoicLowerMesozoicLowerPaleozoicPrecambrianUpperMesozoicUpperPaleozoic\n未定义CS数据与\n数据框CS不一致\nDrawing|A|Aial613651.118 4929477.606Meters",
+      "ocr_score": 0.928
+    },
+    {
+      "index": 51,
+      "image": "page_051.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n问题修复 使用catalog设置投影\n(projection)\n使用toolbox定义投影\nShapefileProperties X\n(projection) General XYCoordinateSystemFieldsIndexesFeature ExtentType here to search @③\n田 Africa\n日 ProjectionsandTransformations 日 Asia AsiaLambert Conformal ConicRaster Asia NorthAlbers Equal Area Conic\n+ Asia North EquidistantConicBatchProject Asia NorthLambertConformal ConicAsia SouthAlbers Equal Area ConicAsiaSouth LambertConformal Conic Asia South Equidistant ConicCreateCustomGeographicTransf Currentcoordinate system:\nAsia_SouthAlbers_EqualArea_ConicWKID:102028 Authority:EsriCreateSpatialReference Projection:AlbersFalse_Easting:0.0\nDefine Projection False_Northing:0.0 Central_Meridian:125.0\nStandard_Parallel_2:-32.0 Standard_Parallel_1:7.0\nProject LinearUnit:Meter(1.0) Latitude_Of_Origin:-15.0\n+ Raster\n+ Relationship Classes\n+ Sampling\n确定 取消 应用（A）",
+      "ocr_score": 0.947
+    },
+    {
+      "index": 52,
+      "image": "page_052.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\nLayerPropertiesGeneral Source Key MetadataExtentDisplaySymbologyFields Joins&Relates TimeProperty ValueExtentSpatialReference <Undefined>\nXYCoordinateSystem UnknownLinearUnitAnqularUnitVerticalCoordinateSyste...\n日 Statistics\n日 a1985\nBuildParameters skipped columns:1,rows:1,ignoredvalue（s）:\nLayerPropertiesGeneral Source KeyMetadataExtentDisplaySymbology Fields Joins&Relates TimeProperty Value\n田 ExtentXYCoordinateSystem Clarke_1866_AlbersLinearUnit Meter(1.000000)\nAngularUnit Degree(0.0174532925199433)\nFalse_EastingFalse_Northing 0\nCentral_Meridian 105\nStandard_Parallel_1 25",
+      "ocr_score": 0.973
+    },
+    {
+      "index": 53,
+      "image": "page_053.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\nArcToolboxGraphIndexesJoins\n常见坐标系统错误的来源 Layersand TableViewsPackage\n白 FeatureBatchProiect\n注意区分 ProjectaisPyAConvert Coordinate NotationCreateCustom GeographicT\n·投影 （Project) Creste Snatial ReferencDefine ProjectionRasterRelationship Classes\n·定义投影 （Define SubtypesProjection) Indexes Subbypes Relationships RepreseGeneral XYCoodnate Syem ToleranoeResoitionDomainReldsName:\nDetals:\nCatalog窗口设置图\nScale_Factor:0.999600 Lattude_OfOnign:0.000000\nLnear Unit: Meter (1.00000)\n层CS GeogahicCoordnateSystem:GCSNrh_AmeDatu:D_NortAmerian_1983\nImportacoordnatesystemandX，ZandMdomnsfrmcass,raster)\nNew Create a nEdt the properes of the curenty selected coordinateSet the coordinate system to UnknonSeveAs... Save the coordinate system to a le",
+      "ocr_score": 0.907
+    },
+    {
+      "index": 54,
+      "image": "page_054.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.1空间坐标参考系统\n定义投影”和“投影”的区别\nODefineProjection工具 OProject工具\nCatalog窗口数据属性 ·改变数据文件的坐标\n·仅改变CS标签 ·改变数据原始的CS定\n·不改变数据原始坐标 义\n·保留原始数据集 ·创建一个新的数据集\n·当空间数据CS缺失 ·需永久改变数据CS时\n使用\n或不正确的时候使用",
+      "ocr_score": 0.991
+    },
+    {
+      "index": 55,
+      "image": "page_055.jpg",
+      "embedded_text": null,
+      "ocr_text": "ArcToolbox 口\n3.2投影变换 CartographyToolsConversion Tools\n日 DataManagementToolsDefineProj Layer Properties ×\nLabels Joins&Relates Time HTMLPopupInput Datase General Source Selection Display Symbology Fields Definition QuerypointCoordinateUnknown Extent Top:98.700000ddLeft:5.400000dd Right:99.100000 ddBottom:13.700000ddDataSourceDataType: ShapefileFeature Class ionShapefile: E:\\ArcGIS_3rd\\Chp2\\Result\\point.shpDefine Proj GeometryType: PointCoordinateshaveZvalues: NoCoordinates havemeasures: NoInput Datase Geographic Coordinate System: GCS_WGS_1984\nDatum: D_WGS_1984\npoint PrimeMeridian: Angular Unit: Degree GreenwichCoordinateGCS_WGS_1984 SetData Source...\nnationsotation\n确定 取消 应用（A）\n田 Raster",
+      "ocr_score": 0.968
+    },
+    {
+      "index": 56,
+      "image": "page_056.jpg",
+      "embedded_text": null,
+      "ocr_text": "ArcToolbox 口 X3.2投影变换 FileGeodatabaseGeneralGeneralization\n>投影转化 GraphIndexes\n田JoinsLASDataset\n>ArcToolbox → Data LayersandTableViewsPackageManagement Tool > PhotosProjections and Transformations\n日 RasterProjections and FlipMin orTransformations ProjectRasterRegisterRasterRescale\n>矢量数据：Projections and RotateshiftTransformationsProject WarpFrom FileBatchProjectConvert Coordinate Notation\n>栅格数据：Projections and Create Custom GeographicTransformationCreateSpatial ReferenceDefine ProjectionTransformationsRaster→ ProjectRasterProject Raster RelationshipClassesSamplingSubtypes",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 57,
+      "image": "page_057.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 矢量数据（Feature）\nArcGIS 10.6 Help 口\n国 回\n隐藏 进 主页 选项（Q）\n目录（ 收藏· Project(Data Management)\n田Get started ArcGIS 10.6\n田Map License LevelBasis standd ocate topi\n田Manage data Analyze Summary\n田Tools Projects spatial data from one coordinate system to another.\n田Extensions UsageCopyright inf License agreeArcGIS Acknc system to the dataset. the data's coordinate system without having to modify the input dataArcScene,and ArcGlobe)are valid input.\nTo project aCoverage,use the Project tool in the Coverage toolbox.\nThe tool's GeographicTransformationparameteris optional.When no geographic or datum transformationisrequired,no drop-down list willappear on the parameter and it is left blank.When a transformationisrequired, a drop-down list willbe generated based on theinput and output datums, and a default transformation will be picked. For example,a geographic transformation isnotrequiredwhen projecting fromGCS_North_American_1983 to NAD_1983_UTM_Zone_12Nbecause both the input and output coordinate systems havea NAD_1983\ndatum.However,projecting fromGCs_North_Amenican_1983 to wGS_1984_UTM_one_12Nrequiresageographictransformationbecause theinputcoordinate systemuses theNAD_1983 datum, while the output coordinate system uses the WGS_1984 datum.\nTip:Transformations are bidirectional.Forexample,if converting data from wGS 1984 to NAD 1927,you can picka transformation called NAD_1927_to_wGS_1984_3,and the tool willapply it correctly.\nhoryworkspaceisnotsupportedasa location to writetheoutputdataset.\nWhen projecting the complex data typeslisted below,certain operationsneed to be performed on theresulting data:\nIf theinput participatesin relationship classes(as with feature-linked annotation),the relationship class wilbe transferred to the output.The exception to thisrulerelates toparticipating stand-alone tables.\nDepending on the input feature coordinate system,multipoint,line,and polygonmaybe clipped or splitinto more than onepartwhen projecting them.\nFeatures thatfallcompletelyoutside thehorizo These canbe deletedusing the Repair etrytool.\nFeature classes participating ina geometricnetwork ca -the entire feature datasetcontaining the networkneeds to beprojected.\nMany geoprocessing tools honor the gutputc the output coordinate system environment setting,whichan entirely different coordinate system.\nSelection and definition query on layers are ignored by this tool-allfeatures in the datasetreferencedby the layer wilbe projected.If you want to project selected features only,consider using theCopy Features Leam more about geoprocessing environmentstool to create a temporary dataset, which will only contain the selected features,and use this intermediate dataset as input to the Project tool.\nWhenafeature class withinafeature datasetisusedasinput,the outputcannotbewritten to thesame feature dataset.Thisisbecausefeature classeswithina featuredatasetmustallhave the same coordinate system.In this case, the output feature class will be written to the geodatabase containing the feature dataset.\nThe PreserveShape parameter,when checked,creates outputfeatures thatmore accuratelyrepresent their true projected location.Preserve Shae isespecially usefulincases where a line or polygon boundaryisdigitizedasalong,straightlinewithfewvertices.If Preserve Shapeisnotchecked,theexistingverticesof theinputline orpolygonboundaryareprojected,andtheresultmaybeafeature thatisnotaccuratelylocation as computedby the tool.when the value is small,more verticesareadded.Choose avalue that suitsyourneeds.For example,if your projected output is for general smallscale cartographic display,a large projected shape of the feature.The MaximumOffset Deviation parameter controlshow many extravertices are added;itsvalueis the maximum distance the projected feature canbe offset from its exact projected",
+      "ocr_score": 0.918
+    },
+    {
+      "index": 58,
+      "image": "page_058.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 矢量数据（Feature）\nProjectInput Dataset or Feature Class InputDatasetorFeatureClassInput Coordinate System(optional) Thefeatureclass,featurelayer,orfeaturedatasettobeHAD_1927_StatePlane_Alabama_East_FIPS_0101 projected.\nOutput Dataset or Feature ClassC:\\Userslyuansheng_huang\\Documents\\ArcGIS\\Default.gdb\\road_ProjectOutput Coordinate SystemVertical （optional)\nGeographicTransformation(optional)\nPreserve Shape (optional)\nMaximumOffsetDeviation(optional)\nUnknownOK Cancel Environments... <<HideHelp Tool Help",
+      "ocr_score": 0.919
+    },
+    {
+      "index": 59,
+      "image": "page_059.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 矢量数据（Feature）\n众Workspace EnvironmentSettingsCurrent WorkspaceC:\\Usersyuansheng_huang\\Documents\\ArcGIS\\Default.gdb EnvironmentsettingsspecifiedinthisdialogboxarevaluesthatSoratch Workspace willbe used bytools thathonortheenvironment.They canbeC:\\Usersyuansheng_huang\\Documents\\ArcGIS\\Default.gdb sethierarchically,meaning thattheycanbe setfortheapplicationyouareworkingin,so they apply to all tools;foraOutputCoordinates modelso they apply to allprocesses within the model;orforaparticularprocesswithinamodel.EnvironmentssetforaProcessing Extent processwithinamodel will overrideall othersettings.\nxYResolutionandTolerance Environmentssetforallprocessesinamodel willoverride thoseset in the application.\nMValuesZValues Geoprocessingenvironmentsettings are additionalparametersGeodatabase that affectatool'sresults.They differfrom normal toolparametersin that they dont appearona tool's dialogbox(withGeodatabaseAdvanced certain exceptions).Rather,they are valuesyou set once usingFields when they are run.\nRandomNumbersCartography Changing the environment settings is oftenaprerequisite toperforminggeoprocessing tasks.Forexample,you mayalreadyCoverage befamiliarwiththeCurrentandScratchWorkspaceenvironmentRasterAnalysis settings,which allowyouto setworkspacesforinputsandoutputs.AnotherexampleistheExtentenvironment setting,\nRasterStorage which allowsyour analysistobelimitedtoaspecificgeographicGeostatisticalAnalysis area,ortheOutputCoordinateSystemenvironmentsetting.\nwhich defines the coordinate system(mapprojection)fornewParallel Processing data.\nTerrainDatasetOK Cancel <<HideHelp Tool Help",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 60,
+      "image": "page_060.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 矢量数据（Feature）\nProject 口\nInput Dataset or Feature Class GeographicTransformation(optional)\npolygonInput Coordinate System (optional) Thismethodcanbe usedforconvertingdatabetweentwoGCS_WGS_1984 geographic coordinate systems or datums.This optionalparametermayberequiredif theinputandoutputOutput Dataset or Feature Class coordinate systemshave different datum.\nE:\\GIS_Example\\Line_p.shpOutput Coordinate System Thetool automaticallyselectsadefault transformation.\nYou canselectadifferent transformationfromthedrop-\nGCS_China_Geodetic_Coordinate_System_2000 downlist.Transformationsarebi-directional.ForexampleVertical(optional) ifconvertingdatafromWGS1984toNAD1927,youcanpickatransformation calledNAD_1927_to_WGS_1984_3.\nGeographicTransformation (optional) and thetool will apply it correctly.\nTheparameterprovidesadrop-down listofvalidtransformation methods.See the usage tipsforfurtherinformation onhowtoselectoneormore appropriatetransformations.\nPreserve Shape (optional)\nMaximum Offset Deviation (optional)\nUnknownOK Cancel Environments... <<HideHelp Tool Help",
+      "ocr_score": 0.967
+    },
+    {
+      "index": 61,
+      "image": "page_061.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 栅格数据（Raster）\nProjectRaster 口\nInput Raster ProjectRasterInput Coordinate System (optional) Transformsarasterintoanewprojection.This createsanewraster.Toapplythetransformation withoutcreatinganew file,use the Warp tool.\nOutput Raster DatasetOutput Coordinate SystemGeographic Transformation (optional)\nResamplingTechnique (optional)\nNEARESTOutput Cell Size （optional)\nRegistration Point (optional)\nXCoordinate Y CoordinateOK Cancel Environments... <<HideHelp Tool Help",
+      "ocr_score": 0.942
+    },
+    {
+      "index": 62,
+      "image": "page_062.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 栅格数据（Raster）\nProjectRaster 口XInput Raster OutputRasterDatasetInput Coordinate System (optional) NametherasterdatasetwiththenewprojectionthatyouWGS_1984_UTM_Zone_49N will create.\nOutput Raster Dataset Whenstoring therasterdatasetinafleformat,youneedC:\\Usersyuansheng_huangDocuments}ArcGIS\\Default.gdb\\dem1_ProjectRaster to specify the file extension:\nGCS_WGS_1984 bil-—EsriBILGeographic Transformation(optional) bip-EsriBIPbsq-EsriBSQdat-ENVIDAT\n-gif-GIFimg-ERDASIMAGINE\n↑ jpg-JPEGjp2-JPEG2000\npng-PNG .tif--TIFF\n.tif-TIFF\n·.mrf-MRF\n.crf-CRFResampling Technique (optional) .Noextension forEsri GridNEARESTOutput Cell Size (optional) When storingaraster datasetinageodatabase,nofledataset.\n8.78783381921378E-04 8.78783381921378E-04 When storingyourraster dataset toaJPEGfileaJPEGRegistration Point (optional) 2000fle,aTIFFfleragodatabaseyoucanpecifyX Coordinate Y Coordinate Compression Type and Compression Qualityin thegeoprocessing Environments.\nOK Cancel Environments... <<HideHep ToolHelp",
+      "ocr_score": 0.934
+    },
+    {
+      "index": 63,
+      "image": "page_063.jpg",
+      "embedded_text": null,
+      "ocr_text": ">投影转化 栅格数据（Raster）\nProjectRaster 口xInput Raster OutputCoordinateSystemInput CoordinateSystem(optional) Selectthecoordinatesystemforthenewrasterdataset.\nWGS_1984_UTM_Zone_49NOutput Raster DatasetC:\\Userslyuansheng_huang\\Documents\\ArcGIS\\Default.gdb\\deml_ProjectRaster1\nOutput Coordinate SystemGCS_WGS_1984\nGeographicTransformation(optional)\nResampling Technique （optional)\nNEARESTOutput Cell Size (optional)\n8.78783381921378E-04 8.78783381921378E-04\nRegistration Point (optional)\nX Coordinate Y CoordinateOK Cancel Environments. <<HideHelp Tool Help",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 64,
+      "image": "page_064.jpg",
+      "embedded_text": null,
+      "ocr_text": "黄河中游区域工程地质图\nTHE MAPOFREGIONALENGINEERING-GEOLOGYOF THEMIDDLEREACHESOFTHEHUANGHERIVER\n图例\n1.工程地票向照Problemsof LEGENDEngineering-Geology\n（）性Reginl StabiyI工程地康条件Conditionef Engineering-Geology 地理配准\n（1 Georpc Pas\n）（）\nogy ofRock Mass SCR2\nher-te 10-101\nThefollowingdatasourcesyou added aremissing spatialreferenceinfommation.Thisdata canbe drawninArcMap.but cannot beprojected：\ntopographic.png 自航地质玻泉及其它Physiogeological Phenomens&OthersDontwamme again ever OK 比尺12000000\nENER.",
+      "ocr_score": 0.823
+    },
+    {
+      "index": 65,
+      "image": "page_065.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.3地理配准\n地形图空间配准\nGeoreferencingGeoreferencingGeoreferencingGeoreferencing topographic.pngtopographic.png\n>启动地理配准工具条→选择待地理配准图层→>\nGeoreferencing菜单下，去除自动校准(AutoAdjust)\n选框→点击添加控制点按钮→控制点处点击鼠\n标左键→再次点击鼠标右键一弹出菜单中选择输\n入X和Y...→输入坐标并确定→Georeferencing菜\n单下点击更新地理配准，点校正，另存数据",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 66,
+      "image": "page_066.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.3地理配准\n地形图空间配准\nGeoreferencingGeoreferencing topographic.pngR Rectif....\nFi ToDisplayLegead Sople sitcsodateDisplay RivemeSeste hourdarAuto Adjust Stedy sreaFlip orRotateTransformation Legend AgenWaier srcaDelete LinksOptions...",
+      "ocr_score": 0.922
+    },
+    {
+      "index": 67,
+      "image": "page_067.jpg",
+      "embedded_text": null,
+      "ocr_text": "3.3地理配准\n地形图空间配准\nGeoreferencingGeoreferencing topographic.pngR Rectify...\nFi ToDisplay 选部\nodate Display 34°\n龙\nAuto Adjust InputXandY...\nFlip orRotate InputDMSofLonandLat...\nCancel PointTransformationDelete Links EnterCoordinates X104°\nResetTransformation X: 1070.367164\n-6050.835500\nOptions...\nOK Cancel",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 68,
+      "image": "page_068.jpg",
+      "embedded_text": null,
+      "ocr_text": "√ Copy3.3地理配准 RemoveOpen Attribute TableJoins and RelatesZoomTo Layeroom ZoomTo Layer\n放大到最大Zoomto ZoomToRaVisible Scale Zoom to theextent of the\n地形图空间配准 Data selectedlayerEditFeaturesSave As Layer File...\nGeoreferencing Create LayerPackage...\nProperties..\nGeoreferencing topographic.png 创\nRectif... Untitled-ArcM FleEdt okmarks SaveAsD ×\nFit ToDisplay TableOfLayers Cell Size: 0.001718\nUpdate Display RGBRed:Band1 GreencBand2\nAuto Adjust Bluer Band3 NoData as: 256\nResampleType: Nearest Neighbor (for discrete data)\nFliporRotateOutputLocation: E:\\ArcGIS_3rdTransformationDelete Links Name: topographic1.tf Format:\nResetTransformation Compression Type: NONE Compression Quality 75\n(1-100):\nOptions.. Save Cancel",
+      "ocr_score": 0.933
+    },
+    {
+      "index": 69,
+      "image": "page_069.jpg",
+      "embedded_text": null,
+      "ocr_text": "第四节\n数据格式转换",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 70,
+      "image": "page_070.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 数据格式转化\n>矢量转栅格\nArcToolbox → Conversion Tools —→ To Raster\n>Feature (Point/Polyline/Polygon) To RasterArcToolbox ArcToolboxCartographyTools ToGeoPackageConversion Tools ToKMLExcelFromGPS 日 To RasterFromKML ASCll toRaster\n田 FromPDF DEMto Raster\n田 FromRaster Feature to RasterFromWFS Float to RasterJSON LASDatasetto RasterMetadata Multipatch toRasterToCADToCollada Pointto RasterToCoverage Polygon toRasterTodBASE Polyline to RasterToGeodatabase RasterToOtherFormat(multToGeoPackage ToShapefileToKML Data InteroperabilityTools\n+ ToRasterToShapetile Data ManagementToolsData InteroperabilityTools Editing ToolsData Management Tools",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 71,
+      "image": "page_071.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1数据格式转化\n>矢量转栅格\nWorkspaceOutput Coordinate SystemOK Cancel ShowHelp>>",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 72,
+      "image": "page_072.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1数据格式转化\n>矢量转栅格\nPolygon toRasterInput Features Cellassignmenttype(optional)\nValue field Themethodtodeterminehowthecellwillbeassignedavaluewhenmorethanonefeaturefallswithinacell.\nOutput Raster Dataset CELL_CENTER-Thepolygonthatoverlapsthecenterof thecellyields the attribute toassigntoCell assigmment type (optional) the cell.\nCELL_CENTER MAXIMUMAREA-ThesinglefeaturewiththePriority field (optional) largestareawithinthecellyieldstheattributetoNON assign to the cell.\nCellsize(optional) MAXIMUM_COMBINED_AREA-Ifthereismorethanone featureinacellwiththesamevalue,theareasofthesefeatureswillbecombined.Thecellwill determinethevaluetoassigntothecell.\nOK Cancel Environments... <<HideHelp Tool Help",
+      "ocr_score": 0.962
+    },
+    {
+      "index": 73,
+      "image": "page_073.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.1 数据格式转化\n>矢量转栅格\nArcToolbox → Conversion Tools → From Raster\n→Raster To Point (Polyline/Polygon)\nRastertoPointRaster toASCllRastertoFloatRaster to PointRastertoPolygonRasterToVideo",
+      "ocr_score": 0.974
+    },
+    {
+      "index": 74,
+      "image": "page_074.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2数据几何形状转化\nFeatureToLineInput Features Feature ToLineCreatesafeature classcontaininglinesgeneratedbyconverting polygon boundariesto lines,or splittingline,polygon,orbothfeatures attheirintersections. s→\nLINEINPUT OUTPUTXY Tolerance （optional) POLYGONINPUT OUTPUTMetersPreserve attributes(optional)\nLINEANDPOLYGON OUTPUTINPUTSOK Cancel Environments... <<HideHelp Tool Help",
+      "ocr_score": 0.969
+    },
+    {
+      "index": 75,
+      "image": "page_075.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2数据几何形状转化\n>Feature to PointArcToolbox → Data Management Tools→\nFeatures→Feature ToPoint（平均值）\nFeatureToPoint 口 XInput FeaturesOutput Feature ClassInside（optional)\nOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.955
+    },
+    {
+      "index": 76,
+      "image": "page_076.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2数据几何形状转化\nFeatureToPolygon 口\nInput Features FeatureToPolygonCreatesa feature classcontaining polygons generatedfrom areas enclosedby input lineorpolygonfeatures.\nLINEINPUT OUTPUT\n←\nOutputFeature ClassPOLYGONINPUT OUTPUTXY Tolerance (optional)\nMetersPreserve attributes (optional)\nLabel Features (optional)\nLINEANDPOLYGONINPUTS OUTPUTOK Cancel Environments... <<HideHelp ToolHep",
+      "ocr_score": 0.916
+    },
+    {
+      "index": 77,
+      "image": "page_077.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2数据几何形状转化\n>Feature Vertices To PointArcToolbox → Data Management Tools→\nFeatures—→FeatureVertices To PointLINEINPUT ALL MID START END BOTH_ENDS DANGLETrue curvePOLYGONINPUT ALL MID START END BOTH_ENDSStartpointoEndpointxVertex",
+      "ocr_score": 0.976
+    },
+    {
+      "index": 78,
+      "image": "page_078.jpg",
+      "embedded_text": null,
+      "ocr_text": "4.2数据几何形状转化\n>Polygon To LinePolygon To Line 口 XInput FeaturesOutputFeature ClassIdentify and store polygon neighboring information (optional)\nOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.939
+    },
+    {
+      "index": 79,
+      "image": "page_079.jpg",
+      "embedded_text": null,
+      "ocr_text": "第五节\n数据处理",
+      "ocr_score": 0.958
+    },
+    {
+      "index": 80,
+      "image": "page_080.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1数据裁剪\n从整个空间输出集中裁剪出部分区域，\n一遍获取真正需要的数据作为研究区域，\n减少不必要参与运算的数据。",
+      "ocr_score": 0.996
+    },
+    {
+      "index": 81,
+      "image": "page_081.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.1矢量数据裁剪\n》工具箱（ArcToolbox）→分析工具（AnalysisTools)→提取(Extract)→裁剪(Clip)\n输入要素 剪切要素 输出要素\n》输入要素/剪切要素：点、线、面",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 82,
+      "image": "page_082.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.1矢量数据裁剪\n》裁剪(Clip)工具\nInput FeaturesClipFeaturesOutput Feature ClassXY Tolerance (optional)\nDecimal degreesOK Cancel Environments.. ShowHelp>>\n输入要素(InputFeatures)：选择需要裁剪的矢\n量数据。",
+      "ocr_score": 0.961
+    },
+    {
+      "index": 83,
+      "image": "page_083.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.1矢量数据裁剪\n》裁剪(Clip)工具\nInputFeaturesClip FeaturesOutput Feature ClassXY Tolerance (optional)\nDecimal degreesOK Cancel Environments... ShowHelp>>\n剪切要素(ClipFeatures)：选择用来进行裁剪\n的矢量数据。",
+      "ocr_score": 0.97
+    },
+    {
+      "index": 84,
+      "image": "page_084.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.1矢量数据裁剪\n》裁剪(Clip)工具\nInputFeaturesClipFeaturesXY Tolerance (optional)\nDecimal degreesOK Cancel Environments... Show Help>>\n输出要素集(OutputFeatures Class)：设置输\n出文件路径和文件名。",
+      "ocr_score": 0.974
+    },
+    {
+      "index": 85,
+      "image": "page_085.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.1矢量数据裁剪\n》裁剪(Clip)工具\n<clip 口 ×\nInput FeaturesVectorClip FeaturesVectox_SelectOutput Feature ClassE:\\GIS_Examplevector_c.shpXY Tolerance (optional)\n0.02 Decimal degreesOK Cancel Environments.. ShowHelp>>\nXY容差(XY Tolerance)：设置\n容差的大小。",
+      "ocr_score": 0.96
+    },
+    {
+      "index": 86,
+      "image": "page_086.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2栅格数据裁剪\nArcToolbox\n+ Space TimePatternMining ToolsSpatial AnalystTools 》工具箱（ArcToolbox)\nConditional\n+ DensityDistance →空间分析工具\nExtraction\n(Spatial Analyst Tools)\nExtractbyCircleExtractbyMaskExtractbyPoints →提取(Extraction)\nSample\n+ Generalization",
+      "ocr_score": 0.981
+    },
+    {
+      "index": 87,
+      "image": "page_087.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2 栅格数据裁剪\n>ExtractbyCircle（按圆提取）\nINSIDEOUTSIDEOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.984
+    },
+    {
+      "index": 88,
+      "image": "page_088.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2栅格数据裁剪\n>ExtractbyMask（按掩膜提取）\nExtractbyMaskInputrasterInput raster or feature mask dataextract_demOutput rasterC:\\Usersyuansheng_huang\\DocumentsArcGIS\\Default.gdb\\extract_demOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.98
+    },
+    {
+      "index": 89,
+      "image": "page_089.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2栅格数据裁剪\n>ExtractbyMask（按掩膜提取）\nExtractbyMask ?\nInputrasterInput raster or feature mask dataextract_demOutputrasterC:\\Usersyuansheng_huang\\Documents\\ArcGIS\\Default.gdb\\extract_demOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.956
+    },
+    {
+      "index": 90,
+      "image": "page_090.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2栅格数据裁剪\n>ExtractbyMask（按掩膜提取）\nExtractbyMask ?\nInput rasterInput raster or feature mask dataextract_demOutputrasterC:\\Usersyuansheng_huangDocumentsArcGIS\\Default.gdb\\extract_demOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.959
+    },
+    {
+      "index": 91,
+      "image": "page_091.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2 栅格数据裁剪\nExtractbyPoints 口 X ExtractbyPolygon 口 XInput raster Input rasterdem1 dem1\nInput points PolygonX Coordinate Y Coordinate X Coordinate Y Coordinate109.536 35.056109.54935.487 109.54935.487109.75835.252 110.001 35.056110.00135.028 109.536 35.056\nOutput raster Output rasterC:\\Usersyuansheng_huang\\Documents\\ArcGIS\\Default.g( C:\\Usersyuansheng_huang\\Documents\\ArcGIS\\Default.g(\nExtraction area(optional) Extraction area (optional)\nINSIDE INSIDEOK Cancel Environments... ShowHelp>> OK Cancel Environments... Show Help>>\n按点提取 按多边形提取",
+      "ocr_score": 0.962
+    },
+    {
+      "index": 92,
+      "image": "page_092.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2 栅格数据裁剪\n>ExtractbyRectangle（按矩形提取）\nTable OfContents\n口\n公日 LayersVector_Select\n口dem1\nValueHigh:1722\nC:\\Userslyuansheng_huang\\Documents\\ArcGIS\\DefaultExtraction area (optional)\nINSIDEOK Cancel Environments. Sh",
+      "ocr_score": 0.941
+    },
+    {
+      "index": 93,
+      "image": "page_093.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.1.2栅格数据裁剪\n>ExtractbyCircle（按圆提取）\nExtractbyCircle 口\nInput rasterCenter pointXCoordinate YCoordinate109.778 35.23\nRadius0.2\nOutput rasterC:\\Usersyuansheng_huang\\DocumentsArcGIS\\Default.gdb\\Extract_dem11\nExtraction area(optional)\nINSIDEOK Cancel Environments.. ShowHelp>>",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 94,
+      "image": "page_094.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.2数据拼接\n将空间位置相邻的多个数据拼接为\n一个完整的目标数据",
+      "ocr_score": 0.999
+    },
+    {
+      "index": 95,
+      "image": "page_095.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.2.1矢量数据拼接\n》工具箱(ArcToolbox）→数据管理工具(DataManagement Tools）→常规（General)→合并\n(Merge)\n输入要素 输出要素\n>输入要素：点、线、面",
+      "ocr_score": 0.975
+    },
+    {
+      "index": 96,
+      "image": "page_096.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.2.1矢量数据拼接\nMergeInput Datasets\n输入数据集\npolygonlpolygon2\n输出数据集 Output DatasetE:\\GIS_Example\\p_area.shpField Map (optional)\nAREA （Double)\nPERIMETER （Double)\nCNTY_（Double)\nCNTY_ID （Double)\nCNTY_CODE （Long)\nNAME （Text)\nOK Cancel Environments... ShowHelp>>",
+      "ocr_score": 0.943
+    },
+    {
+      "index": 97,
+      "image": "page_097.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.2.2栅格数据拼接\nArcToolbox\n》工具箱（ArcToolbox) ProjectionsandTransformationsRasterMosaicDataset\n→数据管理工具(Data OrthoMappingRasterCatalogRasterDatasetManagement Tools) → CopyRasterCreate Random Raster\n栅格（Raster）→栅格 DownloadRastersGenerate RasterFrom RasterFunctionMosaicMosaicTo NewRaster\n数据集(RasterDataset) RasterCatalog ToRasterDatasetm&DaetarDencarcineMosaic",
+      "ocr_score": 0.966
+    },
+    {
+      "index": 98,
+      "image": "page_098.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.2.2栅格数据拼接\nMosaicToNewRaster 口 Mosaic 口\nInput Rasters Input Rastersdem2 dem1\ndem1 dem2\n×\nOutput Location Target RasterE:\\ArcGIS_3rd\\Chp4 E:\\ArcGIS_3rd\\Chp4\\Ex1\\dem1\nRaster Dataset Name with Extension Mosaic Operator (optional）\nDEM LASTSpatial Reference for Raster （optional) Mosaic Colormap Mode (optional)\nWGS_1984_World_Mercator FIRSTPixel Type (optional) Ignore Background Value (optional)\n16_BIT_UNSIGNEDCellsize (optional) HoData Value (optional)\nHumber of Bands Convert 1 bit data to 8 bit（optional）\nMosaic Operator (optional） MosaickingTolerance （optional)\nLAST Color MatchingMethod(optional)\nMosaic Colormap Mode (optional) NONEFIRSTOK Cancel Environments. ShowHelp>> OK Cancel Environments. ShowHelp>>\n镶嵌至新栅格 镶嵌",
+      "ocr_score": 0.946
+    },
+    {
+      "index": 99,
+      "image": "page_099.jpg",
+      "embedded_text": null,
+      "ocr_text": "Table Of ContentsLayers 有上百个栅格文件需要处理\nLS_N47_E082.F CNlineLSN47E084F LS_N47_E083.6f MosaicToNewRaster 口\nLSN47_E085. SN47_E086. Input Rasters 一次操作\nLSN47_E087. LS_N47_E088.ifLSN47_E089. LS_N47_E083.tif LSN47E082.ti + 只能添加\nLS_N47_E084.tif 一个数据\nLS_N47_E118.f MosaicToNewRaster XLSN47_E119.6 LS_N47_E120.f Input RastersLSN47E123. LSN47_E122.f SM47E082.tiLS_N47_E124.if +\nSN47_E125.6f LS_N47_E126.\nLS_N47_E127.f MosaicToNewRasterLSN47E128.if LS_N47_E129.6fLSN47_E130.f Spati Input RastersSN47_E13. LSN47E131. PixelLS_N47_E134.f LSN47E133.f Cells 8_BI1 Outpu Input Rasters +\nLS_N48_E086.f LSN48E085.iF Lookin: China LS.zin XLS_N48_E087.f Raste MosaicToNewRaster 口 XLS_N48_E089.f LS_N48_E088.i Mosai Spati Input RastersLS_N48_E115.6f LSN48_E116.f ISYIPixel 8_BI1\nCells Outpu F:\\Doeunent\\GIS_Data\\China_IS_zip\\LS_H53_E125.tif F:\\Doounent\\GIS_Data\\China_LS_zip\\LS_H15_E111.tif +\nLSN48E121.f F:\\Docunent\\GIS_Data\\China_IS_zip\\LS_H16_E111.tif F:\\Document\\GIS_Data\\China_LS_zip\\LS_H16_E112.tifHunbe Raste F\\Document\\GIS_Data\\China_LS_zip\\LS_N18_E108.tif ↑\nLS_N48_E123.f LS_N48124.F Mosai Spati F:\\Docunent\\GIS_Data\\China_LS_zip\\LS_H18_E109.tifLSN48_E125.if LAST F:\\Doounent\\GIS_Data\\China_IS_zip\\LS_H18_E110.tif F:\\Docunent\\GIS_Data\\China_LS_zip\\LS_H19_E108.tifSN48_E127. Pixel 8_BI F:\\Dooument\\GIS_Data\\China_LS_zip\\LS_M19_E109.tif23 Cell Output LocationLSN48_E132.f NunbLS_N48_E134.f Raster Dataset Hame vith Extension98036N51 LS_N49_E087. Hosai LAST Spatial Reference for Raster (optional)\nLS_N49_E116.if LS_N49_E117.fLSN49E118. 6131 PixelType(optional) 8_BIT_UNSIGNEDLS_N49_E120.f S_N49E121. 一次操作 Cellsize (optional)\nLSN49_E124.f LS_N49E123. 可以添加 spgqLS_N49E125.F LS_N49_E126.f Mosaic Operator (optional)\n多个数据 LAST2136因 LSN49_E128. OK Cancel Environment...\n3因 LSN50E119.fLSN50_E121.",
+      "ocr_score": 0.866
+    },
+    {
+      "index": 100,
+      "image": "page_100.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.3数据提取\n从已有数据（栅格或矢量）中，根据属性\n表内容选择符合条件的数据，构成新的数\n据层。通过SQL表达式进行选择。",
+      "ocr_score": 0.998
+    },
+    {
+      "index": 101,
+      "image": "page_101.jpg",
+      "embedded_text": null,
+      "ocr_text": "2024年国控断面地表水水功能等级\n哪些站点水功能等级为I、ⅡI、IⅢI类？",
+      "ocr_score": 0.982
+    },
+    {
+      "index": 102,
+      "image": "page_102.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.3.1矢量数据的提取\n》工具箱(ArcToolbox）→分析工具(AnalysisTools)→提取(Extract)→筛选(Select)\nQueryBuilderSelect 口 PERIMETERCNTY_\nInput Features CNTY_IDVector CNTY_CODEOutputFeature Class NAMEE:\\GIS_Example\\dom_area.shp Verifying expressionExpression(optional)\n，=日，=\nOK Cancel Environments... Show\n>输入要素：\n点、线、面",
+      "ocr_score": 0.957
+    },
+    {
+      "index": 103,
+      "image": "page_103.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.3.1矢量数据的提取\nVectorFID Shape* ARRA PBRIVBTBR CNTY CNTY_ID CNTY_CODB NAMB0PolyEon 0.27062 2.84467 0 0 610631 黄龙县\n1Polyeon 0.06721 1.49257 0 0 610527 白水县\n2PolyEon 0.10272 2.10223 0 0 610525 澄城县\n3Polygon 0.1275 1.79755 0 0 610524 合阳县\n4Polygon 0.11051 2.17712 0 0 610629 洛川县\n5Polyeon 0.11051 2.17712 0 610629 洛川县\n6Polyeon 0.05002 1.60534 0 610526 消城县\nPolyEon 0.05791 1.81389 0 0 610629 洛川县\n8Polygon 0.22839 3.1834 0 610632 黄陵县\n9Polyeon 0.14888 2.27367 0 0 610222 宜治县\n10Polygon 0.07233 2.59844 0 0 610201 钢川市市\n11 Polygon 0.0295 0.84414 0 0 610527 白水县\n12 Polyeon 0.0295 0.84414 0 0 610527 白水县\n13Polyeon 0.10083 1.71963 o00 0 610221 烟县\n14Polyeon 0.01071 0.47465 0 610526 消城县\n15Polygon 0.01811 0.67949 0 610528 富平县\n(0outof16Selected）\nVector",
+      "ocr_score": 0.931
+    },
+    {
+      "index": 104,
+      "image": "page_104.jpg",
+      "embedded_text": null,
+      "ocr_text": "5.3.2栅格数据的提取\n》工具箱(ArcToolbox)→空间分析工具（SpatialAnalyst Tools）→提取（Extraction）→提取\n(ExtractbyAttributes) QueryBuilderVALUEExtractLike 666\nInput ra 1000\nAnd 1001\ndem2.tif Or 1002\nWhere cl 1003\nNot 1004\n\"VALUEOutputr Null Get UniqueValues GoTo:\nC:\\Users \"VALUE\"<=1000\nClear Verfy Help Load.. Save...\nOK Cancel",
+      "ocr_score": 0.975
+    }
+  ]
+}

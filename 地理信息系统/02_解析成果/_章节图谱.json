@@ -1,0 +1,149 @@
+{
+  "course_dir": "地理信息系统-2026春-121000222-黄源生",
+  "course_name": "地理信息系统",
+  "semester": "2026春",
+  "teacher": "黄源生",
+  "pdf_total": 6,
+  "page_total": 726,
+  "chapter_count": 4,
+  "chapter_nums": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "chapters": [
+    {
+      "chapter_num": 1,
+      "chapter_title": "地理信息系统 Geographic Information System, GIS",
+      "doc_count": 2,
+      "total_pages": 180,
+      "primary": {
+        "rel_dir": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS",
+        "pdf_name": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf",
+        "lesson_seq": 2,
+        "page_count": 90,
+        "lesson_title": "地理信息系统 Geographic Information System, GIS（2）",
+        "presentation_title": "地理信息系统 Geographic Information System, GIS"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "001-地理信息系统 Geographic Information System, GIS-地理信息系统 Geographic Information System, GIS",
+          "pdf_name": "001-地理信息系统 Geographic Information System, GIS-地理信息系统 Geographic Information System, GIS.pdf",
+          "lesson_seq": 1,
+          "page_count": 90,
+          "all_chapter_nums": [
+            1
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS",
+          "pdf_name": "002-地理信息系统 Geographic Information System, GIS（2）-地理信息系统 Geographic Information System, GIS.pdf",
+          "lesson_seq": 2,
+          "page_count": 90,
+          "all_chapter_nums": [
+            1
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "空间数据-知识点回顾",
+      "doc_count": 2,
+      "total_pages": 335,
+      "primary": {
+        "rel_dir": "004-空间数据-知识点回顾",
+        "pdf_name": "004-空间数据-知识点回顾.pdf",
+        "lesson_seq": 4,
+        "page_count": 169,
+        "lesson_title": "空间数据",
+        "presentation_title": "知识点回顾"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "003-GIS-空间数据-知识点回顾",
+          "pdf_name": "003-GIS-空间数据-知识点回顾.pdf",
+          "lesson_seq": 3,
+          "page_count": 166,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "004-空间数据-知识点回顾",
+          "pdf_name": "004-空间数据-知识点回顾.pdf",
+          "lesson_seq": 4,
+          "page_count": 169,
+          "all_chapter_nums": [
+            2
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 3,
+      "chapter_title": "空间数据的转换与处理",
+      "doc_count": 1,
+      "total_pages": 104,
+      "primary": {
+        "rel_dir": "005-空间数据的转换与处理-空间数据的转换与处理",
+        "pdf_name": "005-空间数据的转换与处理-空间数据的转换与处理.pdf",
+        "lesson_seq": 5,
+        "page_count": 104,
+        "lesson_title": "空间数据的转换与处理",
+        "presentation_title": "空间数据的转换与处理"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "005-空间数据的转换与处理-空间数据的转换与处理",
+          "pdf_name": "005-空间数据的转换与处理-空间数据的转换与处理.pdf",
+          "lesson_seq": 5,
+          "page_count": 104,
+          "all_chapter_nums": [
+            3
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "空间数据的可视化表达",
+      "doc_count": 1,
+      "total_pages": 107,
+      "primary": {
+        "rel_dir": "006-空间数据的可视化表达-空间数据的可视化表达",
+        "pdf_name": "006-空间数据的可视化表达-空间数据的可视化表达.pdf",
+        "lesson_seq": 6,
+        "page_count": 107,
+        "lesson_title": "空间数据的可视化表达",
+        "presentation_title": "空间数据的可视化表达"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "006-空间数据的可视化表达-空间数据的可视化表达",
+          "pdf_name": "006-空间数据的可视化表达-空间数据的可视化表达.pdf",
+          "lesson_seq": 6,
+          "page_count": 107,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    }
+  ],
+  "non_lecture": [],
+  "uncategorized": []
+}

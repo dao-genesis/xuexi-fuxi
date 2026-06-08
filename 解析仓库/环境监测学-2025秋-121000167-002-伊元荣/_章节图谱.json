@@ -1,0 +1,175 @@
+{
+  "course_dir": "环境监测学-2025秋-121000167-002-伊元荣",
+  "course_name": "环境监测学",
+  "semester": "2025秋",
+  "teacher": "伊元荣",
+  "pdf_total": 8,
+  "page_total": 459,
+  "chapter_count": 3,
+  "chapter_nums": [
+    6,
+    7,
+    9
+  ],
+  "chapters": [
+    {
+      "chapter_num": 6,
+      "chapter_title": "环境污染生物监测",
+      "doc_count": 4,
+      "total_pages": 352,
+      "primary": {
+        "rel_dir": "012-第六章 环境污染生物监测-第六章 环境污染生物监测",
+        "pdf_name": "012-第六章 环境污染生物监测-第六章 环境污染生物监测.pdf",
+        "lesson_seq": 12,
+        "page_count": 127,
+        "lesson_title": "第六章 环境污染生物监测",
+        "presentation_title": "第六章 环境污染生物监测"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "012-第六章 环境污染生物监测-第六章 环境污染生物监测",
+          "pdf_name": "012-第六章 环境污染生物监测-第六章 环境污染生物监测.pdf",
+          "lesson_seq": 12,
+          "page_count": 127,
+          "all_chapter_nums": [
+            6
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "013-第六章 环境污染生物监测（2）-第六章 环境污染生物监测",
+          "pdf_name": "013-第六章 环境污染生物监测（2）-第六章 环境污染生物监测.pdf",
+          "lesson_seq": 13,
+          "page_count": 125,
+          "all_chapter_nums": [
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "013-第六章 环境污染生物监测（2）-第九章 环境污染自动监测一",
+          "pdf_name": "013-第六章 环境污染生物监测（2）-第九章 环境污染自动监测一.pdf",
+          "lesson_seq": 13,
+          "page_count": 70,
+          "all_chapter_nums": [
+            6,
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测",
+          "pdf_name": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测.pdf",
+          "lesson_seq": 13,
+          "page_count": 30,
+          "all_chapter_nums": [
+            6,
+            7
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "物理型污染监测 - 噪声监测",
+      "doc_count": 1,
+      "total_pages": 30,
+      "primary": {
+        "rel_dir": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测",
+        "pdf_name": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测.pdf",
+        "lesson_seq": 13,
+        "page_count": 30,
+        "lesson_title": "第六章 环境污染生物监测（2）",
+        "presentation_title": "第七章-物理型污染监测 - 噪声监测"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测",
+          "pdf_name": "013-第六章 环境污染生物监测（2）-第七章-物理型污染监测 - 噪声监测.pdf",
+          "lesson_seq": 13,
+          "page_count": 30,
+          "all_chapter_nums": [
+            6,
+            7
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 9,
+      "chapter_title": "环境污染自动监测一",
+      "doc_count": 3,
+      "total_pages": 141,
+      "primary": {
+        "rel_dir": "014-第九章 环境污染自动监测一-第九章 环境污染自动监测一",
+        "pdf_name": "014-第九章 环境污染自动监测一-第九章 环境污染自动监测一.pdf",
+        "lesson_seq": 14,
+        "page_count": 70,
+        "lesson_title": "第九章 环境污染自动监测一",
+        "presentation_title": "第九章 环境污染自动监测一"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "013-第六章 环境污染生物监测（2）-第九章 环境污染自动监测一",
+          "pdf_name": "013-第六章 环境污染生物监测（2）-第九章 环境污染自动监测一.pdf",
+          "lesson_seq": 13,
+          "page_count": 70,
+          "all_chapter_nums": [
+            6,
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "014-第九章 环境污染自动监测一-第九章 环境污染自动监测一",
+          "pdf_name": "014-第九章 环境污染自动监测一-第九章 环境污染自动监测一.pdf",
+          "lesson_seq": 14,
+          "page_count": 70,
+          "all_chapter_nums": [
+            9
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "014-第九章 环境污染自动监测一-测试",
+          "pdf_name": "014-第九章 环境污染自动监测一-测试.pdf",
+          "lesson_seq": 14,
+          "page_count": 1,
+          "all_chapter_nums": [
+            9
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        }
+      ]
+    }
+  ],
+  "non_lecture": [],
+  "uncategorized": [
+    {
+      "rel_dir": "015-测试(2)(1)-期末总结",
+      "pdf_name": "015-测试(2)(1)-期末总结.pdf",
+      "lesson_seq": 15,
+      "page_count": 29,
+      "lesson_title": "测试(2)(1)",
+      "presentation_title": "期末总结"
+    },
+    {
+      "rel_dir": "015-测试(2)(1)-测试(2)(1)",
+      "pdf_name": "015-测试(2)(1)-测试(2)(1).pdf",
+      "lesson_seq": 15,
+      "page_count": 7,
+      "lesson_title": "测试(2)(1)",
+      "presentation_title": "测试(2)(1)"
+    }
+  ]
+}

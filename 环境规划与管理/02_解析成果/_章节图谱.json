@@ -1,0 +1,288 @@
+{
+  "course_dir": "环境规划与管理-2026春-121000104-001-王思雨",
+  "course_name": "环境规划与管理",
+  "semester": "2026春",
+  "teacher": "王思雨",
+  "pdf_total": 11,
+  "page_total": 1207,
+  "chapter_count": 6,
+  "chapter_nums": [
+    0,
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "chapters": [
+    {
+      "chapter_num": 0,
+      "chapter_title": "绪论-环境规划与管理",
+      "doc_count": 2,
+      "total_pages": 202,
+      "primary": {
+        "rel_dir": "002-part02-绪论-环境规划与管理",
+        "pdf_name": "002-part02-绪论-环境规划与管理.pdf",
+        "lesson_seq": 2,
+        "page_count": 129,
+        "lesson_title": "part02",
+        "presentation_title": "绪论-环境规划与管理"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "001-part02-绪论-环境规划与管理",
+          "pdf_name": "001-part02-绪论-环境规划与管理.pdf",
+          "lesson_seq": 1,
+          "page_count": 73,
+          "all_chapter_nums": [
+            0,
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "002-part02-绪论-环境规划与管理",
+          "pdf_name": "002-part02-绪论-环境规划与管理.pdf",
+          "lesson_seq": 2,
+          "page_count": 129,
+          "all_chapter_nums": [
+            0,
+            2
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 2,
+      "chapter_title": "绪论-环境规划与管理",
+      "doc_count": 2,
+      "total_pages": 202,
+      "primary": {
+        "rel_dir": "002-part02-绪论-环境规划与管理",
+        "pdf_name": "002-part02-绪论-环境规划与管理.pdf",
+        "lesson_seq": 2,
+        "page_count": 129,
+        "lesson_title": "part02",
+        "presentation_title": "绪论-环境规划与管理"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "001-part02-绪论-环境规划与管理",
+          "pdf_name": "001-part02-绪论-环境规划与管理.pdf",
+          "lesson_seq": 1,
+          "page_count": 73,
+          "all_chapter_nums": [
+            0,
+            2
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "002-part02-绪论-环境规划与管理",
+          "pdf_name": "002-part02-绪论-环境规划与管理.pdf",
+          "lesson_seq": 2,
+          "page_count": 129,
+          "all_chapter_nums": [
+            0,
+            2
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 4,
+      "chapter_title": "环境规划与管理中的综合分析方法",
+      "doc_count": 4,
+      "total_pages": 513,
+      "primary": {
+        "rel_dir": "004-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法",
+        "pdf_name": "004-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法.pdf",
+        "lesson_seq": 4,
+        "page_count": 135,
+        "lesson_title": "第四章环境规划与管理中的综合分析方法",
+        "presentation_title": "第四章环境规划与管理中的综合分析方法"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "004-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法",
+          "pdf_name": "004-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法.pdf",
+          "lesson_seq": 4,
+          "page_count": 135,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "004-第四章环境规划与管理中的综合分析方法-环境规划与管理",
+          "pdf_name": "004-第四章环境规划与管理中的综合分析方法-环境规划与管理.pdf",
+          "lesson_seq": 4,
+          "page_count": 118,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "005-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法",
+          "pdf_name": "005-第四章环境规划与管理中的综合分析方法-第四章环境规划与管理中的综合分析方法.pdf",
+          "lesson_seq": 5,
+          "page_count": 134,
+          "all_chapter_nums": [
+            4
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法",
+          "pdf_name": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法.pdf",
+          "lesson_seq": 6,
+          "page_count": 126,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 5,
+      "chapter_title": "环境规划的基本内容和程序",
+      "doc_count": 3,
+      "total_pages": 279,
+      "primary": {
+        "rel_dir": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法",
+        "pdf_name": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法.pdf",
+        "lesson_seq": 6,
+        "page_count": 126,
+        "lesson_title": "第五章环境规划的基本内容和程序",
+        "presentation_title": "第四章环境规划与管理中的综合分析方法"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法",
+          "pdf_name": "006-第五章环境规划的基本内容和程序-第四章环境规划与管理中的综合分析方法.pdf",
+          "lesson_seq": 6,
+          "page_count": 126,
+          "all_chapter_nums": [
+            4,
+            5
+          ],
+          "is_primary": true,
+          "is_cross_chapter": true
+        },
+        {
+          "rel_dir": "006-第五章环境规划的基本内容和程序-第五章环境规划的基本内容和程序",
+          "pdf_name": "006-第五章环境规划的基本内容和程序-第五章环境规划的基本内容和程序.pdf",
+          "lesson_seq": 6,
+          "page_count": 76,
+          "all_chapter_nums": [
+            5
+          ],
+          "is_primary": false,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "007-第六章环境规划-第五章环境规划的基本内容和程序",
+          "pdf_name": "007-第六章环境规划-第五章环境规划的基本内容和程序.pdf",
+          "lesson_seq": 7,
+          "page_count": 77,
+          "all_chapter_nums": [
+            5,
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 6,
+      "chapter_title": "环境规划",
+      "doc_count": 2,
+      "total_pages": 192,
+      "primary": {
+        "rel_dir": "007-第六章环境规划-第六章环境规划",
+        "pdf_name": "007-第六章环境规划-第六章环境规划.pdf",
+        "lesson_seq": 7,
+        "page_count": 115,
+        "lesson_title": "第六章环境规划",
+        "presentation_title": "第六章环境规划"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "007-第六章环境规划-第六章环境规划",
+          "pdf_name": "007-第六章环境规划-第六章环境规划.pdf",
+          "lesson_seq": 7,
+          "page_count": 115,
+          "all_chapter_nums": [
+            6
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        },
+        {
+          "rel_dir": "007-第六章环境规划-第五章环境规划的基本内容和程序",
+          "pdf_name": "007-第六章环境规划-第五章环境规划的基本内容和程序.pdf",
+          "lesson_seq": 7,
+          "page_count": 77,
+          "all_chapter_nums": [
+            5,
+            6
+          ],
+          "is_primary": false,
+          "is_cross_chapter": true
+        }
+      ]
+    },
+    {
+      "chapter_num": 7,
+      "chapter_title": "环境管理模式",
+      "doc_count": 1,
+      "total_pages": 106,
+      "primary": {
+        "rel_dir": "008-5月8日授课-第七章环境管理模式",
+        "pdf_name": "008-5月8日授课-第七章环境管理模式.pdf",
+        "lesson_seq": 8,
+        "page_count": 106,
+        "lesson_title": "5月8日授课",
+        "presentation_title": "第七章环境管理模式"
+      },
+      "all_docs": [
+        {
+          "rel_dir": "008-5月8日授课-第七章环境管理模式",
+          "pdf_name": "008-5月8日授课-第七章环境管理模式.pdf",
+          "lesson_seq": 8,
+          "page_count": 106,
+          "all_chapter_nums": [
+            7
+          ],
+          "is_primary": true,
+          "is_cross_chapter": false
+        }
+      ]
+    }
+  ],
+  "non_lecture": [],
+  "uncategorized": [
+    {
+      "rel_dir": "003-第二三章环境规划与管理的政策方针法律法规-环境规划与管理",
+      "pdf_name": "003-第二三章环境规划与管理的政策方针法律法规-环境规划与管理.pdf",
+      "lesson_seq": 3,
+      "page_count": 118,
+      "lesson_title": "第二三章环境规划与管理的政策方针法律法规",
+      "presentation_title": "环境规划与管理"
+    }
+  ]
+}
