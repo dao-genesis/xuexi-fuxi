@@ -579,6 +579,33 @@ def 关_汇编(info: dict) -> dict:
 
 
 # ============================================================
+# 七·三、学习系统（备考总纲 · 自测题库 · 速记卡）
+# ============================================================
+
+def 关_学习系统(info: dict, *, 考试日=None) -> dict:
+    """生 _学习系统/00_备考总纲.md · 自测题库.md · 速记卡.md
+
+    道法：骨已立、肉已生，此关以"提取练习"与"间隔重复"固已得之知。
+          纯离线（不调 LLM），由已有素材 + 章节图谱即出。
+    """
+    from datetime import date, timedelta
+    from 期末_学习系统 import 处理一课
+
+    今日 = date.today()
+    考 = 考试日 or (今日 + timedelta(days=21))
+    result = 处理一课(info["parse_dir"], 今日, 考)
+    if result.get("skipped"):
+        log("  ⊝ 跳: 无图谱/无章", "dim")
+    else:
+        log(
+            f"  ✓ {result.get('filled', 0)}/{result.get('chapters', 0)} 章已填 "
+            f"→ _学习系统/（备考总纲 · 自测题库 · 速记卡）",
+            "ok",
+        )
+    return result
+
+
+# ============================================================
 # 七·五、图谱（思维导图生成关）
 # ============================================================
 
@@ -1108,9 +1135,9 @@ def 关_模拟卷(info: dict, *, mode: str = "offline") -> dict:
 # 九、单课驱动 / 八关链
 # ============================================================
 
-# 九关：提文 → 聚合 → 素材 → 道喂 → 回填 → 汇编 → 图谱 → 模拟卷 → 总览
-# 图谱关置汇编后（复习要点已填时最优）；模拟卷置总览前。
-STAGES = ["提文", "聚合", "素材", "道喂", "回填", "汇编", "图谱", "模拟卷", "总览"]
+# 十关：提文 → 聚合 → 素材 → 道喂 → 回填 → 汇编 → 学习系统 → 图谱 → 模拟卷 → 总览
+# 学习系统关置汇编后（要点已填则题/卡皆实）；图谱关置其后；模拟卷置总览前。
+STAGES = ["提文", "聚合", "素材", "道喂", "回填", "汇编", "学习系统", "图谱", "模拟卷", "总览"]
 
 
 def 闭环一课(info: dict, args) -> dict:
@@ -1167,6 +1194,7 @@ def 闭环一课(info: dict, args) -> dict:
     ))
     跑关("回填", lambda: 关_回填(info, dry=args.dry_writeback))
     跑关("汇编", lambda: 关_汇编(info))
+    跑关("学习系统", lambda: 关_学习系统(info, 考试日=getattr(args, "考试日", None)))
     跑关("图谱", lambda: 关_图谱(
         info, mode=args.图谱, chap_filter=chap_filter, dry=args.dry_writeback,
     ))
@@ -1275,10 +1303,15 @@ def main() -> int:
             "思维导图生成关：none(跳·默)/offline(离线导出)/online(在线LLM)/writeback(回填 _resp/)"
         ),
     )
+    # 学习系统参数
+    p.add_argument(
+        "--考试日", "--exam", dest="考试日", default=None,
+        help="学习系统关：目标考试日 YYYY-MM-DD（默：今日+21），决定间隔重复日历",
+    )
     # 流程
     p.add_argument(
         "--only", default=None,
-        help="仅跑指定关（逗号分: 提文,聚合,素材,道喂,回填,汇编,图谱,模拟卷,总览）",
+        help="仅跑指定关（逗号分: 提文,聚合,素材,道喂,回填,汇编,学习系统,图谱,模拟卷,总览）",
     )
     p.add_argument("--skip", default=None, help="跳过指定关")
     args = p.parse_args()
