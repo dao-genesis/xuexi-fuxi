@@ -367,18 +367,19 @@ def generate_cheatsheet_md(chart: dict, course_dir: Path | None = None) -> str:
 
 
 _MINDMAP_FILLED_H2 = re.compile(r"^##\s+思维导图\s*·\s*LLM.*?$", re.MULTILINE)
-_NEXT_H2_IN_FINAL = re.compile(r"^##\s+", re.MULTILINE)
 
 
 def _extract_mindmap_section(text: str) -> str:
-    """从章 md 中抽取已生成的「思维导图 · LLM 生成」区段。"""
-    m = _MINDMAP_FILLED_H2.search(text)
-    if not m:
+    """从章 md 中抽取已生成的「思维导图 · LLM 生成」区段。
+
+    须用代码块免疫之区段定位：markmap/mermaid 块内含 `#`/`##` 行，
+    朴素 `^##` 正则会在块内误判边界，截断导图（fence 不闭合、mermaid 丢失）。
+    """
+    span = section_span_fenced(text, _MINDMAP_FILLED_H2)
+    if not span:
         return ""
-    rest = text[m.end():]
-    nxt = _NEXT_H2_IN_FINAL.search(rest)
-    end = m.end() + nxt.start() if nxt else len(text)
-    section = text[m.start():end].strip()
+    start, end = span
+    section = text[start:end].strip()
     # 占位不要
     if "（待填）" in section and len(section) < 200:
         return ""

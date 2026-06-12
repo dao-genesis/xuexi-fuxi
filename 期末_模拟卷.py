@@ -244,7 +244,11 @@ def _mock_to_md(course_name: str, teacher: str, semester: str, result) -> str:
             ans = q.get("answer", "")
             exp = q.get("explain", "")
             lines.append("")
-            lines.append(f"> 答：**{ans}**" + (f"  　解析：{exp}" if exp else ""))
+            lines.append("<details><summary>📝 参考答案（先闭卷作答，再展开对照）</summary>")
+            lines.append("")
+            lines.append(f"答：**{ans}**" + (f"  　解析：{exp}" if exp else ""))
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
     # 二、填空
     if result.填空题:
@@ -255,7 +259,11 @@ def _mock_to_md(course_name: str, teacher: str, semester: str, result) -> str:
                 continue
             lines.append(f"**{i}.** {q.get('q', '').strip()}")
             lines.append("")
-            lines.append(f"> 答：**{q.get('answer', '')}**")
+            lines.append("<details><summary>📝 参考答案</summary>")
+            lines.append("")
+            lines.append(f"答：**{q.get('answer', '')}**")
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
     # 三、名解
     if result.名词解释:
@@ -266,7 +274,11 @@ def _mock_to_md(course_name: str, teacher: str, semester: str, result) -> str:
                 continue
             lines.append(f"**{i}.** {q.get('q', '')}")
             lines.append("")
-            lines.append(f"> 答：{q.get('answer', '')}")
+            lines.append("<details><summary>📝 参考答案</summary>")
+            lines.append("")
+            lines.append(f"答：{q.get('answer', '')}")
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
     # 四、简答
     if result.简答题:
@@ -277,7 +289,11 @@ def _mock_to_md(course_name: str, teacher: str, semester: str, result) -> str:
                 continue
             lines.append(f"**{i}.** {q.get('q', '').strip()}")
             lines.append("")
-            lines.append(f"> 答要点：{q.get('answer', '')}")
+            lines.append("<details><summary>📝 参考答案（答要点）</summary>")
+            lines.append("")
+            lines.append(f"答要点：{q.get('answer', '')}")
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
     # 五、论述
     if result.论述题:
@@ -288,7 +304,11 @@ def _mock_to_md(course_name: str, teacher: str, semester: str, result) -> str:
                 continue
             lines.append(f"**{i}.** {q.get('q', '').strip()}")
             lines.append("")
-            lines.append(f"> 答框架：{q.get('answer', '')}")
+            lines.append("<details><summary>📝 参考答案（答框架）</summary>")
+            lines.append("")
+            lines.append(f"答框架：{q.get('answer', '')}")
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
 
     lines.append("---")
