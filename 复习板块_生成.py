@@ -153,6 +153,12 @@ def collect_sections(course_path):
                 stem = os.path.splitext(os.path.basename(p))[0]
                 add("复习资料", _clean_title(stem), read_text(p), "rr-" + slug_safe(stem))
 
+    # 2.5) 例题精解 · 深化（手工深化层：核心例题+详解+图示）
+    if su and os.path.isdir(su):
+        dd = os.path.join(su, "_例题精解.md")
+        if os.path.isfile(dd):
+            add("例题精解 · 深化", "核心例题 · 详解 · 图示", read_text(dd), "deepdive")
+
     # 3) 章节素材
     if su and os.path.isdir(su):
         chap_files = [p for p in glob.glob(os.path.join(su, "_第*.md"))]
@@ -195,11 +201,14 @@ def collect_sections(course_path):
             folder = os.path.basename(os.path.dirname(p))
             add("原始课件 · PDF原文", folder, read_text(p), "pdf-" + slug_safe(folder))
 
-    # default section: 综合复习资料 优先
+    # default section: 例题精解 > 综合复习资料 > 首节
     default = None
-    for s in sections:
-        if s["id"].startswith("review-"):
-            default = s["id"]
+    for pref in ("deepdive", "review-"):
+        for s in sections:
+            if s["id"].startswith(pref):
+                default = s["id"]
+                break
+        if default:
             break
     if not default and sections:
         default = sections[0]["id"]
