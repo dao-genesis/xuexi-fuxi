@@ -1,26 +1,53 @@
-name: Docs Sync Check
+name: Docs Sync (auto-fix on PR)
 
-# PR 校验：重生成 docs/ 并比对，若 PR 内 docs/ 与源不同步则失败，
-# 提示提交者重新运行生成器。
+# 道法自然：PR 内 docs/ 与源不同步时，CI 自动重生成并提交回 PR 分支，
+# 而非报错让你手动跑生成器。本仓库内分支自动自愈；外部 fork 退化为校验提示。
 
 on:
   pull_request:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  check:
+  autofix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 同仓库分支 → 检出 PR 头分支（可回推）
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 外部 fork → 普通检出（仅校验）
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: 重生成 docs/
         run: python 复习板块_生成.py
-      - name: 校验 docs/ 是否已同步
+
+      - name: 同仓库分支 → 自动提交同步结果
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        run: |
+          if git diff --quiet -- docs; then
+            echo "docs/ 已同步。"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs
+            git commit -m "chore(docs): 自动同步 docs/（CI 自愈）[skip ci]"
+            git push origin HEAD:${{ github.head_ref }}
+            echo "已自动重生成 docs/ 并提交到 PR 分支。"
+          fi
+
+      - name: 外部 fork → 校验是否同步
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |
           if ! git diff --quiet -- docs; then
             echo "::error::docs/ 与源不同步，请本地运行 'python 复习板块_生成.py' 后提交。"
