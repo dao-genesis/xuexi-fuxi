@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>复习站 · 道法自然</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #fff; --ink: #1f2328; --muted: #6b7280;
+    --line: #e5e7eb; --accent: #2563eb; --accent-soft: #eff4ff;
+    --code-bg: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink); background: var(--bg);
+  }
+  #app { display: flex; height: 100vh; overflow: hidden; }
+
+  /* 侧栏 */
+  #sidebar {
+    width: 312px; flex: 0 0 312px; background: var(--panel);
+    border-right: 1px solid var(--line); display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  #brand {
+    padding: 16px 18px; border-bottom: 1px solid var(--line);
+  }
+  #brand h1 { font-size: 17px; margin: 0 0 4px; }
+  #brand .meta { font-size: 12.5px; color: var(--muted); }
+  #brand .dao { font-size: 12px; color: var(--accent); margin-top: 6px; }
+  #nav { overflow-y: auto; padding: 8px 0 40px; flex: 1; }
+  .grp-title {
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    text-transform: none; padding: 14px 18px 6px; letter-spacing: .02em;
+  }
+  .nav-item {
+    display: block; padding: 8px 18px 8px 22px; font-size: 14.5px;
+    color: var(--ink); text-decoration: none; cursor: pointer;
+    border-left: 3px solid transparent; white-space: normal;
+  }
+  .nav-item:hover { background: var(--accent-soft); }
+  .nav-item.active {
+    background: var(--accent-soft); border-left-color: var(--accent);
+    color: var(--accent); font-weight: 600;
+  }
+
+  /* 主区 */
+  #main { flex: 1; overflow-y: auto; }
+  #topbar {
+    position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92);
+    backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+    padding: 10px 22px; display: flex; align-items: center; gap: 12px;
+  }
+  #menuBtn {
+    display: none; border: 1px solid var(--line); background: #fff;
+    border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 15px;
+  }
+  #crumb { font-size: 14px; color: var(--muted); }
+  #content {
+    max-width: 920px; margin: 0 auto; padding: 28px 26px 120px;
+  }
+  #content h1 { font-size: 27px; border-bottom: 2px solid var(--line); padding-bottom: .3em; }
+  #content h2 { font-size: 22px; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: .25em; }
+  #content h3 { font-size: 18.5px; margin-top: 1.5em; }
+  #content h4 { font-size: 16.5px; margin-top: 1.2em; }
+  #content p, #content li { font-size: 15.5px; }
+  #content code {
+    background: var(--code-bg); padding: .12em .4em; border-radius: 5px;
+    font-family: "SF Mono", "Cascadia Code", Consolas, monospace; font-size: .92em;
+  }
+  #content pre { background: var(--code-bg); padding: 14px 16px; border-radius: 10px; overflow-x: auto; }
+  #content pre code { background: none; padding: 0; }
+  #content table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 14.5px; display: block; overflow-x: auto; }
+  #content th, #content td { border: 1px solid var(--line); padding: 8px 11px; text-align: left; vertical-align: top; }
+  #content th { background: #f9fafb; }
+  #content tr:nth-child(even) td { background: #fcfcfd; }
+  #content blockquote {
+    margin: 1em 0; padding: .5em 1em; border-left: 4px solid var(--accent);
+    background: var(--accent-soft); color: #374151; border-radius: 0 8px 8px 0;
+  }
+  #content details {
+    border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px;
+    margin: 10px 0; background: #fff;
+  }
+  #content details[open] { background: #fcfdff; }
+  #content summary {
+    cursor: pointer; font-weight: 600; color: var(--accent); user-select: none;
+  }
+  #content a { color: var(--accent); }
+  .mm-wrap { border: 1px solid var(--line); border-radius: 12px; margin: 14px 0; background: #fff; height: 440px; overflow: hidden; }
+  .mm-wrap > .markmap { width: 100%; height: 100%; }
+  .mm-wrap > .markmap > svg { width: 100%; height: 100%; display: block; }
+  .mm-fallback { white-space: pre; overflow-x: auto; }
+  .ocr-note {
+    font-size: 13px; color: var(--muted); background: #fff7ed;
+    border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px; margin: 10px 0;
+  }
+  .loading, .err { color: var(--muted); padding: 40px 0; text-align: center; }
+  .err { color: #b91c1c; }
+  .src-link { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+  /* 课程首页卡片 */
+  .home-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 14px; margin-top: 18px; }
+  .course-card {
+    border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: #fff;
+    text-decoration: none; color: var(--ink); transition: .15s;
+  }
+  .course-card:hover { border-color: var(--accent); box-shadow: 0 4px 18px rgba(37,99,235,.1); }
+  .course-card .t { font-size: 17px; font-weight: 700; }
+  .course-card .s { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  #backdrop { display: none; }
+  @media (max-width: 860px) {
+    #sidebar {
+      position: fixed; left: 0; top: 0; bottom: 0; z-index: 20;
+      transform: translateX(-100%); transition: transform .2s;
+    }
+    #sidebar.open { transform: translateX(0); }
+    #menuBtn { display: inline-block; }
+    #backdrop.show { display: block; position: fixed; inset: 0; background: rgba(0,0,0,.3); z-index: 15; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div id="brand">
+      <h1 id="brandTitle">复习站</h1>
+      <div class="meta" id="brandMeta">道法自然 · 期末复习</div>
+      <div class="dao">无为而无不为 · 反者道之动</div>
+    </div>
+    <nav id="nav"></nav>
+  </aside>
+  <main id="main">
+    <div id="topbar">
+      <button id="menuBtn" aria-label="目录">☰</button>
+      <span id="crumb">载入中…</span>
+    </div>
+    <div id="content"><div class="loading">载入中…</div></div>
+  </main>
+</div>
+<div id="backdrop"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+  // markmap-autoloader 自带 d3 / markmap-lib / markmap-view，并自行按需加载；
+  // manual 模式由我们在渲染每篇文档后手动触发，onReady 兑现就绪 Promise。
+  window.markmap = { autoLoader: { manual: true } };
+  window.__markmapReady = new Promise((res) => { window.markmap.autoLoader.onReady = res; });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+<script>
+(function () {
+  "use strict";
+  const DEFAULT_COURSE = "流体力学";
+  const $ = (s, r = document) => r.querySelector(s);
+  const nav = $("#nav"), content = $("#content"), crumb = $("#crumb");
+
+  try { mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" }); } catch (e) {}
+
+  marked.setOptions({ gfm: true, breaks: false });
+
+  const params = new URLSearchParams(location.search);
+  const course = params.get("course") || DEFAULT_COURSE;
+
+  let manifest = null;
+  const allItems = [];
+
+  function setActive(path) {
+    document.querySelectorAll(".nav-item").forEach((a) => {
+      a.classList.toggle("active", a.dataset.path === path);
+    });
+  }
+
+  function closeSidebar() {
+    $("#sidebar").classList.remove("open");
+    $("#backdrop").classList.remove("show");
+  }
+
+  async function loadManifest() {
+    const r = await fetch("site_data/" + encodeURIComponent(course) + ".json", { cache: "no-cache" });
+    if (!r.ok) throw new Error("清单缺失：" + course);
+    return r.json();
+  }
+
+  function buildNav() {
+    $("#brandTitle").textContent = manifest.course;
+    const bits = [];
+    if (manifest.teacher) bits.push("教师 " + manifest.teacher);
+    if (manifest.semester) bits.push(manifest.semester);
+    bits.push(manifest.count + " 篇资料");
+    $("#brandMeta").textContent = bits.join(" · ");
+
+    nav.innerHTML = "";
+    manifest.groups.forEach((g) => {
+      const t = document.createElement("div");
+      t.className = "grp-title";
+      t.textContent = g.title;
+      nav.appendChild(t);
+      g.items.forEach((it) => {
+        allItems.push(it);
+        const a = document.createElement("a");
+        a.className = "nav-item";
+        a.textContent = it.label;
+        a.dataset.path = it.path;
+        a.href = "#" + encodeURIComponent(it.path);
+        a.addEventListener("click", () => closeSidebar());
+        nav.appendChild(a);
+      });
+    });
+  }
+
+  function renderMermaidAndMarkmap(root) {
+    // mermaid
+    root.querySelectorAll("code.language-mermaid").forEach((code, i) => {
+      const pre = code.closest("pre");
+      const div = document.createElement("div");
+      div.className = "mermaid";
+      div.textContent = code.textContent;
+      pre.replaceWith(div);
+    });
+    try {
+      const nodes = root.querySelectorAll(".mermaid");
+      if (nodes.length) mermaid.run({ nodes });
+    } catch (e) { console.warn("mermaid", e); }
+
+    // markmap：转为 autoloader 识别的 .markmap 元素，就绪后整体渲染
+    let mmCount = 0;
+    root.querySelectorAll("code.language-markmap").forEach((code) => {
+      const pre = code.closest("pre");
+      const wrap = document.createElement("div");
+      wrap.className = "mm-wrap";
+      const inner = document.createElement("div");
+      inner.className = "markmap";
+      inner.textContent = code.textContent;
+      wrap.appendChild(inner);
+      pre.replaceWith(wrap);
+      mmCount++;
+    });
+    if (mmCount && window.__markmapReady) {
+      window.__markmapReady
+        .then(() => {
+          try { window.markmap.autoLoader.renderAllUnder(root); }
+          catch (e) { console.warn("markmap render", e); }
+        });
+    }
+  }
+
+  function tameImages(root) {
+    const imgs = root.querySelectorAll("img");
+    let hidden = 0;
+    imgs.forEach((img) => {
+      img.addEventListener("error", () => { img.style.display = "none"; hidden++; });
+    });
+    // OCR 讲义原始页图未包含于公开仓库 → 给出说明
+    if (imgs.length) {
+      const note = document.createElement("div");
+      note.className = "ocr-note";
+      note.textContent = "说明：本页为雨课堂讲义之 OCR 文本；原始页面图片体积过大未纳入公开仓库，故图片不显示，正文内容完整。";
+      root.insertBefore(note, root.firstChild);
+    }
+  }
+
+  async function loadDoc(path) {
+    setActive(path);
+    const item = allItems.find((x) => x.path === path);
+    crumb.textContent = (manifest.course || "") + (item ? " / " + item.label : "");
+    content.innerHTML = '<div class="loading">载入中…</div>';
+    try {
+      const r = await fetch(encodeURI(path), { cache: "no-cache" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      let md = await r.text();
+      content.innerHTML = marked.parse(md);
+      renderMermaidAndMarkmap(content);
+      tameImages(content);
+      const src = document.createElement("div");
+      src.className = "src-link";
+      src.innerHTML = "源文件：<code>" + path + "</code>";
+      content.appendChild(src);
+      content.scrollIntoView({ block: "start" });
+      $("#main").scrollTop = 0;
+    } catch (e) {
+      content.innerHTML = '<div class="err">载入失败：' + path + "<br>" + e.message + "</div>";
+    }
+  }
+
+  function route() {
+    const h = decodeURIComponent(location.hash.replace(/^#/, ""));
+    if (h && allItems.some((x) => x.path === h)) {
+      loadDoc(h);
+    } else if (allItems.length) {
+      loadDoc(allItems[0].path);
+    }
+  }
+
+  $("#menuBtn").addEventListener("click", () => {
+    $("#sidebar").classList.toggle("open");
+    $("#backdrop").classList.toggle("show");
+  });
+  $("#backdrop").addEventListener("click", closeSidebar);
+  window.addEventListener("hashchange", route);
+
+  loadManifest()
+    .then((m) => { manifest = m; buildNav(); route(); })
+    .catch((e) => {
+      content.innerHTML = '<div class="err">无法载入课程清单：' + e.message +
+        "<br>请确认 site_data/" + course + ".json 存在。</div>";
+      crumb.textContent = "出错";
+    });
+})();
+</script>
+</body>
+</html>
