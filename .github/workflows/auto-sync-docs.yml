@@ -1,0 +1,45 @@
+name: Auto Sync Docs (main)
+
+# 道法自然：源文件合入 main 后，自动重生成 docs/ 并提交回 main，
+# 使仓库内 docs/ 永远与源同步——你无需手动运行生成器或提交。
+# 站点发布由 pages.yml 负责（同样在 push main 时从源重生成并部署）。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'
+      - '复习板块_生成.py'
+      - 'docs/assets/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-sync-docs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 重生成 docs/
+        run: python 复习板块_生成.py
+
+      - name: 若有变更则提交回 main
+        run: |
+          if git diff --quiet -- docs; then
+            echo "docs/ 已同步，无需提交。"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs
+            git commit -m "chore(docs): 自动同步重生成的复习站点 [skip ci]"
+            git push
+          fi

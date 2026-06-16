@@ -45,3 +45,8 @@ _courses.log
 # 课件页图（公网站点资源，纳入版本控制）
 !docs/assets/pdf/
 !docs/assets/pdf/**
+
+# 本地辅助脚本/隧道凭据，勿入库
+_bridge.py
+_payload_*.py
+_bgjobs/
