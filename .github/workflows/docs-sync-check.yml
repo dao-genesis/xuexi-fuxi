@@ -1,0 +1,30 @@
+name: Docs Sync Check
+
+# PR 校验：重生成 docs/ 并比对，若 PR 内 docs/ 与源不同步则失败，
+# 提示提交者重新运行生成器。
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 重生成 docs/
+        run: python 复习板块_生成.py
+      - name: 校验 docs/ 是否已同步
+        run: |
+          if ! git diff --quiet -- docs; then
+            echo "::error::docs/ 与源不同步，请本地运行 'python 复习板块_生成.py' 后提交。"
+            git --no-pager diff --stat -- docs
+            exit 1
+          fi
+          echo "docs/ 已同步。"
