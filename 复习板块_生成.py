@@ -153,11 +153,21 @@ def collect_sections(course_path):
                 stem = os.path.splitext(os.path.basename(p))[0]
                 add("复习资料", _clean_title(stem), read_text(p), "rr-" + slug_safe(stem))
 
-    # 2.5) 例题精解 · 深化（手工深化层：核心例题+详解+图示）
-    if su and os.path.isdir(su):
-        dd = os.path.join(su, "_例题精解.md")
+    # 2.5) 例题精解 · 深化（手工深化层：核心例题/案例+详解+图示）
+    # 兼容各课不同布局：优先 _素材，其次 解析成果根、复习成果目录、课程根
+    deep_candidates = []
+    if su:
+        deep_candidates.append(su)
+    if parse:
+        deep_candidates.append(parse)
+    for rd in REVIEW_RESULT_DIRS:
+        deep_candidates.append(os.path.join(course_path, rd))
+    deep_candidates.append(course_path)
+    for base in deep_candidates:
+        dd = os.path.join(base, "_例题精解.md")
         if os.path.isfile(dd):
             add("例题精解 · 深化", "核心例题 · 详解 · 图示", read_text(dd), "deepdive")
+            break
 
     # 3) 章节素材
     if su and os.path.isdir(su):
