@@ -152,6 +152,48 @@ def _demote_headings(md: str, by: int = 2) -> str:
     return re.sub(r"^(#{1,6})(\s+)", repl, md, flags=re.MULTILINE)
 
 
+_FENCE_LINE = re.compile(r"^[ \t]*(`{3,}|~{3,})")
+_HEADING_LINE = re.compile(r"^(#{1,6})(\s+)")
+
+
+def _demote_headings_fenced(md: str, by: int = 1) -> str:
+    """逐行降级标题，对代码块（markmap/mermaid）内的 # 行免疫。
+
+    道法：markmap 块内含 `#`/`##` 节点行，朴素 ^# 降级会破坏导图语法。
+          故跟踪代码块开关，仅块外之标题行才降级。
+    """
+    out: list[str] = []
+    in_fence = False
+    for line in md.splitlines():
+        if _FENCE_LINE.match(line):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if not in_fence:
+            m = _HEADING_LINE.match(line)
+            if m:
+                marks = "#" * min(6, len(m.group(1)) + by)
+                out.append(marks + line[m.end(1):])
+                continue
+        out.append(line)
+    return "\n".join(out)
+
+
+def _embed_part(path: Path, by: int = 1) -> str:
+    """读入一份已生成之素材 md，去其 H1 题，余者降级嵌入。文件缺则返空。"""
+    if not path.exists():
+        return ""
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        return ""
+    # 去掉首个 H1（# ...）行，避免与全集标题层级冲突
+    lines = text.splitlines()
+    if lines and lines[0].lstrip().startswith("# "):
+        lines = lines[1:]
+    body = "\n".join(lines).strip()
+    return _demote_headings_fenced(body, by=by).strip()
+
+
 def _cell(s: str) -> str:
     """Markdown 表格单元清洗。"""
     return (s or "").replace("|", " / ").replace("\n", "<br>").strip()
@@ -638,6 +680,181 @@ def generate_final_review_md(chart: dict, course_dir: Path) -> str:
 
 
 # ============================================================
+# 期末复习全集（一炉整合：总纲 + 速查 + 分章精要 + 自测 + 速记 + 模拟）
+# ============================================================
+
+def generate_master_review_md(chart: dict, course_dir: Path) -> str:
+    """把一课全部复习资料整合为单一「期末复习全集」。
+
+    道法：
+        资料散于各处——总纲、速查、各章要点与思维导图、自测题库、
+        速记卡、模拟卷。学子临考，欲一炉而毕其功。
+        此关聚之为一：依「先建图谱 → 闭卷提取 → 间隔重复 → 临考速查」
+        之学习法序，串各件为完整复习全集。
+        证据：提取练习 g≈0.50–0.63、间隔重复 g≈0.48–0.68（Dunlosky 2013）。
+
+    与「_综合复习资料.md」之别：
+        综合 = 图文并茂（含原图/图注/全文 OCR），重在溯底层；
+        全集 = 复习精要（要点+导图+自测+速记+模拟+速查），重在临考用。
+    """
+    course_name = chart.get("course_name", "")
+    teacher = chart.get("teacher", "")
+    semester = chart.get("semester", "")
+    chapters = chart.get("chapters", [])
+    reviews = {ch["chapter_num"]: read_chapter_review(course_dir, ch) for ch in chapters}
+    filled_count = sum(1 for r in reviews.values() if r.get("filled"))
+    mindmap_count = sum(
+        1 for r in reviews.values() if _extract_mindmap_section(r.get("text", ""))
+    )
+
+    sys_dir = course_dir / "_学习系统"
+    mat_dir = course_dir / "_素材"
+    p_outline = sys_dir / "00_备考总纲.md"
+    p_selftest = sys_dir / "自测题库.md"
+    p_cards = sys_dir / "速记卡.md"
+    p_cheat = mat_dir / "_期末速查.md"
+    p_exam = mat_dir / "_期末模拟卷.md"
+
+    def _count_details(p: Path) -> int:
+        return p.read_text(encoding="utf-8").count("<details>") if p.exists() else 0
+
+    n_selftest = _count_details(p_selftest)
+    n_cards = _count_details(p_cards)
+    n_exam = _count_details(p_exam)
+
+    L: list[str] = []
+    L.append(f"# {course_name} · 期末复习全集（整合一炉）")
+    L.append("")
+    L.append(f"> 教师: {teacher} · 学期: {semester}")
+    L.append(
+        f"> 完成度：复习要点 **{filled_count}/{len(chapters)}** 章 · "
+        f"思维导图 **{mindmap_count}/{len(chapters)}** 章 · "
+        f"自测 **{n_selftest}** 项（含思考题）· 速记卡 **{n_cards}** 张 · "
+        f"模拟卷 **{n_exam}** 题"
+    )
+    L.append(
+        "> 学习法（Dunlosky 2013）：**提取练习** g≈0.50–0.63、"
+        "**间隔重复** g≈0.48–0.68 为最高效；故本集先精要、后闭卷自测、再间隔速记。"
+    )
+    L.append(
+        "> 用法：① 读总纲定节律 → ② 通读分章精要建图谱 → "
+        "③ 闭卷做自测题库与模拟卷（先答后展开对照）→ "
+        "④ 速记卡按 1/3/7/14 天间隔复习 → ⑤ 临考扫速查。"
+    )
+    L.append(
+        "> 溯源：图文/原图/全文 OCR 见同目录 "
+        "[`_综合复习资料.md`](./_综合复习资料.md)。"
+    )
+    L.append("")
+    L.append("---")
+    L.append("")
+
+    # ── 〇 · 备考总纲 ──
+    part = _embed_part(p_outline, by=1)
+    if part:
+        L.append("## 〇 · 备考总纲（节律与路径）")
+        L.append("")
+        L.append(part)
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    # ── 一 · 期末速查 ──
+    part = _embed_part(p_cheat, by=1)
+    if part:
+        L.append("## 一 · 期末速查（考前一张表）")
+        L.append("")
+        L.append(part)
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    # ── 二 · 分章精要（要点 + 思维导图） ──
+    L.append("## 二 · 分章精要（要点 + 思维导图）")
+    L.append("")
+    for ch in chapters:
+        n = ch["chapter_num"]
+        t = ch.get("chapter_title", "")
+        fname = _chap_md_name(n, t)
+        r = reviews.get(n, {})
+        primary = ch.get("primary", {})
+
+        L.append(f"### {_chap_label(n)} · {t}")
+        L.append("")
+        L.append(
+            f"> 素材：[{fname}](./{fname}) · 主版 {primary.get('page_count', 0)} 页"
+        )
+        L.append("")
+
+        if r.get("filled"):
+            review = r.get("review", "")
+            review_body = re.sub(
+                r"^##\s+复习要点.*?\n+", "", review, count=1, flags=re.MULTILINE
+            )
+            L.append(_demote_headings_fenced(review_body, by=1).strip())
+        else:
+            L.append("> ⚠ 复习要点尚未填充。")
+        L.append("")
+
+        mindmap_section = _extract_mindmap_section(r.get("text", ""))
+        if mindmap_section:
+            mindmap_body = re.sub(
+                r"^##\s+思维导图.*?\n+", "", mindmap_section, count=1, flags=re.MULTILINE
+            )
+            L.append("<details><summary>🧠 思维导图（markmap / mermaid）</summary>")
+            L.append("")
+            L.append(mindmap_body.strip())
+            L.append("")
+            L.append("</details>")
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    # ── 三 · 自测题库 ──
+    part = _embed_part(p_selftest, by=1)
+    if part:
+        L.append("## 三 · 自测题库（闭卷 · 提取练习）")
+        L.append("")
+        L.append("> 先闭卷作答，再展开折叠区对照。错题回到对应章精要复盘。")
+        L.append("")
+        L.append(part)
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    # ── 四 · 速记卡 ──
+    part = _embed_part(p_cards, by=1)
+    if part:
+        L.append("## 四 · 速记卡（间隔重复 · cloze）")
+        L.append("")
+        L.append("> 按 1/3/7/14 天间隔复习；遮答自测，凭回忆而非「眼熟」。")
+        L.append("")
+        L.append(part)
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    # ── 五 · 期末模拟卷 ──
+    part = _embed_part(p_exam, by=1)
+    if part:
+        L.append("## 五 · 期末模拟卷（限时 · 闭卷）")
+        L.append("")
+        L.append("> 计时闭卷完成，再展开答案对照；契合真考之提取情境。")
+        L.append("")
+        L.append(part)
+        L.append("")
+        L.append("---")
+        L.append("")
+
+    L.append(
+        "> **正言若反**：全集为用，底层为体。凡疑处，复归 "
+        "[`_综合复习资料.md`](./_综合复习资料.md) 之图文与原始 PDF。"
+    )
+    L.append("")
+    return "\n".join(L)
+
+
+# ============================================================
 # LLM 提示语模板
 # ============================================================
 
@@ -745,11 +962,12 @@ def compile_course(course_dir: Path) -> dict:
     (out_dir / "_期末骨架.md").write_text(generate_skeleton_md(chart, course_dir), encoding="utf-8")
     (out_dir / "_期末速查.md").write_text(generate_cheatsheet_md(chart, course_dir), encoding="utf-8")
     (out_dir / "_LLM_提示语.md").write_text(generate_llm_prompts_md(chart), encoding="utf-8")
-    # 综合复习资料（图文+思维导图·升级版）
+    # 综合复习资料（图文+思维导图·溯底层版）
     comprehensive = generate_final_review_md(chart, course_dir)
     (out_dir / "_综合复习资料.md").write_text(comprehensive, encoding="utf-8")
-    # 同时保留旧名以向后兼容（内容相同）
-    (out_dir / "_最终复习资料.md").write_text(comprehensive, encoding="utf-8")
+    # 期末复习全集（总纲+速查+分章精要+自测+速记+模拟·临考一炉版）
+    master = generate_master_review_md(chart, course_dir)
+    (out_dir / "_最终复习资料.md").write_text(master, encoding="utf-8")
 
     return {
         "course_dir": course_dir.name,
