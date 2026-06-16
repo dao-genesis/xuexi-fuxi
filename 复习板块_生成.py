@@ -172,7 +172,7 @@ def collect_sections(course_path):
     # 3) 章节素材
     if su and os.path.isdir(su):
         chap_files = [p for p in glob.glob(os.path.join(su, "_第*.md"))]
-        chap_files.sort(key=lambda p: _chapter_num(os.path.basename(p)))
+        chap_files.sort(key=lambda p: (_chapter_num(os.path.basename(p)), os.path.basename(p)))
         meta["chapters"] = len(chap_files)
         for p in chap_files:
             stem = os.path.splitext(os.path.basename(p))[0]
