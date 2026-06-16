@@ -41,3 +41,7 @@ _pdf_run.log
 _闭环_*.log
 _login.log
 _courses.log
+
+# 公网复习站内联 PDF（白名单放行）
+!pdf/
+!pdf/**

@@ -98,6 +98,19 @@
     font-size: 13px; color: var(--muted); background: #fff7ed;
     border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px; margin: 10px 0;
   }
+  .pdf-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap; border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 14px; margin: 4px 0 14px; background: var(--accent-soft);
+  }
+  .pdf-bar strong { font-size: 15px; }
+  .pdf-actions { display: flex; gap: 10px; }
+  .pdf-actions a {
+    font-size: 13.5px; color: var(--accent); text-decoration: none;
+    border: 1px solid var(--accent); border-radius: 8px; padding: 4px 10px; white-space: nowrap;
+  }
+  .pdf-actions a:hover { background: var(--accent); color: #fff; }
+  .pdf-frame { width: 100%; height: 78vh; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
   .loading, .err { color: var(--muted); padding: 40px 0; text-align: center; }
   .err { color: #b91c1c; }
   .src-link { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
@@ -169,6 +182,7 @@
 
   let manifest = null;
   const allItems = [];
+  const keyOf = (it) => it.path || it.src;
 
   function setActive(path) {
     document.querySelectorAll(".nav-item").forEach((a) => {
@@ -205,9 +219,9 @@
         allItems.push(it);
         const a = document.createElement("a");
         a.className = "nav-item";
-        a.textContent = it.label;
-        a.dataset.path = it.path;
-        a.href = "#" + encodeURIComponent(it.path);
+        a.textContent = (it.type === "pdf" ? "\uD83D\uDCC4 " : "") + it.label;
+        a.dataset.path = keyOf(it);
+        a.href = "#" + encodeURIComponent(keyOf(it));
         a.addEventListener("click", () => closeSidebar());
         nav.appendChild(a);
       });
@@ -265,10 +279,32 @@
     }
   }
 
+  function renderPdf(item) {
+    content.innerHTML = "";
+    const bar = document.createElement("div");
+    bar.className = "pdf-bar";
+    const dl = item.download || item.src;
+    bar.innerHTML = '<strong>' + item.label + '</strong>' +
+      '<span class="pdf-actions">' +
+      '<a href="' + encodeURI(item.src) + '" target="_blank" rel="noopener">↗ 新标签打开</a>' +
+      '<a href="' + dl + '" target="_blank" rel="noopener">⬇ 下载原件</a></span>';
+    content.appendChild(bar);
+    const frame = document.createElement("iframe");
+    frame.className = "pdf-frame";
+    frame.src = encodeURI(item.src);
+    content.appendChild(frame);
+    const note = document.createElement("div");
+    note.className = "src-link";
+    note.innerHTML = "原始雨课堂讲义 PDF（公网托管，可直接查看/下载）。若内嵌未显示，请点上方「新标签打开」。";
+    content.appendChild(note);
+    $("#main").scrollTop = 0;
+  }
+
   async function loadDoc(path) {
     setActive(path);
-    const item = allItems.find((x) => x.path === path);
+    const item = allItems.find((x) => keyOf(x) === path);
     crumb.textContent = (manifest.course || "") + (item ? " / " + item.label : "");
+    if (item && item.type === "pdf") { renderPdf(item); return; }
     content.innerHTML = '<div class="loading">载入中…</div>';
     try {
       const r = await fetch(encodeURI(path), { cache: "no-cache" });
@@ -277,6 +313,14 @@
       content.innerHTML = marked.parse(md);
       renderMermaidAndMarkmap(content);
       tameImages(content);
+      if (item && item.pdf) {
+        const box = document.createElement("div");
+        box.className = "pdf-bar";
+        box.innerHTML = '<strong>📄 原始PDF讲义</strong><span class="pdf-actions">' +
+          '<a href="#' + encodeURIComponent(item.pdf) + '">网页内查看</a>' +
+          '<a href="' + (item.pdf_dl || item.pdf) + '" target="_blank" rel="noopener">⬇ 下载</a></span>';
+        content.insertBefore(box, content.firstChild);
+      }
       const src = document.createElement("div");
       src.className = "src-link";
       src.innerHTML = "源文件：<code>" + path + "</code>";
@@ -290,10 +334,10 @@
 
   function route() {
     const h = decodeURIComponent(location.hash.replace(/^#/, ""));
-    if (h && allItems.some((x) => x.path === h)) {
+    if (h && allItems.some((x) => keyOf(x) === h)) {
       loadDoc(h);
     } else if (allItems.length) {
-      loadDoc(allItems[0].path);
+      loadDoc(keyOf(allItems[0]));
     }
   }
 

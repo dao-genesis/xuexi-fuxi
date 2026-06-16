@@ -75,62 +75,179 @@
    "items": [
     {
      "label": "001 · 《流体力学》 第一章 流体及其主要物理性质",
-     "path": "流体力学/02_解析成果/001-开学第一课-《流体力学》 第一章 流体及其主要物理性质/_全文.md"
+     "path": "流体力学/02_解析成果/001-开学第一课-《流体力学》 第一章 流体及其主要物理性质/_全文.md",
+     "pdf": "pdf/流体力学/01.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-01.pdf"
     },
     {
      "label": "001 · 国之重器与流体力学",
-     "path": "流体力学/02_解析成果/001-开学第一课-国之重器与流体力学/_全文.md"
+     "path": "流体力学/02_解析成果/001-开学第一课-国之重器与流体力学/_全文.md",
+     "pdf": "pdf/流体力学/02.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-02.pdf"
     },
     {
      "label": "001 · 开学第一课",
-     "path": "流体力学/02_解析成果/001-开学第一课-开学第一课/_全文.md"
+     "path": "流体力学/02_解析成果/001-开学第一课-开学第一课/_全文.md",
+     "pdf": "pdf/流体力学/03.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-03.pdf"
     },
     {
      "label": "002 · 《流体力学》 第一章 流体及其主要物理性质",
-     "path": "流体力学/02_解析成果/002-《流体力学》 第一章 流体及其主要物理性质-《流体力学》 第一章 流体及其主要物理性质/_全文.md"
+     "path": "流体力学/02_解析成果/002-《流体力学》 第一章 流体及其主要物理性质-《流体力学》 第一章 流体及其主要物理性质/_全文.md",
+     "pdf": "pdf/流体力学/04.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-04.pdf"
     },
     {
      "label": "003 · 《流体力学》 第二章 流体静力学",
-     "path": "流体力学/02_解析成果/003-《流体力学》 第二章 流体静力学-《流体力学》 第二章 流体静力学/_全文.md"
+     "path": "流体力学/02_解析成果/003-《流体力学》 第二章 流体静力学-《流体力学》 第二章 流体静力学/_全文.md",
+     "pdf": "pdf/流体力学/05.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-05.pdf"
     },
     {
      "label": "004 · 《流体力学》 第二章 流体静力学",
-     "path": "流体力学/02_解析成果/004-《流体力学》 第二章 流体静力学（2）-《流体力学》 第二章 流体静力学/_全文.md"
+     "path": "流体力学/02_解析成果/004-《流体力学》 第二章 流体静力学（2）-《流体力学》 第二章 流体静力学/_全文.md",
+     "pdf": "pdf/流体力学/06.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-06.pdf"
     },
     {
      "label": "005 · 《流体力学》 第二章 流体静力学",
-     "path": "流体力学/02_解析成果/005-《流体力学》 第二章 流体静力学（3）-《流体力学》 第二章 流体静力学/_全文.md"
+     "path": "流体力学/02_解析成果/005-《流体力学》 第二章 流体静力学（3）-《流体力学》 第二章 流体静力学/_全文.md",
+     "pdf": "pdf/流体力学/07.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-07.pdf"
     },
     {
      "label": "006 · 《流体力学》 第三章 流体运动基础",
-     "path": "流体力学/02_解析成果/006-《流体力学》 第三章 流体运动基础-《流体力学》 第三章 流体运动基础/_全文.md"
+     "path": "流体力学/02_解析成果/006-《流体力学》 第三章 流体运动基础-《流体力学》 第三章 流体运动基础/_全文.md",
+     "pdf": "pdf/流体力学/08.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-08.pdf"
     },
     {
      "label": "007 · 《流体力学》 第三章 流体运动基础",
-     "path": "流体力学/02_解析成果/007-《流体力学》 第三章 流体运动基础（2）-《流体力学》 第三章 流体运动基础/_全文.md"
+     "path": "流体力学/02_解析成果/007-《流体力学》 第三章 流体运动基础（2）-《流体力学》 第三章 流体运动基础/_全文.md",
+     "pdf": "pdf/流体力学/09.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-09.pdf"
     },
     {
      "label": "008 · 《流体力学》 第四章 流体动力学基础",
-     "path": "流体力学/02_解析成果/008-《流体力学》 第四章 流体动力学基础-《流体力学》 第四章 流体动力学基础/_全文.md"
+     "path": "流体力学/02_解析成果/008-《流体力学》 第四章 流体动力学基础-《流体力学》 第四章 流体动力学基础/_全文.md",
+     "pdf": "pdf/流体力学/10.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-10.pdf"
     },
     {
      "label": "010 · 《流体力学》 第四章 流体动力学基础",
-     "path": "流体力学/02_解析成果/010-《流体力学》 第四章 流体动力学基础（2）-《流体力学》 第四章 流体动力学基础/_全文.md"
+     "path": "流体力学/02_解析成果/010-《流体力学》 第四章 流体动力学基础（2）-《流体力学》 第四章 流体动力学基础/_全文.md",
+     "pdf": "pdf/流体力学/11.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-11.pdf"
     },
     {
      "label": "012 · 《流体力学》 第四章 流体动力学基础",
-     "path": "流体力学/02_解析成果/012-《流体力学》 第四章 流体动力学基础（3）-《流体力学》 第四章 流体动力学基础/_全文.md"
+     "path": "流体力学/02_解析成果/012-《流体力学》 第四章 流体动力学基础（3）-《流体力学》 第四章 流体动力学基础/_全文.md",
+     "pdf": "pdf/流体力学/12.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-12.pdf"
     },
     {
      "label": "015 · 流体力学第五章",
-     "path": "流体力学/02_解析成果/015-流体力学第五章-流体力学第五章/_全文.md"
+     "path": "流体力学/02_解析成果/015-流体力学第五章-流体力学第五章/_全文.md",
+     "pdf": "pdf/流体力学/13.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-13.pdf"
     },
     {
      "label": "016 · 《流体力学》 第五章 层流、紊流及其能量损失",
-     "path": "流体力学/02_解析成果/016-《流体力学》 第五章 层流、紊流及其能量损失-《流体力学》 第五章 层流、紊流及其能量损失/_全文.md"
+     "path": "流体力学/02_解析成果/016-《流体力学》 第五章 层流、紊流及其能量损失-《流体力学》 第五章 层流、紊流及其能量损失/_全文.md",
+     "pdf": "pdf/流体力学/14.pdf",
+     "pdf_dl": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-14.pdf"
+    }
+   ]
+  },
+  {
+   "title": "原始PDF讲义（雨课堂·网页内可直接查看）",
+   "items": [
+    {
+     "label": "001 · 《流体力学》 第一章 流体及其主要物理性质",
+     "type": "pdf",
+     "src": "pdf/流体力学/01.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-01.pdf"
+    },
+    {
+     "label": "001 · 国之重器与流体力学",
+     "type": "pdf",
+     "src": "pdf/流体力学/02.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-02.pdf"
+    },
+    {
+     "label": "001 · 开学第一课",
+     "type": "pdf",
+     "src": "pdf/流体力学/03.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-03.pdf"
+    },
+    {
+     "label": "002 · 《流体力学》 第一章 流体及其主要物理性质",
+     "type": "pdf",
+     "src": "pdf/流体力学/04.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-04.pdf"
+    },
+    {
+     "label": "003 · 《流体力学》 第二章 流体静力学",
+     "type": "pdf",
+     "src": "pdf/流体力学/05.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-05.pdf"
+    },
+    {
+     "label": "004 · 《流体力学》 第二章 流体静力学",
+     "type": "pdf",
+     "src": "pdf/流体力学/06.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-06.pdf"
+    },
+    {
+     "label": "005 · 《流体力学》 第二章 流体静力学",
+     "type": "pdf",
+     "src": "pdf/流体力学/07.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-07.pdf"
+    },
+    {
+     "label": "006 · 《流体力学》 第三章 流体运动基础",
+     "type": "pdf",
+     "src": "pdf/流体力学/08.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-08.pdf"
+    },
+    {
+     "label": "007 · 《流体力学》 第三章 流体运动基础",
+     "type": "pdf",
+     "src": "pdf/流体力学/09.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-09.pdf"
+    },
+    {
+     "label": "008 · 《流体力学》 第四章 流体动力学基础",
+     "type": "pdf",
+     "src": "pdf/流体力学/10.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-10.pdf"
+    },
+    {
+     "label": "010 · 《流体力学》 第四章 流体动力学基础",
+     "type": "pdf",
+     "src": "pdf/流体力学/11.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-11.pdf"
+    },
+    {
+     "label": "012 · 《流体力学》 第四章 流体动力学基础",
+     "type": "pdf",
+     "src": "pdf/流体力学/12.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-12.pdf"
+    },
+    {
+     "label": "015 · 流体力学第五章",
+     "type": "pdf",
+     "src": "pdf/流体力学/13.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-13.pdf"
+    },
+    {
+     "label": "016 · 《流体力学》 第五章 层流、紊流及其能量损失",
+     "type": "pdf",
+     "src": "pdf/流体力学/14.pdf",
+     "download": "https://github.com/zhouyoukang1234-spec/xuexi-fuxi/releases/download/pdf-liuli/liuli-14.pdf"
     }
    ]
   }
  ],
- "count": 27
+ "count": 41
 }
