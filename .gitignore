@@ -41,3 +41,7 @@ _pdf_run.log
 _闭环_*.log
 _login.log
 _courses.log
+
+# 课件页图（公网站点资源，纳入版本控制）
+!docs/assets/pdf/
+!docs/assets/pdf/**

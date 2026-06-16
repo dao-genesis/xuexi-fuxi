@@ -211,6 +211,19 @@ def collect_sections(course_path):
             folder = os.path.basename(os.path.dirname(p))
             add("原始课件 · PDF原文", folder, read_text(p), "pdf-" + slug_safe(folder))
 
+    # 8) 原始课件 · 页图（真实 PDF 页面渲染，按讲次折叠 + 懒加载）
+    cfolder = os.path.basename(course_path.rstrip("/\\"))
+    cslug = slug_for(cfolder)
+    man = os.path.join(DOCS, "assets", "pdf", cslug, "manifest.json")
+    if os.path.isfile(man):
+        try:
+            mf = json.loads(read_text(man))
+        except Exception:
+            mf = None
+        if mf and mf.get("lessons"):
+            add("原始课件 · 页图", "课件原文 · 逐页（真实截图）",
+                build_gallery_md(cslug, mf), "pages")
+
     # default section: 例题精解 > 综合复习资料 > 首节
     default = None
     for pref in ("deepdive", "review-"):
@@ -228,6 +241,25 @@ def collect_sections(course_path):
 
 def slug_safe(s):
     return re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-")[:40] or hashlib.md5(s.encode("utf-8")).hexdigest()[:8]
+
+
+def build_gallery_md(slug, mf):
+    """由 manifest.json 生成「原始课件·页图」分组：按讲次折叠 + 懒加载缩略 + 点击看大图。"""
+    out = [u"# 原始课件 · 页图（真实 PDF 页面）\n",
+           u"> 下列为雨课堂课件原始页面渲染；大讲已均匀采样关键页。点击讲次标题展开，单击图片可看大图。\n"]
+    for i, ls in enumerate(mf.get("lessons", []), 1):
+        title = ls.get("title", u"讲次 %d" % i)
+        pages = ls.get("pages", [])
+        if not pages:
+            continue
+        out.append(u'<details class="pdf-lesson"%s>' % (u" open" if i == 1 else u""))
+        out.append(u'<summary>%s · %d 页</summary>' % (esc_attr(title), len(pages)))
+        out.append(u'<div class="pdf-gallery">')
+        for fn in pages:
+            src = u"assets/pdf/%s/%s" % (slug, fn)
+            out.append(u'<a href="%s" target="_blank" rel="noopener"><img loading="lazy" src="%s" alt=""></a>' % (src, src))
+        out.append(u'</div></details>')
+    return u"\n".join(out)
 
 
 COURSE_HTML = u"""<!DOCTYPE html>
@@ -345,7 +377,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["导览", "复习资料", "章节素材", "学习系统", "期末冲刺", "知识图谱", "原始课件 · PDF原文"]
+    order = ["导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "期末冲刺", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
