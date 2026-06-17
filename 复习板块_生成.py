@@ -224,6 +224,16 @@ def collect_sections(course_path):
             add("原始课件 · 页图", "课件原文 · 逐页（真实截图）",
                 build_gallery_md(cslug, mf), "pages")
 
+    # 修复失效的 PDF 页图路径（旧 page_NNN.jpg → assets 下真实 Lxx_pPPP.jpg）。
+    # 仅限「流体力学」：该课存在两套抽取（旧 page_NNN.jpg 与新 Lxx_pPPP.jpg）的编号错配，
+    # 需按讲次重映射；其它课程素材已用正确路径，不可改写（否则会把多页折叠到同一页图）。
+    if cslug in _REMAP_PDF_SLUGS:
+        lesson_map = build_lesson_map(parse, cslug)
+        if lesson_map:
+            for s in sections:
+                self_folder = s["title"] if s["group"] == u"原始课件 · PDF原文" else None
+                s["md"] = fix_pdf_img_paths(s["md"], cslug, lesson_map, self_folder)
+
     # default section: 例题精解 > 综合复习资料 > 首节
     default = None
     for pref in ("deepdive", "review-"):
@@ -241,6 +251,103 @@ def collect_sections(course_path):
 
 def slug_safe(s):
     return re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-")[:40] or hashlib.md5(s.encode("utf-8")).hexdigest()[:8]
+
+
+# 仅这些课程的素材存在旧/新两套 PDF 抽取编号错配，需在生成时重映射页图路径。
+# 切勿对其它课程启用——它们素材已是正确的 assets 路径，重映射会破坏页图对应关系。
+_REMAP_PDF_SLUGS = {u"fluid-mechanics"}
+
+_CN_NUM = {u"一": 1, u"二": 2, u"三": 3, u"四": 4, u"五": 5,
+           u"六": 6, u"七": 7, u"八": 8, u"九": 9, u"十": 10}
+
+
+def _cn_chap(s):
+    m = re.search(u"第\\s*([一二三四五六七八九十])\\s*章", s)
+    return _CN_NUM.get(m.group(1)) if m else None
+
+
+def _inst_num(s):
+    m = re.search(u"（(\\d)）|\\((\\d)\\)", s)
+    return int(m.group(1) or m.group(2)) if m else 1
+
+
+def _norm_cn(s):
+    return re.sub(u"[^\u4e00-\u9fff]", u"", s or u"")
+
+
+def build_lesson_map(parse_dir, slug):
+    """把「解析成果」各 PDF 子目录（旧编号 page_NNN.jpg）映射到 manifest 中的讲次资源
+    （新编号 Lxx_pPPP.jpg）。按 章号 + 实例序号 + 页数 贪心唯一匹配，返回 {folder: pages_list}。
+    无 manifest 或无匹配时返回 {}（对其它课程为无操作）。"""
+    if not parse_dir:
+        return {}
+    man_path = os.path.join(DOCS, "assets", "pdf", slug, "manifest.json")
+    if not os.path.isfile(man_path):
+        return {}
+    try:
+        mf = json.loads(read_text(man_path))
+    except Exception:
+        return {}
+    lessons = []
+    for ls in mf.get("lessons", []):
+        pages = ls.get("pages", [])
+        if not pages:
+            continue
+        title = ls.get("title", "")
+        lessons.append({"id": pages[0].split("_")[0], "pages": pages,
+                        "cnt": len(pages), "chap": _cn_chap(title),
+                        "inst": _inst_num(title), "norm": _norm_cn(title)})
+    if not lessons:
+        return {}
+    folders = []
+    for d in sorted(os.listdir(parse_dir)):
+        ft = os.path.join(parse_dir, d, "_全文.md")
+        if not os.path.isfile(ft):
+            continue
+        nums = [int(x) for x in re.findall(r"page_(\d+)\.jpg", read_text(ft))]
+        folders.append({"d": d, "mx": max(nums) if nums else 0,
+                        "chap": _cn_chap(d), "inst": _inst_num(d), "norm": _norm_cn(d)})
+    used = set()
+    fmap = {}
+    for f in sorted(folders, key=lambda x: -x["mx"]):
+        cands = [L for L in lessons if L["chap"] == f["chap"]]
+        if not cands:
+            cands = [L for L in lessons
+                     if f["norm"] and (f["norm"] in L["norm"] or L["norm"] in f["norm"])] or list(lessons)
+        cands = sorted(cands, key=lambda L: (L["id"] in used, abs(L["cnt"] - f["mx"]), L["inst"] != f["inst"]))
+        if cands:
+            pick = cands[0]
+            used.add(pick["id"])
+            fmap[f["d"]] = pick["pages"]
+    return fmap
+
+
+def fix_pdf_img_paths(md, slug, fmap, self_folder=None):
+    """把 md 内失效的 PDF 页图路径改写为 assets 下真实存在的页图。
+    - `](../<folder>/page_NNN.jpg)`  → `](assets/pdf/<slug>/<Lxx>_pPPP.jpg)`
+    - 仅当 self_folder 给定时，改写裸 `](page_NNN.jpg)`（原始课件·PDF原文分组）。
+    页号按「位置」对齐并 clamp 到讲次页数，保证目标文件必然存在。"""
+    if not md or not fmap:
+        return md
+
+    def _resolve(folder, n):
+        pages = fmap.get(folder)
+        if not pages:
+            return None
+        idx = min(max(n, 1), len(pages)) - 1
+        return u"](assets/pdf/%s/%s)" % (slug, pages[idx])
+
+    def _rel(m):
+        r = _resolve(m.group(1), int(m.group(2)))
+        return r if r else m.group(0)
+
+    md = re.sub(r"\]\(\.\./([^/)]+)/page_(\d+)\.jpg\)", _rel, md)
+    if self_folder and self_folder in fmap:
+        def _bare(m):
+            r = _resolve(self_folder, int(m.group(1)))
+            return r if r else m.group(0)
+        md = re.sub(r"\]\(page_(\d+)\.jpg\)", _bare, md)
+    return md
 
 
 def build_gallery_md(slug, mf):
