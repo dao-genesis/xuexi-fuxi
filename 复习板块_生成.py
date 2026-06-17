@@ -46,6 +46,9 @@ COURSE_REGISTRY = {
     "有机化学": ("organic-chemistry", "有机化学", "⚗️"),
 }
 
+# GitHub Pages 部署根地址（用于 README 首页在线网址一览）。
+PAGES_BASE = "https://zhouyoukang1234-spec.github.io/xuexi-fuxi"
+
 
 def read_text(path):
     with io.open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -224,6 +227,16 @@ def collect_sections(course_path):
             add("原始课件 · 页图", "课件原文 · 逐页（真实截图）",
                 build_gallery_md(cslug, mf), "pages")
 
+    # 修复失效的 PDF 页图路径（旧 page_NNN.jpg → assets 下真实 Lxx_pPPP.jpg）。
+    # 仅限「流体力学」：该课存在两套抽取（旧 page_NNN.jpg 与新 Lxx_pPPP.jpg）的编号错配，
+    # 需按讲次重映射；其它课程素材已用正确路径，不可改写（否则会把多页折叠到同一页图）。
+    if cslug in _REMAP_PDF_SLUGS:
+        lesson_map = build_lesson_map(parse, cslug)
+        if lesson_map:
+            for s in sections:
+                self_folder = s["title"] if s["group"] == u"原始课件 · PDF原文" else None
+                s["md"] = fix_pdf_img_paths(s["md"], cslug, lesson_map, self_folder)
+
     # default section: 例题精解 > 综合复习资料 > 首节
     default = None
     for pref in ("deepdive", "review-"):
@@ -241,6 +254,103 @@ def collect_sections(course_path):
 
 def slug_safe(s):
     return re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-")[:40] or hashlib.md5(s.encode("utf-8")).hexdigest()[:8]
+
+
+# 仅这些课程的素材存在旧/新两套 PDF 抽取编号错配，需在生成时重映射页图路径。
+# 切勿对其它课程启用——它们素材已是正确的 assets 路径，重映射会破坏页图对应关系。
+_REMAP_PDF_SLUGS = {u"fluid-mechanics"}
+
+_CN_NUM = {u"一": 1, u"二": 2, u"三": 3, u"四": 4, u"五": 5,
+           u"六": 6, u"七": 7, u"八": 8, u"九": 9, u"十": 10}
+
+
+def _cn_chap(s):
+    m = re.search(u"第\\s*([一二三四五六七八九十])\\s*章", s)
+    return _CN_NUM.get(m.group(1)) if m else None
+
+
+def _inst_num(s):
+    m = re.search(u"（(\\d)）|\\((\\d)\\)", s)
+    return int(m.group(1) or m.group(2)) if m else 1
+
+
+def _norm_cn(s):
+    return re.sub(u"[^\u4e00-\u9fff]", u"", s or u"")
+
+
+def build_lesson_map(parse_dir, slug):
+    """把「解析成果」各 PDF 子目录（旧编号 page_NNN.jpg）映射到 manifest 中的讲次资源
+    （新编号 Lxx_pPPP.jpg）。按 章号 + 实例序号 + 页数 贪心唯一匹配，返回 {folder: pages_list}。
+    无 manifest 或无匹配时返回 {}（对其它课程为无操作）。"""
+    if not parse_dir:
+        return {}
+    man_path = os.path.join(DOCS, "assets", "pdf", slug, "manifest.json")
+    if not os.path.isfile(man_path):
+        return {}
+    try:
+        mf = json.loads(read_text(man_path))
+    except Exception:
+        return {}
+    lessons = []
+    for ls in mf.get("lessons", []):
+        pages = ls.get("pages", [])
+        if not pages:
+            continue
+        title = ls.get("title", "")
+        lessons.append({"id": pages[0].split("_")[0], "pages": pages,
+                        "cnt": len(pages), "chap": _cn_chap(title),
+                        "inst": _inst_num(title), "norm": _norm_cn(title)})
+    if not lessons:
+        return {}
+    folders = []
+    for d in sorted(os.listdir(parse_dir)):
+        ft = os.path.join(parse_dir, d, "_全文.md")
+        if not os.path.isfile(ft):
+            continue
+        nums = [int(x) for x in re.findall(r"page_(\d+)\.jpg", read_text(ft))]
+        folders.append({"d": d, "mx": max(nums) if nums else 0,
+                        "chap": _cn_chap(d), "inst": _inst_num(d), "norm": _norm_cn(d)})
+    used = set()
+    fmap = {}
+    for f in sorted(folders, key=lambda x: -x["mx"]):
+        cands = [L for L in lessons if L["chap"] == f["chap"]]
+        if not cands:
+            cands = [L for L in lessons
+                     if f["norm"] and (f["norm"] in L["norm"] or L["norm"] in f["norm"])] or list(lessons)
+        cands = sorted(cands, key=lambda L: (L["id"] in used, abs(L["cnt"] - f["mx"]), L["inst"] != f["inst"]))
+        if cands:
+            pick = cands[0]
+            used.add(pick["id"])
+            fmap[f["d"]] = pick["pages"]
+    return fmap
+
+
+def fix_pdf_img_paths(md, slug, fmap, self_folder=None):
+    """把 md 内失效的 PDF 页图路径改写为 assets 下真实存在的页图。
+    - `](../<folder>/page_NNN.jpg)`  → `](assets/pdf/<slug>/<Lxx>_pPPP.jpg)`
+    - 仅当 self_folder 给定时，改写裸 `](page_NNN.jpg)`（原始课件·PDF原文分组）。
+    页号按「位置」对齐并 clamp 到讲次页数，保证目标文件必然存在。"""
+    if not md or not fmap:
+        return md
+
+    def _resolve(folder, n):
+        pages = fmap.get(folder)
+        if not pages:
+            return None
+        idx = min(max(n, 1), len(pages)) - 1
+        return u"](assets/pdf/%s/%s)" % (slug, pages[idx])
+
+    def _rel(m):
+        r = _resolve(m.group(1), int(m.group(2)))
+        return r if r else m.group(0)
+
+    md = re.sub(r"\]\(\.\./([^/)]+)/page_(\d+)\.jpg\)", _rel, md)
+    if self_folder and self_folder in fmap:
+        def _bare(m):
+            r = _resolve(self_folder, int(m.group(1)))
+            return r if r else m.group(0)
+        md = re.sub(r"\]\(page_(\d+)\.jpg\)", _bare, md)
+    return md
 
 
 def build_gallery_md(slug, mf):
@@ -395,6 +505,53 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
+_README_ORDER = ["导览", "复习资料", "例题精解 · 深化", "章节素材",
+                 "学习系统", "期末冲刺", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+
+
+def build_readme(built):
+    """生成仓库主页 README.md：首页一览所有学科的在线复习网址。
+    由本生成器产出，与 docs/index.html 同源、自动同步。"""
+    L = []
+    L.append(u"# 📚 复习板块 · 全方位复习站")
+    L.append(u"")
+    L.append(u"> 道生一，一生二，二生三，三生万物。")
+    L.append(u"> 从课程原始 PDF 出发，经「抽取 → 聚合 → 素材 → LLM 精炼 → 编译 → 思维导图 → 期末资料」流水线，")
+    L.append(u"> 生成可在**公网任意浏览器**直接查看的复习页：综合复习资料 / 章节素材 / 学习系统 / 期末冲刺 / 知识图谱 / 原始课件 PDF 原文，皆汇于一页。")
+    L.append(u"")
+    L.append(u"## 🌐 在线复习网址（一览）")
+    L.append(u"")
+    L.append(u"**📖 总览首页**：%s/" % PAGES_BASE)
+    L.append(u"")
+    L.append(u"| 学科 | 任课 / 进度 | 在线复习页 |")
+    L.append(u"| --- | --- | --- |")
+    for b in built:
+        url = u"%s/%s.html" % (PAGES_BASE, b["slug"])
+        L.append(u"| %s **%s** | %s | [📖 打开复习页](%s) |"
+                 % (b["emoji"], b["title"], b["meta"] or u"全方位复习", url))
+    L.append(u"")
+    L.append(u"## 🧩 各科内容模块")
+    L.append(u"")
+    for b in built:
+        mods = u" ｜ ".join(u"%s×%d" % (g, b["counts"][g]) for g in _README_ORDER if g in b["counts"])
+        L.append(u"- %s **%s** — %s" % (b["emoji"], b["title"], mods))
+    L.append(u"")
+    L.append(u"## 🛠️ 生成 / 更新")
+    L.append(u"")
+    L.append(u"```bash")
+    L.append(u"python 复习板块_生成.py            # 生成全部课程 → docs/")
+    L.append(u"python 复习板块_生成.py 流体力学   # 仅生成指定课程")
+    L.append(u"```")
+    L.append(u"")
+    L.append(u"产物输出至 `docs/`（`index.html` 总览 + `<slug>.html` 每课一页，自包含、可直接部署为 GitHub Pages 静态站点）。")
+    L.append(u"工程约定与流水线细节见 [`AGENTS.md`](AGENTS.md)。")
+    L.append(u"")
+    L.append(u"---")
+    L.append(u"> 本文件由 `复习板块_生成.py` 自动生成（与 `docs/index.html` 同源），请勿手改；如需调整请改生成器后重新生成。")
+    L.append(u"")
+    write_text(os.path.join(ROOT, "README.md"), u"\n".join(L))
+
+
 def discover_courses():
     found = []
     for name in sorted(os.listdir(ROOT)):
@@ -423,6 +580,8 @@ def main():
     built.sort(key=lambda b: -b["n"])
     build_index(built)
     print(u"[索] docs/index.html  (%d 门课程)" % len(built))
+    build_readme(built)
+    print(u"[页] README.md  (%d 门课程在线网址一览)" % len(built))
 
 
 if __name__ == "__main__":
