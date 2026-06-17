@@ -46,6 +46,9 @@ COURSE_REGISTRY = {
     "有机化学": ("organic-chemistry", "有机化学", "⚗️"),
 }
 
+# GitHub Pages 部署根地址（用于 README 首页在线网址一览）。
+PAGES_BASE = "https://zhouyoukang1234-spec.github.io/xuexi-fuxi"
+
 
 def read_text(path):
     with io.open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -502,6 +505,53 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
+_README_ORDER = ["导览", "复习资料", "例题精解 · 深化", "章节素材",
+                 "学习系统", "期末冲刺", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+
+
+def build_readme(built):
+    """生成仓库主页 README.md：首页一览所有学科的在线复习网址。
+    由本生成器产出，与 docs/index.html 同源、自动同步。"""
+    L = []
+    L.append(u"# 📚 复习板块 · 全方位复习站")
+    L.append(u"")
+    L.append(u"> 道生一，一生二，二生三，三生万物。")
+    L.append(u"> 从课程原始 PDF 出发，经「抽取 → 聚合 → 素材 → LLM 精炼 → 编译 → 思维导图 → 期末资料」流水线，")
+    L.append(u"> 生成可在**公网任意浏览器**直接查看的复习页：综合复习资料 / 章节素材 / 学习系统 / 期末冲刺 / 知识图谱 / 原始课件 PDF 原文，皆汇于一页。")
+    L.append(u"")
+    L.append(u"## 🌐 在线复习网址（一览）")
+    L.append(u"")
+    L.append(u"**📖 总览首页**：%s/" % PAGES_BASE)
+    L.append(u"")
+    L.append(u"| 学科 | 任课 / 进度 | 在线复习页 |")
+    L.append(u"| --- | --- | --- |")
+    for b in built:
+        url = u"%s/%s.html" % (PAGES_BASE, b["slug"])
+        L.append(u"| %s **%s** | %s | [📖 打开复习页](%s) |"
+                 % (b["emoji"], b["title"], b["meta"] or u"全方位复习", url))
+    L.append(u"")
+    L.append(u"## 🧩 各科内容模块")
+    L.append(u"")
+    for b in built:
+        mods = u" ｜ ".join(u"%s×%d" % (g, b["counts"][g]) for g in _README_ORDER if g in b["counts"])
+        L.append(u"- %s **%s** — %s" % (b["emoji"], b["title"], mods))
+    L.append(u"")
+    L.append(u"## 🛠️ 生成 / 更新")
+    L.append(u"")
+    L.append(u"```bash")
+    L.append(u"python 复习板块_生成.py            # 生成全部课程 → docs/")
+    L.append(u"python 复习板块_生成.py 流体力学   # 仅生成指定课程")
+    L.append(u"```")
+    L.append(u"")
+    L.append(u"产物输出至 `docs/`（`index.html` 总览 + `<slug>.html` 每课一页，自包含、可直接部署为 GitHub Pages 静态站点）。")
+    L.append(u"工程约定与流水线细节见 [`AGENTS.md`](AGENTS.md)。")
+    L.append(u"")
+    L.append(u"---")
+    L.append(u"> 本文件由 `复习板块_生成.py` 自动生成（与 `docs/index.html` 同源），请勿手改；如需调整请改生成器后重新生成。")
+    L.append(u"")
+    write_text(os.path.join(ROOT, "README.md"), u"\n".join(L))
+
+
 def discover_courses():
     found = []
     for name in sorted(os.listdir(ROOT)):
@@ -530,6 +580,8 @@ def main():
     built.sort(key=lambda b: -b["n"])
     build_index(built)
     print(u"[索] docs/index.html  (%d 门课程)" % len(built))
+    build_readme(built)
+    print(u"[页] README.md  (%d 门课程在线网址一览)" % len(built))
 
 
 if __name__ == "__main__":
