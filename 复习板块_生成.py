@@ -237,6 +237,15 @@ def collect_sections(course_path):
                 self_folder = s["title"] if s["group"] == u"原始课件 · PDF原文" else None
                 s["md"] = fix_pdf_img_paths(s["md"], cslug, lesson_map, self_folder)
 
+    # 章节为主线重组（仅启用课程）：把分散小节合并为「每章一节」+ 少量总览。
+    if cslug in _CHAPTER_CENTRIC_SLUGS:
+        new_sections, ch_default, ch_count = chapterize(sections, cslug)
+        if new_sections:
+            sections = new_sections
+            if ch_count:
+                meta["chapters"] = ch_count
+            return sections, meta, ch_default
+
     # default section: 例题精解 > 综合复习资料 > 首节
     default = None
     for pref in ("deepdive", "review-"):
@@ -372,6 +381,177 @@ def build_gallery_md(slug, mf):
     return u"\n".join(out)
 
 
+# ============================================================================
+# 章节为主线（chapter-centric）重组 —— 仅对 _CHAPTER_CENTRIC_SLUGS 内课程启用。
+# 把原本分散在「章节素材 / 例题精解 / 自测题库 / 速记卡 / 页图」里的同章内容，
+# 合并为「每章一节」：知识精讲（图文）→ 核心PDF原页+例题详解 → 自测练习 → 速记知识点
+# → 本章课件原页全图。其余内容收敛为少量「总览」板块。导航由此从数十项精简到十余项。
+# ============================================================================
+_CHAPTER_CENTRIC_SLUGS = {u"fluid-mechanics"}
+
+CHAPTER_NAMES = {
+    1: u"流体及其主要物性",
+    2: u"流体静力学",
+    3: u"流体运动基础",
+    4: u"流体动力学基础",
+    5: u"层流、紊流及其能量损失",
+    6: u"孔口、管嘴流动与有压管流",
+    7: u"明渠流动",
+}
+
+
+def _strip_details_markmap(md):
+    """去掉 <details>…</details> 折叠块（页索引 / 逐页OCR文字对照）与 markmap 代码块，
+    保留正文（思维导图 mermaid 与「复习要点」等 LLM 文本）。"""
+    md = re.sub(r"<details[\s\S]*?</details>", u"", md, flags=re.I)
+    md = re.sub(r"```markmap[\s\S]*?```", u"", md)
+    return md
+
+
+def _first_mermaid(md):
+    m = re.search(r"```mermaid[\s\S]*?```", md)
+    return m.group(0) if m else u""
+
+
+def _section_body(md, head_kw):
+    """截取「标题行含 head_kw」起、到下一个同级或更高级标题前的正文（含该标题）。"""
+    lines = md.splitlines()
+    start = None
+    level = 0
+    for i, ln in enumerate(lines):
+        hm = re.match(r"(#{1,6})\s+(.*)$", ln)
+        if hm and head_kw in hm.group(2):
+            start = i
+            level = len(hm.group(1))
+            break
+    if start is None:
+        return u""
+    out = [lines[start]]
+    for ln in lines[start + 1:]:
+        hm = re.match(r"(#{1,6})\s+", ln)
+        if hm and len(hm.group(1)) <= level:
+            break
+        out.append(ln)
+    return u"\n".join(out)
+
+
+def _demote(md, by=1):
+    """ATX 标题整体降级 by 级（# → ##），封顶 ######，使其嵌入到上层小节之下。"""
+    def rep(m):
+        return u"#" * min(len(m.group(1)) + by, 6) + u" "
+    return re.sub(r"(?m)^(#{1,6})\s+", rep, md)
+
+
+def _split_h2_chapters(md):
+    """按 `## 第N章 …` 切分单文件，返回 {章号: 该章正文(不含标题行)}。"""
+    out = {}
+    parts = re.split(r"(?m)^##\s+第\s*0*(\d+)\s*章[^\n]*\n", md or u"")
+    for i in range(1, len(parts), 2):
+        try:
+            n = int(parts[i])
+        except (ValueError, IndexError):
+            continue
+        out[n] = parts[i + 1] if i + 1 < len(parts) else u""
+    return out
+
+
+def _chapter_gallery(slug, mf, chap):
+    """该章对应讲次的课件原页（仅图片、无 OCR 文字），折叠展示。"""
+    rows = []
+    for ls in mf.get("lessons", []):
+        if _cn_chap(ls.get("title", "")) != chap:
+            continue
+        for fn in ls.get("pages", []):
+            src = u"assets/pdf/%s/%s" % (slug, fn)
+            rows.append(u'<a href="%s" target="_blank" rel="noopener">'
+                        u'<img loading="lazy" src="%s" alt=""></a>' % (src, src))
+    if not rows:
+        return u""
+    return (u'<details class="pdf-lesson">\n'
+            u'<summary>本章课件原页 · 共 %d 页（点击展开）</summary>\n'
+            u'<div class="pdf-gallery">\n%s\n</div></details>' % (len(rows), u"\n".join(rows)))
+
+
+def chapterize(sections, slug):
+    """把分散小节重组为「章节为主线」。返回 (new_sections, default_id, chapter_count)。"""
+    man = os.path.join(DOCS, "assets", "pdf", slug, "manifest.json")
+    mf = {}
+    if os.path.isfile(man):
+        try:
+            mf = json.loads(read_text(man))
+        except Exception:
+            mf = {}
+
+    by_group = {}
+    for s in sections:
+        by_group.setdefault(s["group"], []).append(s)
+
+    materials = {}
+    for s in by_group.get(u"章节素材", []):
+        n = _chapter_num(s["title"])
+        if n != 999:
+            materials[n] = s["md"]
+    deepdive = next((s["md"] for s in sections if s["id"] == "deepdive"), u"")
+    dd_ch = _split_h2_chapters(deepdive)
+    quiz = cards = u""
+    for s in by_group.get(u"学习系统", []):
+        if u"自测" in s["title"]:
+            quiz = s["md"]
+        elif u"速记" in s["title"]:
+            cards = s["md"]
+    quiz_ch = _split_h2_chapters(quiz)
+    card_ch = _split_h2_chapters(cards)
+
+    _CN = u"〇一二三四五六七八九十"
+    chaps = sorted(set(list(materials.keys()) + list(dd_ch.keys())))
+    new = []
+    for n in chaps:
+        name = CHAPTER_NAMES.get(n, u"第%d章" % n)
+        P = [u"# 第%d章 · %s" % (n, name), u"",
+             u"> 一章打通 ▸ 知识精讲（图文）· 例题详解 · 自测练习 · 速记知识点 · 课件原页全图", u""]
+        # 收集本章各组成部分，最后按存在者顺序编号（避免出现 二→五 的跳号）。
+        blocks = []
+        if n in materials:
+            mat = _strip_details_markmap(materials[n])
+            rp = _section_body(mat, u"复习要点")
+            body = _demote(rp if rp else mat, 1)
+            mer = _first_mermaid(mat)
+            if mer:
+                body += u"\n\n### 本章知识结构图\n\n" + mer
+            blocks.append((u"知识精讲 · 核心概念 / 公式 / 考点", body))
+        if n in dd_ch:
+            blocks.append((u"核心 PDF 原页 · 图文精讲 + 例题详解", _demote(dd_ch[n], 1)))
+        if n in quiz_ch:
+            blocks.append((u"自测题 · 练习", _demote(quiz_ch[n], 1)))
+        if n in card_ch:
+            blocks.append((u"速记卡 · 知识点速查", _demote(card_ch[n], 1)))
+        gal = _chapter_gallery(slug, mf, n) if mf else u""
+        if gal:
+            blocks.append((u"本章课件原页 · 全图", gal))
+        for idx, (label, body) in enumerate(blocks, 1):
+            P.append(u"## %s、%s" % (_CN[idx] if idx < len(_CN) else str(idx), label))
+            P.append(body)
+        new.append({"id": "chap-%d" % n, "group": u"章节精讲",
+                    "title": u"第%d章 · %s" % (n, name), "md": u"\n\n".join(P)})
+
+    # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
+    for s in by_group.get(u"复习资料", []):
+        new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
+    for s in by_group.get(u"知识图谱", []):
+        new.append({"id": s["id"], "group": u"总览资料", "title": u"知识图谱 · " + s["title"], "md": s["md"]})
+    for s in by_group.get(u"学习系统", []):
+        if u"备考" in s["title"]:
+            new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
+    for s in by_group.get(u"期末冲刺", []):
+        new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
+    for s in by_group.get(u"原始课件 · 页图", []):
+        new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
+    # 丢弃：导览（闭环总览）、原始课件·PDF原文（逐页OCR乱码，已被页图/各章原页取代）
+
+    default = ("chap-%d" % chaps[0]) if chaps else (new[0]["id"] if new else None)
+    return new, default, len(chaps)
+
+
 COURSE_HTML = u"""<!DOCTYPE html>
 <html lang="zh-CN" data-theme="light">
 <head>
@@ -487,7 +667,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "期末冲刺", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "总览资料", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -505,8 +685,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["导览", "复习资料", "例题精解 · 深化", "章节素材",
-                 "学习系统", "期末冲刺", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "总览资料", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):

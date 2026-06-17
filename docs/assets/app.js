@@ -110,7 +110,7 @@
   var elSearch = document.getElementById("search-input");
 
   // ---------- build nav ----------
-  var GROUP_ORDER = ["导览", "复习资料", "章节素材", "学习系统", "期末冲刺", "知识图谱", "原始课件 · PDF原文"];
+  var GROUP_ORDER = ["章节精讲", "总览资料", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"];
   var sectionsById = {};
   COURSE.sections.forEach(function (s) { sectionsById[s.id] = s; });
 
