@@ -387,17 +387,80 @@ def build_gallery_md(slug, mf):
 # 合并为「每章一节」：知识精讲（图文）→ 核心PDF原页+例题详解 → 自测练习 → 速记知识点
 # → 本章课件原页全图。其余内容收敛为少量「总览」板块。导航由此从数十项精简到十余项。
 # ============================================================================
-_CHAPTER_CENTRIC_SLUGS = {u"fluid-mechanics"}
+_CHAPTER_CENTRIC_SLUGS = {u"fluid-mechanics", u"gis", u"environmental-toxicology",
+                         u"environmental-law", u"environmental-planning"}
 
-CHAPTER_NAMES = {
-    1: u"流体及其主要物性",
-    2: u"流体静力学",
-    3: u"流体运动基础",
-    4: u"流体动力学基础",
-    5: u"层流、紊流及其能量损失",
-    6: u"孔口、管嘴流动与有压管流",
-    7: u"明渠流动",
+# 流体力学章名为人工校订版（素材 H1 已规范，此处作为权威覆盖）；
+# 其余课程章名在 chapterize 内由素材 H1 / 文件名自动派生（_name_from_material）。
+CHAPTER_NAMES_BY_SLUG = {
+    u"fluid-mechanics": {
+        1: u"流体及其主要物性",
+        2: u"流体静力学",
+        3: u"流体运动基础",
+        4: u"流体动力学基础",
+        5: u"层流、紊流及其能量损失",
+        6: u"孔口、管嘴流动与有压管流",
+        7: u"明渠流动",
+    },
+    u"gis": {
+        1: u"地理信息系统概论",
+        2: u"空间数据（模型与结构）",
+        3: u"空间数据的转换与处理",
+        4: u"空间数据的可视化表达",
+    },
+    u"environmental-toxicology": {
+        1: u"绪论与基本概念",
+        2: u"污染物在环境（机体）中的迁移与转化",
+        3: u"毒作用及其机制",
+        4: u"毒作用的影响因素",
+        5: u"环境毒理学常用实验方法",
+        6: u"环境化学物的安全性与健康危险度评价",
+        7: u"常见化学致癌物的环境毒理学",
+    },
+    u"environmental-law": {
+        1: u"环境法学概述",
+        2: u"环境保护法的基本原则",
+        3: u"环境权利、义务的主体及其权利义务",
+        4: u"国家的环境保护职责",
+        5: u"环境基本法与综合性环境法律制度",
+        6: u"污染控制法",
+    },
+    u"environmental-planning": {
+        2: u"绪论 · 环境规划与管理",
+        4: u"环境规划与管理的综合分析方法",
+        5: u"环境规划的基本内容和程序",
+        6: u"环境规划（要素规划）",
+        7: u"环境管理模式",
+    },
 }
+
+
+def _name_from_material(md, fname):
+    """从素材 H1（形如「课名 · 第N章 · 章名 · 素材」）或文件名派生章名。"""
+    for ln in md.splitlines():
+        if ln.startswith(u"#"):
+            m = re.search(u"第\\s*0*\\d+\\s*章\\s*[·:：．.\\-—]*\\s*(.+)$", ln)
+            if m:
+                nm = re.split(u"[·|]", m.group(1))[0]
+                nm = nm.replace(u"素材", u"").strip(u" ·-—|\u3000")
+                if nm:
+                    return nm
+            break
+    stem = os.path.splitext(os.path.basename(fname))[0].lstrip(u"_")
+    stem = re.sub(u"^第\\s*0*\\d+\\s*章", u"", stem)
+    stem = re.sub(u"[_\\s]+", u" ", stem).strip()
+    return stem or None
+
+
+def _strip_broken_imgs(md):
+    """删除指向非 assets/、非 http 的失效图片引用（如 ../课夹/page_NNN.jpg、图全副本）。
+    仅删图片标记，正文保留；assets 下真实页图与外链图片不受影响。"""
+    def rep(m):
+        tgt = m.group(1).strip()
+        if tgt.startswith(u"assets/") or tgt.startswith(u"http") or tgt.startswith(u"data:"):
+            return m.group(0)
+        return u""
+    return re.sub(r"!\[[^\]]*\]\(([^)]*)\)", rep, md)
 
 
 def _strip_details_markmap(md):
@@ -487,10 +550,20 @@ def chapterize(sections, slug):
         by_group.setdefault(s["group"], []).append(s)
 
     materials = {}
+    mat_names = {}
+    _mscore = {}
     for s in by_group.get(u"章节素材", []):
         n = _chapter_num(s["title"])
-        if n != 999:
-            materials[n] = s["md"]
+        if n == 999:
+            continue
+        md = s["md"]
+        # 同一章多份素材时：优先含「复习要点」者，其次取更长者；
+        # 如此可跳过「_图全 / _核心复习」等纯图或精简副本，取到带知识精讲的主素材。
+        score = (1 if u"复习要点" in md else 0, len(md))
+        if score > _mscore.get(n, (-1, -1)):
+            _mscore[n] = score
+            materials[n] = md
+            mat_names[n] = _name_from_material(md, s["title"])
     deepdive = next((s["md"] for s in sections if s["id"] == "deepdive"), u"")
     dd_ch = _split_h2_chapters(deepdive)
     quiz = cards = u""
@@ -503,10 +576,11 @@ def chapterize(sections, slug):
     card_ch = _split_h2_chapters(cards)
 
     _CN = u"〇一二三四五六七八九十"
+    fluid_names = CHAPTER_NAMES_BY_SLUG.get(slug, {})
     chaps = sorted(set(list(materials.keys()) + list(dd_ch.keys())))
     new = []
     for n in chaps:
-        name = CHAPTER_NAMES.get(n, u"第%d章" % n)
+        name = fluid_names.get(n) or mat_names.get(n) or (u"第%d章" % n)
         P = [u"# 第%d章 · %s" % (n, name), u"",
              u"> 一章打通 ▸ 知识精讲（图文）· 例题详解 · 自测练习 · 速记知识点 · 课件原页全图", u""]
         # 收集本章各组成部分，最后按存在者顺序编号（避免出现 二→五 的跳号）。
@@ -514,17 +588,17 @@ def chapterize(sections, slug):
         if n in materials:
             mat = _strip_details_markmap(materials[n])
             rp = _section_body(mat, u"复习要点")
-            body = _demote(rp if rp else mat, 1)
+            body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
             mer = _first_mermaid(mat)
             if mer:
                 body += u"\n\n### 本章知识结构图\n\n" + mer
             blocks.append((u"知识精讲 · 核心概念 / 公式 / 考点", body))
         if n in dd_ch:
-            blocks.append((u"核心 PDF 原页 · 图文精讲 + 例题详解", _demote(dd_ch[n], 1)))
+            blocks.append((u"核心 PDF 原页 · 图文精讲 + 例题详解", _strip_broken_imgs(_demote(dd_ch[n], 1))))
         if n in quiz_ch:
-            blocks.append((u"自测题 · 练习", _demote(quiz_ch[n], 1)))
+            blocks.append((u"自测题 · 练习", _strip_broken_imgs(_demote(quiz_ch[n], 1))))
         if n in card_ch:
-            blocks.append((u"速记卡 · 知识点速查", _demote(card_ch[n], 1)))
+            blocks.append((u"速记卡 · 知识点速查", _strip_broken_imgs(_demote(card_ch[n], 1))))
         gal = _chapter_gallery(slug, mf, n) if mf else u""
         if gal:
             blocks.append((u"本章课件原页 · 全图", gal))
