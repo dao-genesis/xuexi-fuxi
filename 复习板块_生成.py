@@ -434,6 +434,86 @@ CHAPTER_NAMES_BY_SLUG = {
     },
 }
 
+# 讲次→章 的「关键词映射」：用于课件标题不含「第N章」、但含章名/主题词的课程
+# （如环境法学标题为章名、环境规划绪论无章号、GIS 为主题录播）。
+# _lesson_chap 先按「第N章」识别，再回退到此关键词表，实现各章课件原页的可靠归并。
+_LESSON_CHAP_KW = {
+    u"environmental-law": {
+        1: [u"开学第一课", u"绪论", u"概述"],
+        2: [u"基本原则"],
+        3: [u"环境利用行为的主体", u"权利义务"],
+        4: [u"国家的环境保护义务", u"国家的环境保护职责"],
+        5: [u"环境基本法", u"综合性环境法律"],
+        6: [u"污染控制法", u"环境损害救济"],
+    },
+    u"environmental-planning": {
+        2: [u"绪论", u"政策方针法律法规", u"第二三章"],
+    },
+    u"gis": {
+        1: [u"地理信息系统 Geographic", u"概论"],
+        2: [u"空间数据"],
+    },
+}
+
+
+# 按讲次 ID 直接指定所属章（一讲可归多章）：用于源录播按主题而非按教材章节录制的课程。
+# GIS 录播仅「概论 / 空间数据」两主题，而教材第2~4章均为「空间数据」子主题，故拆分归并。
+_LESSON_ID_CHAP = {
+    u"gis": {u"L03": [1], u"L04": [1], u"L01": [2, 3], u"L02": [2, 4]},
+}
+
+
+def _lesson_chap(slug, title):
+    """识别课件讲次所属章：先按「第N章」，再回退按章名关键词匹配。"""
+    c = _cn_chap(title)
+    if c:
+        return c
+    for n, kws in _LESSON_CHAP_KW.get(slug, {}).items():
+        for kw in kws:
+            if kw in title:
+                return n
+    return None
+
+
+def _lesson_in_chap(slug, ls, chap):
+    idmap = _LESSON_ID_CHAP.get(slug)
+    if idmap is not None:
+        lid = ls.get("pages", [u"_"])[0].split(u"_")[0]
+        return chap in idmap.get(lid, [])
+    return _lesson_chap(slug, ls.get("title", "")) == chap
+
+
+def _chapter_pages(slug, mf, chap, k=6):
+    """取该章对应讲次的页图文件名，等距抽取至多 k 张作为「核心原页」内嵌图文。"""
+    allp = []
+    for ls in mf.get("lessons", []):
+        if _lesson_in_chap(slug, ls, chap):
+            allp.extend(ls.get("pages", []))
+    if not allp:
+        return []
+    if len(allp) <= k:
+        return allp
+    step = len(allp) / float(k)
+    return [allp[int(i * step)] for i in range(k)]
+
+
+def _inline_pages_md(slug, pages):
+    """把若干核心原页渲染为可点击放大的横向图文条（内嵌于「图文精讲」块顶部）。"""
+    if not pages:
+        return u""
+    cells = []
+    for fn in pages:
+        src = u"assets/pdf/%s/%s" % (slug, fn)
+        cells.append(u'<a href="%s" target="_blank" rel="noopener">'
+                     u'<img loading="lazy" src="%s" alt=""></a>' % (src, src))
+    return (u"### 本章核心课件原页（点击看大图）\n\n"
+            u'<div class="pdf-gallery">\n%s\n</div>\n' % u"\n".join(cells))
+
+
+def _safe_mindmap_label(name):
+    """清洗章名用于 mermaid mindmap 根节点（去除会破坏语法的括号/斜杠等）。"""
+    return re.sub(u"[()（）/\\\\\\[\\]]", u" ", name).strip()
+
 
 def _name_from_material(md, fname):
     """从素材 H1（形如「课名 · 第N章 · 章名 · 素材」）或文件名派生章名。"""
@@ -522,7 +602,7 @@ def _chapter_gallery(slug, mf, chap):
     """该章对应讲次的课件原页（仅图片、无 OCR 文字），折叠展示。"""
     rows = []
     for ls in mf.get("lessons", []):
-        if _cn_chap(ls.get("title", "")) != chap:
+        if not _lesson_in_chap(slug, ls, chap):
             continue
         for fn in ls.get("pages", []):
             src = u"assets/pdf/%s/%s" % (slug, fn)
@@ -591,10 +671,20 @@ def chapterize(sections, slug):
             body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
             mer = _first_mermaid(mat)
             if mer:
+                if slug != u"fluid-mechanics":
+                    mer = re.sub(r"root\(\(.*?\)\)",
+                                 u"root((第%d章<br/>%s))" % (n, _safe_mindmap_label(name)),
+                                 mer, count=1, flags=re.S)
                 body += u"\n\n### 本章知识结构图\n\n" + mer
             blocks.append((u"知识精讲 · 核心概念 / 公式 / 考点", body))
+        # 流体力学已人工图文精解（原页内嵌于解析旁），不再叠加自动原页条，保持原样。
+        inline = (_inline_pages_md(slug, _chapter_pages(slug, mf, n))
+                  if (mf and slug != u"fluid-mechanics") else u"")
         if n in dd_ch:
-            blocks.append((u"核心 PDF 原页 · 图文精讲 + 例题详解", _strip_broken_imgs(_demote(dd_ch[n], 1))))
+            dd = _strip_broken_imgs(_demote(dd_ch[n], 1))
+            blocks.append((u"核心 PDF 原页 · 图文精讲 + 例题详解", (inline + u"\n" + dd) if inline else dd))
+        elif inline:
+            blocks.append((u"核心 PDF 原页 · 图文精讲", inline))
         if n in quiz_ch:
             blocks.append((u"自测题 · 练习", _strip_broken_imgs(_demote(quiz_ch[n], 1))))
         if n in card_ch:
