@@ -23,13 +23,19 @@
     });
     return { md: md, store: store };
   }
+  // 裸百分号会被 KaTeX 当作注释（吞掉行尾含右花括号），转义为 \%；已转义的保持不变。
+  function sanitizeTex(tex) {
+    return tex.replace(/\\%/g, "\u0001PCT\u0001")
+              .replace(/%/g, "\\%")
+              .replace(/\u0001PCT\u0001/g, "\\%");
+  }
   function restoreMath(html, store) {
     return html.replace(new RegExp(MATH_OPEN + "(\\d+)" + MATH_CLOSE, "g"), function (m, i) {
       var item = store[+i];
       if (!item) return m;
       try {
-        return window.katex.renderToString(item.tex, {
-          displayMode: item.display, throwOnError: false, output: "html"
+        return window.katex.renderToString(sanitizeTex(item.tex), {
+          displayMode: item.display, throwOnError: false, strict: false, output: "html"
         });
       } catch (e) {
         return '<code>' + escapeHtml(item.tex) + '</code>';
