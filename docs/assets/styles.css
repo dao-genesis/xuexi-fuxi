@@ -164,6 +164,7 @@ mark.hit { background: #ffe58a; color: inherit; padding: 0 2px; border-radius: 3
 }
 
 /* ---------- responsive ---------- */
+.scrim { display: none; }
 @media (max-width: 860px) {
   .menu-toggle { display: inline-flex; }
   .sidebar {
@@ -172,6 +173,10 @@ mark.hit { background: #ffe58a; color: inherit; padding: 0 2px; border-radius: 3
     box-shadow: var(--shadow);
   }
   .sidebar.open { transform: translateX(0); }
+  .scrim.show {
+    display: block; position: fixed; inset: 56px 0 0 0; z-index: 24;
+    background: rgba(0,0,0,.38);
+  }
   .content { padding: 18px 16px 100px; }
   .doc { padding: 18px; }
   .topbar .search { width: 160px; }
