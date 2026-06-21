@@ -201,6 +201,21 @@
     });
   }
 
+  function cleanSnippet(text) {
+    return text
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/<\/?[a-zA-Z][^>]*>/g, " ")
+      .replace(/&lt;\/?[a-zA-Z][^&]*?&gt;/g, " ")
+      .replace(/&[a-z]+;/g, " ")
+      .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
+      .replace(/\[[ xX]?\]/g, " ")
+      .replace(/^[\s>#*\-+|]+/gm, " ")
+      .replace(/[|#`*_~]/g, " ")
+      .replace(/[-:]{2,}/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   function fullTextSearch(q) {
     var lower = q.toLowerCase(), results = [];
     COURSE.sections.forEach(function (s) {
@@ -208,7 +223,7 @@
       while (idx >= 0) { count++; from = idx + lower.length; idx = hay.indexOf(lower, from); if (count > 99) break; }
       if (count > 0) {
         var first = hay.indexOf(lower);
-        var snip = s.md.substring(Math.max(0, first - 40), first + 60).replace(/\s+/g, " ");
+        var snip = cleanSnippet(s.md.substring(Math.max(0, first - 40), first + 80));
         results.push({ id: s.id, title: s.title, group: s.group, count: count, snip: snip });
       }
     });
@@ -283,8 +298,15 @@
 
   // ---------- mobile sidebar ----------
   var btnMenu = document.getElementById("btn-menu");
-  function closeSidebarMobile() { elSidebar.classList.remove("open"); }
-  if (btnMenu) btnMenu.addEventListener("click", function () { elSidebar.classList.toggle("open"); });
+  var scrim = document.createElement("div");
+  scrim.className = "scrim";
+  document.body.appendChild(scrim);
+  function closeSidebarMobile() { elSidebar.classList.remove("open"); scrim.classList.remove("show"); }
+  if (btnMenu) btnMenu.addEventListener("click", function () {
+    var open = elSidebar.classList.toggle("open");
+    scrim.classList.toggle("show", open);
+  });
+  scrim.addEventListener("click", closeSidebarMobile);
 
   // ---------- init ----------
   var initTheme = "light";
