@@ -100,6 +100,14 @@ def _clean_title(stem):
     return t.strip()
 
 
+def _web_res_title(stem):
+    """由 `_网络资源_NN_标题` 文件名派生显示标题：去前缀与序号，下划线转空格。"""
+    t = stem.lstrip("_")
+    t = re.sub(r"^网络资源[_\-]?\d*[_\-]?", "", t)
+    t = t.replace("_", " ").strip()
+    return t or stem.lstrip("_")
+
+
 def collect_sections(course_path):
     """返回 (sections, meta)。sections: [{id, group, title, md}]"""
     sections = []
@@ -155,6 +163,13 @@ def collect_sections(course_path):
             for p in sorted(glob.glob(os.path.join(rp, "*.md"))):
                 stem = os.path.splitext(os.path.basename(p))[0]
                 add("复习资料", _clean_title(stem), read_text(p), "rr-" + slug_safe(stem))
+
+    # 2.6) 网络资源 · 真题/考点专集（联网调研汇编：真题题型、高频考点、名词解释速查、院校专集）
+    # 文件命名 `_素材/_网络资源_NN_*.md`；为全部课程通用，离线汇编、与生成器同源、可查可搜。
+    if su and os.path.isdir(su):
+        for p in sorted(glob.glob(os.path.join(su, "_网络资源_*.md"))):
+            stem = os.path.splitext(os.path.basename(p))[0]
+            add("真题与网络资源", _web_res_title(stem), read_text(p), "web-" + slug_safe(stem))
 
     # 2.5) 例题精解 · 深化（手工深化层：核心例题/案例+详解+图示）
     # 兼容各课不同布局：优先 _素材，其次 解析成果根、复习成果目录、课程根
@@ -706,6 +721,8 @@ def chapterize(sections, slug):
     for s in by_group.get(u"学习系统", []):
         if u"备考" in s["title"]:
             new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
+    for s in by_group.get(u"真题与网络资源", []):
+        new.append({"id": s["id"], "group": u"真题与网络资源", "title": s["title"], "md": s["md"]})
     for s in by_group.get(u"期末冲刺", []):
         new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
     for s in by_group.get(u"原始课件 · 页图", []):
@@ -831,7 +848,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["章节精讲", "总览资料", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -849,7 +866,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["章节精讲", "总览资料", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):
