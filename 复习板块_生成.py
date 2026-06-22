@@ -49,6 +49,11 @@ COURSE_REGISTRY = {
 # GitHub Pages 部署根地址（用于 README 首页在线网址一览）。
 PAGES_BASE = "https://zhouyoukang1234-spec.github.io/xuexi-fuxi"
 
+# 实验上机分组名（实验课与理论课融为一体：同一课页内，章节精讲之后即为上机实验精讲）。
+LAB_GROUP = u"实验精讲 · 上机"
+_LAB_CN = {0: u"导览", 1: u"一", 2: u"二", 3: u"三", 4: u"四", 5: u"五",
+           6: u"六", 7: u"七", 8: u"八", 9: u"九", 10: u"十"}
+
 
 def read_text(path):
     with io.open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -98,6 +103,19 @@ def _clean_title(stem):
     t = stem.lstrip("_")
     t = t.replace("_", " ")
     return t.strip()
+
+
+def _lab_title(stem):
+    """由 `_实验_NN_标题` 文件名派生显示标题：实验_03_矢量数据编辑与处理 → 实验三 · 矢量数据编辑与处理。"""
+    s = stem.lstrip(u"_")
+    m = re.match(u"实验_0*(\\d+)_(.+)$", s)
+    if m:
+        n = int(m.group(1))
+        rest = m.group(2).replace(u"_", u" ").strip()
+        if n == 0:
+            return u"实验导览 · " + rest
+        return u"实验%s · %s" % (_LAB_CN.get(n, str(n)), rest)
+    return _clean_title(stem)
 
 
 def _web_res_title(stem):
@@ -195,6 +213,15 @@ def collect_sections(course_path):
         for p in chap_files:
             stem = os.path.splitext(os.path.basename(p))[0]
             add("章节素材", _clean_title(stem), read_text(p), "ch-" + slug_safe(stem))
+
+    # 3.5) 实验上机素材（实验课 ↔ 理论课融为一体）：`_素材/_实验_NN_*.md`，按序号排序。
+    # 仅 GIS 等含实验的课程存在此类文件；其它课程无此文件，自动跳过（无操作）。
+    if su and os.path.isdir(su):
+        lab_files = sorted(glob.glob(os.path.join(su, "_实验_*.md")),
+                           key=lambda p: os.path.basename(p))
+        for p in lab_files:
+            stem = os.path.splitext(os.path.basename(p))[0]
+            add(LAB_GROUP, _lab_title(stem), read_text(p), "lab-" + slug_safe(stem))
 
     # 4) 期末冲刺
     if su and os.path.isdir(su):
@@ -712,6 +739,10 @@ def chapterize(sections, slug):
             P.append(body)
         new.append({"id": "chap-%d" % n, "group": u"章节精讲",
                     "title": u"第%d章 · %s" % (n, name), "md": u"\n\n".join(P)})
+
+    # 实验上机精讲：紧随章节精讲之后，实验课与理论课融为一体（内容已为成稿，原样保留）。
+    for s in by_group.get(LAB_GROUP, []):
+        new.append({"id": s["id"], "group": LAB_GROUP, "title": s["title"], "md": s["md"]})
 
     # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
     for s in by_group.get(u"复习资料", []):
