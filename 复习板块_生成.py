@@ -574,6 +574,22 @@ def _name_from_material(md, fname):
     return stem or None
 
 
+def _strip_core_preamble(md):
+    """核复(核心复习)稿去掉开头 H1 标题与「来源/哲学」引言，从首个二级小节(## )起，
+    避免与章节页大标题重复。"""
+    lines = md.splitlines()
+    for i, ln in enumerate(lines):
+        if re.match(r"#{2,6}\s+", ln):
+            return u"\n".join(lines[i:])
+    return md
+
+
+def _drop_ocr_note(md):
+    """删除自动素材遗留的「基于 OCR 全文自动提取，人工校核待补」误导性提示（内容实已精编）。"""
+    return u"\n".join(ln for ln in md.splitlines()
+                       if (u"OCR 全文自动提取" not in ln and u"人工校核待补" not in ln))
+
+
 def _strip_broken_imgs(md):
     """删除指向非 assets/、非 http 的失效图片引用（如 ../课夹/page_NNN.jpg、图全副本）。
     仅删图片标记，正文保留；assets 下真实页图与外链图片不受影响。"""
@@ -673,19 +689,28 @@ def chapterize(sections, slug):
 
     materials = {}
     mat_names = {}
+    mat_core = {}
+    mat_mermaid = {}
     _mscore = {}
     for s in by_group.get(u"章节素材", []):
         n = _chapter_num(s["title"])
         if n == 999:
             continue
         md = s["md"]
-        # 同一章多份素材时：优先含「复习要点」者，其次取更长者；
-        # 如此可跳过「_图全 / _核心复习」等纯图或精简副本，取到带知识精讲的主素材。
-        score = (1 if u"复习要点" in md else 0, len(md))
-        if score > _mscore.get(n, (-1, -1)):
+        # 同一章多份素材时：最优先「核复(核心复习)」手工精编稿（考点最全、已去芜存菁），
+        # 其次含「复习要点」的主素材，再次取更长者；纯页图副本（_图全）自然落选。
+        is_core = (u"核复" in s["title"]) or (u"核心复习" in s["title"])
+        score = (1 if is_core else 0, 1 if u"复习要点" in md else 0, len(md))
+        if score > _mscore.get(n, (-1, -1, -1)):
             _mscore[n] = score
             materials[n] = md
             mat_names[n] = _name_from_material(md, s["title"])
+            mat_core[n] = is_core
+        # 知识结构图（mermaid）可能仅存在于自动素材：跨同章各素材保留首个 mermaid。
+        if n not in mat_mermaid:
+            mm = _first_mermaid(md)
+            if mm:
+                mat_mermaid[n] = mm
     deepdive = next((s["md"] for s in sections if s["id"] == "deepdive"), u"")
     dd_ch = _split_h2_chapters(deepdive)
     quiz = cards = u""
@@ -709,9 +734,13 @@ def chapterize(sections, slug):
         blocks = []
         if n in materials:
             mat = _strip_details_markmap(materials[n])
-            rp = _section_body(mat, u"复习要点")
-            body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
-            mer = _first_mermaid(mat)
+            if mat_core.get(n):
+                body = _strip_broken_imgs(_demote(_strip_core_preamble(mat), 1))
+            else:
+                rp = _section_body(mat, u"复习要点")
+                body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
+            body = _drop_ocr_note(body)
+            mer = mat_mermaid.get(n) or _first_mermaid(mat)
             if mer:
                 if slug != u"fluid-mechanics":
                     mer = re.sub(r"root\(\(.*?\)\)",
@@ -759,6 +788,10 @@ def chapterize(sections, slug):
     for s in by_group.get(u"原始课件 · 页图", []):
         new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
     # 丢弃：导览（闭环总览）、原始课件·PDF原文（逐页OCR乱码，已被页图/各章原页取代）
+
+    # 全局去除自动素材遗留的「OCR 全文自动提取 / 人工校核待补」误导提示（汇编/总览等处亦含）。
+    for s in new:
+        s["md"] = _drop_ocr_note(s["md"])
 
     default = ("chap-%d" % chaps[0]) if chaps else (new[0]["id"] if new else None)
     return new, default, len(chaps)
