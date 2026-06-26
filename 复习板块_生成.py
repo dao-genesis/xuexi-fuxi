@@ -779,21 +779,40 @@ def chapterize(sections, slug):
         new.append({"id": s["id"], "group": LAB_GROUP, "title": s["title"], "md": s["md"]})
 
     if slug in LEAN_COURSE_SLUGS:
-        # 考前精华（浓缩核心·无计划规划）：期末速查 → 名词解释速查 → 真题题型 → 期末模拟卷。
-        essence, seen = [], set()
+        # 考前综合归一（取长补短·三页高密度·无计划规划）：散料整合、去重、补全为「最后一天高效冲刺」三页。
+        #   ① 期末综合速查 —— 全 7 章 概念/公式/机制/高频考点 一站归纳（+ 名词速对表）
+        #   ② 名词解释与简答归纳 —— 按章核心名词 + 高频简答得分要点 + 易错辨析
+        #   ③ 真题题型·高频考点·模拟自测 —— 题型分布 + 高频考点梯队 + 一套模拟自测（答案默藏）
+        GRP = u"考前综合"
 
-        def _pick(group, *keywords):
+        def _find(group, *keywords):
             for s in by_group.get(group, []):
-                if s["id"] not in seen and any(k in s["title"] for k in keywords):
-                    seen.add(s["id"])
-                    essence.append(s)
-        _pick(u"期末冲刺", u"速查")
-        _pick(u"真题与网络资源", u"名词解释", u"简答")
-        _pick(u"真题与网络资源", u"真题", u"高频考点")
-        _pick(u"期末冲刺", u"模拟卷")
-        for s in essence:
-            new.append({"id": s["id"], "group": u"考前精华", "title": s["title"], "md": s["md"]})
-        # 原始课件页图作底稿（折叠在末）；丢弃综合复习资料/期末骨架/备考总纲/路线图/院校旁支/章节图谱。
+                if any(k in s["title"] for k in keywords):
+                    return s
+            return None
+
+        s_quick = _find(u"期末冲刺", u"速查")
+        if s_quick:
+            new.append({"id": s_quick["id"], "group": GRP,
+                        "title": u"期末综合速查 · 全章核心一站", "md": s_quick["md"]})
+        s_term = _find(u"真题与网络资源", u"名词解释", u"简答")
+        if s_term:
+            new.append({"id": s_term["id"], "group": GRP,
+                        "title": u"名词解释与简答归纳", "md": s_term["md"]})
+        # ③ 真题题型 + 期末模拟卷 → 合并为一页（模拟卷降一级并入，避免双 H1）
+        s_exam = _find(u"真题与网络资源", u"真题", u"高频考点")
+        s_mock = _find(u"期末冲刺", u"模拟卷")
+        parts = []
+        if s_exam:
+            parts.append(s_exam["md"].rstrip())
+        if s_mock:
+            mock = re.sub(r"(?m)^#\s+[^\n]*\n", u"", s_mock["md"], count=1)  # 去其 H1
+            parts.append(u"---\n\n## 附 · 期末模拟自测卷（先闭卷作答，再展开对照）\n\n" + _demote(mock, 1).strip())
+        if parts:
+            eid = (s_exam or s_mock or {"id": "exam-merge"})["id"]
+            new.append({"id": eid, "group": GRP,
+                        "title": u"真题题型 · 高频考点 · 模拟自测", "md": u"\n\n".join(parts)})
+        # 原始课件页图作底稿（折叠在末）；丢弃综合/最终复习资料、期末骨架、备考总纲、路线图、院校旁支、章节图谱等碎片/重复页。
         for s in by_group.get(u"原始课件 · 页图", []):
             new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
     else:
@@ -936,7 +955,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["章节精讲", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -954,7 +973,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["章节精讲", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):
