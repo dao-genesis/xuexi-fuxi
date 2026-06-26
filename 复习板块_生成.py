@@ -476,6 +476,11 @@ CHAPTER_NAMES_BY_SLUG = {
     },
 }
 
+# 精简课程：考前一日之境——前为「章节精讲」（主体·读完≈一日），后仅留三五页浓缩「考前精华」，
+# 末附原始课件页图作底稿。删去一切计划/规划（备考总纲间隔重复日历、一天冲刺路线图）与
+# 冗余总览（综合复习资料=章节重复、期末骨架=提纲、知识图谱=章内已含、院校旁支资料）。
+LEAN_COURSE_SLUGS = {u"environmental-toxicology"}
+
 # 讲次→章 的「关键词映射」：用于课件标题不含「第N章」、但含章名/主题词的课程
 # （如环境法学标题为章名、环境规划绪论无章号、GIS 为主题录播）。
 # _lesson_chap 先按「第N章」识别，再回退到此关键词表，实现各章课件原页的可靠归并。
@@ -773,20 +778,39 @@ def chapterize(sections, slug):
     for s in by_group.get(LAB_GROUP, []):
         new.append({"id": s["id"], "group": LAB_GROUP, "title": s["title"], "md": s["md"]})
 
-    # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
-    for s in by_group.get(u"复习资料", []):
-        new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"知识图谱", []):
-        new.append({"id": s["id"], "group": u"总览资料", "title": u"知识图谱 · " + s["title"], "md": s["md"]})
-    for s in by_group.get(u"学习系统", []):
-        if u"备考" in s["title"]:
+    if slug in LEAN_COURSE_SLUGS:
+        # 考前精华（浓缩核心·无计划规划）：期末速查 → 名词解释速查 → 真题题型 → 期末模拟卷。
+        essence, seen = [], set()
+
+        def _pick(group, *keywords):
+            for s in by_group.get(group, []):
+                if s["id"] not in seen and any(k in s["title"] for k in keywords):
+                    seen.add(s["id"])
+                    essence.append(s)
+        _pick(u"期末冲刺", u"速查")
+        _pick(u"真题与网络资源", u"名词解释", u"简答")
+        _pick(u"真题与网络资源", u"真题", u"高频考点")
+        _pick(u"期末冲刺", u"模拟卷")
+        for s in essence:
+            new.append({"id": s["id"], "group": u"考前精华", "title": s["title"], "md": s["md"]})
+        # 原始课件页图作底稿（折叠在末）；丢弃综合复习资料/期末骨架/备考总纲/路线图/院校旁支/章节图谱。
+        for s in by_group.get(u"原始课件 · 页图", []):
+            new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
+    else:
+        # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
+        for s in by_group.get(u"复习资料", []):
             new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"真题与网络资源", []):
-        new.append({"id": s["id"], "group": u"真题与网络资源", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"期末冲刺", []):
-        new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"原始课件 · 页图", []):
-        new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
+        for s in by_group.get(u"知识图谱", []):
+            new.append({"id": s["id"], "group": u"总览资料", "title": u"知识图谱 · " + s["title"], "md": s["md"]})
+        for s in by_group.get(u"学习系统", []):
+            if u"备考" in s["title"]:
+                new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"真题与网络资源", []):
+            new.append({"id": s["id"], "group": u"真题与网络资源", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"期末冲刺", []):
+            new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"原始课件 · 页图", []):
+            new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
     # 丢弃：导览（闭环总览）、原始课件·PDF原文（逐页OCR乱码，已被页图/各章原页取代）
 
     # 全局去除自动素材遗留的「OCR 全文自动提取 / 人工校核待补」误导提示（汇编/总览等处亦含）。
@@ -912,7 +936,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -930,7 +954,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):
