@@ -1,0 +1,49 @@
+name: Auto-merge PR
+
+# 道法自然 · 反者道之动：PR 通过校验（Docs Sync Check）即自动合并入 main，
+# 并触发 "Build & Deploy Review Site" 发布到 GitHub Pages。
+# 此后主公无需手工点合并——无为而无不为。
+#
+# 仅用内置 GITHUB_TOKEN（无需任何密钥 / 管理员权限）。
+# 注意：GITHUB_TOKEN 合并产生的 push 不会自动触发 pages.yml（GitHub 限制），
+#       故合并后显式 workflow_dispatch 触发发布。
+# 仅自动合并本仓库分支（非派生 fork）且非草稿的 PR；校验失败则不合并。
+
+on:
+  workflow_run:
+    workflows: ["Docs Sync Check"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  automerge:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: 合并通过校验的 PR 并触发发布
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+          prs=$(gh pr list --repo "$REPO" --state open --base main \
+                  --head "$HEAD_BRANCH" --json number,isDraft \
+                  --jq '.[] | select(.isDraft | not) | .number')
+          if [ -z "$prs" ]; then
+            echo "无可合并的开放 PR（分支：$HEAD_BRANCH）"; exit 0
+          fi
+          for pr in $prs; do
+            echo "==> 合并 PR #$pr"
+            gh pr merge "$pr" --repo "$REPO" --squash --delete-branch \
+              || gh pr merge "$pr" --repo "$REPO" --merge --delete-branch
+          done
+          echo "==> 触发 Build & Deploy Review Site"
+          gh workflow run "Build & Deploy Review Site" --repo "$REPO" --ref main

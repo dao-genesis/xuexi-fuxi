@@ -49,6 +49,11 @@ COURSE_REGISTRY = {
 # GitHub Pages 部署根地址（用于 README 首页在线网址一览）。
 PAGES_BASE = "https://zhouyoukang1234-spec.github.io/xuexi-fuxi"
 
+# 实验上机分组名（实验课与理论课融为一体：同一课页内，章节精讲之后即为上机实验精讲）。
+LAB_GROUP = u"实验精讲 · 上机"
+_LAB_CN = {0: u"导览", 1: u"一", 2: u"二", 3: u"三", 4: u"四", 5: u"五",
+           6: u"六", 7: u"七", 8: u"八", 9: u"九", 10: u"十"}
+
 
 def read_text(path):
     with io.open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -98,6 +103,19 @@ def _clean_title(stem):
     t = stem.lstrip("_")
     t = t.replace("_", " ")
     return t.strip()
+
+
+def _lab_title(stem):
+    """由 `_实验_NN_标题` 文件名派生显示标题：实验_03_矢量数据编辑与处理 → 实验三 · 矢量数据编辑与处理。"""
+    s = stem.lstrip(u"_")
+    m = re.match(u"实验_0*(\\d+)_(.+)$", s)
+    if m:
+        n = int(m.group(1))
+        rest = m.group(2).replace(u"_", u" ").strip()
+        if n == 0:
+            return u"实验导览 · " + rest
+        return u"实验%s · %s" % (_LAB_CN.get(n, str(n)), rest)
+    return _clean_title(stem)
 
 
 def _web_res_title(stem):
@@ -195,6 +213,15 @@ def collect_sections(course_path):
         for p in chap_files:
             stem = os.path.splitext(os.path.basename(p))[0]
             add("章节素材", _clean_title(stem), read_text(p), "ch-" + slug_safe(stem))
+
+    # 3.5) 实验上机素材（实验课 ↔ 理论课融为一体）：`_素材/_实验_NN_*.md`，按序号排序。
+    # 仅 GIS 等含实验的课程存在此类文件；其它课程无此文件，自动跳过（无操作）。
+    if su and os.path.isdir(su):
+        lab_files = sorted(glob.glob(os.path.join(su, "_实验_*.md")),
+                           key=lambda p: os.path.basename(p))
+        for p in lab_files:
+            stem = os.path.splitext(os.path.basename(p))[0]
+            add(LAB_GROUP, _lab_title(stem), read_text(p), "lab-" + slug_safe(stem))
 
     # 4) 期末冲刺
     if su and os.path.isdir(su):
@@ -425,11 +452,11 @@ CHAPTER_NAMES_BY_SLUG = {
     },
     u"environmental-toxicology": {
         1: u"绪论与基本概念",
-        2: u"污染物在环境（机体）中的迁移与转化",
-        3: u"毒作用及其机制",
-        4: u"毒作用的影响因素",
+        2: u"污染物在环境中的迁移和转化",
+        3: u"污染物的生物转运与生物转化",
+        4: u"环境污染物的毒作用及其影响因素",
         5: u"环境毒理学常用实验方法",
-        6: u"环境化学物的安全性与健康危险度评价",
+        6: u"环境化学物的安全性和健康危险度评价",
         7: u"常见化学致癌物的环境毒理学",
     },
     u"environmental-law": {
@@ -448,6 +475,11 @@ CHAPTER_NAMES_BY_SLUG = {
         7: u"环境管理模式",
     },
 }
+
+# 精简课程：考前一日之境——前为「章节精讲」（主体·读完≈一日），后仅留三五页浓缩「考前精华」，
+# 末附原始课件页图作底稿。删去一切计划/规划（备考总纲间隔重复日历、一天冲刺路线图）与
+# 冗余总览（综合复习资料=章节重复、期末骨架=提纲、知识图谱=章内已含、院校旁支资料）。
+LEAN_COURSE_SLUGS = {u"environmental-toxicology"}
 
 # 讲次→章 的「关键词映射」：用于课件标题不含「第N章」、但含章名/主题词的课程
 # （如环境法学标题为章名、环境规划绪论无章号、GIS 为主题录播）。
@@ -545,6 +577,22 @@ def _name_from_material(md, fname):
     stem = re.sub(u"^第\\s*0*\\d+\\s*章", u"", stem)
     stem = re.sub(u"[_\\s]+", u" ", stem).strip()
     return stem or None
+
+
+def _strip_core_preamble(md):
+    """核复(核心复习)稿去掉开头 H1 标题与「来源/哲学」引言，从首个二级小节(## )起，
+    避免与章节页大标题重复。"""
+    lines = md.splitlines()
+    for i, ln in enumerate(lines):
+        if re.match(r"#{2,6}\s+", ln):
+            return u"\n".join(lines[i:])
+    return md
+
+
+def _drop_ocr_note(md):
+    """删除自动素材遗留的「基于 OCR 全文自动提取，人工校核待补」误导性提示（内容实已精编）。"""
+    return u"\n".join(ln for ln in md.splitlines()
+                       if (u"OCR 全文自动提取" not in ln and u"人工校核待补" not in ln))
 
 
 def _strip_broken_imgs(md):
@@ -646,19 +694,28 @@ def chapterize(sections, slug):
 
     materials = {}
     mat_names = {}
+    mat_core = {}
+    mat_mermaid = {}
     _mscore = {}
     for s in by_group.get(u"章节素材", []):
         n = _chapter_num(s["title"])
         if n == 999:
             continue
         md = s["md"]
-        # 同一章多份素材时：优先含「复习要点」者，其次取更长者；
-        # 如此可跳过「_图全 / _核心复习」等纯图或精简副本，取到带知识精讲的主素材。
-        score = (1 if u"复习要点" in md else 0, len(md))
-        if score > _mscore.get(n, (-1, -1)):
+        # 同一章多份素材时：最优先「核复(核心复习)」手工精编稿（考点最全、已去芜存菁），
+        # 其次含「复习要点」的主素材，再次取更长者；纯页图副本（_图全）自然落选。
+        is_core = (u"核复" in s["title"]) or (u"核心复习" in s["title"])
+        score = (1 if is_core else 0, 1 if u"复习要点" in md else 0, len(md))
+        if score > _mscore.get(n, (-1, -1, -1)):
             _mscore[n] = score
             materials[n] = md
             mat_names[n] = _name_from_material(md, s["title"])
+            mat_core[n] = is_core
+        # 知识结构图（mermaid）可能仅存在于自动素材：跨同章各素材保留首个 mermaid。
+        if n not in mat_mermaid:
+            mm = _first_mermaid(md)
+            if mm:
+                mat_mermaid[n] = mm
     deepdive = next((s["md"] for s in sections if s["id"] == "deepdive"), u"")
     dd_ch = _split_h2_chapters(deepdive)
     quiz = cards = u""
@@ -682,9 +739,13 @@ def chapterize(sections, slug):
         blocks = []
         if n in materials:
             mat = _strip_details_markmap(materials[n])
-            rp = _section_body(mat, u"复习要点")
-            body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
-            mer = _first_mermaid(mat)
+            if mat_core.get(n):
+                body = _strip_broken_imgs(_demote(_strip_core_preamble(mat), 1))
+            else:
+                rp = _section_body(mat, u"复习要点")
+                body = _strip_broken_imgs(_demote(rp if rp else mat, 1))
+            body = _drop_ocr_note(body)
+            mer = mat_mermaid.get(n) or _first_mermaid(mat)
             if mer:
                 if slug != u"fluid-mechanics":
                     mer = re.sub(r"root\(\(.*?\)\)",
@@ -713,21 +774,67 @@ def chapterize(sections, slug):
         new.append({"id": "chap-%d" % n, "group": u"章节精讲",
                     "title": u"第%d章 · %s" % (n, name), "md": u"\n\n".join(P)})
 
-    # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
-    for s in by_group.get(u"复习资料", []):
-        new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"知识图谱", []):
-        new.append({"id": s["id"], "group": u"总览资料", "title": u"知识图谱 · " + s["title"], "md": s["md"]})
-    for s in by_group.get(u"学习系统", []):
-        if u"备考" in s["title"]:
+    # 实验上机精讲：紧随章节精讲之后，实验课与理论课融为一体（内容已为成稿，原样保留）。
+    for s in by_group.get(LAB_GROUP, []):
+        new.append({"id": s["id"], "group": LAB_GROUP, "title": s["title"], "md": s["md"]})
+
+    if slug in LEAN_COURSE_SLUGS:
+        # 考前综合归一（取长补短·三页高密度·无计划规划）：散料整合、去重、补全为「最后一天高效冲刺」三页。
+        #   ① 期末综合速查 —— 全 7 章 概念/公式/机制/高频考点 一站归纳（+ 名词速对表）
+        #   ② 名词解释与简答归纳 —— 按章核心名词 + 高频简答得分要点 + 易错辨析
+        #   ③ 真题题型·高频考点·模拟自测 —— 题型分布 + 高频考点梯队 + 一套模拟自测（答案默藏）
+        GRP = u"考前综合"
+
+        def _find(group, *keywords):
+            for s in by_group.get(group, []):
+                if any(k in s["title"] for k in keywords):
+                    return s
+            return None
+
+        s_quick = _find(u"期末冲刺", u"速查")
+        if s_quick:
+            new.append({"id": s_quick["id"], "group": GRP,
+                        "title": u"期末综合速查 · 全章核心一站", "md": s_quick["md"]})
+        s_term = _find(u"真题与网络资源", u"名词解释", u"简答")
+        if s_term:
+            new.append({"id": s_term["id"], "group": GRP,
+                        "title": u"名词解释与简答归纳", "md": s_term["md"]})
+        # ③ 真题题型 + 期末模拟卷 → 合并为一页（模拟卷降一级并入，避免双 H1）
+        s_exam = _find(u"真题与网络资源", u"真题", u"高频考点")
+        s_mock = _find(u"期末冲刺", u"模拟卷")
+        parts = []
+        if s_exam:
+            parts.append(s_exam["md"].rstrip())
+        if s_mock:
+            mock = re.sub(r"(?m)^#\s+[^\n]*\n", u"", s_mock["md"], count=1)  # 去其 H1
+            parts.append(u"---\n\n## 附 · 期末模拟自测卷（先闭卷作答，再展开对照）\n\n" + _demote(mock, 1).strip())
+        if parts:
+            eid = (s_exam or s_mock or {"id": "exam-merge"})["id"]
+            new.append({"id": eid, "group": GRP,
+                        "title": u"真题题型 · 高频考点 · 模拟自测", "md": u"\n\n".join(parts)})
+        # 原始课件页图作底稿（折叠在末）；丢弃综合/最终复习资料、期末骨架、备考总纲、路线图、院校旁支、章节图谱等碎片/重复页。
+        for s in by_group.get(u"原始课件 · 页图", []):
+            new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
+    else:
+        # 总览板块（少量）：综合复习资料 / 知识图谱 / 备考总纲 → 总览资料；期末冲刺；全部课件原页
+        for s in by_group.get(u"复习资料", []):
             new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"真题与网络资源", []):
-        new.append({"id": s["id"], "group": u"真题与网络资源", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"期末冲刺", []):
-        new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
-    for s in by_group.get(u"原始课件 · 页图", []):
-        new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
+        for s in by_group.get(u"知识图谱", []):
+            new.append({"id": s["id"], "group": u"总览资料", "title": u"知识图谱 · " + s["title"], "md": s["md"]})
+        for s in by_group.get(u"学习系统", []):
+            if u"备考" in s["title"]:
+                new.append({"id": s["id"], "group": u"总览资料", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"真题与网络资源", []):
+            new.append({"id": s["id"], "group": u"真题与网络资源", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"期末冲刺", []):
+            new.append({"id": s["id"], "group": u"期末冲刺", "title": s["title"], "md": s["md"]})
+        for s in by_group.get(u"原始课件 · 页图", []):
+            new.append({"id": s["id"], "group": u"原始课件", "title": u"全部课件原页 · 逐讲", "md": s["md"]})
     # 丢弃：导览（闭环总览）、原始课件·PDF原文（逐页OCR乱码，已被页图/各章原页取代）
+
+    # 全局去除自动素材遗留的「OCR 全文自动提取 / 人工校核待补」误导提示（汇编/总览等处亦含）。
+    for s in new:
+        s["md"] = _drop_ocr_note(s["md"])
 
     default = ("chap-%d" % chaps[0]) if chaps else (new[0]["id"] if new else None)
     return new, default, len(chaps)
@@ -848,7 +955,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -866,7 +973,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):
