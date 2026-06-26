@@ -95,9 +95,24 @@
   var RENDERER = buildRenderer();
   marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 
+  // 正文里的比较号与区间号本是数学符号，却会被 Markdown 误解析：
+  //  ① 孤立 ~（如 1~3 / 100~1000）被 GFM 当成删除线（仅 ~~ 才应是删除线）；
+  //  ② 裸 <（如 K<1 / <之和）被当成 HTML 标签起始，吞掉其后的 **加粗** 等行内语法。
+  // 故在「代码块/行内代码之外」先占位保护 ~、转义比较号 <（标签 <a 等不动），解析后再还原。
+  var TILDE_HOLD = "\u0001TLD\u0001";
+  function protectInline(md) {
+    var parts = md.split(/(```[\s\S]*?```|`[^`\n]*`)/g);
+    for (var i = 0; i < parts.length; i += 2) {
+      parts[i] = parts[i]
+        .replace(/(^|[^~])~(?!~)/g, "$1" + TILDE_HOLD)
+        .replace(/<(?![A-Za-z\/!?])/g, "&lt;");
+    }
+    return parts.join("");
+  }
   function renderMarkdown(md) {
     var p = protectMath(md);
-    var html = marked.parse(p.md, { renderer: RENDERER });
+    var html = marked.parse(protectInline(p.md), { renderer: RENDERER });
+    html = html.split(TILDE_HOLD).join("~");
     return restoreMath(html, p.store);
   }
 
@@ -116,7 +131,7 @@
   var elSearch = document.getElementById("search-input");
 
   // ---------- build nav ----------
-  var GROUP_ORDER = ["章节精讲", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"];
+  var GROUP_ORDER = ["章节精讲", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"];
   var sectionsById = {};
   COURSE.sections.forEach(function (s) { sectionsById[s.id] = s; });
 
