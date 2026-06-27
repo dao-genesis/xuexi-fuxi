@@ -479,7 +479,7 @@ CHAPTER_NAMES_BY_SLUG = {
 # 精简课程：考前一日之境——前为「章节精讲」（主体·读完≈一日），后仅留三五页浓缩「考前精华」，
 # 末附原始课件页图作底稿。删去一切计划/规划（备考总纲间隔重复日历、一天冲刺路线图）与
 # 冗余总览（综合复习资料=章节重复、期末骨架=提纲、知识图谱=章内已含、院校旁支资料）。
-LEAN_COURSE_SLUGS = {u"environmental-toxicology"}
+LEAN_COURSE_SLUGS = {u"environmental-toxicology", u"gis"}
 
 # 讲次→章 的「关键词映射」：用于课件标题不含「第N章」、但含章名/主题词的课程
 # （如环境法学标题为章名、环境规划绪论无章号、GIS 为主题录播）。
@@ -799,17 +799,26 @@ def chapterize(sections, slug):
         if s_term:
             new.append({"id": s_term["id"], "group": GRP,
                         "title": u"名词解释与简答归纳", "md": s_term["md"]})
-        # ③ 真题题型 + 期末模拟卷 → 合并为一页（模拟卷降一级并入，避免双 H1）
-        s_exam = _find(u"真题与网络资源", u"真题", u"高频考点")
+        # ③ 真题题型 + 高频考点（多份真题聚合·取长补短）+ 期末模拟卷 → 合并为一页（均降一级并入，避免多 H1 撑乱层级）
+        exam_secs = [s for s in by_group.get(u"真题与网络资源", [])
+                     if any(k in s["title"] for k in (u"真题", u"试题", u"高频考点"))
+                     and u"名词解释" not in s["title"]]
         s_mock = _find(u"期末冲刺", u"模拟卷")
         parts = []
-        if s_exam:
-            parts.append(s_exam["md"].rstrip())
+        if len(exam_secs) <= 1:
+            if exam_secs:
+                parts.append(exam_secs[0]["md"].rstrip())
+        else:
+            blocks = []
+            for s in exam_secs:
+                body = re.sub(r"(?m)^#\s+[^\n]*\n", u"", s["md"].rstrip(), count=1)  # 去各自 H1
+                blocks.append(u"## " + s["title"] + u"\n\n" + _demote(body, 1).strip())
+            parts.append(u"\n\n---\n\n".join(blocks))
         if s_mock:
             mock = re.sub(r"(?m)^#\s+[^\n]*\n", u"", s_mock["md"], count=1)  # 去其 H1
             parts.append(u"---\n\n## 附 · 期末模拟自测卷（先闭卷作答，再展开对照）\n\n" + _demote(mock, 1).strip())
         if parts:
-            eid = (s_exam or s_mock or {"id": "exam-merge"})["id"]
+            eid = (exam_secs[0] if exam_secs else (s_mock or {"id": "exam-merge"}))["id"]
             new.append({"id": eid, "group": GRP,
                         "title": u"真题题型 · 高频考点 · 模拟自测", "md": u"\n\n".join(parts)})
         # 原始课件页图作底稿（折叠在末）；丢弃综合/最终复习资料、期末骨架、备考总纲、路线图、院校旁支、章节图谱等碎片/重复页。
@@ -955,7 +964,7 @@ def esc_attr(s):
 
 def build_index(built):
     cards = []
-    order = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+    order = ["章节精讲", "实验精讲 · 上机", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
     for b in built:
         badges = "".join(
             '<span class="badge">%s·%d</span>' % (esc_attr(g), b["counts"][g])
@@ -973,7 +982,7 @@ def build_index(built):
     write_text(os.path.join(DOCS, "index.html"), INDEX_HTML.format(cards="\n".join(cards)))
 
 
-_README_ORDER = ["章节精讲", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
+_README_ORDER = ["章节精讲", "实验精讲 · 上机", "考前综合", "考前精华", "总览资料", "真题与网络资源", "期末冲刺", "原始课件", "导览", "复习资料", "例题精解 · 深化", "章节素材", "学习系统", "知识图谱", "原始课件 · 页图", "原始课件 · PDF原文"]
 
 
 def build_readme(built):
