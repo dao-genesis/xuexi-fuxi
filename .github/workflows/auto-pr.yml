@@ -1,0 +1,69 @@
+name: Auto PR to main
+
+# 道法自然：推送到任意工作分支后，自动重生成 docs/、提交回该分支，
+# 并自动开/更新到 main 的 PR（尝试开启 auto-merge）。你无需手动建 PR。
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - 'auto/**'
+      - 'gh-pages'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 重生成 docs/
+        run: python 复习板块_生成.py
+
+      - name: 若 docs/ 有变更则提交回当前分支
+        run: |
+          if git diff --quiet -- docs; then
+            echo "docs/ 已同步，无需提交。"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs
+            git commit -m "chore(docs): 自动重生成复习站点 [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: 开/更新到 main 的 PR（幂等、容错）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+        run: |
+          set +e
+          git fetch origin main --quiet
+          if git diff --quiet origin/main..HEAD; then
+            echo "与 main 无差异，跳过开 PR。"; exit 0
+          fi
+          existing=$(gh pr list --head "${{ github.ref_name }}" --base main --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "PR #$existing 已存在，跳过创建。"
+          else
+            gh pr create --base main --head "${{ github.ref_name }}" \
+              --title "auto: ${{ github.ref_name }} → main（复习站点）" \
+              --body "由 GitHub Actions 自动创建。源变更已重生成 \`docs/\`，合并后将自动部署 GitHub Pages。" \
+              || echo "开 PR 失败（可能已存在/无差异），忽略。"
+          fi
+
+      - name: 尝试开启 auto-merge（需仓库已允许）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+        run: gh pr merge "${{ github.ref_name }}" --auto --squash || echo "auto-merge 未启用或暂不可用，忽略。"
